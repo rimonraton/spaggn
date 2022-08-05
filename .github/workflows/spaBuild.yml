@@ -1,0 +1,34 @@
+name: SpaGGN
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  laravel-build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    #- name: NPM Install
+    #  run: npm install
+      
+    #- name: NPM Development
+      #run: npm run dev
+    
+    - name: Deployment
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        script: |
+          cd /var/www/personal/spaggn/
+          git checkout -f 
+          git pull
+          npm run dev
+
+
