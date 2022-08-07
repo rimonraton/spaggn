@@ -1,5 +1,4 @@
 <template>
-
     <div class="max-w-screen-md mx-auto my-1 lg:my-4 text-gray-900">
         <div class="flex justify-center items-center">
             <!-- <div class="flex-1"> -->
