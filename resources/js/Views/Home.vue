@@ -1,5 +1,6 @@
 <template>
   <div class="max-w-screen-lg mx-auto text-gray-900">
+    hello
     <!-- <div class="flex justify-center">
         <div class="flex-1">
             <div class="border w-auto">

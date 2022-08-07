@@ -1,17 +1,17 @@
 <template>
   <div>
-        <div>
-            <nav-bar v-if="this.$route.name !== 'welcome'"></nav-bar>
-        </div>
-        <VerifyNotice :id="id" v-if="(this.$route.name !== 'welcome') && id && !verified" />
-        <div>
-          
-          <router-view class="p-6 " v-slot="{ Component }">
-            <transition name="fade" mode="out-in" >
-              <component :is="Component" />
-            </transition>
-          </router-view>
-        </div>
+    <!-- <div>
+      <nav-bar v-if="this.$route.name !== 'welcome'"></nav-bar>
+    </div>
+    <VerifyNotice :id="id" v-if="(this.$route.name !== 'welcome') && id && !verified" /> -->
+    <div>
+
+      <router-view class="p-6 " v-slot="{ Component }">
+        <!-- <transition name="fade" mode="out-in"> -->
+        <component :is="Component" />
+        <!-- </transition> -->
+      </router-view>
+    </div>
   </div>
 </template>
 
@@ -19,20 +19,20 @@
 import NavBar from './NavBar.vue'
 import VerifyNotice from './VerifyNotice.vue'
 export default {
-  computed : {
-    id () {
-      return this.$store.getters.id 
+  computed: {
+    id() {
+      return this.$store.getters.id
     },
-    verified () {
-      return this.$store.getters.verified 
+    verified() {
+      return this.$store.getters.verified
     }
 
   },
-  components : {
+  components: {
     NavBar,
     VerifyNotice
   },
-  
+
 }
 </script>
 
@@ -47,5 +47,4 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
-
 </style>
