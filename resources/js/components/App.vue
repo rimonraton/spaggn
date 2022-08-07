@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <!-- <div>
+  <!-- <div> -->
+  <!-- <div>
       <nav-bar v-if="this.$route.name !== 'welcome'"></nav-bar>
     </div>
     <VerifyNotice :id="id" v-if="(this.$route.name !== 'welcome') && id && !verified" /> -->
-    <div>
+  <div class="min-h-screen">
 
-      <router-view class="p-6 " v-slot="{ Component }">
-        <!-- <transition name="fade" mode="out-in"> -->
-        <component :is="Component" />
-        <!-- </transition> -->
-      </router-view>
-    </div>
+    <router-view class="p-6 " v-slot="{ Component }">
+      <!-- <transition name="fade" mode="out-in"> -->
+      <component :is="Component" />
+      <!-- </transition> -->
+    </router-view>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
