@@ -1,34 +1,22 @@
-name: SpaGGN
-
-on:
-  push:
-    branches: [ main ]
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  laravel-build:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
     
-    - name: Checkout
-      uses: actions/checkout@v3
-      
-    #- name: NPM Install
-    #  run: npm install
-      
-    #- name: NPM Development
-      #run: npm run dev
-    
-    - name: Deployment
-      uses: appleboy/ssh-action@master
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        script: |
-          cd /var/www/personal/ggnspa
-          git checkout -f 
-          git pull
-          npm run dev
-
-
+        server: ${{ secrets.ftp_server }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/vendor/**
+          **/.zip/**
