@@ -63,7 +63,6 @@
       </div>
     </nav>
   </header>
-
   <!-- Start block -->
   <section class="bg-white dark:bg-gray-900">
     <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
@@ -917,7 +916,7 @@
       <div class="text-center">
         <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
           <img src="/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
-          GOOD GIVING NETWORK
+          Landwind
         </a>
         <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2021-2022 Landwind™. All Rights
           Reserved. Built with <a href="https://flowbite.com"
@@ -975,8 +974,6 @@
     </div>
   </footer>
 </template>
-
-
 <script setup>
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'
