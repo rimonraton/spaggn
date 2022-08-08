@@ -4,7 +4,7 @@
       <nav-bar v-if="this.$route.name !== 'welcome'"></nav-bar>
     </div>
     <VerifyNotice :id="id" v-if="(this.$route.name !== 'welcome') && id && !verified" /> -->
-  <div class="min-h-screen">
+  <div class="">
 
     <router-view class="p-6 " v-slot="{ Component }">
       <!-- <transition name="fade" mode="out-in"> -->

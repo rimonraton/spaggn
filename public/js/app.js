@@ -19691,7 +19691,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "min-h-screen"
+  "class": ""
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
@@ -19838,6 +19838,255 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "py-2 px-3 bg-blue-600 text-white rounded"
   }, " Email Sent ! "))])]);
 }
+
+/***/ }),
+
+/***/ "./resources/js/api/api.js":
+/*!*********************************!*\
+  !*** ./resources/js/api/api.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+ // import Nprogress from 'nprogress'
+
+var instance = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
+  withCredentials: true,
+  baseURL: "http://spaggn.test" // timeout: 10000,
+
+});
+instance.interceptors.request.use(function (request) {
+  // Nprogress.start()
+  request.headers.common.Accept = 'application/json';
+  request.headers.common['Content-Type'] = 'application/json';
+  request.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // request.headers.common['Access-Control-Allow-Origin'] = '*'
+  // const userToken = sessionStorage.getItem('user')
+  // if (userToken) {
+  //     request.headers.common.Authorization = `Bearer ${JSON.parse(userToken)[0].token}`
+  // }
+
+  return request;
+});
+instance.interceptors.response.use(function (response) {
+  // console.log(['response....', response])
+  // Nprogress.done()
+  return response;
+}, function (error) {
+  console.log(error); // if(error.response){
+  //   if (error.message == "Network Error") {
+  //     console.log(['boom', 'Network error']);
+  //     window.location.assign('/network-issue');
+  //   }
+  // }
+  // else{
+  //   if (error.response.status === 401) {
+  //     sessionStorage.removeItem("user");
+  //     window.location.reload();
+  //   }
+  // }
+
+  if (error.response.status === 401) {
+    sessionStorage.removeItem('user');
+    window.location.reload();
+  }
+
+  return Promise.reject(error);
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (instance);
+
+/***/ }),
+
+/***/ "./resources/js/api/repository.js":
+/*!****************************************!*\
+  !*** ./resources/js/api/repository.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ "./resources/js/api/api.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  createSession: function createSession() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/sanctum/csrf-cookie');
+  },
+  login: function login(params) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/login', params);
+  },
+  registration: function registration(params) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/registration', params);
+  },
+  changeAddress: function changeAddress(params) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/change-address', params);
+  },
+  otp: function otp(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/otp', param);
+  },
+  logout: function logout() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]('/api/logout');
+  },
+  getUsers: function getUsers() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/users');
+  },
+  getUser: function getUser(user) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/users/".concat(user));
+  },
+  reSendOtp: function reSendOtp(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/re_generate_otp', param);
+  },
+  resetPassword: function resetPassword(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/reset-password', param);
+  },
+  resetOTP: function resetOTP(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/reset-otp', param);
+  },
+  setPassword: function setPassword(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/set-password', param);
+  },
+  getCurrentLocation: function getCurrentLocation(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/getCurrentLocation', param);
+  },
+  getAutocompleteAddress: function getAutocompleteAddress(address) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getAutocompleteAddress/".concat(address));
+  },
+  setSelectedAddress: function setSelectedAddress(placeId) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getPlaceDetails/".concat(placeId));
+  },
+  getUserAddress: function getUserAddress(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/address/".concat(param));
+  },
+  addAddress: function addAddress(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-address', param);
+  },
+  removeAddress: function removeAddress(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/delete-address', param);
+  },
+  getRestaurant: function getRestaurant(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getRestaurant?".concat(param));
+  },
+  getProduct: function getProduct(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getProduct/".concat(param));
+  },
+  getShopProducts: function getShopProducts(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopProducts/".concat(param));
+  },
+  getShopCategory: function getShopCategory(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopCategory/".concat(param));
+  },
+  getShopProductsCategory: function getShopProductsCategory(param1, param2) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopProductsCategory/".concat(param1, "/").concat(param2));
+  },
+  searchShopProducts: function searchShopProducts(param1, param2) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/searchShopProducts/".concat(param1, "/").concat(param2));
+  },
+  saveCarts: function saveCarts(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/save-cart', param);
+  },
+  removeCartItem: function removeCartItem(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/delete-cart', param);
+  },
+  getCartItems: function getCartItems(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getCart/".concat(param));
+  },
+  incrementCartItem: function incrementCartItem(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/incrementCart', param);
+  },
+  decrementCartItem: function decrementCartItem(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/decrementCart', param);
+  },
+  shopProduct: function shopProduct(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopProduct/".concat(param));
+  },
+  saveReview: function saveReview(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/save-review', param);
+  },
+  getProductReview: function getProductReview(param) {
+    console.log(['obj', param]);
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-product-review/".concat(param.product, "?page=").concat(param.pagenumber));
+  },
+  saveDeliveryReview: function saveDeliveryReview(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/save-delivery-review', param);
+  },
+  getDeliveryReview: function getDeliveryReview(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-delivery-review/".concat(param));
+  },
+  getDistance: function getDistance(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-distance/".concat(param.origins, "/").concat(param.destinations));
+  },
+  getMenus: function getMenus(role) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-menus/".concat(role));
+  },
+  allMenu: function allMenu() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/all-menus');
+  },
+  storeMenuRole: function storeMenuRole(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-role-menu', param);
+  },
+  sellerRegistration: function sellerRegistration(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/seller-registration', param);
+  },
+  riderRegistration: function riderRegistration(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/rider-registration', param);
+  },
+  storeOrder: function storeOrder(param) {
+    // console.log('param.....', typeof param, param)
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-orders', param);
+  },
+  getOrders: function getOrders(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-orders?page=".concat(param.page));
+  },
+  searchOrders: function searchOrders(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/search-orders/".concat(param));
+  },
+  allSearchable: function allSearchable(keyword) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/all-searchable/".concat(keyword));
+  },
+  allSearchRestaurent: function allSearchRestaurent(keyword) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/search-by-item-category-restaurent', keyword);
+  },
+  getPolicy: function getPolicy() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-policy');
+  },
+  getOrdersHistoryByUser: function getOrdersHistoryByUser(user) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-orders-history/".concat(user));
+  },
+  getCurrentOrdersByUser: function getCurrentOrdersByUser(user) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-current-orders/".concat(user));
+  },
+  trackingOrders: function trackingOrders(orderNo) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/tracking-orders', orderNo);
+  },
+  storeWiselist: function storeWiselist(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-wiselist', param);
+  },
+  storeFavourite: function storeFavourite(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-favourite', param);
+  },
+  getFavourites: function getFavourites(user) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-favourites/".concat(user));
+  },
+  removeFavourite: function removeFavourite(favourite) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]("/api/remove-favourite/".concat(favourite));
+  },
+  userProductReviews: function userProductReviews(user) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/user-product-reviews/".concat(user));
+  },
+  userTobeReviewed: function userTobeReviewed(user) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/user-tobe-reviewed/".concat(user));
+  },
+  productOptions: function productOptions(product) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-product-details/".concat(product));
+  }
+});
 
 /***/ }),
 
@@ -19995,8 +20244,16 @@ var Welcome = function Welcome() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_Welcome_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Welcome.vue */ "./resources/js/Views/Welcome.vue"));
 };
 
-var AdminLayout = function AdminLayout() {
+var Admin = function Admin() {
   return __webpack_require__.e(/*! import() */ "resources_js_Layout_AdminLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Layout/AdminLayout.vue */ "./resources/js/Layout/AdminLayout.vue"));
+};
+
+var Artist = function Artist() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Layout_ArtistLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Layout/ArtistLayout.vue */ "./resources/js/Layout/ArtistLayout.vue"));
+};
+
+var Charity = function Charity() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Layout_CharityLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Layout/CharityLayout.vue */ "./resources/js/Layout/CharityLayout.vue"));
 };
 
 var LandingLayout = function LandingLayout() {
@@ -20006,10 +20263,19 @@ var LandingLayout = function LandingLayout() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   path: '/',
   component: Welcome,
-  name: 'welcome',
-  meta: {
-    layout: LandingLayout
-  }
+  name: 'welcome'
+}, {
+  path: '/artist-dashboard',
+  component: Artist,
+  name: 'Artist'
+}, {
+  path: '/admin-dashboard',
+  component: Admin,
+  name: 'Admin'
+}, {
+  path: '/charity-dashboard',
+  component: Charity,
+  name: 'Charity'
 }, {
   path: '/home',
   component: Home,
@@ -20108,9 +20374,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 /* harmony import */ var vuex_shared_mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex-shared-mutations */ "./node_modules/vuex-shared-mutations/dist/vuex-shared-mutations.js");
 /* harmony import */ var vuex_shared_mutations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuex_shared_mutations__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api/repository */ "./resources/js/api/repository.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -20120,7 +20387,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_3__.createStore)({
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_4__.createStore)({
   state: function state() {
     return {
       user: null
@@ -20155,11 +20423,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 dispatch = _ref.dispatch;
                 _context.prev = 1;
                 _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/sanctum/csrf-cookie');
+                return _api_repository__WEBPACK_IMPORTED_MODULE_3__["default"].createSession();
 
               case 4:
                 _context.next = 6;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/login', payload).then(function (res) {
+                return _api_repository__WEBPACK_IMPORTED_MODULE_3__["default"].login(payload).then(function (res) {
                   return dispatch('getUser');
                 })["catch"](function (err) {
                   throw err.response;
@@ -20249,6 +20517,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 commit = _ref4.commit;
                 _context4.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/user').then(function (res) {
+                  console.log(res.data);
                   commit('setUser', res.data);
                 })["catch"](function (err) {
                   throw err.response;
@@ -39239,7 +39508,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _vue_devtools_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @vue/devtools-api */ "./node_modules/@vue/devtools-api/lib/esm/index.js");
 /*!
-  * vue-router v4.0.14
+  * vue-router v4.0.13
   * (c) 2022 Eduardo San Martin Morote
   * @license MIT
   */
@@ -41719,7 +41988,7 @@ function addDevtools(app, router, matcher) {
                     title: 'Error during Navigation',
                     subtitle: to.fullPath,
                     logType: 'error',
-                    time: api.now(),
+                    time: Date.now(),
                     data: { error },
                     groupId: to.meta.__navigationId,
                 },
@@ -41740,7 +42009,7 @@ function addDevtools(app, router, matcher) {
             api.addTimelineEvent({
                 layerId: navigationsLayerId,
                 event: {
-                    time: api.now(),
+                    time: Date.now(),
                     title: 'Start of navigation',
                     subtitle: to.fullPath,
                     data,
@@ -41775,7 +42044,7 @@ function addDevtools(app, router, matcher) {
                 event: {
                     title: 'End of navigation',
                     subtitle: to.fullPath,
-                    time: api.now(),
+                    time: Date.now(),
                     data,
                     logType: failure ? 'warning' : 'default',
                     groupId: to.meta.__navigationId,
@@ -44644,7 +44913,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Login_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Register_vue":1,"resources_js_Views_Home_vue":1,"resources_js_Views_Welcome_vue":1,"resources_js_Layout_AdminLayout_vue":1,"resources_js_Layout_LandingLayout_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Login_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Register_vue":1,"resources_js_Views_Home_vue":1,"resources_js_Views_Welcome_vue":1,"resources_js_Layout_AdminLayout_vue":1,"resources_js_Layout_ArtistLayout_vue":1,"resources_js_Layout_CharityLayout_vue":1,"resources_js_Layout_LandingLayout_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

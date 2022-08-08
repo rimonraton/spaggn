@@ -1,7 +1,8 @@
 <template>
-  <div class="max-w-screen-lg mx-auto text-gray-900">
-    hello
-    <!-- <div class="flex justify-center">
+    <div class="max-w-screen-lg mx-auto text-gray-900">
+        hello
+        <button @click="logout">Log out</button>
+        <!-- <div class="flex justify-center">
         <div class="flex-1">
             <div class="border w-auto">
                 <div  class="border p-4 font-semibold ">Dashboard</div>
@@ -14,16 +15,27 @@
             </div>
         </div>
     </div> -->
-</div>
+    </div>
 </template>
 
 
 
-<script>
-export default {
-    data() {
-        return {
-        }
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+const router = useRouter()
+const store = useStore()
+const errors = ref(null)
+const logout = async () => {
+    errors.value = null
+    try {
+        await store.dispatch('logout')
+        router.push({ name: 'welcome' })
     }
+    catch (e) {
+        errors.value = e.data
+    };
+
 }
 </script>

@@ -11,7 +11,9 @@ class UserController extends Controller
     public function __invoke(Request $request)
     {
         if(auth("sanctum")->check()){
-            return response()->json(auth("sanctum")->user());
+            $user = auth("sanctum")->user();
+            $user['role'] = auth("sanctum")->user()->role();
+            return response()->json($user);
         }
     }
 }

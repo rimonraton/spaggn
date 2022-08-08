@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createStore } from 'vuex'
 import sharedMutations from 'vuex-shared-mutations';
+import repository from '../api/repository';
 
 
 export default createStore({
@@ -34,9 +35,11 @@ export default createStore({
 
         async login({ dispatch }, payload) {
             try {
-                await axios.get('/sanctum/csrf-cookie');
+                // await axios.get('/sanctum/csrf-cookie');
+                await repository.createSession();
 
-                await axios.post('/api/login', payload).then((res) => {
+                // await axios.post('/api/login', payload).then((res) => {
+                await repository.login(payload).then((res) => {
                     return dispatch('getUser');
                 }).catch((err) => {
                     throw err.response
@@ -46,68 +49,69 @@ export default createStore({
                 // if (res.status != 200) throw res;
 
                 // if (res.data.status_code != 200) throw res.data.message;
-                
-                
-                
+
+
+
             } catch (e) {
                 throw e
             }
-    
+
         },
 
         async register({ dispatch }, payload) {
             try {
 
-                await axios.post('/api/register' , payload).then((res) => {
-                    return dispatch('login' , { 'email' : payload.email , 'password' : payload.password})
+                await axios.post('/api/register', payload).then((res) => {
+                    return dispatch('login', { 'email': payload.email, 'password': payload.password })
                 }).catch((err) => {
-                    throw(err.response)
+                    throw (err.response)
                 })
             } catch (e) {
                 throw (e)
             }
         },
         async logout({ commit }) {
-                await axios.post('/api/logout').then((res) => {
-                    commit('setUser', null);
-                }).catch((err) => {
-                    
-                })
-            
+            await axios.post('/api/logout').then((res) => {
+                commit('setUser', null);
+            }).catch((err) => {
+
+            })
+
         },
-        async getUser({commit}) {
+        async getUser({ commit }) {
             await axios.get('/api/user').then((res) => {
+                console.log(res.data)
                 commit('setUser', res.data);
             }).catch((err) => {
                 throw err.response
             })
         },
-        async profile({commit},payload) {
+        async profile({ commit }, payload) {
             await axios.patch('/api/profile', payload).then((res) => {
                 commit('setUser', res.data.user);
             }).catch((err) => {
                 throw err.response
             })
         },
-        async password({commit},payload) {
+        async password({ commit }, payload) {
             await axios.patch('/api/password', payload).then((res) => {
-                
+
             }).catch((err) => {
                 throw err.response
             })
         },
 
-        async verifyResend({dispatch} , payload){
-            let res = await axios.post('/api/verify-resend' , payload)
+        async verifyResend({ dispatch }, payload) {
+            let res = await axios.post('/api/verify-resend', payload)
             if (res.status != 200) throw res
             return res
         },
-        async verifyEmail({dispatch} , payload){
+        async verifyEmail({ dispatch }, payload) {
             let res = await axios.post('/api/verify-email/' + payload.id + '/' + payload.hash)
             if (res.status != 200) throw res
             dispatch('getUser')
-                return res
-            
+            return res
+
         },
 
 
