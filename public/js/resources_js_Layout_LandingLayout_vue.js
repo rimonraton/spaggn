@@ -57,7 +57,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "fixed w-full"
+  "class": "fixed w-full shadow-lg"
 };
 var _hoisted_2 = {
   "class": "bg-white border-gray-200 py-2.5 dark:bg-gray-900"
