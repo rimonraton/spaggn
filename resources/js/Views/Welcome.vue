@@ -3,8 +3,7 @@
 </template>
 
 <script setup>
-import LandingLayoutVue from '../Layout/LandingLayout.vue';
+import LandingLayoutVue from "../layouts/LandingLayout.vue";
 </script>
 
-<style>
-</style>
+<style></style>

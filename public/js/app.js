@@ -20193,6 +20193,55 @@ router.beforeEach(function (to, from, next) {
 
 /***/ }),
 
+/***/ "./resources/js/router/routes-artist.js":
+/*!**********************************************!*\
+  !*** ./resources/js/router/routes-artist.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var ArtistHome = function ArtistHome() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Artist_pages_Home_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Artist/pages/Home.vue */ "./resources/js/Views/Artist/pages/Home.vue"));
+};
+
+var ArtistProfile = function ArtistProfile() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Artist_pages_Profile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Artist/pages/Profile.vue */ "./resources/js/Views/Artist/pages/Profile.vue"));
+};
+
+var CreateArtistProfile = function CreateArtistProfile() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Artist_pages_CreateProfile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Artist/pages/CreateProfile.vue */ "./resources/js/Views/Artist/pages/CreateProfile.vue"));
+};
+
+var ArtistLayout = function ArtistLayout() {
+  return __webpack_require__.e(/*! import() */ "resources_js_layouts_ArtistLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/ArtistLayout.vue */ "./resources/js/layouts/ArtistLayout.vue"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+  path: '/artist-home',
+  component: ArtistHome,
+  name: 'ArtistHome',
+  meta: {
+    layout: ArtistLayout
+  }
+}, {
+  path: '/artist-profile',
+  component: ArtistProfile,
+  name: 'ArtistProfile'
+}, {
+  path: '/create-artist-profile',
+  component: CreateArtistProfile,
+  name: 'CreateArtistProfile'
+}, {
+  path: '/:pathMatch(.*)*',
+  redirect: '/'
+}]);
+
+/***/ }),
+
 /***/ "./resources/js/router/routes.js":
 /*!***************************************!*\
   !*** ./resources/js/router/routes.js ***!
@@ -20204,6 +20253,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _routes_artist__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes-artist */ "./resources/js/router/routes-artist.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
 var Settings = function Settings() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_Settings_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Settings.vue */ "./resources/js/Views/Settings.vue"));
 };
@@ -20245,22 +20309,22 @@ var Welcome = function Welcome() {
 };
 
 var Admin = function Admin() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Layout_AdminLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Layout/AdminLayout.vue */ "./resources/js/Layout/AdminLayout.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_layouts_AdminLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/AdminLayout.vue */ "./resources/js/layouts/AdminLayout.vue"));
 };
 
 var Artist = function Artist() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Layout_ArtistLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Layout/ArtistLayout.vue */ "./resources/js/Layout/ArtistLayout.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_layouts_ArtistLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/ArtistLayout.vue */ "./resources/js/layouts/ArtistLayout.vue"));
 };
 
 var Charity = function Charity() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Layout_CharityLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Layout/CharityLayout.vue */ "./resources/js/Layout/CharityLayout.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_layouts_CharityLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/CharityLayout.vue */ "./resources/js/layouts/CharityLayout.vue"));
 };
 
 var LandingLayout = function LandingLayout() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Layout_LandingLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Layout/LandingLayout.vue */ "./resources/js/Layout/LandingLayout.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_layouts_LandingLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/LandingLayout.vue */ "./resources/js/layouts/LandingLayout.vue"));
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([].concat(_toConsumableArray(_routes_artist__WEBPACK_IMPORTED_MODULE_0__["default"]), [{
   path: '/',
   component: Welcome,
   name: 'welcome'
@@ -20355,7 +20419,7 @@ var LandingLayout = function LandingLayout() {
 }, {
   path: '/:pathMatch(.*)*',
   redirect: '/home'
-}]);
+}]));
 
 /***/ }),
 
@@ -20375,9 +20439,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var vuex_shared_mutations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex-shared-mutations */ "./node_modules/vuex-shared-mutations/dist/vuex-shared-mutations.js");
-/* harmony import */ var vuex_shared_mutations__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuex_shared_mutations__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api/repository */ "./resources/js/api/repository.js");
+/* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/repository */ "./resources/js/api/repository.js");
+/* harmony import */ var _modules_ArtistModule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/ArtistModule */ "./resources/js/store/modules/ArtistModule.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -20385,10 +20448,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
+ // import sharedMutations from 'vuex-shared-mutations';
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_4__.createStore)({
+  namespaced: true,
   state: function state() {
     return {
       user: null
@@ -20423,11 +20488,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 dispatch = _ref.dispatch;
                 _context.prev = 1;
                 _context.next = 4;
-                return _api_repository__WEBPACK_IMPORTED_MODULE_3__["default"].createSession();
+                return _api_repository__WEBPACK_IMPORTED_MODULE_2__["default"].createSession();
 
               case 4:
                 _context.next = 6;
-                return _api_repository__WEBPACK_IMPORTED_MODULE_3__["default"].login(payload).then(function (res) {
+                return _api_repository__WEBPACK_IMPORTED_MODULE_2__["default"].login(payload).then(function (res) {
                   return dispatch('getUser');
                 })["catch"](function (err) {
                   throw err.response;
@@ -20641,10 +20706,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     }
   },
-  plugins: [vuex_shared_mutations__WEBPACK_IMPORTED_MODULE_2___default()({
-    predicate: ['setUser']
-  })]
+  // plugins: [sharedMutations({ predicate: ['setUser'] })],
+  modules: {
+    artistModule: _modules_ArtistModule__WEBPACK_IMPORTED_MODULE_3__
+  }
 }));
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/ArtistModule.js":
+/*!****************************************************!*\
+  !*** ./resources/js/store/modules/ArtistModule.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "actions": () => (/* binding */ actions),
+/* harmony export */   "getters": () => (/* binding */ getters),
+/* harmony export */   "mutations": () => (/* binding */ mutations),
+/* harmony export */   "namespaced": () => (/* binding */ namespaced),
+/* harmony export */   "state": () => (/* binding */ state)
+/* harmony export */ });
+var namespaced = true;
+var state = {
+  artist: 'Artist from store'
+};
+var getters = {};
+var mutations = {};
+var actions = {};
 
 /***/ }),
 
@@ -43191,17 +43282,6 @@ function compileToFunction(template, options) {
 
 /***/ }),
 
-/***/ "./node_modules/vuex-shared-mutations/dist/vuex-shared-mutations.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/vuex-shared-mutations/dist/vuex-shared-mutations.js ***!
-  \**************************************************************************/
-/***/ ((module) => {
-
-!function(e,t){ true?module.exports=t():0}(window,function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=3)}([function(e,t,n){"use strict";(function(e){function r(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function o(e,t,n){return t&&r(e.prototype,t),n&&r(e,n),e}n.d(t,"a",function(){return u});var a="vuex-shared-mutations",i="undefined"!=typeof window?window:e,u=function(){function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);var n=t.BroadcastChannel||i.BroadcastChannel,r=t.key||a;if(!this.constructor.available(n))throw new Error("Broadcast strategy not available");this.channel=new n(r)}return o(e,null,[{key:"available",value:function(){return!("function"!=typeof(arguments.length>0&&void 0!==arguments[0]?arguments[0]:i.BroadcastChannel))}}]),o(e,[{key:"addEventListener",value:function(e){this.channel.addEventListener("message",function(t){e(t.data)})}},{key:"share",value:function(e){return this.channel.postMessage(e)}}]),e}()}).call(this,n(2))},function(e,t,n){"use strict";(function(e){function r(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function a(e,t,n){return t&&o(e.prototype,t),n&&o(e,n),e}n.d(t,"a",function(){return s});var i="vuex-shared-mutations",u="undefined"!=typeof window?window:e,c=4096,f=1;var s=function(){function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e);var n=t.window||u.window,o=t.localStorage||u.localStorage;if(!this.constructor.available({window:n,localStorage:o}))throw new Error("Strategy unavailable");this.uniqueId="".concat(Date.now(),"-").concat(Math.random()),this.messageBuffer=[],this.window=n,this.storage=o,this.options=function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{},o=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(o=o.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),o.forEach(function(t){r(e,t,n[t])})}return e}({key:i},t)}return a(e,null,[{key:"available",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{window:u.window,localStorage:u.localStorage},t=e.window,n=e.localStorage;if(!t||!n)return!1;try{return n.setItem("vuex-shared-mutations-test-key",Date.now()),n.removeItem("vuex-shared-mutations-test-key"),!0}catch(e){return!1}}}]),a(e,[{key:"addEventListener",value:function(e){var t=this;return this.window.addEventListener("storage",function(n){if(!n.newValue)return!1;if(-1===n.key.indexOf("##")||n.key.split("##")[0]!==t.options.key)return!1;var r=t.window.JSON.parse(n.newValue);if(r.author===t.uniqueId)return!1;if(t.messageBuffer.push(r.messagePart),t.messageBuffer.length===r.total){var o=t.window.JSON.parse(t.messageBuffer.join(""));t.messageBuffer=[],e(o)}return!0})}},{key:"share",value:function(e){var t=this,n=function(e){var t=Math.ceil(e.length/c);return Array.from({length:t}).map(function(t,n){return e.substr(n*c,c)})}(this.window.JSON.stringify(e));n.forEach(function(e,r){f+=1;var o="".concat(t.options.key,"##").concat(r);t.storage.setItem(o,JSON.stringify({author:t.uniqueId,part:r,total:n.length,messagePart:e,messageCounter:f})),t.storage.removeItem(o)})}}]),e}()}).call(this,n(2))},function(e,t){var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(e){"object"==typeof window&&(n=window)}e.exports=n},function(e,t,n){"use strict";n.r(t);var r=n(0),o=n(1);function a(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},a=Object.keys(e);for(r=0;r<a.length;r++)n=a[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);for(r=0;r<a.length;r++)n=a[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}n.d(t,"BroadcastChannelStrategy",function(){return r.a}),n.d(t,"LocalStorageStratery",function(){return o.a});t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.predicate,n=e.strategy,i=a(e,["predicate","strategy"]);if(("storageKey"in i||"sharingKey"in i)&&window.console.warn("Configuration directly on plugin was removed, configure specific strategies if needed"),!Array.isArray(t)&&"function"!=typeof t)throw new Error("Either array of accepted mutations or predicate function must be supplied");var u="function"==typeof t?t:function(e){var n=e.type;return-1!==t.indexOf(n)},c=!1,f=n||function(){if(o.a.available())return new o.a;if(r.a.available())return new r.a;throw new Error("No strategies available")}();return function(e){e.subscribe(function(e,t){return c?Promise.resolve(!1):Promise.resolve(u(e,t)).then(function(t){t&&f.share(e)})}),f.addEventListener(function(t){try{c=!0,e.commit(t.type,t.payload)}finally{c=!1}return"done"})}}}])});
-//# sourceMappingURL=vuex-shared-mutations.js.map
-
-/***/ }),
-
 /***/ "./node_modules/vuex/dist/vuex.esm-bundler.js":
 /*!****************************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm-bundler.js ***!
@@ -44913,7 +44993,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Login_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Register_vue":1,"resources_js_Views_Home_vue":1,"resources_js_Views_Welcome_vue":1,"resources_js_Layout_AdminLayout_vue":1,"resources_js_Layout_ArtistLayout_vue":1,"resources_js_Layout_CharityLayout_vue":1,"resources_js_Layout_LandingLayout_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Login_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Register_vue":1,"resources_js_Views_Home_vue":1,"resources_js_Views_Welcome_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_Profile_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

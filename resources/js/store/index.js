@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { createStore } from 'vuex'
-import sharedMutations from 'vuex-shared-mutations';
+// import sharedMutations from 'vuex-shared-mutations';
 import repository from '../api/repository';
+import * as artistModule from './modules/ArtistModule'
 
 
 export default createStore({
+    namespaced: true,
     state() {
         return {
             user: null
@@ -116,7 +118,8 @@ export default createStore({
 
 
     },
-    plugins: [sharedMutations({ predicate: ['setUser'] })],
+    // plugins: [sharedMutations({ predicate: ['setUser'] })],
+    modules: { artistModule }
 
 
 })

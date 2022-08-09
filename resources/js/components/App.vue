@@ -5,8 +5,7 @@
     </div>
     <VerifyNotice :id="id" v-if="(this.$route.name !== 'welcome') && id && !verified" /> -->
   <div class="">
-
-    <router-view class="p-6 " v-slot="{ Component }">
+    <router-view class="p-6" v-slot="{ Component }">
       <!-- <transition name="fade" mode="out-in"> -->
       <component :is="Component" />
       <!-- </transition> -->
@@ -16,26 +15,23 @@
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
-import VerifyNotice from './VerifyNotice.vue'
+import NavBar from "./NavBar.vue";
+import VerifyNotice from "./VerifyNotice.vue";
 export default {
   computed: {
     id() {
-      return this.$store.getters.id
+      return this.$store.getters.id;
     },
     verified() {
-      return this.$store.getters.verified
-    }
-
+      return this.$store.getters.verified;
+    },
   },
   components: {
     NavBar,
-    VerifyNotice
+    VerifyNotice,
   },
-
-}
+};
 </script>
-
 
 <style>
 .fade-enter-active,
