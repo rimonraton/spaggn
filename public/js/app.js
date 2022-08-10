@@ -5682,14 +5682,14 @@ const isProxyAvailable = typeof Proxy === 'function';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "isPerformanceSupported": () => (/* reexport safe */ _time__WEBPACK_IMPORTED_MODULE_0__.isPerformanceSupported),
-/* harmony export */   "now": () => (/* reexport safe */ _time__WEBPACK_IMPORTED_MODULE_0__.now),
+/* harmony export */   "isPerformanceSupported": () => (/* reexport safe */ _time_js__WEBPACK_IMPORTED_MODULE_0__.isPerformanceSupported),
+/* harmony export */   "now": () => (/* reexport safe */ _time_js__WEBPACK_IMPORTED_MODULE_0__.now),
 /* harmony export */   "setupDevtoolsPlugin": () => (/* binding */ setupDevtoolsPlugin)
 /* harmony export */ });
-/* harmony import */ var _env__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./env */ "./node_modules/@vue/devtools-api/lib/esm/env.js");
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./const */ "./node_modules/@vue/devtools-api/lib/esm/const.js");
-/* harmony import */ var _proxy__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./proxy */ "./node_modules/@vue/devtools-api/lib/esm/proxy.js");
-/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./time */ "./node_modules/@vue/devtools-api/lib/esm/time.js");
+/* harmony import */ var _env_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./env.js */ "./node_modules/@vue/devtools-api/lib/esm/env.js");
+/* harmony import */ var _const_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./const.js */ "./node_modules/@vue/devtools-api/lib/esm/const.js");
+/* harmony import */ var _proxy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./proxy.js */ "./node_modules/@vue/devtools-api/lib/esm/proxy.js");
+/* harmony import */ var _time_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./time.js */ "./node_modules/@vue/devtools-api/lib/esm/time.js");
 
 
 
@@ -5698,14 +5698,14 @@ __webpack_require__.r(__webpack_exports__);
 
 function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
     const descriptor = pluginDescriptor;
-    const target = (0,_env__WEBPACK_IMPORTED_MODULE_1__.getTarget)();
-    const hook = (0,_env__WEBPACK_IMPORTED_MODULE_1__.getDevtoolsGlobalHook)();
-    const enableProxy = _env__WEBPACK_IMPORTED_MODULE_1__.isProxyAvailable && descriptor.enableEarlyProxy;
+    const target = (0,_env_js__WEBPACK_IMPORTED_MODULE_1__.getTarget)();
+    const hook = (0,_env_js__WEBPACK_IMPORTED_MODULE_1__.getDevtoolsGlobalHook)();
+    const enableProxy = _env_js__WEBPACK_IMPORTED_MODULE_1__.isProxyAvailable && descriptor.enableEarlyProxy;
     if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
-        hook.emit(_const__WEBPACK_IMPORTED_MODULE_2__.HOOK_SETUP, pluginDescriptor, setupFn);
+        hook.emit(_const_js__WEBPACK_IMPORTED_MODULE_2__.HOOK_SETUP, pluginDescriptor, setupFn);
     }
     else {
-        const proxy = enableProxy ? new _proxy__WEBPACK_IMPORTED_MODULE_3__.ApiProxy(descriptor, hook) : null;
+        const proxy = enableProxy ? new _proxy_js__WEBPACK_IMPORTED_MODULE_3__.ApiProxy(descriptor, hook) : null;
         const list = target.__VUE_DEVTOOLS_PLUGINS__ = target.__VUE_DEVTOOLS_PLUGINS__ || [];
         list.push({
             pluginDescriptor: descriptor,
@@ -5731,8 +5731,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ApiProxy": () => (/* binding */ ApiProxy)
 /* harmony export */ });
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./const */ "./node_modules/@vue/devtools-api/lib/esm/const.js");
-/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./time */ "./node_modules/@vue/devtools-api/lib/esm/time.js");
+/* harmony import */ var _const_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./const.js */ "./node_modules/@vue/devtools-api/lib/esm/const.js");
+/* harmony import */ var _time_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./time.js */ "./node_modules/@vue/devtools-api/lib/esm/time.js");
 
 
 class ApiProxy {
@@ -5773,11 +5773,11 @@ class ApiProxy {
                 currentSettings = value;
             },
             now() {
-                return (0,_time__WEBPACK_IMPORTED_MODULE_0__.now)();
+                return (0,_time_js__WEBPACK_IMPORTED_MODULE_0__.now)();
             },
         };
         if (hook) {
-            hook.on(_const__WEBPACK_IMPORTED_MODULE_1__.HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
+            hook.on(_const_js__WEBPACK_IMPORTED_MODULE_1__.HOOK_PLUGIN_SETTINGS_SET, (pluginId, value) => {
                 if (pluginId === this.plugin.id) {
                     this.fallbacks.setSettings(value);
                 }
@@ -19696,9 +19696,7 @@ var _hoisted_1 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div>\r\n      <nav-bar v-if=\"this.$route.name !== 'welcome'\"></nav-bar>\r\n    </div>\r\n    <VerifyNotice :id=\"id\" v-if=\"(this.$route.name !== 'welcome') && id && !verified\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view, {
-    "class": "p-6"
-  }, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div>\r\n      <nav-bar v-if=\"this.$route.name !== 'welcome'\"></nav-bar>\r\n    </div>\r\n    <VerifyNotice :id=\"id\" v-if=\"(this.$route.name !== 'welcome') && id && !verified\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
       var Component = _ref.Component;
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <transition name=\"fade\" mode=\"out-in\"> "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)(Component))), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </transition> ")];
@@ -20281,7 +20279,11 @@ var Password = function Password() {
 };
 
 var Login = function Login() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Views_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Login.vue */ "./resources/js/Views/Login.vue"));
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Authentication_Login_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Authentication/Login.vue */ "./resources/js/Views/Authentication/Login.vue"));
+};
+
+var Register = function Register() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Authentication_Signup_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Authentication/Signup.vue */ "./resources/js/Views/Authentication/Signup.vue"));
 };
 
 var ForgotPassword = function ForgotPassword() {
@@ -20294,10 +20296,6 @@ var ResetPassword = function ResetPassword() {
 
 var VerifyEmail = function VerifyEmail() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_VerifyEmail_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/VerifyEmail.vue */ "./resources/js/Views/VerifyEmail.vue"));
-};
-
-var Register = function Register() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Views_Register_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Register.vue */ "./resources/js/Views/Register.vue"));
 };
 
 var Home = function Home() {
@@ -44993,7 +44991,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Login_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Register_vue":1,"resources_js_Views_Home_vue":1,"resources_js_Views_Welcome_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_Profile_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_Views_Welcome_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_Profile_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

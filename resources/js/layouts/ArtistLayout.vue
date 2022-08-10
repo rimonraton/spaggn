@@ -8,7 +8,7 @@
           class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold"
           href="#"
         >
-          <i class="fas fa-sun text-pink-600 pr-3"></i> Admin Day Mode
+          <i class="fas fa-sun text-pink-600 pr-3"></i> Artist Dashboard
         </a>
       </div>
       <div class="w-1/2 pr-0">
@@ -142,7 +142,7 @@
               ><span class="pb-1 md:pb-0 text-sm">Messages</span>
             </a>
           </li>
-          <li class="mr-6 my-2 md:my-0">
+          <!-- <li class="mr-6 my-2 md:my-0">
             <a
               href="#"
               class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-green-500"
@@ -159,7 +159,7 @@
               <i class="fa fa-wallet fa-fw mr-3"></i
               ><span class="pb-1 md:pb-0 text-sm">Payments</span>
             </a>
-          </li>
+          </li> -->
         </ul>
         <div class="relative pull-right pl-4 pr-4 md:pr-0">
           <input

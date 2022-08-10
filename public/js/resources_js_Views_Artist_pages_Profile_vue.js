@@ -118,7 +118,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   href: "#"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-sun text-pink-600 pr-3"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Admin Day Mode ")])], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Artist Dashboard ")])], -1
 /* HOISTED */
 );
 
@@ -244,18 +244,29 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"mr-6 my-2 md:my-0\"><a href=\"#\" class=\"block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500\"><i class=\"fa fa-envelope fa-fw mr-3\"></i><span class=\"pb-1 md:pb-0 text-sm\">Messages</span></a></li><li class=\"mr-6 my-2 md:my-0\"><a href=\"#\" class=\"block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-green-500\"><i class=\"fas fa-chart-area fa-fw mr-3\"></i><span class=\"pb-1 md:pb-0 text-sm\">Analytics</span></a></li><li class=\"mr-6 my-2 md:my-0\"><a href=\"#\" class=\"block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-red-500\"><i class=\"fa fa-wallet fa-fw mr-3\"></i><span class=\"pb-1 md:pb-0 text-sm\">Payments</span></a></li>", 3);
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "mr-6 my-2 md:my-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#",
+  "class": "block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-purple-500"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-envelope fa-fw mr-3"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "pb-1 md:pb-0 text-sm"
+}, "Messages")])], -1
+/* HOISTED */
+);
 
-var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative pull-right pl-4 pr-4 md:pr-0\"><input type=\"search\" placeholder=\"Search\" class=\"w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-gray-700 rounded py-1 px-2 pl-10 appearance-none leading-normal\"><div class=\"absolute search-icon\" style=\"top:0.375rem;left:1.75rem;\"><svg class=\"fill-current pointer-events-none text-gray-800 w-4 h-4\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z\"></path></svg></div></div>", 1);
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative pull-right pl-4 pr-4 md:pr-0\"><input type=\"search\" placeholder=\"Search\" class=\"w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-gray-700 rounded py-1 px-2 pl-10 appearance-none leading-normal\"><div class=\"absolute search-icon\" style=\"top:0.375rem;left:1.75rem;\"><svg class=\"fill-current pointer-events-none text-gray-800 w-4 h-4\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\"><path d=\"M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z\"></path></svg></div></div>", 1);
 
-var _hoisted_35 = {
+var _hoisted_33 = {
   "class": "container w-full mx-auto pt-20"
 };
-var _hoisted_36 = {
+var _hoisted_34 = {
   "class": "w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal"
 };
 
-var _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<footer class=\"bg-white border-t border-gray-400 shadow\"><div class=\"container max-w-md mx-auto flex py-8\"><div class=\"w-full mx-auto flex flex-wrap\"><div class=\"flex w-full md:w-1/2\"><div class=\"px-8\"><h3 class=\"font-bold font-bold text-gray-900\">About</h3><p class=\"py-4 text-gray-600 text-sm\"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia. </p></div></div><div class=\"flex w-full md:w-1/2\"><div class=\"px-8\"><h3 class=\"font-bold font-bold text-gray-900\">Social</h3><ul class=\"list-reset items-center text-sm pt-3\"><li><a class=\"inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1\" href=\"#\">Add social link</a></li><li><a class=\"inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1\" href=\"#\">Add social link</a></li><li><a class=\"inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1\" href=\"#\">Add social link</a></li></ul></div></div></div></div></footer>", 1);
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<footer class=\"bg-white border-t border-gray-400 shadow\"><div class=\"container max-w-md mx-auto flex py-8\"><div class=\"w-full mx-auto flex flex-wrap\"><div class=\"flex w-full md:w-1/2\"><div class=\"px-8\"><h3 class=\"font-bold font-bold text-gray-900\">About</h3><p class=\"py-4 text-gray-600 text-sm\"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia. </p></div></div><div class=\"flex w-full md:w-1/2\"><div class=\"px-8\"><h3 class=\"font-bold font-bold text-gray-900\">Social</h3><ul class=\"list-reset items-center text-sm pt-3\"><li><a class=\"inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1\" href=\"#\">Add social link</a></li><li><a class=\"inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1\" href=\"#\">Add social link</a></li><li><a class=\"inline-block text-gray-600 no-underline hover:text-gray-900 hover:underline py-1\" href=\"#\">Add social link</a></li></ul></div></div></div></div></footer>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -300,9 +311,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_31]), _hoisted_34], 2
+  })]), _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"mr-6 my-2 md:my-0\">\r\n            <a\r\n              href=\"#\"\r\n              class=\"block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-green-500\"\r\n            >\r\n              <i class=\"fas fa-chart-area fa-fw mr-3\"></i\r\n              ><span class=\"pb-1 md:pb-0 text-sm\">Analytics</span>\r\n            </a>\r\n          </li>\r\n          <li class=\"mr-6 my-2 md:my-0\">\r\n            <a\r\n              href=\"#\"\r\n              class=\"block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-red-500\"\r\n            >\r\n              <i class=\"fa fa-wallet fa-fw mr-3\"></i\r\n              ><span class=\"pb-1 md:pb-0 text-sm\">Payments</span>\r\n            </a>\r\n          </li> ")]), _hoisted_32], 2
   /* CLASS */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Container"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/container"), _hoisted_37], 64
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Container"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/container"), _hoisted_35], 64
   /* STABLE_FRAGMENT */
   );
 }

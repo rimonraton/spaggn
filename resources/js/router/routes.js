@@ -3,11 +3,11 @@ import routesArtist from './routes-artist';
 const Settings = () => import('../Views/Settings.vue');
 const Profile = () => import('../Views/Profile.vue');
 const Password = () => import('../Views/Password.vue');
-const Login = () => import('../Views/Login.vue');
+const Login = () => import('../Views/Authentication/Login.vue');
+const Register = () => import('../Views/Authentication/Signup.vue');
 const ForgotPassword = () => import('../Views/ForgotPassword.vue');
 const ResetPassword = () => import('../Views/ResetPassword.vue');
 const VerifyEmail = () => import('../Views/VerifyEmail.vue');
-const Register = () => import('../Views/Register.vue');
 const Home = () => import('../Views/Home.vue');
 const Welcome = () => import('../Views/Welcome.vue')
 const Admin = () => import('../layouts/AdminLayout.vue')
