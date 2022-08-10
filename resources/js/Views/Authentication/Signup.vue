@@ -73,7 +73,6 @@ const user = reactive({
     password: '',
     confirm: ''
 })
-const
 
 </script>
 
