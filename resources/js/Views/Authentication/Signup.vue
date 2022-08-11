@@ -28,8 +28,9 @@
                     </ul>
                     <div>
                         <label class="block" for="Name">Name</label>
-                        <input v-model="user.name" type="text" placeholder="Name"
+                        <input v-model="value" type="text" placeholder="Name"
                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" />
+                            <span class="text-xs text-red-400">{{errorMessage}}</span>
                     </div>
                     <div class="mt-4">
                         <label class="block" for="email">Email</label>
@@ -64,7 +65,7 @@
 </template>
 
 <script setup>
-import { useField } from 'vee-validate';
+import { useField, useForm } from 'vee-validate';
 import { reactive } from 'vue'
 const user = reactive({
     userType: '',
@@ -73,6 +74,17 @@ const user = reactive({
     password: '',
     confirm: ''
 })
+const validations = {
+    user
+}
+function isRequired(value) {
+  if (value && value.trim()) {
+    return true;
+  }
+  return 'This is required';
+}
+const { errorMessage, value } = useField(user.name, isRequired);
+console.log(errorMessage, value)
 
 </script>
 
