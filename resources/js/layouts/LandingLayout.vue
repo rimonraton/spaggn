@@ -113,9 +113,9 @@
           </p>
         </div>
         <div class="flex text-white pt-5 gap-4">
-          <router-link to="/" class="px-3 py-2 border border-blue-400 hover:border-blue-500 rounded-lg">Explore
+          <router-link to="/" class="px-3 py-2 border border-blue-400 hover:bg-blue-500 rounded-lg">Explore
           </router-link>
-          <router-link to="/" class="px-3 py-2 border border-purple-400 hover:border-purple-500 rounded-lg">Submit
+          <router-link to="/" class="px-3 py-2 border border-purple-400 hover:bg-purple-500 rounded-lg">Submit
             Project</router-link>
         </div>
       </div>
