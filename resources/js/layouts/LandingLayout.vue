@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed w-full shadow-lg">
+  <header class="fixed w-full shadow-lg z-10">
     <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
       <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
         <a href="#" class="flex items-center">
@@ -102,12 +102,14 @@
       </div>
     </nav>
   </header>
+  <!-- hero -->
   <section>
     <div class="px-6 mx-auto bg-gray-900 pattern px-4 pt-20 w-full">
       <div class="flex flex-col items-center py-6 lg:h-96 items-center justify-center">
         <div>
           <h2 class="text-2xl font-semibold text-gray-100">Give to a great cause and own a piece of the legacy of your
-            favorite charity.</h2>
+            favorite charity.
+          </h2>
           <p class="mt-3 text-gray-100">
             Good Giving Network lets you donate to your favorite charities and collect NFTs that reflect your values.
           </p>
@@ -121,6 +123,483 @@
       </div>
     </div>
   </section>
+  <!-- end hero -->
+  <!-- auction -->
+  <section>
+    <div class="container mx-auto lg:w-5/6">
+      <h2 class="text-2xl font-semibold py-6">
+        Live auctions
+      </h2>
+      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
+        :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
+        :options="swiperOptions">
+        <swiper-slide v-for="item in 12" :key="item">
+          <!-- component -->
+          <div class="card bg-[#15263F] w-full h-[32rem] rounded-xl p-6 space-y-4">
+            <a href="#">
+              <img class="w-full h-64 rounded-md transition hover:bg-cyan-300"
+                src="https://images.unsplash.com/photo-1635002962487-2c1d4d2f63c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGlnaXRhbCUyMGFydHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=800&q=60"
+                alt="">
+            </a>
+            <div id="description" class="space-y-0">
+              <a href="#">
+                <h2 class="font-semibold text-xl transition hover:text-cyan-300">
+                  Equilibrium #3429
+                </h2>
+              </a>
+              <p class="text-slate-500 text-sm select-none">Our Equilibrium collection promotes balance and calm.</p>
+              <div class="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
+                <span id="price" class="text-cyan-300 flex justify-between items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 320 512" fill="#67E7F9">
+                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
+                  </svg>
+                  0.041 ETH
+                </span>
+                <span class="text-slate-500 flex justify-between items-center select-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  3 days left
+                </span>
+              </div>
+              <div class="flex text-sm items-center">
+                <img src="https://i.pravatar.cc/30?img=56" alt="avatar" class="rounded-full border border-white">
+                <span class="ml-2 text-slate-500">
+                  Creation of
+                  <a href="#" class="text-gray-300 transition hover:text-cyan-300">
+                    d855
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
+  </section>
+  <!-- end auction -->
+  <!-- Charities -->
+  <section>
+    <div class="container mx-auto lg:w-5/6">
+      <h2 class="text-2xl font-semibold py-6">
+        Charities
+      </h2>
+      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
+        :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
+        :autoplay="true">
+        <swiper-slide v-for="item in 12" :key="item">
+          <!-- component -->
+          <div class="card bg-[#15263F] w-full h-[32rem] rounded-xl p-6 space-y-4">
+            <a href="#">
+              <img class="w-full h-64 rounded-md transition hover:bg-cyan-300"
+                src="https://images.unsplash.com/photo-1635002962487-2c1d4d2f63c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGlnaXRhbCUyMGFydHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=800&q=60"
+                alt="">
+            </a>
+            <div id="description" class="space-y-0">
+              <a href="#">
+                <h2 class="font-semibold text-xl transition hover:text-cyan-300">
+                  Equilibrium #3429
+                </h2>
+              </a>
+              <p class="text-slate-500 text-sm select-none">Our Equilibrium collection promotes balance and calm.</p>
+              <div class="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
+                <span id="price" class="text-cyan-300 flex justify-between items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 320 512" fill="#67E7F9">
+                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
+                  </svg>
+                  0.041 ETH
+                </span>
+                <span class="text-slate-500 flex justify-between items-center select-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  3 days left
+                </span>
+              </div>
+              <div class="flex text-sm items-center">
+                <img src="https://i.pravatar.cc/30?img=56" alt="avatar" class="rounded-full border border-white">
+                <span class="ml-2 text-slate-500">
+                  Creation of
+                  <a href="#" class="text-gray-300 transition hover:text-cyan-300">
+                    d855
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <!-- <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+    <swiper-slide>Slide 6</swiper-slide>
+    <swiper-slide>Slide 7</swiper-slide>
+    <swiper-slide>Slide 8</swiper-slide> -->
+      </swiper>
+    </div>
+  </section>
+  <!-- end Charities -->
+  <!-- Artists -->
+  <section>
+    <div class="container mx-auto lg:w-5/6">
+      <h2 class="text-2xl font-semibold py-6">
+        Artists
+      </h2>
+      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
+        :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
+        :autoplay="true">
+        <swiper-slide v-for="item in 12" :key="item">
+          <!-- component -->
+          <div class="card bg-[#15263F] w-full h-[32rem] rounded-xl p-6 space-y-4">
+            <a href="#">
+              <img class="w-full h-64 rounded-md transition hover:bg-cyan-300"
+                src="https://images.unsplash.com/photo-1635002962487-2c1d4d2f63c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGlnaXRhbCUyMGFydHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=800&q=60"
+                alt="">
+            </a>
+            <div id="description" class="space-y-0">
+              <a href="#">
+                <h2 class="font-semibold text-xl transition hover:text-cyan-300">
+                  Equilibrium #3429
+                </h2>
+              </a>
+              <p class="text-slate-500 text-sm select-none">Our Equilibrium collection promotes balance and calm.</p>
+              <div class="flex items-center justify-between font-semibold text-sm border-b border-slate-500 pb-6">
+                <span id="price" class="text-cyan-300 flex justify-between items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 320 512" fill="#67E7F9">
+                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
+                  </svg>
+                  0.041 ETH
+                </span>
+                <span class="text-slate-500 flex justify-between items-center select-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  3 days left
+                </span>
+              </div>
+              <div class="flex text-sm items-center">
+                <img src="https://i.pravatar.cc/30?img=56" alt="avatar" class="rounded-full border border-white">
+                <span class="ml-2 text-slate-500">
+                  Creation of
+                  <a href="#" class="text-gray-300 transition hover:text-cyan-300">
+                    d855
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <!-- <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+    <swiper-slide>Slide 6</swiper-slide>
+    <swiper-slide>Slide 7</swiper-slide>
+    <swiper-slide>Slide 8</swiper-slide> -->
+      </swiper>
+    </div>
+  </section>
+  <!-- end Artists -->
+  <!-- Creating and selling -->
+  <section>
+    <div class="container mx-auto lg:w-5/6">
+      <!-- component -->
+      <!-- <div class="antialiased w-full h-full text-gray-400 font-inter p-10">
+        <div class="container px-4 mx-auto"> -->
+      <div>
+        <div id="title" class="my-4">
+          <h1 class="font-semibold text-2xl">Get started creating & selling your NFTs</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-evenly gap-10 pt-10">
+          <div id="plan"
+            class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in">
+            <div id="title" class="w-full py-5 border-b border-gray-800">
+              <h2 class="font-bold text-2xl">Set up your wallet</h2>
+            </div>
+            <div id="content" class="">
+              <div id="icon" class="my-5">
+                <svg class="h-12 w-12 mx-auto fill-stroke text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M19,7H18V6a3,3,0,0,0-3-3H5A3,3,0,0,0,2,6H2V18a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V10A3,3,0,0,0,19,7ZM5,5H15a1,1,0,0,1,1,1V7H5A1,1,0,0,1,5,5ZM20,15H19a1,1,0,0,1,0-2h1Zm0-4H19a3,3,0,0,0,0,6h1v1a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8.83A3,3,0,0,0,5,9H19a1,1,0,0,1,1,1Z">
+                  </path>
+                </svg>
+              </div>
+              <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                Once you’ve set up your wallet of choice, connect it to NFT marketplace by clicking this link.
+                <router-link to="/" class="text-blue-500 underline">Connect my wallet</router-link>
+              </div>
+            </div>
+          </div>
+          <div id="plan"
+            class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in">
+            <div id="title" class="w-full py-5 border-b border-gray-800">
+              <h2 class="font-bold text-2xl">Create your collection</h2>
+            </div>
+            <div id="content" class="">
+              <div id="icon" class="my-5">
+                <svg class="h-12 w-12 mx-auto fill-stroke text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M10,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,19H5V15H9ZM20,3H14a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM19,9H15V5h4Zm1,7H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2ZM10,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,10,3ZM9,9H5V5H9Z">
+                  </path>
+                </svg>
+              </div>
+              <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                Click Create and set up your collection. Add social links, a description, profile & banner images, and
+                set a secondary sales fee.
+              </div>
+            </div>
+          </div>
+          <div id="plan"
+            class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in">
+            <div id="title" class="w-full py-5 border-b border-gray-800">
+              <h2 class="font-bold text-2xl">Add your NFTs</h2>
+            </div>
+            <div id="content" class="">
+              <div id="icon" class="my-5">
+                <svg class="h-12 w-12 mx-auto fill-stroke text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M22.71,6.29a1,1,0,0,0-1.42,0L20,7.59V2a1,1,0,0,0-2,0V7.59l-1.29-1.3a1,1,0,0,0-1.42,1.42l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,22.71,6.29ZM19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h8a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21Z">
+                  </path>
+                </svg>
+              </div>
+              <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                Upload your work, add a title and description, and customize your NFTs with properties, stats, and
+                unlockable content.
+              </div>
+            </div>
+          </div>
+          <div id="plan"
+            class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in">
+            <div id="title" class="w-full py-5 border-b border-gray-800">
+              <h2 class="font-bold text-2xl">List them for sale</h2>
+            </div>
+            <div id="content" class="">
+              <div id="icon" class="my-5">
+                <svg class="h-12 w-12 mx-auto fill-stroke text-indigo-600" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M15,12a1,1,0,1,0,1-1A1,1,0,0,0,15,12Zm6.71-.71-5-5A1,1,0,0,0,16,6H5A3,3,0,0,0,2,9v6a3,3,0,0,0,3,3H16a1,1,0,0,0,.71-.29l5-5A1,1,0,0,0,21.71,11.29ZM15.59,16H5a1,1,0,0,1-1-1V9A1,1,0,0,1,5,8H15.59l4,4Z">
+                  </path>
+                </svg>
+              </div>
+              <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to
+                sell your NFTs, and we help you sell them!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div>
+    </div> -->
+  </section>
+  <!-- end Creating and selling -->
+  <!-- blog -->
+  <section>
+    <div class="container mx-auto px-5 py-5 lg:w-5/6">
+      <!-- <section class="text-gray-600 body-font">
+        <div class="container px-5 py-5 mx-auto"> -->
+          <div id="title" class="my-4 flex justify-between items-center">
+          <h1 class="font-semibold text-2xl">Our Blog</h1>
+          <router-link to="/" class="flex hover:text-blue-400"><span>View More</span><svg class="w-4 pt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.92,11.62a1,1,0,0,0-.21-.33l-5-5a1,1,0,0,0-1.42,1.42L14.59,11H7a1,1,0,0,0,0,2h7.59l-3.3,3.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l5-5a1,1,0,0,0,.21-.33A1,1,0,0,0,17.92,11.62Z"></path></svg></router-link>
+        </div>
+          <div class="flex flex-wrap -m-4">
+            <!--start here-->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <div class="w-full">
+                  <div class="w-full flex p-2">
+                    <div class="p-2 ">
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/Tcc_img%2Flogo.png?alt=media&token=5e5738c4-8ffd-44f9-b47a-57d07e0b7939"
+                        alt="author" class="w-10 h-10 rounded-full overflow-hidden" />
+                    </div>
+                    <div class="pl-2 pt-2 ">
+                      <p class="font-bold">Vipin Bansal</p>
+                      <p class="text-xs">2 June 2022</p>
+                    </div>
+                  </div>
+                </div>
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  src="https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&token=271cb624-94d4-468d-a14d-455377ba75c2"
+                  alt="blog cover" />
+
+                <div class="p-4">
+                  <h2 class="tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase ">Web
+                    development</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">This is a blog template</h1>
+                  <div class="flex items-center flex-wrap ">
+                    <a href="/" class="text-green-800  md:mb-2 lg:mb-0">
+                      <p class="inline-flex items-center">Read Blog
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </p>
+                    </a>
+                    <span
+                      class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                      <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg>
+                      24
+                    </span>
+                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path
+                          d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                        </path>
+                      </svg>
+                      89
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <div class="w-full">
+                  <div class="w-full flex p-2">
+                    <div class="p-2 ">
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/Tcc_img%2Flogo.png?alt=media&token=5e5738c4-8ffd-44f9-b47a-57d07e0b7939"
+                        alt="author" class="w-10 h-10 rounded-full overflow-hidden" />
+                    </div>
+                    <div class="pl-2 pt-2 ">
+                      <p class="font-bold">Vipin Bansal</p>
+                      <p class="text-xs">2 June 2022</p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  src="https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&token=271cb624-94d4-468d-a14d-455377ba75c2"
+                  alt="blog cover" />
+
+                <div class="p-4">
+                  <h2 class="tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase ">Web
+                    development</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">This is a blog template</h1>
+                  <div class="flex items-center flex-wrap ">
+                    <a href="/" class="text-green-800  md:mb-2 lg:mb-0">
+                      <p class="inline-flex items-center">Read Blog
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </p>
+                    </a>
+                    <span
+                      class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                      <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg>
+                      24
+                    </span>
+                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path
+                          d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                        </path>
+                      </svg>
+                      89
+                    </span>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <div class="w-full">
+                  <div class="w-full flex p-2">
+                    <div class="p-2 ">
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/Tcc_img%2Flogo.png?alt=media&token=5e5738c4-8ffd-44f9-b47a-57d07e0b7939"
+                        alt="author" class="w-10 h-10 rounded-full overflow-hidden" />
+                    </div>
+                    <div class="pl-2 pt-2 ">
+                      <p class="font-bold">Vipin Bansal</p>
+                      <p class="text-xs">2 June 2022</p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  src="https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&token=271cb624-94d4-468d-a14d-455377ba75c2"
+                  alt="blog cover" />
+
+                <div class="p-4">
+                  <h2 class="tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase ">Web
+                    development</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">This is a blog template</h1>
+                  <div class="flex items-center flex-wrap ">
+                    <a href="/" class="text-green-800  md:mb-2 lg:mb-0">
+                      <p class="inline-flex items-center">Read Blog
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </p>
+                    </a>
+                    <span
+                      class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                      <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                      </svg>
+                      24
+                    </span>
+                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                      <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path
+                          d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                        </path>
+                      </svg>
+                      89
+                    </span>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <!--End here-->
+          </div>
+        </div>
+      </section>
+    <!-- </div>
+  </section> -->
   <footer class="bg-white dark:bg-gray-800">
     <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
       <div class="text-center">
@@ -267,14 +746,26 @@
   </footer>
 </template>
 <script setup>
+import SwiperClass, { Navigation, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+// import swiper module styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import { ref, computed } from "vue";
 import { useStore } from "vuex";
+const modules = ref([Pagination, Navigation])
+const swiperOptions = ref({
+  autoplay: {
+    delay: 2000
+  }
+})
 const store = useStore();
 const auth = ref(true);
 const openMenu = ref(false);
 const user = computed(() => store.getters.user);
 </script>
-<style>
+<style scoped>
 .pattern {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%23a0aec0' fill-opacity='0.1' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
 }
