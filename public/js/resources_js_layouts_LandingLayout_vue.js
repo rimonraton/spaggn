@@ -630,7 +630,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     pagination: {
       clickable: true
     },
-    options: $setup.swiperOptions
+    autoplay: {
+      delay: 2000
+    }
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(12, function (item) {
@@ -655,7 +657,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modules", "options"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
+  , ["modules"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
     "space-between": 30,

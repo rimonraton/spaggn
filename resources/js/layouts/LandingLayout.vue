@@ -132,7 +132,7 @@
       </h2>
       <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
         :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
-        :options="swiperOptions">
+        :autoplay="{ delay: 2000 }">
         <swiper-slide v-for="item in 12" :key="item">
           <!-- component -->
           <div class="card bg-[#15263F] w-full h-[32rem] rounded-xl p-6 space-y-4">
