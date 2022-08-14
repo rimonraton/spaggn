@@ -136,7 +136,6 @@ const login = async () => {
     try {
         await store.dispatch('login', { 'email': user.email, 'password': user.password })
         const role = store.getters.user.role.role_name
-        console.log(role)
         router.push({ name: role })
     }
     catch (e) {

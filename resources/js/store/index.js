@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { createStore } from 'vuex'
+import { useRouter } from 'vue-router'
 // import sharedMutations from 'vuex-shared-mutations';
 import repository from '../api/repository';
 import * as artistModule from './modules/ArtistModule'
 
+const router = useRouter()
 
 export default createStore({
     namespaced: true,
@@ -59,11 +61,9 @@ export default createStore({
             }
 
         },
-
         async register({ dispatch }, payload) {
             try {
-
-                await axios.post('/api/register', payload).then((res) => {
+                await repository.registration(payload).then((res) => {
                     return dispatch('login', { 'email': payload.email, 'password': payload.password })
                 }).catch((err) => {
                     throw (err.response)
@@ -82,7 +82,6 @@ export default createStore({
         },
         async getUser({ commit }) {
             await axios.get('/api/user').then((res) => {
-                console.log(res.data)
                 commit('setUser', res.data);
             }).catch((err) => {
                 throw err.response

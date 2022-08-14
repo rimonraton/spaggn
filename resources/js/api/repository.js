@@ -7,7 +7,7 @@ export default {
         return api.post('/api/login', params)
     },
     registration(params) {
-        return api.post('/api/registration', params)
+        return api.post('/api/register', params)
     },
     changeAddress(params) {
         return api.post('/api/change-address', params)

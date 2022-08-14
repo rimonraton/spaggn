@@ -58,28 +58,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 5:
                 role = store.getters.user.role.role_name;
-                console.log(role);
                 router.push({
                   name: role
                 });
-                _context.next = 13;
+                _context.next = 12;
                 break;
 
-              case 10:
-                _context.prev = 10;
+              case 9:
+                _context.prev = 9;
                 _context.t0 = _context["catch"](2);
                 helper.errors = _context.t0.data;
 
-              case 13:
+              case 12:
                 ;
                 helper.busy = false;
 
-              case 15:
+              case 14:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 10]]);
+        }, _callee, null, [[2, 9]]);
       }));
 
       return function login() {
