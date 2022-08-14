@@ -1,9 +1,13 @@
 <template>
     <!-- component -->
-    <div class="flex justify-center bg-gray-100">
-        <div class="container mt-10 my-auto max-w-md border-2 border-gray-200 p-3 bg-white">
+    <div class="flex justify-center bg-gray-100 h-screen items-center">
+        <div class="container mt-10 my-auto max-w-md border-2 border-gray-200 p-3 bg-white rounded-lg">
             <!-- header -->
             <div class="text-center my-6">
+                <router-link to="/" class="mb-4 flex justify-center">
+                    <img src="/images/logo.svg" class="w-12 h-auto rounded-full"
+                        alt="">
+                </router-link>
                 <h1 class="text-3xl font-semibold text-gray-700">Sign in</h1>
                 <p class="text-gray-500">Sign in to Good Giving Network account</p>
             </div>

@@ -4,13 +4,13 @@
       <nav-bar v-if="this.$route.name !== 'welcome'"></nav-bar>
     </div>
     <VerifyNotice :id="id" v-if="(this.$route.name !== 'welcome') && id && !verified" /> -->
-  <div class="">
+  <!-- <div class=""> -->
     <router-view v-slot="{ Component }">
       <!-- <transition name="fade" mode="out-in"> -->
       <component :is="Component" />
       <!-- </transition> -->
     </router-view>
-  </div>
+  <!-- </div> -->
   <!-- </div> -->
 </template>
 
