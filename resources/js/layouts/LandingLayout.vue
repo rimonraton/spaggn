@@ -130,7 +130,7 @@
       <h2 class="text-2xl font-semibold py-6">
         Live auctions
       </h2>
-      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
+      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="1"
         :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
         <swiper-slide v-for="item, i in 12" :key="item">
@@ -205,7 +205,7 @@
       <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
         :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
-        <swiper-slide v-for="item in 12" :key="item">
+        <swiper-slide v-for="item, i in 12" :key="item">
           <div class="relative mx-auto w-full">
             <a href="#"
               class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
@@ -263,8 +263,10 @@
                   <div class="mt-2 text-sm text-gray-800 line-clamp-1">
                     <div class="flex items-center">
                       <div class="relative">
-                        <div class="rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200"></div>
-                        <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
+                        <!-- <div class="rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200"></div>
+                        <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span> -->
+                        <img :src="`http://i.pravatar.cc/${300 + i}`"
+                          class="rounded-full border-solid border-white border-2 w-10">
                       </div>
 
                       <p class="ml-2 text-gray-800 line-clamp-1">
@@ -274,7 +276,7 @@
                   </div>
                 </div>
 
-                <div class="flex justify-between mt-6">
+                <div class="flex justify-between mt-2">
                   <p class="inline-flex flex-col xl:items-center text-gray-800">
                     <span class="mt-2 xl:mt-0">
                       Reserve price
@@ -319,10 +321,10 @@
         <swiper-slide v-for="item, i in 12" :key="item">
           <!-- component -->
           <div class="rounded-3xl overflow-hidden shadow-xl max-w-xs my-3 bg-purple-500">
-            <img src="https://i.imgur.com/dYcYQ7E.png" class="w-full" />
-            <div class="flex justify-center -mt-8">
+            <!-- <img src="https://i.imgur.com/dYcYQ7E.png" class="w-full" /> -->
+            <div class="flex justify-center bg-white">
               <img :src="`http://i.pravatar.cc/${300 + i}`"
-                class="rounded-full border-solid border-white border-2 w-28 -mt-3">
+                class="rounded-full border-solid border-white border-2 w-24">
             </div>
             <div class="text-center px-3 pb-3 pt-2">
               <h3 class="text-white text-sm bold font-sans">Olivia Dunham</h3>
@@ -524,7 +526,7 @@
                     alt="author" class="w-10 h-10 rounded-full overflow-hidden" />
                 </div>
                 <div class="pl-2 pt-2 ">
-                  <p class="font-bold">{{blogName[1]}}</p>
+                  <p class="font-bold">{{ blogName[1] }}</p>
                   <p class="text-xs">2 June 2022</p>
                 </div>
               </div>
@@ -583,7 +585,7 @@
                     alt="author" class="w-10 h-10 rounded-full overflow-hidden" />
                 </div>
                 <div class="pl-2 pt-2 ">
-                  <p class="font-bold">{{blogName[2]}}</p>
+                  <p class="font-bold">{{ blogName[2] }}</p>
                   <p class="text-xs">2 June 2022</p>
                 </div>
               </div>
