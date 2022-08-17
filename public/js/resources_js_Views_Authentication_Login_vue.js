@@ -57,7 +57,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 5:
-                role = store.getters.user.role.role_name;
+                role = store.getters.user.role.name;
                 router.push({
                   name: role
                 });

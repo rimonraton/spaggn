@@ -202,7 +202,7 @@
       <h2 class="text-2xl font-semibold py-6">
         Charities
       </h2>
-      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
+      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="1"
         :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
         <swiper-slide v-for="item, i in 12" :key="item">
@@ -315,7 +315,7 @@
       <h2 class="text-2xl font-semibold py-6">
         Artists
       </h2>
-      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="4"
+      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="1"
         :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
         <swiper-slide v-for="item, i in 12" :key="item">

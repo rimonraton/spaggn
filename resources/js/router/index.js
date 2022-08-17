@@ -4,7 +4,8 @@ import store from '../store'
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  linkActiveClass: 'activeLink'
 })
 
 router.beforeEach((to, from, next) => {

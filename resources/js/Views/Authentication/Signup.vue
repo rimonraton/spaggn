@@ -97,7 +97,7 @@ const user = reactive({
 // const { errorMessage, value } = useField(user.name, isRequired);
 const signUp = async () => {
     await store.dispatch('register', user)
-    const role = store.getters.user.role.role_name
+    const role = store.getters.user.role.name
     router.push({ name: role })
 }
 

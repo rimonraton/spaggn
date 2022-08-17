@@ -135,7 +135,7 @@ const login = async () => {
     helper.errors = null
     try {
         await store.dispatch('login', { 'email': user.email, 'password': user.password })
-        const role = store.getters.user.role.role_name
+        const role = store.getters.user.role.name
         router.push({ name: role })
     }
     catch (e) {
