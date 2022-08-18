@@ -5,8 +5,7 @@
             <!-- header -->
             <div class="text-center my-6">
                 <router-link to="/" class="mb-4 flex justify-center">
-                    <img src="/images/logo.svg" class="w-12 h-auto rounded-full"
-                        alt="">
+                    <img src="/images/logo.svg" class="w-12 h-auto rounded-full" alt="">
                 </router-link>
                 <h1 class="text-3xl font-semibold text-gray-700">Sign in</h1>
                 <p class="text-gray-500">Sign in to Good Giving Network account</p>
@@ -24,13 +23,16 @@
                     <div class="mb-6">
                         <div class="flex justify-between mb-2">
                             <label for="password" class="text-sm text-gray-600 dark:text-gray-400">Password</label>
-                            <a href="#!"
-                                class="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300">Forgot
-                                password?</a>
                         </div>
                         <input type="password" v-model="user.password" name="password" id="password"
                             placeholder="Your password"
                             class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        <div class="text-right mb-2">
+                            <a href="#!"
+                                class="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300">
+                                Forgot password?
+                            </a>
+                        </div>
                     </div>
                     <div class="mb-6">
                         <button type="submit"
