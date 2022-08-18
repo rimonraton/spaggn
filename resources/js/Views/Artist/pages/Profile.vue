@@ -89,59 +89,69 @@
                 <label for="country" class="block text-sm font-medium text-gray-700">What type of charities would you
                   like to partner with (choose 3)?</label>
                 <multiselect ref="multiselectCharity" v-model="formData.charities.id" :id="charity" :hideSelected="true"
-                  placeholder="Select One" :multiple="true" trackBy="id"
-                  label="name" :options="charitiesOptions">
+                  placeholder="Select One" :multiple="true" trackBy="id" label="name" :options="charitiesOptions">
                 </multiselect>
               </div>
               <div class="relative  mb-6 w-full group">
                 <label for="country" class="block text-sm font-medium text-gray-700">What artistic inspiration closely
                   resembles your arts (choose one)?</label>
-                <multiselect v-model="formData.artisticInspiration" :hideSelected="true"
-                  placeholder="Select One" :options="['one', 'two', 'three']">
+                <multiselect v-model="formData.artisticInspiration" :hideSelected="true" placeholder="Select One"
+                  :options="['one', 'two', 'three']">
                 </multiselect>
               </div>
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
-                <div>
-                  <label class="block text-sm font-medium text-gray-700"> Your Photo </label>
-                  <div
-                    class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                    <div class="space-y-1 text-center">
+              <div>
+                <label class="block text-sm font-medium text-gray-700"> Your Photo </label>
+                <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                  <div class="space-y-1 text-center">
+                    <div v-if="imgSrc.photosrc == null">
                       <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
                         aria-hidden="true">
                         <path
                           d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
-                      <div class="flex text-sm text-gray-600">
-                        <label for="file-upload"
-                          class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                          <span>Upload a file</span>
-                          <input id="file-upload" name="file-upload" type="file" class="sr-only">
-                        </label>
-                        <p class="pl-1">or drag and drop</p>
-                      </div>
-                      <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                     </div>
+                    <div v-else>
+                      <img class="mx-auto w-12 h-12" :src="imgSrc.photosrc" />
+                    </div>
+                    <div class="flex text-sm text-gray-600">
+                      <label for="file-upload"
+                        class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                        <span>Upload a file</span>
+                        <input id="file-upload" @change="onFileChangePhoto" name="file-upload" type="file"
+                          class="sr-only" accept="image/*">
+                      </label>
+                      <p class="pl-1">or drag and drop</p>
+                    </div>
+                    <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
                   </div>
                 </div>
+              </div>
               <div class="relative mb-6 w-full group">
                 <div>
                   <label class="block text-sm font-medium text-gray-700"> Cover Photo (1920 x 300)px </label>
                   <div
                     class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                     <div class="space-y-1 text-center">
-                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
-                        aria-hidden="true">
-                        <path
-                          d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
+                      <div v-if="imgSrc.coverphotosrc == null">
+                        <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none"
+                          viewBox="0 0 48 48" aria-hidden="true">
+                          <path
+                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </div>
+                      <div v-else>
+                        <img class="mx-auto w-12 h-12" :src="imgSrc.coverphotosrc" />
+                      </div>
                       <div class="flex text-sm text-gray-600">
-                        <label for="file-upload"
+                        <label for="file-upload-cover"
                           class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                           <span>Upload a file</span>
-                          <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                          <input id="file-upload-cover" @change="onFileChangeCoverPhoto" name="file-upload-cover"
+                            type="file" class="sr-only" accept="image/*">
                         </label>
                         <p class="pl-1">or drag and drop</p>
                       </div>
@@ -181,6 +191,10 @@ const formData = reactive({
   photo: null,
   coverPhoto: null
 })
+const imgSrc = reactive({
+  photosrc: null,
+  coverphotosrc: null
+})
 const multiselectref = ref()
 const charitiesOptions = reactive([
   {
@@ -216,6 +230,48 @@ const addTag = (value, id) => {
 //   console.log('remove',removeOption.url, index, options)
 //   options.splice(index, 1)
 // }
+const onFileChangePhoto = (e) => {
+  if (e.target.files[0]) {
+    // name.value = e.target.files[0].name;
+    formData.photo = e.target.files[0];
+
+    const mimeType = e.target.files[0].type
+    if (mimeType.split('/')[0] === 'image') {
+      // only video file
+      var reader = new FileReader(); // instance of the FileReader
+      reader.readAsDataURL(e.target.files[0]); // read the local file
+      reader.onloadend = function () {
+        // set video data as background of div
+        imgSrc.photosrc = reader.result
+        // var video = document.getElementById("video_here");
+        // video.src = reader.result;
+      };
+    }
+  } else {
+    alert("file is empty!");
+  }
+};
+const onFileChangeCoverPhoto = (e) => {
+  if (e.target.files[0]) {
+    // name.value = e.target.files[0].name;
+    formData.coverPhoto = e.target.files[0];
+
+    const mimeType = e.target.files[0].type
+    if (mimeType.split('/')[0] === 'image') {
+      // only video file
+      var reader = new FileReader(); // instance of the FileReader
+      reader.readAsDataURL(e.target.files[0]); // read the local file
+      reader.onloadend = function () {
+        // set video data as background of div
+        imgSrc.coverphotosrc = reader.result
+        // var video = document.getElementById("video_here");
+        // video.src = reader.result;
+      };
+    }
+  } else {
+    alert("file is empty!");
+  }
+};
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.css">
 </style>
