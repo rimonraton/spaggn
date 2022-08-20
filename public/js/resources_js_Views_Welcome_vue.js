@@ -61,9 +61,23 @@ __webpack_require__.r(__webpack_exports__);
     expose();
     var blogName = ['Charity', 'Digital Art', 'Artist'];
     var modules = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay]);
-    var swiperOptions = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)({
-      autoplay: {
-        delay: 2000
+    var swiperOptions = (0,vue__WEBPACK_IMPORTED_MODULE_5__.reactive)({
+      // autoplay: {
+      //   delay: 2000
+      // }
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        770: {
+          slidesPerView: 2,
+          spaceBetween: 50
+        },
+        771: {
+          slidesPerView: 4,
+          spaceBetween: 30
+        }
       }
     }); // const swiper = new Swiper()
 
@@ -89,6 +103,7 @@ __webpack_require__.r(__webpack_exports__);
       SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__.SwiperSlide,
       ref: vue__WEBPACK_IMPORTED_MODULE_5__.ref,
       computed: vue__WEBPACK_IMPORTED_MODULE_5__.computed,
+      reactive: vue__WEBPACK_IMPORTED_MODULE_5__.reactive,
       useStore: vuex__WEBPACK_IMPORTED_MODULE_6__.useStore
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
@@ -793,6 +808,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   })])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end hero "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [_hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
+    breakpoints: $setup.swiperOptions.breakpoints,
     "space-between": 30,
     "slides-per-view": 4,
     "slides-per-group": 1,
@@ -840,9 +856,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modules"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [_hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
+  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [_hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
+    breakpoints: $setup.swiperOptions.breakpoints,
     "space-between": 30,
     "slides-per-view": 4,
     "slides-per-group": 1,
@@ -887,9 +904,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modules"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_59, [_hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
+  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_59, [_hoisted_60, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
+    breakpoints: $setup.swiperOptions.breakpoints,
     "space-between": 30,
     "slides-per-view": 4,
     "slides-per-group": 1,
@@ -934,7 +952,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modules"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Creating and selling "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"antialiased w-full h-full text-gray-400 font-inter p-10\">\r\n        <div class=\"container px-4 mx-auto\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_67, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_69, [_hoisted_70, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [_hoisted_72, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [_hoisted_74, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Creating and selling "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"antialiased w-full h-full text-gray-400 font-inter p-10\">\r\n        <div class=\"container px-4 mx-auto\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_67, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_68, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_69, [_hoisted_70, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [_hoisted_72, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [_hoisted_74, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/",
     "class": "text-blue-500 underline"
   }, {

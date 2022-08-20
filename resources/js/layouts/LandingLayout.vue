@@ -130,8 +130,9 @@
       <h2 class="text-2xl font-semibold py-6">
         Live auctions
       </h2>
-      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="1"
-        :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
+      <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
+        :slides-per-view="4" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true" :navigation="true"
+        :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
         <swiper-slide v-for="item, i in 12" :key="item">
           <div class="relative mx-auto w-full">
@@ -202,7 +203,7 @@
       <h2 class="text-2xl font-semibold py-6">
         Charities
       </h2>
-      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="1"
+      <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30" :slides-per-view="4" :slides-per-group="1"
         :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
         <swiper-slide v-for="item, i in 12" :key="item">
@@ -315,7 +316,7 @@
       <h2 class="text-2xl font-semibold py-6">
         Artists
       </h2>
-      <swiper class="swiper" :modules="modules" :space-between="30" :slides-per-view="4" :slides-per-group="1"
+      <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints"  :space-between="30" :slides-per-view="4" :slides-per-group="1"
         :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
         <swiper-slide v-for="item, i in 12" :key="item">
@@ -792,13 +793,28 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import { ref, computed } from "vue";
+import { ref, computed, reactive } from "vue";
 import { useStore } from "vuex";
 const blogName = ['Charity', 'Digital Art', 'Artist']
 const modules = ref([Pagination, Navigation, Autoplay])
-const swiperOptions = ref({
-  autoplay: {
-    delay: 2000
+const swiperOptions = reactive({
+  // autoplay: {
+  //   delay: 2000
+  // }
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    770: {
+      slidesPerView: 2,
+      spaceBetween: 50
+    },
+
+    771: {
+      slidesPerView: 4,
+      spaceBetween: 30
+    }
   }
 })
 // const swiper = new Swiper()

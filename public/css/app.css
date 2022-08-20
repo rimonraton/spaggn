@@ -552,7 +552,6 @@ video {
 .truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .whitespace-nowrap{white-space:nowrap}
 .break-words{overflow-wrap:break-word}
-.break-all{word-break:break-all}
 .rounded-lg{border-radius:0.5rem}
 .rounded{border-radius:0.25rem}
 .rounded-md{border-radius:0.375rem}

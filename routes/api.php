@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\ArtistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('/password', PasswordController::class);
 
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    // Artist
+    Route::post('create-artist-profile', [ArtistController::class, 'ArtistProfileSave']);
 
     // in app verification
     // Route::post('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verify');

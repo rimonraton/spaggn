@@ -19849,11 +19849,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
  // import Nprogress from 'nprogress'
 
 var instance = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
   withCredentials: true,
-  baseURL: "http://spaggn.test" // timeout: 10000,
+  baseURL: process.env.MIX_API_URL // timeout: 10000,
 
 });
 instance.interceptors.request.use(function (request) {
@@ -19920,167 +19921,170 @@ __webpack_require__.r(__webpack_exports__);
   registration: function registration(params) {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/register', params);
   },
-  changeAddress: function changeAddress(params) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/change-address', params);
-  },
-  otp: function otp(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/otp', param);
-  },
-  logout: function logout() {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]('/api/logout');
-  },
-  getUsers: function getUsers() {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/users');
-  },
-  getUser: function getUser(user) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/users/".concat(user));
-  },
-  reSendOtp: function reSendOtp(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/re_generate_otp', param);
-  },
-  resetPassword: function resetPassword(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/reset-password', param);
-  },
-  resetOTP: function resetOTP(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/reset-otp', param);
-  },
-  setPassword: function setPassword(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/set-password', param);
-  },
-  getCurrentLocation: function getCurrentLocation(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/getCurrentLocation', param);
-  },
-  getAutocompleteAddress: function getAutocompleteAddress(address) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getAutocompleteAddress/".concat(address));
-  },
-  setSelectedAddress: function setSelectedAddress(placeId) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getPlaceDetails/".concat(placeId));
-  },
-  getUserAddress: function getUserAddress(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/address/".concat(param));
-  },
-  addAddress: function addAddress(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-address', param);
-  },
-  removeAddress: function removeAddress(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/delete-address', param);
-  },
-  getRestaurant: function getRestaurant(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getRestaurant?".concat(param));
-  },
-  getProduct: function getProduct(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getProduct/".concat(param));
-  },
-  getShopProducts: function getShopProducts(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopProducts/".concat(param));
-  },
-  getShopCategory: function getShopCategory(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopCategory/".concat(param));
-  },
-  getShopProductsCategory: function getShopProductsCategory(param1, param2) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopProductsCategory/".concat(param1, "/").concat(param2));
-  },
-  searchShopProducts: function searchShopProducts(param1, param2) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/searchShopProducts/".concat(param1, "/").concat(param2));
-  },
-  saveCarts: function saveCarts(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/save-cart', param);
-  },
-  removeCartItem: function removeCartItem(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/delete-cart', param);
-  },
-  getCartItems: function getCartItems(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/getCart/".concat(param));
-  },
-  incrementCartItem: function incrementCartItem(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/incrementCart', param);
-  },
-  decrementCartItem: function decrementCartItem(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/decrementCart', param);
-  },
-  shopProduct: function shopProduct(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/shopProduct/".concat(param));
-  },
-  saveReview: function saveReview(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/save-review', param);
-  },
-  getProductReview: function getProductReview(param) {
-    console.log(['obj', param]);
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-product-review/".concat(param.product, "?page=").concat(param.pagenumber));
-  },
-  saveDeliveryReview: function saveDeliveryReview(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/save-delivery-review', param);
-  },
-  getDeliveryReview: function getDeliveryReview(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-delivery-review/".concat(param));
-  },
-  getDistance: function getDistance(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-distance/".concat(param.origins, "/").concat(param.destinations));
-  },
-  getMenus: function getMenus(role) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-menus/".concat(role));
-  },
-  allMenu: function allMenu() {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/all-menus');
-  },
-  storeMenuRole: function storeMenuRole(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-role-menu', param);
-  },
-  sellerRegistration: function sellerRegistration(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/seller-registration', param);
-  },
-  riderRegistration: function riderRegistration(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/rider-registration', param);
-  },
-  storeOrder: function storeOrder(param) {
-    // console.log('param.....', typeof param, param)
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-orders', param);
-  },
-  getOrders: function getOrders(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-orders?page=".concat(param.page));
-  },
-  searchOrders: function searchOrders(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/search-orders/".concat(param));
-  },
-  allSearchable: function allSearchable(keyword) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/all-searchable/".concat(keyword));
-  },
-  allSearchRestaurent: function allSearchRestaurent(keyword) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/search-by-item-category-restaurent', keyword);
-  },
-  getPolicy: function getPolicy() {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-policy');
-  },
-  getOrdersHistoryByUser: function getOrdersHistoryByUser(user) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-orders-history/".concat(user));
-  },
-  getCurrentOrdersByUser: function getCurrentOrdersByUser(user) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-current-orders/".concat(user));
-  },
-  trackingOrders: function trackingOrders(orderNo) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/tracking-orders', orderNo);
-  },
-  storeWiselist: function storeWiselist(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-wiselist', param);
-  },
-  storeFavourite: function storeFavourite(param) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/store-favourite', param);
-  },
-  getFavourites: function getFavourites(user) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-favourites/".concat(user));
-  },
-  removeFavourite: function removeFavourite(favourite) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]("/api/remove-favourite/".concat(favourite));
-  },
-  userProductReviews: function userProductReviews(user) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/user-product-reviews/".concat(user));
-  },
-  userTobeReviewed: function userTobeReviewed(user) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/user-tobe-reviewed/".concat(user));
-  },
-  productOptions: function productOptions(product) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-product-details/".concat(product));
-  }
+  createArtistProfile: function createArtistProfile(params) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/create-artist-profile', params);
+  } // changeAddress(params) {
+  //     return api.post('/api/change-address', params)
+  // },
+  // otp(param) {
+  //     return api.post('/api/otp', param)
+  // },
+  // logout() {
+  //     return api.delete('/api/logout')
+  // },
+  // getUsers() {
+  //     return api.get('/api/users')
+  // },
+  // getUser(user) {
+  //     return api.get(`/api/users/${user}`)
+  // },
+  // reSendOtp(param) {
+  //     return api.post('/api/re_generate_otp', param)
+  // },
+  // resetPassword(param) {
+  //     return api.post('/api/reset-password', param)
+  // },
+  // resetOTP(param) {
+  //     return api.post('/api/reset-otp', param)
+  // },
+  // setPassword(param) {
+  //     return api.post('/api/set-password', param)
+  // },
+  // getCurrentLocation(param) {
+  //     return api.post('/api/getCurrentLocation', param)
+  // },
+  // getAutocompleteAddress(address) {
+  //     return api.get(`/api/getAutocompleteAddress/${address}`)
+  // },
+  // setSelectedAddress(placeId) {
+  //     return api.get(`/api/getPlaceDetails/${placeId}`)
+  // },
+  // getUserAddress(param) {
+  //     return api.get(`/api/address/${param}`)
+  // },
+  // addAddress(param) {
+  //     return api.post('/api/store-address', param)
+  // },
+  // removeAddress(param) {
+  //     return api.post('/api/delete-address', param)
+  // },
+  // getRestaurant(param) {
+  //     return api.get(`/api/getRestaurant?${param}`)
+  // },
+  // getProduct(param) {
+  //     return api.get(`/api/getProduct/${param}`)
+  // },
+  // getShopProducts(param) {
+  //     return api.get(`/api/shopProducts/${param}`)
+  // },
+  // getShopCategory(param) {
+  //     return api.get(`/api/shopCategory/${param}`)
+  // },
+  // getShopProductsCategory(param1, param2) {
+  //     return api.get(`/api/shopProductsCategory/${param1}/${param2}`)
+  // },
+  // searchShopProducts(param1, param2) {
+  //     return api.get(`/api/searchShopProducts/${param1}/${param2}`)
+  // },
+  // saveCarts(param) {
+  //     return api.post('/api/save-cart', param)
+  // },
+  // removeCartItem(param) {
+  //     return api.post('/api/delete-cart', param)
+  // },
+  // getCartItems(param) {
+  //     return api.get(`/api/getCart/${param}`)
+  // },
+  // incrementCartItem(param) {
+  //     return api.post('/api/incrementCart', param)
+  // },
+  // decrementCartItem(param) {
+  //     return api.post('/api/decrementCart', param)
+  // },
+  // shopProduct(param) {
+  //     return api.get(`/api/shopProduct/${param}`)
+  // },
+  // saveReview(param) {
+  //     return api.post('/api/save-review', param)
+  // },
+  // getProductReview(param) {
+  //     console.log(['obj', param])
+  //     return api.get(`/api/get-product-review/${param.product}?page=${param.pagenumber}`)
+  // },
+  // saveDeliveryReview(param) {
+  //     return api.post('/api/save-delivery-review', param)
+  // },
+  // getDeliveryReview(param) {
+  //     return api.get(`/api/get-delivery-review/${param}`)
+  // },
+  // getDistance(param) {
+  //     return api.get(`/api/get-distance/${param.origins}/${param.destinations}`)
+  // },
+  // getMenus(role) {
+  //     return api.get(`/api/get-menus/${role}`)
+  // },
+  // allMenu() {
+  //     return api.get('/api/all-menus')
+  // },
+  // storeMenuRole(param) {
+  //     return api.post('/api/store-role-menu', param)
+  // },
+  // sellerRegistration(param) {
+  //     return api.post('/api/seller-registration', param)
+  // },
+  // riderRegistration(param) {
+  //     return api.post('/api/rider-registration', param)
+  // },
+  // storeOrder(param) {
+  //     // console.log('param.....', typeof param, param)
+  //     return api.post('/api/store-orders', param)
+  // },
+  // getOrders(param) {
+  //     return api.get(`/api/get-orders?page=${param.page}`)
+  // },
+  // searchOrders(param) {
+  //     return api.get(`/api/search-orders/${param}`)
+  // },
+  // allSearchable(keyword) {
+  //     return api.get(`/api/all-searchable/${keyword}`)
+  // },
+  // allSearchRestaurent(keyword) {
+  //     return api.post('/api/search-by-item-category-restaurent', keyword)
+  // },
+  // getPolicy() {
+  //     return api.get('/api/get-policy')
+  // },
+  // getOrdersHistoryByUser(user) {
+  //     return api.get(`/api/get-orders-history/${user}`)
+  // },
+  // getCurrentOrdersByUser(user) {
+  //     return api.get(`/api/get-current-orders/${user}`)
+  // },
+  // trackingOrders(orderNo) {
+  //     return api.post('/api/tracking-orders', orderNo)
+  // },
+  // storeWiselist(param) {
+  //     return api.post('/api/store-wiselist', param)
+  // },
+  // storeFavourite(param) {
+  //     return api.post('/api/store-favourite', param)
+  // },
+  // getFavourites(user) {
+  //     return api.get(`/api/get-favourites/${user}`)
+  // },
+  // removeFavourite(favourite) {
+  //     return api.delete(`/api/remove-favourite/${favourite}`)
+  // },
+  // userProductReviews(user) {
+  //     return api.get(`/api/user-product-reviews/${user}`)
+  // },
+  // userTobeReviewed(user) {
+  //     return api.get(`/api/user-tobe-reviewed/${user}`)
+  // },
+  // productOptions(product) {
+  //     return api.get(`/api/get-product-details/${product}`)
+  // }
+
 });
 
 /***/ }),
@@ -20735,13 +20739,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "namespaced": () => (/* binding */ namespaced),
 /* harmony export */   "state": () => (/* binding */ state)
 /* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/repository */ "./resources/js/api/repository.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 var namespaced = true;
 var state = {
   artist: 'Artist from store'
 };
 var getters = {};
 var mutations = {};
-var actions = {};
+var actions = {
+  createArtistProfile: function createArtistProfile(_ref, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var commit, _yield$repository$cre, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.prev = 1;
+              _context.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].createArtistProfile(payload);
+
+            case 4:
+              _yield$repository$cre = _context.sent;
+              data = _yield$repository$cre.data;
+              console.log(data);
+              _context.next = 12;
+              break;
+
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](1);
+              throw _context.t0;
+
+            case 12:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 9]]);
+    }))();
+  }
+};
 
 /***/ }),
 
@@ -44888,7 +44936,7 @@ function render(_ctx, _cache) {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\spaggn"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/localtunnel"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\laragon\\\\www\\\\spaggn","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

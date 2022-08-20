@@ -8,7 +8,7 @@
       </div>
       <div class="md:grid md:grid-cols-1 md:gap-6">
         <div class="mt-5 md:mt-0">
-          <form>
+          <form @submit.prevent="saveArtistData" enctype="multipart/form-data">
             <!-- <div class="relative z-0 mb-6 w-full group">
               <input type="password" name="floating_password" id="floating_password"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -28,7 +28,7 @@
               <div class="relative z-0 mb-6 w-full group">
                 <input type="text" v-model="formData.firstName" name="floating_first_name" id="floating_first_name"
                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" " required="">
+                  placeholder=" ">
                 <label for="floating_first_name"
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
                   name</label>
@@ -36,7 +36,7 @@
               <div class="relative z-0 mb-6 w-full group">
                 <input type="text" v-model="formData.lastName" name="floating_last_name" id="floating_last_name"
                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" " required="">
+                  placeholder=" ">
                 <label for="floating_last_name"
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
                   name</label>
@@ -88,8 +88,9 @@
               <div class="relative mb-6 w-full group">
                 <label for="country" class="block text-sm font-medium text-gray-700">What type of charities would you
                   like to partner with (choose 3)?</label>
-                <multiselect ref="multiselectCharity" v-model="formData.charities.id" :id="charity" :hideSelected="true"
-                  placeholder="Select One" :multiple="true" trackBy="id" label="name" :options="charitiesOptions">
+                <multiselect ref="multiselectCharity" v-model="formData.charities" :id="charity" :hideSelected="true"
+                  placeholder="Select One" :multiple="true" trackBy="id" label="name" :options="charitiesOptions"
+                  :closeOnSelect="true">
                 </multiselect>
               </div>
               <div class="relative  mb-6 w-full group">
@@ -105,7 +106,7 @@
                 <label class="block text-sm font-medium text-gray-700"> Your Photo </label>
                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   <div class="space-y-1 text-center">
-                    <div v-if="imgSrc.photosrc == null">
+                    <div v-if="formData.photo == null">
                       <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
                         aria-hidden="true">
                         <path
@@ -114,14 +115,14 @@
                       </svg>
                     </div>
                     <div v-else>
-                      <img class="mx-auto w-12 h-12" :src="imgSrc.photosrc" />
+                      <img class="mx-auto w-12 h-12" :src="formData.photo" />
                     </div>
                     <div class="flex text-sm text-gray-600">
                       <label for="file-upload"
                         class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                         <span>Upload a file</span>
-                        <input id="file-upload" @change="onFileChangePhoto" name="file-upload" type="file"
-                          class="sr-only" accept="image/*">
+                        <input id="file-upload" @change="onFileChangePhoto($event, 'photo')" name="file-upload"
+                          type="file" class="sr-only" accept="image/*">
                       </label>
                       <p class="pl-1">or drag and drop</p>
                     </div>
@@ -135,7 +136,7 @@
                   <div
                     class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                     <div class="space-y-1 text-center">
-                      <div v-if="imgSrc.coverphotosrc == null">
+                      <div v-if="formData.coverPhoto == null">
                         <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none"
                           viewBox="0 0 48 48" aria-hidden="true">
                           <path
@@ -144,14 +145,14 @@
                         </svg>
                       </div>
                       <div v-else>
-                        <img class="mx-auto w-12 h-12" :src="imgSrc.coverphotosrc" />
+                        <img class="mx-auto w-12 h-12" :src="formData.coverPhoto" />
                       </div>
                       <div class="flex text-sm text-gray-600">
                         <label for="file-upload-cover"
                           class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                           <span>Upload a file</span>
-                          <input id="file-upload-cover" @change="onFileChangeCoverPhoto" name="file-upload-cover"
-                            type="file" class="sr-only" accept="image/*">
+                          <input id="file-upload-cover" @change="onFileChangePhoto($event, 'coverPhoto')"
+                            name="file-upload-cover" type="file" class="sr-only" accept="image/*">
                         </label>
                         <p class="pl-1">or drag and drop</p>
                       </div>
@@ -176,8 +177,10 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import ArtistLayout from "../../../layouts/ArtistLayout";
+import { useStore } from 'vuex'
 import Multiselect from 'vue-multiselect'
 import { emit } from 'process';
+const store = useStore()
 const formData = reactive({
   firstName: '',
   lastName: '',
@@ -190,10 +193,6 @@ const formData = reactive({
   artisticInspiration: '',
   photo: null,
   coverPhoto: null
-})
-const imgSrc = reactive({
-  photosrc: null,
-  coverphotosrc: null
 })
 const multiselectref = ref()
 const charitiesOptions = reactive([
@@ -211,8 +210,8 @@ const charitiesOptions = reactive([
   }
 ])
 const optionSelected = (option, id) => {
-  alert(`${option.language}`)
-  console.log(' >> ' + `${id}`)
+  console.log(`${option.id}`, `${option.name}`)
+  console.log(' >> ', formData.charities)
 }
 
 const addTag = (value, id) => {
@@ -230,48 +229,28 @@ const addTag = (value, id) => {
 //   console.log('remove',removeOption.url, index, options)
 //   options.splice(index, 1)
 // }
-const onFileChangePhoto = (e) => {
+const onFileChangePhoto = (e, photo) => {
   if (e.target.files[0]) {
-    // name.value = e.target.files[0].name;
-    formData.photo = e.target.files[0];
-
     const mimeType = e.target.files[0].type
     if (mimeType.split('/')[0] === 'image') {
-      // only video file
       var reader = new FileReader(); // instance of the FileReader
       reader.readAsDataURL(e.target.files[0]); // read the local file
       reader.onloadend = function () {
         // set video data as background of div
-        imgSrc.photosrc = reader.result
-        // var video = document.getElementById("video_here");
-        // video.src = reader.result;
+        formData[photo] = reader.result
       };
     }
   } else {
     alert("file is empty!");
   }
 };
-const onFileChangeCoverPhoto = (e) => {
-  if (e.target.files[0]) {
-    // name.value = e.target.files[0].name;
-    formData.coverPhoto = e.target.files[0];
-
-    const mimeType = e.target.files[0].type
-    if (mimeType.split('/')[0] === 'image') {
-      // only video file
-      var reader = new FileReader(); // instance of the FileReader
-      reader.readAsDataURL(e.target.files[0]); // read the local file
-      reader.onloadend = function () {
-        // set video data as background of div
-        imgSrc.coverphotosrc = reader.result
-        // var video = document.getElementById("video_here");
-        // video.src = reader.result;
-      };
-    }
-  } else {
-    alert("file is empty!");
+const saveArtistData = async () => {
+  try {
+    await store.dispatch('artistModule/createArtistProfile', formData)
+  } catch (e) {
+    console.log(e)
   }
-};
+}
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.css">
 </style>
