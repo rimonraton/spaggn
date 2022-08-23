@@ -1,4 +1,5 @@
 import routesArtist from './routes-artist';
+import siteRoutes from './site-routes';
 
 const Settings = () => import('../Views/Settings.vue');
 const Profile = () => import('../Views/Profile.vue');
@@ -9,12 +10,13 @@ const ForgotPassword = () => import('../Views/ForgotPassword.vue');
 const ResetPassword = () => import('../Views/ResetPassword.vue');
 const VerifyEmail = () => import('../Views/VerifyEmail.vue');
 const Home = () => import('../Views/Home.vue');
-const Welcome = () => import('../Views/Welcome.vue')
+const Welcome = () => import('../Views/Site/Home.vue')
 const Admin = () => import('../layouts/AdminLayout.vue')
 const Artist = () => import('../layouts/ArtistLayout.vue')
 const Charity = () => import('../layouts/CharityLayout.vue')
 const LandingLayout = () => import('../layouts/LandingLayout.vue')
 export default [
+    ...siteRoutes,
     ...routesArtist,
     {
         path: '/',
