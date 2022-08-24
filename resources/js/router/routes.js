@@ -10,19 +10,22 @@ const ForgotPassword = () => import('../Views/ForgotPassword.vue');
 const ResetPassword = () => import('../Views/ResetPassword.vue');
 const VerifyEmail = () => import('../Views/VerifyEmail.vue');
 const Home = () => import('../Views/Home.vue');
-const Welcome = () => import('../Views/Site/Home.vue')
+const Welcome = () => import('../Views/Site/Welcome.vue')
 const Admin = () => import('../layouts/AdminLayout.vue')
 const Artist = () => import('../layouts/ArtistLayout.vue')
 const Charity = () => import('../layouts/CharityLayout.vue')
 const LandingLayout = () => import('../layouts/LandingLayout.vue')
+const LayoutA = () => import('../layouts/LayoutA.vue')
+const Page2 = () => import('../Views/Site/Page2.vue')
 export default [
     ...siteRoutes,
     ...routesArtist,
-    {
-        path: '/',
-        component: Welcome,
-        name: 'welcome',
-    },
+    // {
+    //     path: '/',
+    //     component: Welcome,
+    //     name: 'welcome',
+    // },
+    
     {
         path: '/artist-dashboard',
         component: Artist,
