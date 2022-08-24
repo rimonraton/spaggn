@@ -3,7 +3,7 @@
         <!-- component -->
         <div class="py-16 white">
             <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                <h2 class="mb-6 text-center text-2xl text-gray-900 font-bold md:text-4xl py-4">Why GGN?</h2>
+                <h2 class="text-2xl text-gray-900 font-bold md:text-4xl py-4">Why GGN?</h2>
                 <div class="flex flex-col gap-4">
                     <p>
                         Now that you learned everything about NFT, let’s talk about why you should make a donation in

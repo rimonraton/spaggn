@@ -56,16 +56,16 @@
               </router-link>
             </li>
             <li>
-              <a href="#"
+              <router-link to="/charities"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
                 Explore Charities
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#"
+              <router-link to="/artists"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
                 Artists
-              </a>
+              </router-link>
             </li>
             <li>
               <a href="#"
@@ -74,16 +74,16 @@
               </a>
             </li>
             <li>
-              <a href="#"
-                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+              <a href="https://opensea.io/assets/bscc-nft-project?embed=true&ref=0x495f947276749ce646f68ac8c248420045cb7b5e"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" target="_blank">
                 Explore
               </a>
             </li>
             <li>
-              <a href="#"
+              <router-link to="/blog"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
                 Blog
-              </a>
+              </router-link>
             </li>
             <li class="block lg:hidden">
               <router-link :to="{ name: 'login' }"
