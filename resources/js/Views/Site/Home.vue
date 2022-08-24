@@ -175,7 +175,7 @@
                                                 <div class="relative">
                                                     <!-- <div class="rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200"></div>
                         <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span> -->
-                                                    <img :src="`http://i.pravatar.cc/${300 + i}`"
+                                                    <img :src="`https://i.pravatar.cc/${300 + i}`"
                                                         class="rounded-full border-solid border-white border-2 w-10">
                                                 </div>
 
@@ -234,7 +234,7 @@
                         <div class="rounded-3xl overflow-hidden shadow-xl max-w-xs my-3 bg-purple-500">
                             <!-- <img src="https://i.imgur.com/dYcYQ7E.png" class="w-full" /> -->
                             <div class="flex justify-center bg-white">
-                                <img :src="`http://i.pravatar.cc/${300 + i}`"
+                                <img :src="`https://i.pravatar.cc/${300 + i}`"
                                     class="rounded-full border-solid border-white border-2 w-24">
                             </div>
                             <div class="text-center px-3 pb-3 pt-2">

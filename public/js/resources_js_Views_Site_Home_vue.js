@@ -938,7 +938,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200\"></div>\r\n                        <span class=\"absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full\"></span> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-                  src: "http://i.pravatar.cc/".concat(300 + i),
+                  src: "https://i.pravatar.cc/".concat(300 + i),
                   "class": "rounded-full border-solid border-white border-2 w-10"
                 }, null, 8
                 /* PROPS */
@@ -986,7 +986,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, {
               "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                 return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img src=\"https://i.imgur.com/dYcYQ7E.png\" class=\"w-full\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-                  src: "http://i.pravatar.cc/".concat(300 + i),
+                  src: "https://i.pravatar.cc/".concat(300 + i),
                   "class": "rounded-full border-solid border-white border-2 w-24"
                 }, null, 8
                 /* PROPS */
