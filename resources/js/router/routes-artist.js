@@ -5,28 +5,55 @@ const ArtistLayout = () => import('../layouts/ArtistLayout.vue')
 const ArtistMessage = () => import('../Views/Artist/pages/Messages.vue')
 export default [
     {
-        path: '/artist-home',
-        component: ArtistHome,
-        name: 'ArtistHome',
-        meta: {
-            layout: ArtistLayout
-        }
+        path: '/artist',
+        component: ArtistLayout,
+        name: 'ArtistLayout',
+        children: [
+            {
+                path: '/artist-home',
+                component: ArtistHome,
+                name: 'Artist',
+            },
+            {
+                path: '/artist-profile',
+                component: ArtistProfile,
+                name: 'ArtistProfile',
+            },
+            {
+                path: '/create-artist-profile',
+                component: CreateArtistProfile,
+                name: 'CreateArtistProfile',
+            },
+            {
+                path: '/artist-messages',
+                component: ArtistMessage,
+                name: 'ArtistMessage',
+            },
+        ]
     },
-    {
-        path: '/artist-profile',
-        component: ArtistProfile,
-        name: 'ArtistProfile',
-    },
-    {
-        path: '/create-artist-profile',
-        component: CreateArtistProfile,
-        name: 'CreateArtistProfile',
-    },
-    {
-        path: '/artist-messages',
-        component: ArtistMessage,
-        name: 'ArtistMessage',
-    },
+    // {
+    //     path: '/artist-home',
+    //     component: ArtistHome,
+    //     name: 'ArtistHome',
+    //     meta: {
+    //         layout: ArtistLayout
+    //     }
+    // },
+    // {
+    //     path: '/artist-profile',
+    //     component: ArtistProfile,
+    //     name: 'ArtistProfile',
+    // },
+    // {
+    //     path: '/create-artist-profile',
+    //     component: CreateArtistProfile,
+    //     name: 'CreateArtistProfile',
+    // },
+    // {
+    //     path: '/artist-messages',
+    //     component: ArtistMessage,
+    //     name: 'ArtistMessage',
+    // },
     {
         path: '/:pathMatch(.*)*',
         redirect: '/',

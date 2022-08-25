@@ -26,11 +26,11 @@ export default [
     //     name: 'welcome',
     // },
     
-    {
-        path: '/artist-dashboard',
-        component: Artist,
-        name: 'Artist',
-    },
+    // {
+    //     path: '/artist-dashboard',
+    //     component: Artist,
+    //     name: 'Artist',
+    // },
     {
         path: '/admin-dashboard',
         component: Admin,

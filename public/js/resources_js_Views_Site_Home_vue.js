@@ -11,15 +11,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _layouts_LandingLayout_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../layouts/LandingLayout.vue */ "./resources/js/layouts/LandingLayout.vue");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/index.js");
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
-/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
-/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/index.js");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
+/* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
+/* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 
  // import swiper module styles
 
@@ -33,8 +31,8 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var blogName = ['Charity', 'Digital Art', 'Artist'];
-    var modules = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)([swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_1__.Autoplay]);
-    var swiperOptions = (0,vue__WEBPACK_IMPORTED_MODULE_6__.reactive)({
+    var modules = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)([swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay]);
+    var swiperOptions = (0,vue__WEBPACK_IMPORTED_MODULE_5__.reactive)({
       // autoplay: {
       //   delay: 2000
       // }
@@ -54,10 +52,10 @@ __webpack_require__.r(__webpack_exports__);
       }
     }); // const swiper = new Swiper()
 
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_7__.useStore)();
-    var auth = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)(true);
-    var openMenu = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)(false);
-    var user = (0,vue__WEBPACK_IMPORTED_MODULE_6__.computed)(function () {
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_6__.useStore)();
+    var auth = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(true);
+    var openMenu = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(false);
+    var user = (0,vue__WEBPACK_IMPORTED_MODULE_5__.computed)(function () {
       return store.getters.user;
     });
     var __returned__ = {
@@ -68,17 +66,16 @@ __webpack_require__.r(__webpack_exports__);
       auth: auth,
       openMenu: openMenu,
       user: user,
-      LandingLayout: _layouts_LandingLayout_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-      SwiperClass: swiper__WEBPACK_IMPORTED_MODULE_1__["default"],
-      Navigation: swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation,
-      Pagination: swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination,
-      Autoplay: swiper__WEBPACK_IMPORTED_MODULE_1__.Autoplay,
-      Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_2__.Swiper,
-      SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_2__.SwiperSlide,
-      ref: vue__WEBPACK_IMPORTED_MODULE_6__.ref,
-      computed: vue__WEBPACK_IMPORTED_MODULE_6__.computed,
-      reactive: vue__WEBPACK_IMPORTED_MODULE_6__.reactive,
-      useStore: vuex__WEBPACK_IMPORTED_MODULE_7__.useStore
+      SwiperClass: swiper__WEBPACK_IMPORTED_MODULE_0__["default"],
+      Navigation: swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation,
+      Pagination: swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination,
+      Autoplay: swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay,
+      Swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__.Swiper,
+      SwiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__.SwiperSlide,
+      ref: vue__WEBPACK_IMPORTED_MODULE_5__.ref,
+      computed: vue__WEBPACK_IMPORTED_MODULE_5__.computed,
+      reactive: vue__WEBPACK_IMPORTED_MODULE_5__.reactive,
+      useStore: vuex__WEBPACK_IMPORTED_MODULE_6__.useStore
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,

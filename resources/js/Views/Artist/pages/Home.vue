@@ -1,5 +1,7 @@
 <template>
-  <ArtistLayout> Home {{ store.state.artistModule.artist }} </ArtistLayout>
+  <!-- <ArtistLayout>  -->
+    Home {{ store.state.artistModule.artist }} 
+    <!-- </ArtistLayout> -->
 </template>
 <script setup>
 import ArtistLayout from "../../../layouts/ArtistLayout";

@@ -1,11 +1,11 @@
-import WhyGGN from "../Views/Site/WhyGGN.vue";
-import ExploreCharities from "../Views/Site/Charities.vue";
-import ExploreArtists from "../Views/Site/Artists.vue";
-import Blog from "../Views/Site/Blogs.vue";
-import Community from "../Views/Site/Community.vue";
-import Home from "../Views/Site/Home.vue";
-import Welcome from "../Views/Site/Welcome.vue";
-const LandingLayout = ()=> import('../layouts/LandingLayout.vue')
+const WhyGGN = () => import('../Views/Site/WhyGGN.vue');
+const ExploreCharities = () => import('../Views/Site/Charities.vue');
+const ExploreArtists = () => import( "../Views/Site/Artists.vue");
+const Blog = () => import( "../Views/Site/Blogs.vue");
+const Community = () => import( "../Views/Site/Community.vue");
+const Home = () => import( "../Views/Site/Home.vue");
+const Welcome = () => import( "../Views/Site/Welcome.vue");
+const LandingLayout = () => import('../layouts/LandingLayout.vue')
 export default [
      {
         path: '/',

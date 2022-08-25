@@ -116,20 +116,18 @@
   <!--Container-->
   <div class="container w-full mx-auto pt-20">
     <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
-      <slot></slot>
+      <!-- <slot></slot> -->
+      <router-view />
     </div>
   </div>
   <!--/container-->
 
   <footer class="bg-white border-t border-gray-400 shadow">
-    <div class="container max-w-md mx-auto flex py-8">
-      <div class="w-full mx-auto flex flex-wrap">
-        <div class="copyright">
-          © 2022 <a href="javascript:void(0);">
-            GOOD GIVING NETWORK
-          </a>
-        </div>
-      </div>
+    <div class="text-center py-8">
+      © {{ new Date().getFullYear() }} 
+      <a href="javascript:void(0);">
+        GOOD GIVING NETWORK
+      </a>
     </div>
   </footer>
 </template>

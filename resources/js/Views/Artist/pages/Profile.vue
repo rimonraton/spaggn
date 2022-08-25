@@ -1,5 +1,5 @@
 <template>
-  <ArtistLayout>
+  <!-- <ArtistLayout> -->
     <div class="container mx-auto lg:w-5/6">
       <div class="px-4 py-2 sm:px-0">
         <h3 class="text-lg font-medium leading-6 text-gray-900">Tell us about yourself</h3>
@@ -171,7 +171,7 @@
         </div>
       </div>
     </div>
-  </ArtistLayout>
+  <!-- </ArtistLayout> -->
 </template>
 
 <script setup>

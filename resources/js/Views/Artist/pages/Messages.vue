@@ -1,5 +1,7 @@
 <template>
-  <ArtistLayout><p>Messages..</p></ArtistLayout>
+  <!-- <ArtistLayout> -->
+    <p>Messages..</p>
+    <!-- </ArtistLayout> -->
 </template>
 
 <script setup>
