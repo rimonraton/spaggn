@@ -1,6 +1,5 @@
 <template >
-  <div
-    class="
+  <div class="
       flex
       items-start
       border
@@ -14,12 +13,10 @@
       bg-red-100
       border border-red-100
       text-red-500
-    "
-    role="alert shadow"
-  >
+    " role="alert shadow">
     <!-- <strong class="font-bold">Holy smokes!</strong> -->
     <span v-if="!content.errors" class="block sm:inline w-full text-center">{{
-      content.message
+        content.message
     }}</span>
     <div v-else class="block sm:inline w-full text-center">
       <!-- <div>{{content.message}}</div> -->
@@ -27,7 +24,7 @@
         <li v-for="error in content.errors" :key="error.index">
           <ul>
             <li v-for="e in error" :key="e.index">
-                {{ e }}
+              {{ e }}
             </li>
           </ul>
         </li>

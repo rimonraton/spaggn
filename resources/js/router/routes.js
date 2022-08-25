@@ -1,4 +1,4 @@
-import routesArtist from './routes-artist';
+import routesArtist from './artist-routes';
 import siteRoutes from './site-routes';
 
 const Settings = () => import('../Views/Settings.vue');
@@ -127,8 +127,16 @@ export default [
         ]
     },
     {
+        path: '/404',
+       component: () => import('../components/helper/404.vue'),
+       name: '404'
+
+    },
+    {
         path: '/:pathMatch(.*)*',
-        redirect: '/home',
+        redirect: {
+            name: 'welcome'
+        },
 
     }
 ];

@@ -37,7 +37,7 @@
                   <hr class="border-t mx-2 border-gray-400" />
                 </li>
                 <li>
-                  <a href="#"
+                  <a @click="logout" href="#"
                     class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Logout</a>
                 </li>
               </ul>
@@ -115,7 +115,7 @@
   </nav>
   <!--Container-->
   <div class="container w-full mx-auto pt-20">
-    <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+    <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal relative">
       <!-- <slot></slot> -->
       <router-view />
     </div>
@@ -124,7 +124,7 @@
 
   <footer class="bg-white border-t border-gray-400 shadow">
     <div class="text-center py-8">
-      © {{ new Date().getFullYear() }} 
+      © {{ new Date().getFullYear() }}
       <a href="javascript:void(0);">
         GOOD GIVING NETWORK
       </a>
@@ -134,8 +134,22 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+const router = useRouter()
+const store = useStore()
 const openMenu = ref(false);
 const dropdownOpen = ref(false);
+const logout = async () => {
+  try {
+    await store.dispatch('logout')
+    router.push({ name: 'welcome' })
+  }
+  catch (e) {
+    console.log(e.data)
+  };
+
+}
 </script>
 
 <style scoped>
