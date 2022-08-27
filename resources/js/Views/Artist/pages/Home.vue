@@ -2,7 +2,7 @@
   <div class="flex">
     <aside class="hidden w-50 md:block flex-shrink-0 sticky top-28 h-60">
       <div class="p-2 flex justify-center">
-        <a href="#"
+        <a @click.prevent="gotoUp" href="#"
           class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
           <span class="inline-flex justify-center items-center ml-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -15,7 +15,7 @@
           <span class="ml-2 text-sm tracking-wide truncate">Home</span>
         </a>
       </div>
-      <div class="p-2 flex justify-center">
+      <!-- <div class="p-2 flex justify-center">
         <a href="#"
           class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
           <span class="inline-flex justify-center items-center ml-4">
@@ -30,10 +30,10 @@
           <span
             class="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">1.2k</span>
         </a>
-      </div>
+      </div> -->
 
       <div class="p-2 flex justify-center">
-        <a href="#"
+        <a @click.prevent="gotoComment" href="#"
           class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
           <span class="inline-flex justify-center items-center ml-4">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -110,8 +110,8 @@
       </div> -->
     </aside>
 
-    <main>
-      <div class="block md:grid md:grid-flow-row-dense md:grid-cols-4 md:grid-rows-3">
+    <main id="home">
+      <div class="block">
         <div class="col-span-4">
           <div class="bg-white shadow">
             <div class="flex flex-row px-2 py-3 mx-3">
@@ -187,12 +187,71 @@
               </div>
             </div>
           </div>
+          <div class="bg-white shadow rounded-lg mb-6">
+            <div class="flex flex-row px-2 py-3 mx-3">
+              <div class="flex flex-col mb-2 ml-4 mt-1">
+                <div class="text-gray-600 text-2xl font-semibold">
+                  Websites/Social Links
+                </div>
+                <div class="flex gap-2 cursor-pointer">
+                  <div>
+                    <img src="https://tailus.io/sources/blocks/social/preview/images/google.svg" class=" w-5"
+                      alt="google logo">
+                  </div>
+                  <div
+                    class="block font-semibold tracking-wide text-blue-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base hover:underline">
+                    Google</div>
+                </div>
+                <div class="flex gap-2 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 text-gray-700"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                  </svg>
+                  <div
+                    class="block font-semibold tracking-wide text-blue-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base hover:underline">
+                    Github</div>
+                </div>
+                <div class="flex gap-2 cursor-pointer">
+                  <img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg" class="w-5"
+                    alt="Facebook logo">
+                  <div
+                    class="block font-semibold tracking-wide text-blue-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base hover:underline">
+                    Facebook</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white shadow rounded-lg mb-6" id="comments">
+            <div class="rounded-xl border p-5 shadow-md w-full bg-white">
+              <div class=" w-full border-b pb-3">
+                <div class="text-lg font-bold text-slate-700">Comments</div>
+              </div>
+
+              <div class="mt-4 mb-6">
+                <!-- <div class="mb-3 text-xl font-bold">Nulla sed leo tempus, feugiat velit vel, rhoncus neque?</div> -->
+                <div class="text-sm text-neutral-600">
+                  No comments yet..
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
   </div>
 </template>
-<script setup></script>
+<script setup>
+const gotoComment = () => {
+  const element = document.getElementById('comments');
+  element.scrollIntoView({ behavior: 'smooth' });
+}
+const gotoUp = () => {
+  const element = document.getElementById('home');
+  element.scrollIntoView({ behavior: 'smooth' });
+}
+
+</script>
 
 <style>
 </style>
