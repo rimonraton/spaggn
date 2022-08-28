@@ -38,10 +38,10 @@
         <div :class="openMenu ? '' : 'hidden'" class="items-center justify-between w-full lg:flex lg:w-auto lg:order-1"
           id="mobile-menu-2">
           <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-            <li>
+            <!-- <li>
               <router-link :to="{ name: 'welcome' }" class="block py-2 pl-3 pr-4 text-gray-700 lg:bg-transparent lg:p-0"
                 aria-current="page">Home</router-link>
-            </li>
+            </li> -->
             <li>
               <a href="https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
@@ -50,36 +50,36 @@
               </a>
             </li>
             <li>
-              <router-link :to="{ name: 'WhyGGN' }"
+              <router-link :to="{ name: 'Funding' }"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                Why GGN?
+                Funding, addressed
               </router-link>
             </li>
             <li>
               <router-link :to="{ name: 'ExploreCharities' }"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                Explore Charities
+                Charities
               </router-link>
             </li>
             <li>
               <router-link :to="{ name: 'ExploreArtists' }"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                Artists
+                Artists & Collabs
               </router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'Community' }"
+              <router-link :to="{ name: 'Projects' }"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                Community
+                Projects
               </router-link>
             </li>
-            <li>
+            <!-- <li>
               <a href="https://opensea.io/assets/bscc-nft-project?embed=true&ref=0x495f947276749ce646f68ac8c248420045cb7b5e"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                 target="_blank">
                 Explore
               </a>
-            </li>
+            </li> -->
             <li>
               <router-link :to="{ name: 'Blog' }"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
@@ -117,7 +117,7 @@ const auth = ref(true);
 const openMenu = ref(false);
 const user = computed(() => store.getters.user);
 const goToHome = () => {
-  router.push({name: 'welcome'})
+  router.push({ name: 'welcome' })
 }
 </script>
 <style scoped>

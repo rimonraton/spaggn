@@ -31,10 +31,11 @@
         <div class="py-16 bg-gray-200">
             <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
                 <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3">
-                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                        <div class="mb-12 space-y-4">
-                            <h3 class="text-2xl font-semibold text-center text-purple-900">We are not just another NFT
-                                Marketplace</h3>
+                    <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-center text-purple-900">
+                                We are not just another NFT Marketplace
+                            </h3>
                             <p class="mb-6">
                                 We do not plan to be everything for everyone. We only allow verified charities and
                                 authentic artists in our platform. We believe the charities and the communities that
@@ -43,11 +44,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                        <div class="mb-12 space-y-4">
-                            <h3 class="text-2xl font-semibold text-purple-900 text-center">Projects with built-in
-                                community &
-                                Utility</h3>
+                    <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-purple-900 text-center">
+                                Projects with built-in community & Utility
+                            </h3>
                             <p class="mb-6">
                                 Every successful charity already has a passionate group of followers and donors, and
                                 these followers join the cause when the charity starts a project. The funds collected
@@ -61,11 +62,11 @@
                             </p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
-                        <div class="mb-12 space-y-4">
-                            <h3 class="text-2xl font-semibold text-purple-900 text-center">We are addressing the NFT
-                                platform
-                                challenges</h3>
+                    <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-purple-900 text-center">
+                                We are addressing the NFT platform challenges
+                            </h3>
                             <p class="mb-6">
                                 GGN partners with NFTrade the first cross-chain and blockchain agonstic NFT platform to
                                 address the multi-chain & cross-chain and peer-to-peer challenges. GGN is building a

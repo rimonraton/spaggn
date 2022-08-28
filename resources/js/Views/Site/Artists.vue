@@ -2,7 +2,7 @@
     <!-- <LandingLayout> -->
     <div class="py-16 white">
         <div class="container mx-auto lg:w-5/6 px-6 text-gray-600 md:px-12 xl:px-6">
-            <h2 class="text-2xl text-gray-900 font-bold md:text-4xl py-4">Artists</h2>
+            <h2 class="text-2xl text-gray-900 font-bold md:text-4xl py-4">Artists & Collabs</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
                 <div class="relative mx-auto w-full">
                     <a href="#"
@@ -551,7 +551,6 @@
 </template>
 
 <script setup>
-import LandingLayout from '../../layouts/LandingLayout.vue';
 </script>
 
 <style>

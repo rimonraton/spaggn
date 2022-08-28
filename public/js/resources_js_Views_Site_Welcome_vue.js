@@ -236,7 +236,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Submit Project");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section data-v-ad3225d0><!-- component --><div class=\"py-16 bg-gray-200\" data-v-ad3225d0><div class=\"container m-auto px-6 text-gray-500 md:px-12 xl:px-0\" data-v-ad3225d0><div class=\"mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3\" data-v-ad3225d0><div class=\"bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"mb-12 space-y-4\" data-v-ad3225d0><h3 class=\"text-2xl font-semibold text-center text-purple-900\" data-v-ad3225d0>We are not just another NFT Marketplace</h3><p class=\"mb-6\" data-v-ad3225d0> We do not plan to be everything for everyone. We only allow verified charities and authentic artists in our platform. We believe the charities and the communities that support them have the power to solve the hardest problems that the world faces today. Our goal is to partner with these charities and the communities to achieve their goals. </p></div></div><div class=\"bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"mb-12 space-y-4\" data-v-ad3225d0><h3 class=\"text-2xl font-semibold text-purple-900 text-center\" data-v-ad3225d0>Projects with built-in community &amp; Utility</h3><p class=\"mb-6\" data-v-ad3225d0> Every successful charity already has a passionate group of followers and donors, and these followers join the cause when the charity starts a project. The funds collected for every NFT that is sold by the charity are used to solve difficult societal and environmental problems. Some projects also have a governance feature associated with their NFTs which provides DAO membership to the NFT holders. The collectors of these NFTs have opportunity to vote on the NFT projects or any other projects related to the charity. </p></div></div><div class=\"bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"mb-12 space-y-4\" data-v-ad3225d0><h3 class=\"text-2xl font-semibold text-purple-900 text-center\" data-v-ad3225d0>We are addressing the NFT platform challenges</h3><p class=\"mb-6\" data-v-ad3225d0> GGN partners with NFTrade the first cross-chain and blockchain agonstic NFT platform to address the multi-chain &amp; cross-chain and peer-to-peer challenges. GGN is building a seamless integration between the two platforms, so UX will not be affected. The fiat currency integration to NFT is also on NFTrade’s roadmap. Once complete anyone will be able to purchase NFTs using credit card in their native currency. </p></div></div></div></div></div></section>", 1);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section data-v-ad3225d0><!-- component --><div class=\"py-16 bg-gray-200\" data-v-ad3225d0><div class=\"container m-auto px-6 text-gray-500 md:px-12 xl:px-0\" data-v-ad3225d0><div class=\"mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3\" data-v-ad3225d0><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-center text-purple-900\" data-v-ad3225d0> We are not just another NFT Marketplace </h3><p class=\"mb-6\" data-v-ad3225d0> We do not plan to be everything for everyone. We only allow verified charities and authentic artists in our platform. We believe the charities and the communities that support them have the power to solve the hardest problems that the world faces today. Our goal is to partner with these charities and the communities to achieve their goals. </p></div></div><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-purple-900 text-center\" data-v-ad3225d0> Projects with built-in community &amp; Utility </h3><p class=\"mb-6\" data-v-ad3225d0> Every successful charity already has a passionate group of followers and donors, and these followers join the cause when the charity starts a project. The funds collected for every NFT that is sold by the charity are used to solve difficult societal and environmental problems. Some projects also have a governance feature associated with their NFTs which provides DAO membership to the NFT holders. The collectors of these NFTs have opportunity to vote on the NFT projects or any other projects related to the charity. </p></div></div><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-purple-900 text-center\" data-v-ad3225d0> We are addressing the NFT platform challenges </h3><p class=\"mb-6\" data-v-ad3225d0> GGN partners with NFTrade the first cross-chain and blockchain agonstic NFT platform to address the multi-chain &amp; cross-chain and peer-to-peer challenges. GGN is building a seamless integration between the two platforms, so UX will not be affected. The fiat currency integration to NFT is also on NFTrade’s roadmap. Once complete anyone will be able to purchase NFTs using credit card in their native currency. </p></div></div></div></div></div></section>", 1);
 
 var _hoisted_8 = {
   "class": "container mx-auto lg:w-5/6"
@@ -1032,9 +1032,7 @@ var _hoisted_17 = {
   "class": "flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
 };
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Home");
-
-var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_18 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: "https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq",
     "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700",
@@ -1044,37 +1042,27 @@ var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Why GGN? ");
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Funding, addressed ");
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Explore Charities ");
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Charities ");
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Artists ");
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Artists & Collabs ");
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Community ");
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Projects ");
 
-var _hoisted_24 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    href: "https://opensea.io/assets/bscc-nft-project?embed=true&ref=0x495f947276749ce646f68ac8c248420045cb7b5e",
-    "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700",
-    target: "_blank"
-  }, " Explore ")], -1
-  /* HOISTED */
-  );
-});
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Blog ");
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Blog ");
+var _hoisted_24 = {
+  "class": "block lg:hidden"
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Login ");
 
 var _hoisted_26 = {
   "class": "block lg:hidden"
 };
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Login ");
-
-var _hoisted_28 = {
-  "class": "block lg:hidden"
-};
-
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register ");
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -1119,27 +1107,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [_hoisted_10, !$setup.openMenu ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_11, _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_14, _hoisted_16))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" mobile "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([$setup.openMenu ? '' : 'hidden', "items-center justify-between w-full lg:flex lg:w-auto lg:order-1"]),
     id: "mobile-menu-2"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\r\n              <router-link :to=\"{ name: 'welcome' }\" class=\"block py-2 pl-3 pr-4 text-gray-700 lg:bg-transparent lg:p-0\"\r\n                aria-current=\"page\">Home</router-link>\r\n            </li> "), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
-      name: 'welcome'
-    },
-    "class": "block py-2 pl-3 pr-4 text-gray-700 lg:bg-transparent lg:p-0",
-    "aria-current": "page"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_18];
-    }),
-    _: 1
-    /* STABLE */
-
-  })]), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: {
-      name: 'WhyGGN'
+      name: 'Funding'
     },
     "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_20];
+      return [_hoisted_19];
     }),
     _: 1
     /* STABLE */
@@ -1151,7 +1126,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_21];
+      return [_hoisted_20];
     }),
     _: 1
     /* STABLE */
@@ -1163,14 +1138,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_22];
+      return [_hoisted_21];
     }),
     _: 1
     /* STABLE */
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
-      name: 'Community'
+      name: 'Projects'
+    },
+    "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_22];
+    }),
+    _: 1
+    /* STABLE */
+
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li>\r\n              <a href=\"https://opensea.io/assets/bscc-nft-project?embed=true&ref=0x495f947276749ce646f68ac8c248420045cb7b5e\"\r\n                class=\"block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700\"\r\n                target=\"_blank\">\r\n                Explore\r\n              </a>\r\n            </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: {
+      name: 'Blog'
     },
     "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
   }, {
@@ -1180,9 +1167,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
-      name: 'Blog'
+      name: 'login'
     },
     "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
   }, {
@@ -1194,24 +1181,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
-      name: 'login'
-    },
-    "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_27];
-    }),
-    _: 1
-    /* STABLE */
-
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: {
       name: 'register'
     },
     "class": "block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_29];
+      return [_hoisted_27];
     }),
     _: 1
     /* STABLE */
