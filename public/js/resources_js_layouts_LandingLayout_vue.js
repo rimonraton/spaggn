@@ -173,7 +173,7 @@ var _hoisted_3 = {
 var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: "/images/logo.svg",
-    "class": "h-6 mr-3 sm:h-9",
+    "class": "h-6 mr-1 sm:h-9",
     alt: "Landwind Logo"
   }, null, -1
   /* HOISTED */
@@ -182,8 +182,8 @@ var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
 
 var _hoisted_5 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "self-center text-xl font-semibold whitespace-nowrap dark:text-white"
-  }, "Good Give Work", -1
+    "class": "self-center text-l font-semibold whitespace-nowrap dark:text-white"
+  }, "Good Giving Network", -1
   /* HOISTED */
   );
 });

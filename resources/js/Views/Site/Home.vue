@@ -5,13 +5,12 @@
         <div class="px-6 mx-auto bg-gray-900 pattern px-4 pt-20 w-full">
             <div class="flex flex-col items-center py-6 lg:h-96 items-center justify-center">
                 <div>
-                    <h2 class="text-2xl font-semibold text-gray-100">Give to a great cause and own a piece of the
-                        legacy of your
-                        favorite charity.
+                    <h2 class="text-2xl font-semibold text-gray-100">
+                        Amplify generosity and create legacy for your donors
                     </h2>
                     <p class="mt-3 text-gray-100">
-                        Good Giving Network lets you donate to your favorite charities and collect NFTs that reflect
-                        your values.
+                        Good Giving Network lets donors and collectors to donate to their favorite charities and collect
+                        NFTs that reflect their values.
                     </p>
                 </div>
                 <div class="flex text-white pt-5 gap-4">
@@ -26,6 +25,61 @@
         </div>
     </section>
     <!-- end hero -->
+    <!-- card -->
+    <section>
+        <!-- component -->
+        <div class="py-16 bg-gray-200">
+            <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+                <div class="mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3">
+                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
+                        <div class="mb-12 space-y-4">
+                            <h3 class="text-2xl font-semibold text-center text-purple-900">We are not just another NFT
+                                Marketplace</h3>
+                            <p class="mb-6">
+                                We do not plan to be everything for everyone. We only allow verified charities and
+                                authentic artists in our platform. We believe the charities and the communities that
+                                support them have the power to solve the hardest problems that the world faces today.
+                                Our goal is to partner with these charities and the communities to achieve their goals.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
+                        <div class="mb-12 space-y-4">
+                            <h3 class="text-2xl font-semibold text-purple-900 text-center">Projects with built-in
+                                community &
+                                Utility</h3>
+                            <p class="mb-6">
+                                Every successful charity already has a passionate group of followers and donors, and
+                                these followers join the cause when the charity starts a project. The funds collected
+                                for every NFT that is sold by the charity are used to solve difficult societal and
+                                environmental problems.
+
+                                Some projects also have a governance feature associated with their NFTs which provides
+                                DAO membership to the NFT holders. The collectors of these NFTs have opportunity to vote
+                                on the NFT projects or any other projects related to the charity.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-xl px-8 py-12 sm:px-12 lg:px-8">
+                        <div class="mb-12 space-y-4">
+                            <h3 class="text-2xl font-semibold text-purple-900 text-center">We are addressing the NFT
+                                platform
+                                challenges</h3>
+                            <p class="mb-6">
+                                GGN partners with NFTrade the first cross-chain and blockchain agonstic NFT platform to
+                                address the multi-chain & cross-chain and peer-to-peer challenges. GGN is building a
+                                seamless integration between the two platforms, so UX will not be affected. The fiat
+                                currency integration to NFT is also on NFTrade’s roadmap. Once complete anyone will be
+                                able to purchase NFTs using credit card in their native currency.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end card -->
     <!-- auction -->
     <section>
         <div class="container mx-auto lg:w-5/6">
@@ -223,7 +277,7 @@
     <section>
         <div class="container mx-auto lg:w-5/6">
             <h2 class="text-2xl font-semibold py-6">
-                Artists
+                Artists & Collabs
             </h2>
             <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
                 :slides-per-view="4" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true"
