@@ -24,8 +24,8 @@ __webpack_require__.r(__webpack_exports__);
     };
 
     var gotoUp = function gotoUp() {
-      var element = document.getElementById('home');
-      element.scrollIntoView({
+      window.scrollTo({
+        top: 0,
         behavior: 'smooth'
       });
     };

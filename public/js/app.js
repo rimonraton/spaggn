@@ -19849,11 +19849,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
  // import Nprogress from 'nprogress'
 
 var instance = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
   withCredentials: true,
-  baseURL: "http://spaggn.test" // timeout: 10000,
+  baseURL: process.env.MIX_API_URL // timeout: 10000,
 
 });
 instance.interceptors.request.use(function (request) {
@@ -20144,6 +20145,81 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/router/admin-routes.js":
+/*!*********************************************!*\
+  !*** ./resources/js/router/admin-routes.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var AdminHome = function AdminHome() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_Home_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/Home.vue */ "./resources/js/Views/Admin/pages/Home.vue"));
+}; // const AdminProfile = () => import('../Views/Admin/pages/Profile.vue');
+// const CreateAdminProfile = () => import('../Views/Admin/pages/CreateProfile.vue');
+
+
+var AdminLayout = function AdminLayout() {
+  return __webpack_require__.e(/*! import() */ "resources_js_layouts_AdminLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/AdminLayout.vue */ "./resources/js/layouts/AdminLayout.vue"));
+};
+
+var ViewCharities = function ViewCharities() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_Charities_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/Charities.vue */ "./resources/js/Views/Admin/pages/Charities.vue"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+  path: '/adminLayout',
+  component: AdminLayout,
+  name: 'AdminLayout',
+  children: [{
+    path: '/admin-home',
+    component: AdminHome,
+    name: 'Admin',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/view-charities',
+    component: ViewCharities,
+    name: 'ViewCharities',
+    meta: {
+      guard: 'auth'
+    }
+  } // {
+  //     path: '/Admin-profile',
+  //     component: AdminProfile,
+  //     name: 'AdminProfile',
+  //     meta: {
+  //         guard: 'auth'
+  //     }
+  // },
+  // {
+  //     path: '/setting',
+  //     component: CreateAdminProfile,
+  //     name: 'CreateAdminProfile',
+  //     meta: {
+  //         guard: 'auth'
+  //     }
+  // },
+  // {
+  //     path: '/Admin-messages',
+  //     component: AdminMessage,
+  //     name: 'AdminMessage',
+  //     meta: {
+  //         guard: 'auth'
+  //     }
+  // },
+  ]
+}, {
+  path: '/:pathMatch(.*)*',
+  redirect: '/'
+}]);
+
+/***/ }),
+
 /***/ "./resources/js/router/artist-routes.js":
 /*!**********************************************!*\
   !*** ./resources/js/router/artist-routes.js ***!
@@ -20238,6 +20314,77 @@ var ArtistMessage = function ArtistMessage() {
 
 /***/ }),
 
+/***/ "./resources/js/router/charity-routes.js":
+/*!***********************************************!*\
+  !*** ./resources/js/router/charity-routes.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var CharityHome = function CharityHome() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Charity_pages_Home_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Charity/pages/Home.vue */ "./resources/js/Views/Charity/pages/Home.vue"));
+};
+
+var CharityProfile = function CharityProfile() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Charity_pages_Profile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Charity/pages/Profile.vue */ "./resources/js/Views/Charity/pages/Profile.vue"));
+};
+
+var CreateCharityProfile = function CreateCharityProfile() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Charity_pages_CreateProfile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Charity/pages/CreateProfile.vue */ "./resources/js/Views/Charity/pages/CreateProfile.vue"));
+};
+
+var CharityLayout = function CharityLayout() {
+  return __webpack_require__.e(/*! import() */ "resources_js_layouts_CharityLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/CharityLayout.vue */ "./resources/js/layouts/CharityLayout.vue"));
+};
+
+var CharityMessage = function CharityMessage() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Charity_pages_Messages_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Charity/pages/Messages.vue */ "./resources/js/Views/Charity/pages/Messages.vue"));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
+  path: '/charityLayout',
+  component: CharityLayout,
+  name: 'CharityLayout',
+  children: [{
+    path: '/charity-home',
+    component: CharityHome,
+    name: 'Charity',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/charity-profile',
+    component: CharityProfile,
+    name: 'CharityProfile',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/setting',
+    component: CreateCharityProfile,
+    name: 'CreateCharityProfile',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/charity-messages',
+    component: CharityMessage,
+    name: 'CharityMessage',
+    meta: {
+      guard: 'auth'
+    }
+  }]
+}, {
+  path: '/:pathMatch(.*)*',
+  redirect: '/'
+}]);
+
+/***/ }),
+
 /***/ "./resources/js/router/index.js":
 /*!**************************************!*\
   !*** ./resources/js/router/index.js ***!
@@ -20299,6 +20446,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _artist_routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./artist-routes */ "./resources/js/router/artist-routes.js");
 /* harmony import */ var _site_routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./site-routes */ "./resources/js/router/site-routes.js");
+/* harmony import */ var _charity_routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./charity-routes */ "./resources/js/router/charity-routes.js");
+/* harmony import */ var _admin_routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin-routes */ "./resources/js/router/admin-routes.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -20310,6 +20459,8 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symb
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
 
 
 
@@ -20348,37 +20499,16 @@ var VerifyEmail = function VerifyEmail() {
 
 var Home = function Home() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_Home_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Home.vue */ "./resources/js/Views/Home.vue"));
-};
+}; // const Welcome = () => import('../Views/Site/Welcome.vue')
+// const Admin = () => import('../layouts/AdminLayout.vue')
+// const Artist = () => import('../layouts/ArtistLayout.vue')
+// const Charity = () => import('../layouts/CharityLayout.vue')
+// const LandingLayout = () => import('../layouts/LandingLayout.vue')
+// const LayoutA = () => import('../layouts/LayoutA.vue')
+// const Page2 = () => import('../Views/Site/Page2.vue')
 
-var Welcome = function Welcome() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Views_Site_Welcome_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Site/Welcome.vue */ "./resources/js/Views/Site/Welcome.vue"));
-};
 
-var Admin = function Admin() {
-  return __webpack_require__.e(/*! import() */ "resources_js_layouts_AdminLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/AdminLayout.vue */ "./resources/js/layouts/AdminLayout.vue"));
-};
-
-var Artist = function Artist() {
-  return __webpack_require__.e(/*! import() */ "resources_js_layouts_ArtistLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/ArtistLayout.vue */ "./resources/js/layouts/ArtistLayout.vue"));
-};
-
-var Charity = function Charity() {
-  return __webpack_require__.e(/*! import() */ "resources_js_layouts_CharityLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/CharityLayout.vue */ "./resources/js/layouts/CharityLayout.vue"));
-};
-
-var LandingLayout = function LandingLayout() {
-  return __webpack_require__.e(/*! import() */ "resources_js_layouts_LandingLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/LandingLayout.vue */ "./resources/js/layouts/LandingLayout.vue"));
-};
-
-var LayoutA = function LayoutA() {
-  return __webpack_require__.e(/*! import() */ "resources_js_layouts_LayoutA_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/LayoutA.vue */ "./resources/js/layouts/LayoutA.vue"));
-};
-
-var Page2 = function Page2() {
-  return __webpack_require__.e(/*! import() */ "resources_js_Views_Site_Page2_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Site/Page2.vue */ "./resources/js/Views/Site/Page2.vue"));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([].concat(_toConsumableArray(_site_routes__WEBPACK_IMPORTED_MODULE_1__["default"]), _toConsumableArray(_artist_routes__WEBPACK_IMPORTED_MODULE_0__["default"]), [// {
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([].concat(_toConsumableArray(_site_routes__WEBPACK_IMPORTED_MODULE_1__["default"]), _toConsumableArray(_artist_routes__WEBPACK_IMPORTED_MODULE_0__["default"]), _toConsumableArray(_charity_routes__WEBPACK_IMPORTED_MODULE_2__["default"]), _toConsumableArray(_admin_routes__WEBPACK_IMPORTED_MODULE_3__["default"]), [// {
 //     path: '/',
 //     component: Welcome,
 //     name: 'welcome',
@@ -20388,15 +20518,17 @@ var Page2 = function Page2() {
 //     component: Artist,
 //     name: 'Artist',
 // },
+// {
+//     path: '/admin-dashboard',
+//     component: Admin,
+//     name: 'Admin',
+// },
+// {
+//     path: '/charity-dashboard',
+//     component: Charity,
+//     name: 'Charity',
+// },
 {
-  path: '/admin-dashboard',
-  component: Admin,
-  name: 'Admin'
-}, {
-  path: '/charity-dashboard',
-  component: Charity,
-  name: 'Charity'
-}, {
   path: '/home',
   component: Home,
   name: 'home',
@@ -45083,7 +45215,7 @@ function render(_ctx, _cache) {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\spaggn"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/localtunnel"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\laragon\\\\www\\\\spaggn","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 
@@ -45194,7 +45326,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_layouts_LayoutA_vue":1,"resources_js_Views_Site_Page2_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_Profile_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_Profile_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

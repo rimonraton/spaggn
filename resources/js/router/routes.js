@@ -1,5 +1,7 @@
 import routesArtist from './artist-routes';
 import siteRoutes from './site-routes';
+import charityRoutes from './charity-routes';
+import adminRoutes from './admin-routes';
 
 const Settings = () => import('../Views/Settings.vue');
 const Profile = () => import('../Views/Profile.vue');
@@ -10,37 +12,39 @@ const ForgotPassword = () => import('../Views/ForgotPassword.vue');
 const ResetPassword = () => import('../Views/ResetPassword.vue');
 const VerifyEmail = () => import('../Views/VerifyEmail.vue');
 const Home = () => import('../Views/Home.vue');
-const Welcome = () => import('../Views/Site/Welcome.vue')
-const Admin = () => import('../layouts/AdminLayout.vue')
-const Artist = () => import('../layouts/ArtistLayout.vue')
-const Charity = () => import('../layouts/CharityLayout.vue')
-const LandingLayout = () => import('../layouts/LandingLayout.vue')
-const LayoutA = () => import('../layouts/LayoutA.vue')
-const Page2 = () => import('../Views/Site/Page2.vue')
+// const Welcome = () => import('../Views/Site/Welcome.vue')
+// const Admin = () => import('../layouts/AdminLayout.vue')
+// const Artist = () => import('../layouts/ArtistLayout.vue')
+// const Charity = () => import('../layouts/CharityLayout.vue')
+// const LandingLayout = () => import('../layouts/LandingLayout.vue')
+// const LayoutA = () => import('../layouts/LayoutA.vue')
+// const Page2 = () => import('../Views/Site/Page2.vue')
 export default [
     ...siteRoutes,
     ...routesArtist,
+    ...charityRoutes,
+    ...adminRoutes,
     // {
     //     path: '/',
     //     component: Welcome,
     //     name: 'welcome',
     // },
-    
+
     // {
     //     path: '/artist-dashboard',
     //     component: Artist,
     //     name: 'Artist',
     // },
-    {
-        path: '/admin-dashboard',
-        component: Admin,
-        name: 'Admin',
-    },
-    {
-        path: '/charity-dashboard',
-        component: Charity,
-        name: 'Charity',
-    },
+    // {
+    //     path: '/admin-dashboard',
+    //     component: Admin,
+    //     name: 'Admin',
+    // },
+    // {
+    //     path: '/charity-dashboard',
+    //     component: Charity,
+    //     name: 'Charity',
+    // },
     {
         path: '/home',
         component: Home,
@@ -128,8 +132,8 @@ export default [
     },
     {
         path: '/404',
-       component: () => import('../components/helper/404.vue'),
-       name: '404'
+        component: () => import('../components/helper/404.vue'),
+        name: '404'
 
     },
     {

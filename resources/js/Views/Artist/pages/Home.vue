@@ -247,8 +247,7 @@ const gotoComment = () => {
   element.scrollIntoView({ behavior: 'smooth' });
 }
 const gotoUp = () => {
-  const element = document.getElementById('home');
-  element.scrollIntoView({ behavior: 'smooth' });
+  window.scrollTo({top: 0, behavior: 'smooth' });
 }
 
 </script>
