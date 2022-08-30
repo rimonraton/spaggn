@@ -7,7 +7,7 @@
         <!-- ./Header -->
 
         <!-- Sidebar -->
-        <Sidebar @logout="logout" :menu-status="isOpen"></Sidebar>
+        <Sidebar @logout="logout" :menu-status="isOpen" @closeMenu="isOpen = false"></Sidebar>
         <!-- ./Sidebar -->
 
         <div class="h-full ml-0 mt-14 mb-10 md:ml-64">
