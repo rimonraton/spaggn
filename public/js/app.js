@@ -20412,7 +20412,7 @@ router.beforeEach(function (to, from, next) {
     if (to.matched.some(function (route) {
       return route.meta.guard === 'guest';
     })) next({
-      name: 'home'
+      name: _store__WEBPACK_IMPORTED_MODULE_1__["default"].getters.user.role.name
     });else next();
   } else {
     if (to.matched.some(function (route) {
