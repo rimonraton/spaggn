@@ -87,7 +87,7 @@
                                 We are addressing the NFT platform challenges
                             </h3>
                             <p class="mb-6">
-                                GGN partners with <a href="https://nftrade.com"
+                                GGN partners with <a href="https://nftrade.com" target="_blank"
                                     class="text-blue-700 hover:underline cursor-pointer">NFTrade</a> the first
                                 cross-chain and blockchain agnostic NFT platform to
                                 address the multi-chain & cross-chain and peer-to-peer challenges. GGN is building a
