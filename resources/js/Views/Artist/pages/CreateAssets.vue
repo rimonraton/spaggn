@@ -1,9 +1,13 @@
 <template>
-  <p>Messages..</p>
+  Create Asset
 </template>
 
-<script setup>
+<script>
+export default {
+
+}
 </script>
 
 <style>
+
 </style>

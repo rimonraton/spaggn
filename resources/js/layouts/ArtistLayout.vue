@@ -12,7 +12,7 @@
             <button id="userButton" @click="dropdownOpen = !dropdownOpen"
               class="flex items-center focus:outline-none mr-3">
               <img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of User" />
-              <span class="hidden md:inline-block">Hi, User </span>
+              <span class="hidden md:inline-block">Hi, {{$store.state.user? $store.state.user.name :""}} </span>
               <svg v-if="!dropdownOpen" class="pl-1 h-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 <path
                   d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
@@ -60,21 +60,37 @@
       </div>
       <div :class="openMenu ? '' : 'hidden'"
         class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 bg-white z-20" id="nav-content">
-        <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
+        <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0" @click="openMenu = !openMenu">
           <li class="mr-6 my-2 md:my-0">
-            <router-link to="/artist-home"
+            <!-- <router-link to="/artist-home"
               class="block py-1 md:py-3 pl-1 align-middle no-underline hover:text-gray-900 border-b-2 border-white hover:border-pink-500">
               <span class="pb-1 md:pb-0 text-sm">Home</span>
-            </router-link>
-          </li>
-          <li class="mr-6 my-2 md:my-0">
-            <router-link to="/artist-profile"
+            </router-link> -->
+            <router-link to="/your-home"
               class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-pink-500">
-              <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Profile</span>
+              <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
             </router-link>
           </li>
           <li class="mr-6 my-2 md:my-0">
-            <router-link to="/artist-messages"
+            <router-link to="/create-your-profile"
+              class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-pink-500">
+              <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Create your Profile</span>
+            </router-link>
+          </li>
+          <li class="mr-6 my-2 md:my-0">
+            <router-link to="/submit-your-assets"
+              class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-pink-500">
+              <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Submit Assets</span>
+            </router-link>
+          </li>
+          <li class="mr-6 my-2 md:my-0">
+            <router-link to="/view-your-assets"
+              class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-pink-500">
+              <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Show Assets</span>
+            </router-link>
+          </li>
+          <li class="mr-6 my-2 md:my-0">
+            <router-link to="/your-messages"
               class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-pink-500">
               <i class="fa fa-envelope fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Messages</span>
             </router-link>

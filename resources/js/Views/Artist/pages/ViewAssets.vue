@@ -1,5 +1,5 @@
 <template>
-  <p>Messages..</p>
+  <p>View Assets</p>
 </template>
 
 <script setup>

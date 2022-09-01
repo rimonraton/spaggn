@@ -56,6 +56,7 @@ class ArtistController extends Controller
         $photo->save(public_path($photoUrl));
         $charities = collect($request->charities)->implode('id', ',');
         $artist = new Artist([
+            'user_id' => auth()->id,
             'name' => $request->firstName.' '.$request->lastName,
             'email' => $request->email,
             'sc_profile' => $sc_profile,
@@ -213,5 +214,9 @@ class ArtistController extends Controller
             \File::delete(public_path($r->name));
         }
         return $r->name;
+    }
+    public function getArtistProfile()
+    {
+        return \Auth::user()->profile;
     }
 }

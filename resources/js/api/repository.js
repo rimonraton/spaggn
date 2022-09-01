@@ -9,8 +9,11 @@ export default {
     registration(params) {
         return api.post('/api/register', params)
     },
-    createArtistProfile(params){
+    createArtistProfile(params) {
         return api.post('/api/create-artist-profile', params)
+    },
+    getArtistProfile() {
+        return api.get('/api/get-artist-profile')
     }
     // changeAddress(params) {
     //     return api.post('/api/change-address', params)

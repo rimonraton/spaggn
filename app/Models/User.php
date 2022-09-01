@@ -52,7 +52,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->roles()->first();
     }
-
+    public function profile()
+    {
+        // return $this->belongsTo(Artist::class);
+        return $this->hasOne(Artist::class);
+    }
 
     public function sendPasswordResetNotification($token)
     {

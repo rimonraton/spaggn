@@ -18,4 +18,14 @@ export const actions = {
         }
 
     },
+    async getArtistProfile({ commit }, payload) {
+        try {
+            const {data} = await repository.getArtistProfile()
+            console.log(data)
+            return data
+        } catch (e) {
+            throw e
+        }
+
+    }
 }
