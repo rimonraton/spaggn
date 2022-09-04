@@ -1,13 +1,9 @@
 <template>
-  Create Asset
+  <p>Submit your Assets</p>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
 </script>
 
 <style>
-
 </style>

@@ -3,7 +3,7 @@ const ArtistHome = () => import('../Views/Artist/pages/Home.vue');
 const CreateArtistProfile = () => import('../Views/Artist/pages/CreateProfile.vue');
 const ArtistLayout = () => import('../layouts/ArtistLayout.vue')
 const ArtistMessage = () => import('../Views/Artist/pages/Messages.vue')
-const CreateAssets = () => import('../Views/Artist/pages/CreateAssets.vue')
+const SubmitAssets = () => import('../Views/Artist/pages/Assets.vue')
 const ViewAssets = () => import('../Views/Artist/pages/ViewAssets.vue')
 export default [
     {
@@ -37,8 +37,8 @@ export default [
             },
             {
                 path: '/submit-your-assets',
-                component: CreateAssets,
-                name: 'CreateAssets',
+                component: SubmitAssets,
+                name: 'SubmitAssets',
                 meta: {
                     guard: 'auth'
                 }
