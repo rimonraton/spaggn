@@ -4,6 +4,7 @@ export default {
         return api.get('/sanctum/csrf-cookie')
     },
     login(params) {
+        console.log('params',params)
         return api.post('/api/login', params)
     },
     registration(params) {

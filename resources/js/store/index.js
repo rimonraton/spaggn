@@ -30,6 +30,7 @@ export default createStore({
     mutations: {
 
         setUser(state, payload) {
+            console.log('set user', payload)
             state.user = payload;
         }
 
@@ -82,6 +83,7 @@ export default createStore({
         },
         async getUser({ commit }) {
             await axios.get('/api/user').then((res) => {
+                console.log('res data', res.data)
                 commit('setUser', res.data);
             }).catch((err) => {
                 throw err.response

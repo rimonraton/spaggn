@@ -13,6 +13,7 @@ class UserController extends Controller
         if(auth("sanctum")->check()){
             $user = auth("sanctum")->user();
             $user['role'] = auth("sanctum")->user()->role();
+            // $user['role'] = 'Artist';
             return response()->json($user);
         }
     }
