@@ -1,6 +1,6 @@
 <template>
   <headerComponent></headerComponent>
-  <div>
+  <div class="pt-16">
     <router-view />
   </div>
   <footerComponent></footerComponent>

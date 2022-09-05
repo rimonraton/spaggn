@@ -104,30 +104,38 @@ var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-ad3225d0"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 
-var _hoisted_1 = {
-  "class": "px-6 mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center px-4 pt-20 w-full"
-};
+var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "h-14 w-full"
+  }, null, -1
+  /* HOISTED */
+  );
+});
+
 var _hoisted_2 = {
-  "class": "flex flex-col items-center lg:h-96 items-center justify-center"
+  "class": "px-6 mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center px-4 pt-32 w-full pattern"
+};
+var _hoisted_3 = {
+  "class": "flex flex-col lg:h-96 items-center bg-black bg-opacity-40 xl:w-2/4 lg:w-3/4 mx-auto rounded-lg"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"w-28 mb-10\" data-v-ad3225d0><img src=\"/images/bird.png\" class=\"w-full\" data-v-ad3225d0></div><div data-v-ad3225d0><h2 class=\"text-4xl font-semibold text-gray-100\" data-v-ad3225d0> Amplify GENEROSITY </h2><h2 class=\"text-4xl font-semibold text-gray-100 my-4\" data-v-ad3225d0> Create LEGACY for your donors </h2><p class=\"mt-3 text-gray-100\" data-v-ad3225d0> Good Giving Network lets donors and collectors to donate to their favorite charities and collect NFTs that reflect their values. </p></div>", 2);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"w-28 mb-10\" data-v-ad3225d0><img src=\"/images/bird.png\" class=\"w-full\" data-v-ad3225d0></div><div data-v-ad3225d0><h2 class=\"text-4xl font-semibold text-gray-100\" data-v-ad3225d0> Amplify GENEROSITY </h2><h2 class=\"text-4xl font-semibold text-gray-100 my-4\" data-v-ad3225d0> Create LEGACY for your donors </h2><p class=\"mt-3 text-gray-100\" data-v-ad3225d0> Good Giving Network lets donors and collectors to donate to their favorite charities and collect NFTs that reflect their values. </p></div>", 2);
 
-var _hoisted_5 = {
+var _hoisted_6 = {
   "class": "flex text-white pt-5 gap-4"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Explore ");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Explore ");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Submit Project");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Submit Project");
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section data-v-ad3225d0><!-- component --><div class=\"py-16 bg-gray-200\" data-v-ad3225d0><div class=\"container m-auto px-6 text-gray-500 md:px-12 xl:px-0\" data-v-ad3225d0><div class=\"mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3\" data-v-ad3225d0><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-center text-purple-900\" data-v-ad3225d0> We are not just another NFT Marketplace </h3><p class=\"mb-6\" data-v-ad3225d0> Our platform is designed for Charities and nonprofits that are dedicated to solving the hardest problems the world faces today. GGN partners with these organizations to help them achieve their vision. All the charities, artists, and collabs on our platform go through extensive verification and authentication processes before being accepted. <!-- We do not plan to be everything for everyone. We only allow verified charities and\r\n                                authentic artists in our platform. We believe the charities and the communities that\r\n                                support them have the power to solve the hardest problems that the world faces today.\r\n                                Our goal is to partner with these charities and the communities to achieve their goals. --></p></div></div><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-purple-900 text-center\" data-v-ad3225d0> Projects with built-in community &amp; Utility </h3><p class=\"mb-6\" data-v-ad3225d0> Charities with great cause always have a passionate group of followers and donors. So, charities do not have the same challenge of building community as other NFT projects. The funds collected for every NFT that is sold by the charity are used to solve difficult societal and environmental problems. Some projects also have a governance feature associated with their NFTs which provides DAO membership to the NFT holders. The collectors of these NFTs have the opportunity to vote on the NFT projects or any other projects related to the charity. <!-- Every successful charity already has a passionate group of followers and donors, and\r\n                                these followers join the cause when the charity starts a project. The funds collected\r\n                                for every NFT that is sold by the charity are used to solve difficult societal and\r\n                                environmental problems.\r\n\r\n                                Some projects also have a governance feature associated with their NFTs which provides\r\n                                DAO membership to the NFT holders. The collectors of these NFTs have opportunity to vote\r\n                                on the NFT projects or any other projects related to the charity. --></p></div></div><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-purple-900 text-center\" data-v-ad3225d0> We are addressing the NFT platform challenges </h3><p class=\"mb-6\" data-v-ad3225d0> GGN partners with <a href=\"https://nftrade.com\" target=\"_blank\" class=\"text-blue-700 hover:underline cursor-pointer\" data-v-ad3225d0>NFTrade</a> the first cross-chain and blockchain agnostic NFT platform to address the multi-chain &amp; cross-chain and peer-to-peer challenges. GGN is building a seamless integration between the two platforms, so UX will not be affected. The fiat currency integration to NFT is also on NFTrade’s roadmap. Once complete, anyone will be able to purchase NFTs using credit cards in their native currency. <!-- GGN partners with NFTrade the first cross-chain and blockchain agonstic NFT platform to\r\n                                address the multi-chain &amp; cross-chain and peer-to-peer challenges. GGN is building a\r\n                                seamless integration between the two platforms, so UX will not be affected. The fiat\r\n                                currency integration to NFT is also on NFTrade’s roadmap. Once complete anyone will be\r\n                                able to purchase NFTs using credit card in their native currency. --></p></div></div></div></div></div></section>", 1);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section data-v-ad3225d0><!-- component --><div class=\"py-16 bg-gray-200\" data-v-ad3225d0><div class=\"container m-auto px-6 text-gray-500 md:px-12 xl:px-0\" data-v-ad3225d0><div class=\"mx-auto grid gap-6 md:w-3/4 lg:w-full lg:grid-cols-3\" data-v-ad3225d0><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-center text-purple-900\" data-v-ad3225d0> We are not just another NFT Marketplace </h3><p class=\"mb-6\" data-v-ad3225d0> Our platform is designed for Charities and nonprofits that are dedicated to solving the hardest problems the world faces today. GGN partners with these organizations to help them achieve their vision. All the charities, artists, and collabs on our platform go through extensive verification and authentication processes before being accepted. <!-- We do not plan to be everything for everyone. We only allow verified charities and\n                                authentic artists in our platform. We believe the charities and the communities that\n                                support them have the power to solve the hardest problems that the world faces today.\n                                Our goal is to partner with these charities and the communities to achieve their goals. --></p></div></div><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-purple-900 text-center\" data-v-ad3225d0> Projects with built-in community &amp; Utility </h3><p class=\"mb-6\" data-v-ad3225d0> Charities with great cause always have a passionate group of followers and donors. So, charities do not have the same challenge of building community as other NFT projects. The funds collected for every NFT that is sold by the charity are used to solve difficult societal and environmental problems. Some projects also have a governance feature associated with their NFTs which provides DAO membership to the NFT holders. The collectors of these NFTs have the opportunity to vote on the NFT projects or any other projects related to the charity. <!-- Every successful charity already has a passionate group of followers and donors, and\n                                these followers join the cause when the charity starts a project. The funds collected\n                                for every NFT that is sold by the charity are used to solve difficult societal and\n                                environmental problems.\n\n                                Some projects also have a governance feature associated with their NFTs which provides\n                                DAO membership to the NFT holders. The collectors of these NFTs have opportunity to vote\n                                on the NFT projects or any other projects related to the charity. --></p></div></div><div class=\"bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8\" data-v-ad3225d0><div class=\"space-y-4\" data-v-ad3225d0><h3 class=\"text-xl font-semibold text-purple-900 text-center\" data-v-ad3225d0> We are addressing the NFT platform challenges </h3><p class=\"mb-6\" data-v-ad3225d0> GGN partners with <a href=\"https://nftrade.com\" target=\"_blank\" class=\"text-blue-700 hover:underline cursor-pointer\" data-v-ad3225d0>NFTrade</a> the first cross-chain and blockchain agnostic NFT platform to address the multi-chain &amp; cross-chain and peer-to-peer challenges. GGN is building a seamless integration between the two platforms, so UX will not be affected. The fiat currency integration to NFT is also on NFTrade’s roadmap. Once complete, anyone will be able to purchase NFTs using credit cards in their native currency. <!-- GGN partners with NFTrade the first cross-chain and blockchain agonstic NFT platform to\n                                address the multi-chain &amp; cross-chain and peer-to-peer challenges. GGN is building a\n                                seamless integration between the two platforms, so UX will not be affected. The fiat\n                                currency integration to NFT is also on NFTrade’s roadmap. Once complete anyone will be\n                                able to purchase NFTs using credit card in their native currency. --></p></div></div></div></div></div></section>", 1);
 
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "container mx-auto lg:w-5/6"
 };
 
-var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_11 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "text-2xl font-semibold py-6"
   }, " Live auctions ", -1
@@ -135,21 +143,21 @@ var _hoisted_10 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_11 = {
+var _hoisted_12 = {
   "class": "relative mx-auto w-full"
 };
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": "shadow p-4 rounded-lg bg-white"
 };
-var _hoisted_13 = {
+var _hoisted_14 = {
   "class": "flex justify-center relative rounded-lg overflow-hidden h-52"
 };
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": "transition-transform duration-500 transform ease-in-out hover:scale-110 w-full"
 };
-var _hoisted_15 = ["src"];
+var _hoisted_16 = ["src"];
 
-var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_17 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "absolute flex items-center justify-center bottom-0 right-0"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -166,15 +174,15 @@ var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_17 = {
+var _hoisted_18 = {
   "class": "mt-4"
 };
-var _hoisted_18 = {
+var _hoisted_19 = {
   "class": "font-medium text-base md:text-lg text-gray-800 line-clamp-1",
   title: "New York"
 };
 
-var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_20 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "mt-2 text-sm text-gray-800 line-clamp-1"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -195,11 +203,11 @@ var _hoisted_19 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_20 = {
+var _hoisted_21 = {
   "class": "container mx-auto lg:w-5/6"
 };
 
-var _hoisted_21 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_22 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "text-2xl font-semibold py-6"
   }, " Charities ", -1
@@ -207,18 +215,18 @@ var _hoisted_21 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_22 = {
+var _hoisted_23 = {
   "class": "relative mx-auto w-full"
 };
-var _hoisted_23 = {
+var _hoisted_24 = {
   href: "#",
   "class": "relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"
 };
-var _hoisted_24 = {
+var _hoisted_25 = {
   "class": "shadow p-4 rounded-lg bg-white"
 };
 
-var _hoisted_25 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_26 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "flex justify-center relative rounded-lg overflow-hidden h-52"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -227,16 +235,16 @@ var _hoisted_25 = /*#__PURE__*/_withScopeId(function () {
     "class": "w-full h-64 rounded-md transition hover:bg-cyan-300",
     src: "https://images.unsplash.com/photo-1659868016402-7afc25b1af8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
     alt: ""
-  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"absolute flex justify-center bottom-0 mb-3\">\r\n                    <div class=\"flex bg-white px-4 py-1 space-x-5 rounded-lg overflow-hidden shadow\">\r\n                      <p class=\"flex items-center font-medium text-gray-800\">\r\n                        <svg class=\"w-5 h-5 fill-current mr-2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n                          <path\r\n                            d=\"M480,226.15V80a48,48,0,0,0-48-48H80A48,48,0,0,0,32,80V226.15C13.74,231,0,246.89,0,266.67V472a8,8,0,0,0,8,8H24a8,8,0,0,0,8-8V416H480v56a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V266.67C512,246.89,498.26,231,480,226.15ZM64,192a32,32,0,0,1,32-32H208a32,32,0,0,1,32,32v32H64Zm384,32H272V192a32,32,0,0,1,32-32H416a32,32,0,0,1,32,32ZM80,64H432a16,16,0,0,1,16,16v56.9a63.27,63.27,0,0,0-32-8.9H304a63.9,63.9,0,0,0-48,21.71A63.9,63.9,0,0,0,208,128H96a63.27,63.27,0,0,0-32,8.9V80A16,16,0,0,1,80,64ZM32,384V266.67A10.69,10.69,0,0,1,42.67,256H469.33A10.69,10.69,0,0,1,480,266.67V384Z\">\r\n                          </path>\r\n                        </svg>\r\n                        3 + 1\r\n                      </p>\r\n\r\n                      <p class=\"flex items-center font-medium text-gray-800\">\r\n                        <svg class=\"w-5 h-5 fill-current mr-2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 512\">\r\n                          <path\r\n                            d=\"M423.18 195.81l-24.94-76.58C387.51 86.29 356.81 64 322.17 64H157.83c-34.64 0-65.34 22.29-76.07 55.22L56.82 195.8C24.02 205.79 0 235.92 0 271.99V400c0 26.47 21.53 48 48 48h16c26.47 0 48-21.53 48-48v-16h256v16c0 26.47 21.53 48 48 48h16c26.47 0 48-21.53 48-48V271.99c0-36.07-24.02-66.2-56.82-76.18zm-310.99-66.67c6.46-19.82 24.8-33.14 45.64-33.14h164.34c20.84 0 39.18 13.32 45.64 33.13l20.47 62.85H91.72l20.47-62.84zM80 400c0 8.83-7.19 16-16 16H48c-8.81 0-16-7.17-16-16v-16h48v16zm368 0c0 8.83-7.19 16-16 16h-16c-8.81 0-16-7.17-16-16v-16h48v16zm0-80.01v32H32v-80c0-26.47 21.53-48 48-48h320c26.47 0 48 21.53 48 48v48zM104.8 248C78.84 248 60 264.8 60 287.95c0 23.15 18.84 39.95 44.8 39.95l10.14.1c39.21 0 45.06-20.1 45.06-32.08 0-24.68-31.1-47.92-55.2-47.92zm10.14 56c-3.51 0-7.02-.1-10.14-.1-12.48 0-20.8-6.38-20.8-15.95S92.32 272 104.8 272s31.2 14.36 31.2 23.93c0 7.17-10.53 8.07-21.06 8.07zm260.26-56c-24.1 0-55.2 23.24-55.2 47.93 0 11.98 5.85 32.08 45.06 32.08l10.14-.1c25.96 0 44.8-16.8 44.8-39.95 0-23.16-18.84-39.96-44.8-39.96zm0 55.9c-3.12 0-6.63.1-10.14.1-10.53 0-21.06-.9-21.06-8.07 0-9.57 18.72-23.93 31.2-23.93s20.8 6.38 20.8 15.95-8.32 15.95-20.8 15.95z\">\r\n                          </path>\r\n                        </svg>\r\n                        2\r\n                      </p>\r\n\r\n                      <p class=\"flex items-center font-medium text-gray-800\">\r\n                        <svg class=\"w-5 h-5 fill-current mr-2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n                          <path\r\n                            d=\"M504,256H64V61.25a29.26,29.26,0,0,1,49.94-20.69L139.18,65.8A71.49,71.49,0,0,0,128,104c0,20.3,8.8,38.21,22.34,51.26L138.58,167a8,8,0,0,0,0,11.31l11.31,11.32a8,8,0,0,0,11.32,0L285.66,65.21a8,8,0,0,0,0-11.32L274.34,42.58a8,8,0,0,0-11.31,0L251.26,54.34C238.21,40.8,220.3,32,200,32a71.44,71.44,0,0,0-38.2,11.18L136.56,18A61.24,61.24,0,0,0,32,61.25V256H8a8,8,0,0,0-8,8v16a8,8,0,0,0,8,8H32v96c0,41.74,26.8,76.9,64,90.12V504a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V480H384v24a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V474.12c37.2-13.22,64-48.38,64-90.12V288h24a8,8,0,0,0,8-8V264A8,8,0,0,0,504,256ZM228.71,76.9,172.9,132.71A38.67,38.67,0,0,1,160,104a40,40,0,0,1,40-40A38.67,38.67,0,0,1,228.71,76.9ZM448,384a64.07,64.07,0,0,1-64,64H128a64.07,64.07,0,0,1-64-64V288H448Z\">\r\n                          </path>\r\n                        </svg>\r\n                        3\r\n                      </p>\r\n                    </div>\r\n                  </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span\r\n                    class=\"absolute top-0 left-0 inline-flex mt-3 ml-3 px-3 py-2 rounded-lg z-10 bg-red-500 text-sm font-medium text-white select-none\">\r\n                    Featured\r\n                  </span> ")], -1
+  }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"absolute flex justify-center bottom-0 mb-3\">\n                    <div class=\"flex bg-white px-4 py-1 space-x-5 rounded-lg overflow-hidden shadow\">\n                      <p class=\"flex items-center font-medium text-gray-800\">\n                        <svg class=\"w-5 h-5 fill-current mr-2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\n                          <path\n                            d=\"M480,226.15V80a48,48,0,0,0-48-48H80A48,48,0,0,0,32,80V226.15C13.74,231,0,246.89,0,266.67V472a8,8,0,0,0,8,8H24a8,8,0,0,0,8-8V416H480v56a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V266.67C512,246.89,498.26,231,480,226.15ZM64,192a32,32,0,0,1,32-32H208a32,32,0,0,1,32,32v32H64Zm384,32H272V192a32,32,0,0,1,32-32H416a32,32,0,0,1,32,32ZM80,64H432a16,16,0,0,1,16,16v56.9a63.27,63.27,0,0,0-32-8.9H304a63.9,63.9,0,0,0-48,21.71A63.9,63.9,0,0,0,208,128H96a63.27,63.27,0,0,0-32,8.9V80A16,16,0,0,1,80,64ZM32,384V266.67A10.69,10.69,0,0,1,42.67,256H469.33A10.69,10.69,0,0,1,480,266.67V384Z\">\n                          </path>\n                        </svg>\n                        3 + 1\n                      </p>\n\n                      <p class=\"flex items-center font-medium text-gray-800\">\n                        <svg class=\"w-5 h-5 fill-current mr-2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 512\">\n                          <path\n                            d=\"M423.18 195.81l-24.94-76.58C387.51 86.29 356.81 64 322.17 64H157.83c-34.64 0-65.34 22.29-76.07 55.22L56.82 195.8C24.02 205.79 0 235.92 0 271.99V400c0 26.47 21.53 48 48 48h16c26.47 0 48-21.53 48-48v-16h256v16c0 26.47 21.53 48 48 48h16c26.47 0 48-21.53 48-48V271.99c0-36.07-24.02-66.2-56.82-76.18zm-310.99-66.67c6.46-19.82 24.8-33.14 45.64-33.14h164.34c20.84 0 39.18 13.32 45.64 33.13l20.47 62.85H91.72l20.47-62.84zM80 400c0 8.83-7.19 16-16 16H48c-8.81 0-16-7.17-16-16v-16h48v16zm368 0c0 8.83-7.19 16-16 16h-16c-8.81 0-16-7.17-16-16v-16h48v16zm0-80.01v32H32v-80c0-26.47 21.53-48 48-48h320c26.47 0 48 21.53 48 48v48zM104.8 248C78.84 248 60 264.8 60 287.95c0 23.15 18.84 39.95 44.8 39.95l10.14.1c39.21 0 45.06-20.1 45.06-32.08 0-24.68-31.1-47.92-55.2-47.92zm10.14 56c-3.51 0-7.02-.1-10.14-.1-12.48 0-20.8-6.38-20.8-15.95S92.32 272 104.8 272s31.2 14.36 31.2 23.93c0 7.17-10.53 8.07-21.06 8.07zm260.26-56c-24.1 0-55.2 23.24-55.2 47.93 0 11.98 5.85 32.08 45.06 32.08l10.14-.1c25.96 0 44.8-16.8 44.8-39.95 0-23.16-18.84-39.96-44.8-39.96zm0 55.9c-3.12 0-6.63.1-10.14.1-10.53 0-21.06-.9-21.06-8.07 0-9.57 18.72-23.93 31.2-23.93s20.8 6.38 20.8 15.95-8.32 15.95-20.8 15.95z\">\n                          </path>\n                        </svg>\n                        2\n                      </p>\n\n                      <p class=\"flex items-center font-medium text-gray-800\">\n                        <svg class=\"w-5 h-5 fill-current mr-2\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\n                          <path\n                            d=\"M504,256H64V61.25a29.26,29.26,0,0,1,49.94-20.69L139.18,65.8A71.49,71.49,0,0,0,128,104c0,20.3,8.8,38.21,22.34,51.26L138.58,167a8,8,0,0,0,0,11.31l11.31,11.32a8,8,0,0,0,11.32,0L285.66,65.21a8,8,0,0,0,0-11.32L274.34,42.58a8,8,0,0,0-11.31,0L251.26,54.34C238.21,40.8,220.3,32,200,32a71.44,71.44,0,0,0-38.2,11.18L136.56,18A61.24,61.24,0,0,0,32,61.25V256H8a8,8,0,0,0-8,8v16a8,8,0,0,0,8,8H32v96c0,41.74,26.8,76.9,64,90.12V504a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V480H384v24a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V474.12c37.2-13.22,64-48.38,64-90.12V288h24a8,8,0,0,0,8-8V264A8,8,0,0,0,504,256ZM228.71,76.9,172.9,132.71A38.67,38.67,0,0,1,160,104a40,40,0,0,1,40-40A38.67,38.67,0,0,1,228.71,76.9ZM448,384a64.07,64.07,0,0,1-64,64H128a64.07,64.07,0,0,1-64-64V288H448Z\">\n                          </path>\n                        </svg>\n                        3\n                      </p>\n                    </div>\n                  </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span\n                    class=\"absolute top-0 left-0 inline-flex mt-3 ml-3 px-3 py-2 rounded-lg z-10 bg-red-500 text-sm font-medium text-white select-none\">\n                    Featured\n                  </span> ")], -1
   /* HOISTED */
   );
 });
 
-var _hoisted_26 = {
+var _hoisted_27 = {
   "class": "mt-4"
 };
 
-var _hoisted_27 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_28 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "font-medium text-base md:text-lg text-gray-800 line-clamp-1",
     title: "New York"
@@ -245,18 +253,18 @@ var _hoisted_27 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_28 = {
+var _hoisted_29 = {
   "class": "mt-2 text-sm text-gray-800 line-clamp-1"
 };
-var _hoisted_29 = {
+var _hoisted_30 = {
   "class": "flex items-center"
 };
-var _hoisted_30 = {
+var _hoisted_31 = {
   "class": "relative"
 };
-var _hoisted_31 = ["src"];
+var _hoisted_32 = ["src"];
 
-var _hoisted_32 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_33 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "ml-2 text-gray-800 line-clamp-1"
   }, " John Doe ", -1
@@ -264,7 +272,7 @@ var _hoisted_32 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_33 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_34 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "flex justify-between mt-2"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
@@ -286,11 +294,11 @@ var _hoisted_33 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_34 = {
+var _hoisted_35 = {
   "class": "container mx-auto lg:w-5/6"
 };
 
-var _hoisted_35 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_36 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
     "class": "text-2xl font-semibold py-6"
   }, " Artists & Collabs ", -1
@@ -298,15 +306,15 @@ var _hoisted_35 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_36 = {
+var _hoisted_37 = {
   "class": "rounded-3xl overflow-hidden shadow-xl max-w-xs my-3 bg-purple-500"
 };
-var _hoisted_37 = {
+var _hoisted_38 = {
   "class": "flex justify-center bg-white"
 };
-var _hoisted_38 = ["src"];
+var _hoisted_39 = ["src"];
 
-var _hoisted_39 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_40 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "text-center px-3 pb-3 pt-2"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
@@ -316,19 +324,19 @@ var _hoisted_39 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_40 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_41 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "text-center pb-3 text-white"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"text-center mr-3 border-r pr-3\">\r\n                <h2>34</h2>\r\n                <span>Photos</span>\r\n              </div>\r\n              <div class=\"text-center\">\r\n                <h2>42</h2>\r\n                <span>Friends</span>\r\n              </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "ERC-721")], -1
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"text-center mr-3 border-r pr-3\">\n                <h2>34</h2>\n                <span>Photos</span>\n              </div>\n              <div class=\"text-center\">\n                <h2>42</h2>\n                <span>Friends</span>\n              </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "ERC-721")], -1
   /* HOISTED */
   );
 });
 
-var _hoisted_41 = {
+var _hoisted_42 = {
   "class": "container mx-auto lg:w-5/6"
 };
 
-var _hoisted_42 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_43 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     id: "title",
     "class": "my-4"
@@ -339,15 +347,15 @@ var _hoisted_42 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_43 = {
+var _hoisted_44 = {
   "class": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-evenly gap-10 pt-10"
 };
-var _hoisted_44 = {
+var _hoisted_45 = {
   id: "plan",
   "class": "rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in"
 };
 
-var _hoisted_45 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_46 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     id: "title",
     "class": "w-full py-5 border-b border-gray-800"
@@ -358,12 +366,12 @@ var _hoisted_45 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_46 = {
+var _hoisted_47 = {
   id: "content",
   "class": ""
 };
 
-var _hoisted_47 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_48 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     id: "icon",
     "class": "my-5"
@@ -378,26 +386,26 @@ var _hoisted_47 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_48 = {
+var _hoisted_49 = {
   id: "contain",
   "class": "leading-8 mb-10 text-lg font-light"
 };
 
-var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Once you’ve set up your wallet of choice, connect it to NFT marketplace by clicking this link. ");
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Once you’ve set up your wallet of choice, connect it to NFT marketplace by clicking this link. ");
 
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Connect my wallet");
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Connect my wallet");
 
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Create your collection</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M10,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,19H5V15H9ZM20,3H14a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM19,9H15V5h4Zm1,7H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2ZM10,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,10,3ZM9,9H5V5H9Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Click Create and set up your collection. Add social links, a description, profile &amp; banner images, and set a secondary sales fee. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Add your NFTs</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M22.71,6.29a1,1,0,0,0-1.42,0L20,7.59V2a1,1,0,0,0-2,0V7.59l-1.29-1.3a1,1,0,0,0-1.42,1.42l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,22.71,6.29ZM19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h8a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Upload your work, add a title and description, and customize your NFTs with properties, stats, and unlockable content. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>List them for sale</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M15,12a1,1,0,1,0,1-1A1,1,0,0,0,15,12Zm6.71-.71-5-5A1,1,0,0,0,16,6H5A3,3,0,0,0,2,9v6a3,3,0,0,0,3,3H16a1,1,0,0,0,.71-.29l5-5A1,1,0,0,0,21.71,11.29ZM15.59,16H5a1,1,0,0,1-1-1V9A1,1,0,0,1,5,8H15.59l4,4Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to sell your NFTs, and we help you sell them! </div></div></div>", 3);
+var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Create your collection</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M10,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,19H5V15H9ZM20,3H14a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM19,9H15V5h4Zm1,7H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2ZM10,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,10,3ZM9,9H5V5H9Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Click Create and set up your collection. Add social links, a description, profile &amp; banner images, and set a secondary sales fee. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Add your NFTs</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M22.71,6.29a1,1,0,0,0-1.42,0L20,7.59V2a1,1,0,0,0-2,0V7.59l-1.29-1.3a1,1,0,0,0-1.42,1.42l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,22.71,6.29ZM19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h8a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Upload your work, add a title and description, and customize your NFTs with properties, stats, and unlockable content. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>List them for sale</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M15,12a1,1,0,1,0,1-1A1,1,0,0,0,15,12Zm6.71-.71-5-5A1,1,0,0,0,16,6H5A3,3,0,0,0,2,9v6a3,3,0,0,0,3,3H16a1,1,0,0,0,.71-.29l5-5A1,1,0,0,0,21.71,11.29ZM15.59,16H5a1,1,0,0,1-1-1V9A1,1,0,0,1,5,8H15.59l4,4Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to sell your NFTs, and we help you sell them! </div></div></div>", 3);
 
-var _hoisted_54 = {
+var _hoisted_55 = {
   "class": "container mx-auto px-5 py-5 lg:w-5/6"
 };
-var _hoisted_55 = {
+var _hoisted_56 = {
   id: "title",
   "class": "my-4 flex justify-between items-center"
 };
 
-var _hoisted_56 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_57 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
     "class": "font-semibold text-2xl"
   }, "Our Blog", -1
@@ -405,13 +413,13 @@ var _hoisted_56 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_57 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_58 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "View More", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_58 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_59 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
     "class": "w-4 pt-1",
     xmlns: "http://www.w3.org/2000/svg",
@@ -423,23 +431,23 @@ var _hoisted_58 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_59 = {
+var _hoisted_60 = {
   "class": "flex flex-wrap -m-4"
 };
-var _hoisted_60 = {
-  "class": "p-4 md:w-1/3"
-};
 var _hoisted_61 = {
-  "class": "h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
+  "class": "p-4 md:w-1/3"
 };
 var _hoisted_62 = {
-  "class": "w-full"
+  "class": "h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
 };
 var _hoisted_63 = {
+  "class": "w-full"
+};
+var _hoisted_64 = {
   "class": "w-full flex p-2"
 };
 
-var _hoisted_64 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_65 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "p-2"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
@@ -451,14 +459,14 @@ var _hoisted_64 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_65 = {
+var _hoisted_66 = {
   "class": "pl-2 pt-2"
 };
-var _hoisted_66 = {
+var _hoisted_67 = {
   "class": "font-bold"
 };
 
-var _hoisted_67 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_68 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "text-xs"
   }, "2 June 2022", -1
@@ -466,64 +474,22 @@ var _hoisted_67 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_68 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img class=\"lg:h-48 md:h-36 w-full object-cover object-center\" src=\"https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&amp;token=271cb624-94d4-468d-a14d-455377ba75c2\" alt=\"blog cover\" data-v-ad3225d0><div class=\"p-4\" data-v-ad3225d0><h2 class=\"tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase\" data-v-ad3225d0> Web development</h2><h1 class=\"title-font text-lg font-medium text-gray-900 mb-3\" data-v-ad3225d0>This is a blog template </h1><div class=\"flex items-center flex-wrap\" data-v-ad3225d0><a href=\"/\" class=\"text-green-800 md:mb-2 lg:mb-0\" data-v-ad3225d0><p class=\"inline-flex items-center\" data-v-ad3225d0>Read Blog <svg class=\"w-4 h-4 ml-2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M5 12h14\" data-v-ad3225d0></path><path d=\"M12 5l7 7-7 7\" data-v-ad3225d0></path></svg></p></a><span class=\"text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\" data-v-ad3225d0></path></svg> 24 </span><span class=\"text-gray-400 inline-flex items-center leading-none text-sm\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z\" data-v-ad3225d0></path></svg> 89 </span></div></div>", 2);
+var _hoisted_69 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img class=\"lg:h-48 md:h-36 w-full object-cover object-center\" src=\"https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&amp;token=271cb624-94d4-468d-a14d-455377ba75c2\" alt=\"blog cover\" data-v-ad3225d0><div class=\"p-4\" data-v-ad3225d0><h2 class=\"tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase\" data-v-ad3225d0> Web development</h2><h1 class=\"title-font text-lg font-medium text-gray-900 mb-3\" data-v-ad3225d0>This is a blog template </h1><div class=\"flex items-center flex-wrap\" data-v-ad3225d0><a href=\"/\" class=\"text-green-800 md:mb-2 lg:mb-0\" data-v-ad3225d0><p class=\"inline-flex items-center\" data-v-ad3225d0>Read Blog <svg class=\"w-4 h-4 ml-2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M5 12h14\" data-v-ad3225d0></path><path d=\"M12 5l7 7-7 7\" data-v-ad3225d0></path></svg></p></a><span class=\"text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\" data-v-ad3225d0></path></svg> 24 </span><span class=\"text-gray-400 inline-flex items-center leading-none text-sm\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z\" data-v-ad3225d0></path></svg> 89 </span></div></div>", 2);
 
-var _hoisted_70 = {
-  "class": "p-4 md:w-1/3"
-};
 var _hoisted_71 = {
-  "class": "h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
+  "class": "p-4 md:w-1/3"
 };
 var _hoisted_72 = {
-  "class": "w-full"
-};
-var _hoisted_73 = {
-  "class": "w-full flex p-2"
-};
-
-var _hoisted_74 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "p-2"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: "https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/Tcc_img%2Flogo.png?alt=media&token=5e5738c4-8ffd-44f9-b47a-57d07e0b7939",
-    alt: "author",
-    "class": "w-10 h-10 rounded-full overflow-hidden"
-  })], -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_75 = {
-  "class": "pl-2 pt-2"
-};
-var _hoisted_76 = {
-  "class": "font-bold"
-};
-
-var _hoisted_77 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "text-xs"
-  }, "2 June 2022", -1
-  /* HOISTED */
-  );
-});
-
-var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img class=\"lg:h-48 md:h-36 w-full object-cover object-center\" src=\"https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&amp;token=271cb624-94d4-468d-a14d-455377ba75c2\" alt=\"blog cover\" data-v-ad3225d0><div class=\"p-4\" data-v-ad3225d0><h2 class=\"tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase\" data-v-ad3225d0> Web development</h2><h1 class=\"title-font text-lg font-medium text-gray-900 mb-3\" data-v-ad3225d0>This is a blog template </h1><div class=\"flex items-center flex-wrap\" data-v-ad3225d0><a href=\"/\" class=\"text-green-800 md:mb-2 lg:mb-0\" data-v-ad3225d0><p class=\"inline-flex items-center\" data-v-ad3225d0>Read Blog <svg class=\"w-4 h-4 ml-2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M5 12h14\" data-v-ad3225d0></path><path d=\"M12 5l7 7-7 7\" data-v-ad3225d0></path></svg></p></a><span class=\"text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\" data-v-ad3225d0></path></svg> 24 </span><span class=\"text-gray-400 inline-flex items-center leading-none text-sm\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z\" data-v-ad3225d0></path></svg> 89 </span></div></div>", 2);
-
-var _hoisted_80 = {
-  "class": "p-4 md:w-1/3"
-};
-var _hoisted_81 = {
   "class": "h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
 };
-var _hoisted_82 = {
+var _hoisted_73 = {
   "class": "w-full"
 };
-var _hoisted_83 = {
+var _hoisted_74 = {
   "class": "w-full flex p-2"
 };
 
-var _hoisted_84 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_75 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "p-2"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
@@ -535,14 +501,14 @@ var _hoisted_84 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_85 = {
+var _hoisted_76 = {
   "class": "pl-2 pt-2"
 };
-var _hoisted_86 = {
+var _hoisted_77 = {
   "class": "font-bold"
 };
 
-var _hoisted_87 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_78 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "text-xs"
   }, "2 June 2022", -1
@@ -550,17 +516,59 @@ var _hoisted_87 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_88 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img class=\"lg:h-48 md:h-36 w-full object-cover object-center\" src=\"https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&amp;token=271cb624-94d4-468d-a14d-455377ba75c2\" alt=\"blog cover\" data-v-ad3225d0><div class=\"p-4\" data-v-ad3225d0><h2 class=\"tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase\" data-v-ad3225d0> Web development</h2><h1 class=\"title-font text-lg font-medium text-gray-900 mb-3\" data-v-ad3225d0>This is a blog template </h1><div class=\"flex items-center flex-wrap\" data-v-ad3225d0><a href=\"/\" class=\"text-green-800 md:mb-2 lg:mb-0\" data-v-ad3225d0><p class=\"inline-flex items-center\" data-v-ad3225d0>Read Blog <svg class=\"w-4 h-4 ml-2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M5 12h14\" data-v-ad3225d0></path><path d=\"M12 5l7 7-7 7\" data-v-ad3225d0></path></svg></p></a><span class=\"text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\" data-v-ad3225d0></path></svg> 24 </span><span class=\"text-gray-400 inline-flex items-center leading-none text-sm\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z\" data-v-ad3225d0></path></svg> 89 </span></div></div>", 2);
+var _hoisted_79 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img class=\"lg:h-48 md:h-36 w-full object-cover object-center\" src=\"https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&amp;token=271cb624-94d4-468d-a14d-455377ba75c2\" alt=\"blog cover\" data-v-ad3225d0><div class=\"p-4\" data-v-ad3225d0><h2 class=\"tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase\" data-v-ad3225d0> Web development</h2><h1 class=\"title-font text-lg font-medium text-gray-900 mb-3\" data-v-ad3225d0>This is a blog template </h1><div class=\"flex items-center flex-wrap\" data-v-ad3225d0><a href=\"/\" class=\"text-green-800 md:mb-2 lg:mb-0\" data-v-ad3225d0><p class=\"inline-flex items-center\" data-v-ad3225d0>Read Blog <svg class=\"w-4 h-4 ml-2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M5 12h14\" data-v-ad3225d0></path><path d=\"M12 5l7 7-7 7\" data-v-ad3225d0></path></svg></p></a><span class=\"text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\" data-v-ad3225d0></path></svg> 24 </span><span class=\"text-gray-400 inline-flex items-center leading-none text-sm\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z\" data-v-ad3225d0></path></svg> 89 </span></div></div>", 2);
+
+var _hoisted_81 = {
+  "class": "p-4 md:w-1/3"
+};
+var _hoisted_82 = {
+  "class": "h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
+};
+var _hoisted_83 = {
+  "class": "w-full"
+};
+var _hoisted_84 = {
+  "class": "w-full flex p-2"
+};
+
+var _hoisted_85 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "p-2"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: "https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/Tcc_img%2Flogo.png?alt=media&token=5e5738c4-8ffd-44f9-b47a-57d07e0b7939",
+    alt: "author",
+    "class": "w-10 h-10 rounded-full overflow-hidden"
+  })], -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_86 = {
+  "class": "pl-2 pt-2"
+};
+var _hoisted_87 = {
+  "class": "font-bold"
+};
+
+var _hoisted_88 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "text-xs"
+  }, "2 June 2022", -1
+  /* HOISTED */
+  );
+});
+
+var _hoisted_89 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img class=\"lg:h-48 md:h-36 w-full object-cover object-center\" src=\"https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&amp;token=271cb624-94d4-468d-a14d-455377ba75c2\" alt=\"blog cover\" data-v-ad3225d0><div class=\"p-4\" data-v-ad3225d0><h2 class=\"tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase\" data-v-ad3225d0> Web development</h2><h1 class=\"title-font text-lg font-medium text-gray-900 mb-3\" data-v-ad3225d0>This is a blog template </h1><div class=\"flex items-center flex-wrap\" data-v-ad3225d0><a href=\"/\" class=\"text-green-800 md:mb-2 lg:mb-0\" data-v-ad3225d0><p class=\"inline-flex items-center\" data-v-ad3225d0>Read Blog <svg class=\"w-4 h-4 ml-2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M5 12h14\" data-v-ad3225d0></path><path d=\"M12 5l7 7-7 7\" data-v-ad3225d0></path></svg></p></a><span class=\"text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" data-v-ad3225d0><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\" data-v-ad3225d0></path></svg> 24 </span><span class=\"text-gray-400 inline-flex items-center leading-none text-sm\" data-v-ad3225d0><svg class=\"w-4 h-4 mr-1\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z\" data-v-ad3225d0></path></svg> 89 </span></div></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <LandingLayout> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" hero "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <LandingLayout> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" hero "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/",
     "class": "px-3 py-2 border border-blue-400 hover:bg-blue-500 rounded-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6];
+      return [_hoisted_7];
     }),
     _: 1
     /* STABLE */
@@ -570,12 +578,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "px-3 py-2 border border-purple-400 hover:bg-purple-500 rounded-lg"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_7];
+      return [_hoisted_8];
     }),
     _: 1
     /* STABLE */
 
-  })])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end hero "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" card "), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end card "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
+  })])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end hero "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" card "), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end card "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
     breakpoints: $setup.swiperOptions.breakpoints,
@@ -601,15 +609,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           key: item
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"#\"\r\n              class=\"relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"absolute inset-0 bg-black opacity-10\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <a href=\"#\"\n              class=\"relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"absolute inset-0 bg-black opacity-10\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               "class": "w-full h-64 rounded-md transition hover:bg-cyan-300",
               src: "https://picsum.photos/500/300?random=".concat(i + 1),
               alt: ""
             }, null, 8
             /* PROPS */
-            , _hoisted_15), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" src=\"https://images.unsplash.com/photo-1546453667-8a8d2d07bc20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80\" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")]), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span\r\n                    class=\"absolute top-0 left-0 inline-flex mt-3 ml-3 px-3 py-2 rounded-lg z-10 bg-red-500 text-sm font-medium text-white select-none\">\r\n                    Featured\r\n                  </span> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_18, " End Human Trafficking " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(i + 1), 1
+            , _hoisted_16), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" src=\"https://images.unsplash.com/photo-1546453667-8a8d2d07bc20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80\" "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")]), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span\n                    class=\"absolute top-0 left-0 inline-flex mt-3 ml-3 px-3 py-2 rounded-lg z-10 bg-red-500 text-sm font-medium text-white select-none\">\n                    Featured\n                  </span> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_19, " End Human Trafficking " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(i + 1), 1
             /* TEXT */
-            ), _hoisted_19])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </a> ")])];
+            ), _hoisted_20])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </a> ")])];
           }),
           _: 2
           /* DYNAMIC */
@@ -626,7 +634,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
+  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end auction "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
     breakpoints: $setup.swiperOptions.breakpoints,
@@ -652,12 +660,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           key: item
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200\"></div>\r\n                        <span class=\"absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full\"></span> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200\"></div>\n                        <span class=\"absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full\"></span> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: "https://i.pravatar.cc/".concat(300 + i),
               "class": "rounded-full border-solid border-white border-2 w-10"
             }, null, 8
             /* PROPS */
-            , _hoisted_31)]), _hoisted_32])])]), _hoisted_33])])])];
+            , _hoisted_32)]), _hoisted_33])])]), _hoisted_34])])])];
           }),
           _: 2
           /* DYNAMIC */
@@ -667,14 +675,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         );
       }), 64
       /* STABLE_FRAGMENT */
-      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <swiper-slide>Slide 2</swiper-slide>\r\n    <swiper-slide>Slide 3</swiper-slide>\r\n    <swiper-slide>Slide 4</swiper-slide>\r\n    <swiper-slide>Slide 5</swiper-slide>\r\n    <swiper-slide>Slide 6</swiper-slide>\r\n    <swiper-slide>Slide 7</swiper-slide>\r\n    <swiper-slide>Slide 8</swiper-slide> ")];
+      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <swiper-slide>Slide 2</swiper-slide>\n    <swiper-slide>Slide 3</swiper-slide>\n    <swiper-slide>Slide 4</swiper-slide>\n    <swiper-slide>Slide 5</swiper-slide>\n    <swiper-slide>Slide 6</swiper-slide>\n    <swiper-slide>Slide 7</swiper-slide>\n    <swiper-slide>Slide 8</swiper-slide> ")];
     }),
     _: 1
     /* STABLE */
 
   }, 8
   /* PROPS */
-  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [_hoisted_35, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
+  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
     breakpoints: $setup.swiperOptions.breakpoints,
@@ -700,12 +708,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           key: item
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img src=\"https://i.imgur.com/dYcYQ7E.png\" class=\"w-full\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img src=\"https://i.imgur.com/dYcYQ7E.png\" class=\"w-full\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
               src: "https://i.pravatar.cc/".concat(300 + i),
               "class": "rounded-full border-solid border-white border-2 w-24"
             }, null, 8
             /* PROPS */
-            , _hoisted_38)]), _hoisted_39, _hoisted_40])];
+            , _hoisted_39)]), _hoisted_40, _hoisted_41])];
           }),
           _: 2
           /* DYNAMIC */
@@ -722,33 +730,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Creating and selling "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"antialiased w-full h-full text-gray-400 font-inter p-10\">\r\n        <div class=\"container px-4 mx-auto\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [_hoisted_49, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Creating and selling "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"antialiased w-full h-full text-gray-400 font-inter p-10\">\n        <div class=\"container px-4 mx-auto\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [_hoisted_46, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [_hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_49, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/",
     "class": "text-blue-500 underline"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_50];
+      return [_hoisted_51];
     }),
     _: 1
     /* STABLE */
 
-  })])])]), _hoisted_51])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div>\r\n    </div> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Creating and selling "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" blog "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_54, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"text-gray-600 body-font\">\r\n        <div class=\"container px-5 py-5 mx-auto\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [_hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  })])])]), _hoisted_52])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div>\n    </div> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Creating and selling "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" blog "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section class=\"text-gray-600 body-font\">\n        <div class=\"container px-5 py-5 mx-auto\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_56, [_hoisted_57, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/",
     "class": "flex hover:text-blue-400"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_57, _hoisted_58];
+      return [_hoisted_58, _hoisted_59];
     }),
     _: 1
     /* STABLE */
 
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_59, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("start here"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_63, [_hoisted_64, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_65, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_66, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.blogName[0]), 1
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("start here"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_61, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_62, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_63, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_64, [_hoisted_65, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_66, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_67, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.blogName[0]), 1
   /* TEXT */
-  ), _hoisted_67])])]), _hoisted_68])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_70, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [_hoisted_74, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_75, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_76, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.blogName[1]), 1
+  ), _hoisted_68])])]), _hoisted_69])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_71, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_72, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_73, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_74, [_hoisted_75, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_76, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_77, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.blogName[1]), 1
   /* TEXT */
-  ), _hoisted_77])])]), _hoisted_78])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_80, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_81, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_83, [_hoisted_84, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_85, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_86, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.blogName[2]), 1
+  ), _hoisted_78])])]), _hoisted_79])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_81, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_82, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_83, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_84, [_hoisted_85, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_86, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_87, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.blogName[2]), 1
   /* TEXT */
-  ), _hoisted_87])])]), _hoisted_88])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End here")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div>\r\n  </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </LandingLayout> ")], 64
+  ), _hoisted_88])])]), _hoisted_89])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("End here")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div>\n  </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </LandingLayout> ")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -840,7 +848,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pattern[data-v-ad3225d0] {\r\n    background-image: url('/images/bg-image/1.png');\r\n    background-repeat: no-repeat;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pattern[data-v-ad3225d0] {\n    background-image: url('/images/bg-image/PatchWorkKingdoms.png');\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
