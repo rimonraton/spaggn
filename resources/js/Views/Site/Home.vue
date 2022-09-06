@@ -2,9 +2,9 @@
     <!-- <LandingLayout> -->
     <!-- hero -->
     <section>
-        <div class="h-14 w-full"></div>
-        <div class="px-6 mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center px-4 pt-32 w-full pattern">
-            <div class="flex flex-col lg:h-96 items-center bg-black bg-opacity-40 xl:w-2/4 lg:w-3/4 mx-auto rounded-lg">
+        <div class="h-16 w-full"></div>
+        <div class="mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center  w-full pattern">
+            <div class="flex flex-col p-5 items-center bg-black/50 w-full pt-32 mx-auto rounded-lg">
                 <div class="w-28 mb-10">
                     <img src="/images/bird.png" class="w-full">
                 </div>
@@ -682,7 +682,8 @@ const user = computed(() => store.getters.user);
 </script>
 <style scoped>
 .pattern {
-    background-image: url('/images/bg-image/PatchWorkKingdoms.png');
+    background-image: url('/images/bg-image/cover.png');
+    /*background-image: url('/images/bg-image/PatchWorkKingdoms.png');*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

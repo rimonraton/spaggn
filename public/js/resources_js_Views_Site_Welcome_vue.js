@@ -213,17 +213,17 @@ var _withScopeId = function _withScopeId(n) {
 
 var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "h-14 w-full"
+    "class": "h-16 w-full"
   }, null, -1
   /* HOISTED */
   );
 });
 
 var _hoisted_2 = {
-  "class": "px-6 mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center px-4 pt-32 w-full pattern"
+  "class": "mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center w-full pattern"
 };
 var _hoisted_3 = {
-  "class": "flex flex-col lg:h-96 items-center bg-black bg-opacity-40 xl:w-2/4 lg:w-3/4 mx-auto rounded-lg"
+  "class": "flex flex-col p-5 items-center bg-black/50 w-full pt-32 mx-auto rounded-lg"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"w-28 mb-10\" data-v-ad3225d0><img src=\"/images/bird.png\" class=\"w-full\" data-v-ad3225d0></div><div data-v-ad3225d0><h2 class=\"text-4xl font-semibold text-gray-100\" data-v-ad3225d0> Amplify GENEROSITY </h2><h2 class=\"text-4xl font-semibold text-gray-100 my-4\" data-v-ad3225d0> Create LEGACY for your donors </h2><p class=\"mt-3 text-gray-100\" data-v-ad3225d0> Good Giving Network lets donors and collectors to donate to their favorite charities and collect NFTs that reflect their values. </p></div>", 2);
@@ -1283,7 +1283,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.pattern[data-v-ad3225d0] {\n    background-image: url('/images/bg-image/PatchWorkKingdoms.png');\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.pattern[data-v-ad3225d0] {\n    background-image: url('/images/bg-image/cover.png');\n    /*background-image: url('/images/bg-image/PatchWorkKingdoms.png');*/\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
