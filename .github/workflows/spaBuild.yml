@@ -30,4 +30,4 @@ jobs:
           **/.zip/**
           
         script: |
-          npm run prod
+          npm run dev
