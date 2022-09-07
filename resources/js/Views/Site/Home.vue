@@ -109,12 +109,13 @@
     </section>
     <!-- end card -->
     <!-- info -->
-    <section class="block lg:hidden" >
+    <section class="block lg:hidden">
         <div class="py-8 bg-gray-200">
             <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
                 <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
                     :slides-per-view="3" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true"
-                    :pagination="{ clickable: true }" :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true, }" :speed="2000">
+                    :pagination="{ clickable: true }"
+                    :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true, }" :speed="2000">
                     <swiper-slide>
                         <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
                             <div class="space-y-4">
@@ -194,7 +195,7 @@
                 :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
                 <swiper-slide v-for="item, i in 12" :key="item">
-                    <div class="relative mx-auto w-full">
+                    <div class="relative mx-auto w-full my-10">
                         <!-- <a href="#"
               class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"> -->
                         <div class="shadow p-4 rounded-lg bg-white">
@@ -271,7 +272,7 @@
                 :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
                 <swiper-slide v-for="item, i in 12" :key="item">
-                    <div class="relative mx-auto w-full">
+                    <div class="relative mx-auto w-full my-10">
                         <a href="#"
                             class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                             <div class="shadow p-4 rounded-lg bg-white">
@@ -377,6 +378,34 @@
     </section>
     <!-- end Charities -->
     <!-- Artists -->
+    <!-- <section>
+        <div class="container mx-auto lg:w-5/6">
+            <h2 class="text-2xl font-semibold py-6 px-4">
+                Artists & Collabs
+            </h2>
+            <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
+                :slides-per-view="4" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true"
+                :navigation="true" :pagination="{ clickable: true }"
+                :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
+                <swiper-slide v-for="item, i in 12" :key="item">
+                    <div class="rounded-3xl overflow-hidden shadow-xl max-w-xs my-3 bg-purple-500">
+                        <div class="flex justify-center bg-white">
+                            <img :src="`https://i.pravatar.cc/${300 + i}`"
+                                class="rounded-full border-solid border-white border-2 w-24">
+                        </div>
+                        <div class="text-center px-3 pb-3 pt-2">
+                            <h3 class="text-white text-sm bold font-sans">Olivia Dunham</h3>
+                        </div>
+                        <div class="text-center pb-3 text-white">
+                            <span>ERC-721</span>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper>
+        </div>
+    </section> -->
+    <!-- end Artists -->
+    <!-- Artists -->
     <section>
         <div class="container mx-auto lg:w-5/6">
             <h2 class="text-2xl font-semibold py-6 px-4">
@@ -387,26 +416,19 @@
                 :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
                 <swiper-slide v-for="item, i in 12" :key="item">
-                    <!-- component -->
-                    <div class="rounded-3xl overflow-hidden shadow-xl max-w-xs my-3 bg-purple-500">
-                        <!-- <img src="https://i.imgur.com/dYcYQ7E.png" class="w-full" /> -->
-                        <div class="flex justify-center bg-white">
-                            <img :src="`https://i.pravatar.cc/${300 + i}`"
-                                class="rounded-full border-solid border-white border-2 w-24">
+                    <div class="max-w-md px-8 bg-white shadow-lg rounded-lg my-10">
+                        <div class="flex justify-center md:justify-end z-80">
+                            <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
+                                :src="`https://i.pravatar.cc/${300 + i}`">
                         </div>
-                        <div class="text-center px-3 pb-3 pt-2">
-                            <h3 class="text-white text-sm bold font-sans">Olivia Dunham</h3>
+                        <div>
+                            <h2 class="text-gray-800 text-3xl font-semibold">Design Tools</h2>
+                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
+                                dolores deserunt ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic,
+                                suscipit in a veritatis pariatur minus consequuntur!</p>
                         </div>
-                        <div class="text-center pb-3 text-white">
-                            <!-- <div class="text-center mr-3 border-r pr-3">
-                <h2>34</h2>
-                <span>Photos</span>
-              </div>
-              <div class="text-center">
-                <h2>42</h2>
-                <span>Friends</span>
-              </div> -->
-                            <span>ERC-721</span>
+                        <div class="flex justify-end mt-4">
+                            <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
                         </div>
                     </div>
                 </swiper-slide>
@@ -421,7 +443,7 @@
             <!-- <div class="antialiased w-full h-full text-gray-400 font-inter p-10">
         <div class="container px-4 mx-auto"> -->
             <div>
-                <div id="title" class="my-4">
+                <div id="title" class="my-4 mx-4">
                     <h1 class="font-semibold text-2xl">Get started creating & selling your NFTs</h1>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-evenly gap-10 pt-10">
@@ -439,7 +461,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                            <div id="contain" class="leading-8 mb-10 text-lg font-light mx-2">
                                 Once you’ve set up your wallet of choice, connect it to NFT marketplace by clicking
                                 this link.
                                 <router-link to="/" class="text-blue-500 underline">Connect my wallet</router-link>
@@ -460,7 +482,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                            <div id="contain" class="leading-8 mb-10 text-lg font-light mx-2">
                                 Click Create and set up your collection. Add social links, a description, profile &
                                 banner images, and
                                 set a secondary sales fee.
@@ -481,7 +503,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                            <div id="contain" class="leading-8 mb-10 text-lg font-light mx-2">
                                 Upload your work, add a title and description, and customize your NFTs with
                                 properties, stats, and
                                 unlockable content.
@@ -502,7 +524,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <div id="contain" class="leading-8 mb-10 text-lg font-light">
+                            <div id="contain" class="leading-8 mb-10 text-lg font-light mx-2">
                                 Choose between auctions, fixed-price listings, and declining-price listings. You
                                 choose how you want to
                                 sell your NFTs, and we help you sell them!

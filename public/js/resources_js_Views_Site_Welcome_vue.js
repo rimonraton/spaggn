@@ -299,7 +299,7 @@ var _hoisted_16 = /*#__PURE__*/_withScopeId(function () {
 });
 
 var _hoisted_17 = {
-  "class": "relative mx-auto w-full"
+  "class": "relative mx-auto w-full my-10"
 };
 var _hoisted_18 = {
   "class": "shadow p-4 rounded-lg bg-white"
@@ -371,7 +371,7 @@ var _hoisted_27 = /*#__PURE__*/_withScopeId(function () {
 });
 
 var _hoisted_28 = {
-  "class": "relative mx-auto w-full"
+  "class": "relative mx-auto w-full my-10"
 };
 var _hoisted_29 = {
   href: "#",
@@ -462,27 +462,30 @@ var _hoisted_41 = /*#__PURE__*/_withScopeId(function () {
 });
 
 var _hoisted_42 = {
-  "class": "rounded-3xl overflow-hidden shadow-xl max-w-xs my-3 bg-purple-500"
+  "class": "max-w-md px-8 bg-white shadow-lg rounded-lg my-10"
 };
 var _hoisted_43 = {
-  "class": "flex justify-center bg-white"
+  "class": "flex justify-center md:justify-end z-80"
 };
 var _hoisted_44 = ["src"];
 
 var _hoisted_45 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "text-center px-3 pb-3 pt-2"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
-    "class": "text-white text-sm bold font-sans"
-  }, "Olivia Dunham")], -1
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+    "class": "text-gray-800 text-3xl font-semibold"
+  }, "Design Tools"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+    "class": "mt-2 text-gray-600"
+  }, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores deserunt ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis pariatur minus consequuntur!")], -1
   /* HOISTED */
   );
 });
 
 var _hoisted_46 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "text-center pb-3 text-white"
-  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"text-center mr-3 border-r pr-3\">\r\n                <h2>34</h2>\r\n                <span>Photos</span>\r\n              </div>\r\n              <div class=\"text-center\">\r\n                <h2>42</h2>\r\n                <span>Friends</span>\r\n              </div> "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "ERC-721")], -1
+    "class": "flex justify-end mt-4"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "#",
+    "class": "text-xl font-medium text-indigo-500"
+  }, "John Doe")], -1
   /* HOISTED */
   );
 });
@@ -494,7 +497,7 @@ var _hoisted_47 = {
 var _hoisted_48 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     id: "title",
-    "class": "my-4"
+    "class": "my-4 mx-4"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
     "class": "font-semibold text-2xl"
   }, "Get started creating & selling your NFTs")], -1
@@ -543,14 +546,14 @@ var _hoisted_53 = /*#__PURE__*/_withScopeId(function () {
 
 var _hoisted_54 = {
   id: "contain",
-  "class": "leading-8 mb-10 text-lg font-light"
+  "class": "leading-8 mb-10 text-lg font-light mx-2"
 };
 
 var _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Once you’ve set up your wallet of choice, connect it to NFT marketplace by clicking this link. ");
 
 var _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Connect my wallet");
 
-var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Create your collection</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M10,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,19H5V15H9ZM20,3H14a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM19,9H15V5h4Zm1,7H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2ZM10,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,10,3ZM9,9H5V5H9Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Click Create and set up your collection. Add social links, a description, profile &amp; banner images, and set a secondary sales fee. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Add your NFTs</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M22.71,6.29a1,1,0,0,0-1.42,0L20,7.59V2a1,1,0,0,0-2,0V7.59l-1.29-1.3a1,1,0,0,0-1.42,1.42l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,22.71,6.29ZM19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h8a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Upload your work, add a title and description, and customize your NFTs with properties, stats, and unlockable content. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>List them for sale</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M15,12a1,1,0,1,0,1-1A1,1,0,0,0,15,12Zm6.71-.71-5-5A1,1,0,0,0,16,6H5A3,3,0,0,0,2,9v6a3,3,0,0,0,3,3H16a1,1,0,0,0,.71-.29l5-5A1,1,0,0,0,21.71,11.29ZM15.59,16H5a1,1,0,0,1-1-1V9A1,1,0,0,1,5,8H15.59l4,4Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light\" data-v-ad3225d0> Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to sell your NFTs, and we help you sell them! </div></div></div>", 3);
+var _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Create your collection</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M10,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14A1,1,0,0,0,10,13ZM9,19H5V15H9ZM20,3H14a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM19,9H15V5h4Zm1,7H18V14a1,1,0,0,0-2,0v2H14a1,1,0,0,0,0,2h2v2a1,1,0,0,0,2,0V18h2a1,1,0,0,0,0-2ZM10,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V4A1,1,0,0,0,10,3ZM9,9H5V5H9Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light mx-2\" data-v-ad3225d0> Click Create and set up your collection. Add social links, a description, profile &amp; banner images, and set a secondary sales fee. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>Add your NFTs</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M22.71,6.29a1,1,0,0,0-1.42,0L20,7.59V2a1,1,0,0,0-2,0V7.59l-1.29-1.3a1,1,0,0,0-1.42,1.42l3,3a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l3-3A1,1,0,0,0,22.71,6.29ZM19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h8a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light mx-2\" data-v-ad3225d0> Upload your work, add a title and description, and customize your NFTs with properties, stats, and unlockable content. </div></div></div><div id=\"plan\" class=\"rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 transition duration-200 ease-in\" data-v-ad3225d0><div id=\"title\" class=\"w-full py-5 border-b border-gray-800\" data-v-ad3225d0><h2 class=\"font-bold text-2xl\" data-v-ad3225d0>List them for sale</h2></div><div id=\"content\" class=\"\" data-v-ad3225d0><div id=\"icon\" class=\"my-5\" data-v-ad3225d0><svg class=\"h-12 w-12 mx-auto fill-stroke text-indigo-600\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" data-v-ad3225d0><path d=\"M15,12a1,1,0,1,0,1-1A1,1,0,0,0,15,12Zm6.71-.71-5-5A1,1,0,0,0,16,6H5A3,3,0,0,0,2,9v6a3,3,0,0,0,3,3H16a1,1,0,0,0,.71-.29l5-5A1,1,0,0,0,21.71,11.29ZM15.59,16H5a1,1,0,0,1-1-1V9A1,1,0,0,1,5,8H15.59l4,4Z\" data-v-ad3225d0></path></svg></div><div id=\"contain\" class=\"leading-8 mb-10 text-lg font-light mx-2\" data-v-ad3225d0> Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to sell your NFTs, and we help you sell them! </div></div></div>", 3);
 
 var _hoisted_60 = {
   "class": "container mx-auto px-5 py-5 lg:w-5/6"
@@ -885,7 +888,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
+  , ["modules", "breakpoints"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Charities "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <section>\r\n        <div class=\"container mx-auto lg:w-5/6\">\r\n            <h2 class=\"text-2xl font-semibold py-6 px-4\">\r\n                Artists & Collabs\r\n            </h2>\r\n            <swiper class=\"swiper\" :modules=\"modules\" :breakpoints=\"swiperOptions.breakpoints\" :space-between=\"30\"\r\n                :slides-per-view=\"4\" :slides-per-group=\"1\" :loop=\"true\" :loop-fill-group-with-blank=\"true\"\r\n                :navigation=\"true\" :pagination=\"{ clickable: true }\"\r\n                :autoplay=\"{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }\" :speed=\"3000\">\r\n                <swiper-slide v-for=\"item, i in 12\" :key=\"item\">\r\n                    <div class=\"rounded-3xl overflow-hidden shadow-xl max-w-xs my-3 bg-purple-500\">\r\n                        <div class=\"flex justify-center bg-white\">\r\n                            <img :src=\"`https://i.pravatar.cc/${300 + i}`\"\r\n                                class=\"rounded-full border-solid border-white border-2 w-24\">\r\n                        </div>\r\n                        <div class=\"text-center px-3 pb-3 pt-2\">\r\n                            <h3 class=\"text-white text-sm bold font-sans\">Olivia Dunham</h3>\r\n                        </div>\r\n                        <div class=\"text-center pb-3 text-white\">\r\n                            <span>ERC-721</span>\r\n                        </div>\r\n                    </div>\r\n                </swiper-slide>\r\n            </swiper>\r\n        </div>\r\n    </section> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" end Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Artists "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Swiper"], {
     "class": "swiper",
     modules: $setup.modules,
     breakpoints: $setup.swiperOptions.breakpoints,
@@ -911,9 +914,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           key: item
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" component "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img src=\"https://i.imgur.com/dYcYQ7E.png\" class=\"w-full\" /> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-              src: "https://i.pravatar.cc/".concat(300 + i),
-              "class": "rounded-full border-solid border-white border-2 w-24"
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+              "class": "w-20 h-20 object-cover rounded-full border-2 border-indigo-500",
+              src: "https://i.pravatar.cc/".concat(300 + i)
             }, null, 8
             /* PROPS */
             , _hoisted_44)]), _hoisted_45, _hoisted_46])];
