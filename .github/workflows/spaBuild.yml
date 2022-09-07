@@ -28,5 +28,6 @@ jobs:
           **/node_modules/**
           **/vendor/**
           **/.zip/**
+          
         script: |
           npm run prod
