@@ -365,6 +365,7 @@ video {
 .m-auto{margin:auto}
 .m-6{margin:1.5rem}
 .-m-4{margin:-1rem}
+.m-4{margin:1rem}
 .mx-auto{margin-left:auto;margin-right:auto}
 .my-7{margin-top:1.75rem;margin-bottom:1.75rem}
 .mx-2{margin-left:0.5rem;margin-right:0.5rem}
@@ -699,6 +700,7 @@ video {
 .py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}
 .py-0{padding-top:0px;padding-bottom:0px}
 .px-0{padding-left:0px;padding-right:0px}
+.py-10{padding-top:2.5rem;padding-bottom:2.5rem}
 .pt-8{padding-top:2rem}
 .pt-4{padding-top:1rem}
 .pb-3{padding-bottom:0.75rem}

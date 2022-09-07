@@ -34,7 +34,7 @@
     </section>
     <!-- end hero -->
     <!-- card -->
-    <section>
+    <section class="hidden lg:block">
         <!-- component -->
         <div class="py-16 bg-gray-200">
             <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
@@ -108,10 +108,85 @@
         </div>
     </section>
     <!-- end card -->
+    <!-- info -->
+    <section class="block lg:hidden" >
+        <div class="py-8 bg-gray-200">
+            <div class="container m-auto px-6 text-gray-500 md:px-12 xl:px-0">
+                <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
+                    :slides-per-view="3" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true"
+                    :pagination="{ clickable: true }" :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true, }" :speed="2000">
+                    <swiper-slide>
+                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                            <div class="space-y-4">
+                                <h3 class="text-xl font-semibold text-center text-purple-900">
+                                    We are not just another NFT Marketplace
+                                </h3>
+                                <p class="mb-6">
+                                    Our platform is designed for Charities and nonprofits that are dedicated to
+                                    solving the
+                                    hardest problems the world faces today. GGN partners with these organizations to
+                                    help
+                                    them achieve their vision. All the charities, artists, and collabs on our
+                                    platform go
+                                    through extensive verification and authentication processes before being
+                                    accepted.
+                                </p>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                            <div class="space-y-4">
+                                <h3 class="text-xl font-semibold text-purple-900 text-center">
+                                    Projects with built-in community & Utility
+                                </h3>
+                                <p class="mb-6">
+                                    Charities with great cause always have a passionate group of followers and
+                                    donors. So,
+                                    charities do not have the same challenge of building community as other NFT
+                                    projects.
+                                    The funds collected for every NFT that is sold by the charity are used to solve
+                                    difficult societal and environmental problems. Some projects also have a
+                                    governance
+                                    feature associated with their NFTs which provides DAO membership to the NFT
+                                    holders. The
+                                    collectors of these NFTs have the opportunity to vote on the NFT projects or any
+                                    other
+                                    projects related to the charity.
+                                </p>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                            <div class="space-y-4">
+                                <h3 class="text-xl font-semibold text-purple-900 text-center">
+                                    We are addressing the NFT platform challenges
+                                </h3>
+                                <p class="mb-6">
+                                    GGN partners with <a href="https://nftrade.com" target="_blank"
+                                        class="text-blue-700 hover:underline cursor-pointer">NFTrade</a> the first
+                                    cross-chain and blockchain agnostic NFT platform to
+                                    address the multi-chain & cross-chain and peer-to-peer challenges. GGN is
+                                    building a
+                                    seamless integration between the two platforms, so UX will not be affected. The
+                                    fiat
+                                    currency integration to NFT is also on NFTrade’s roadmap. Once complete, anyone
+                                    will be
+                                    able to purchase NFTs using credit cards in their native currency.
+                                </p>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+            </div>
+        </div>
+    </section>
+    <!-- end info -->
     <!-- auction -->
     <section>
         <div class="container mx-auto lg:w-5/6">
-            <h2 class="text-2xl font-semibold py-6">
+            <h2 class="text-2xl font-semibold py-6 px-4">
                 Live auctions
             </h2>
             <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
@@ -188,7 +263,7 @@
     <!-- Charities -->
     <section>
         <div class="container mx-auto lg:w-5/6">
-            <h2 class="text-2xl font-semibold py-6">
+            <h2 class="text-2xl font-semibold py-6 px-4">
                 Charities
             </h2>
             <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
@@ -304,7 +379,7 @@
     <!-- Artists -->
     <section>
         <div class="container mx-auto lg:w-5/6">
-            <h2 class="text-2xl font-semibold py-6">
+            <h2 class="text-2xl font-semibold py-6 px-4">
                 Artists & Collabs
             </h2>
             <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
@@ -446,7 +521,7 @@
         <div class="container mx-auto px-5 py-5 lg:w-5/6">
             <!-- <section class="text-gray-600 body-font">
         <div class="container px-5 py-5 mx-auto"> -->
-            <div id="title" class="my-4 flex justify-between items-center">
+            <div id="title" class="my-4 mx-4 flex justify-between items-center">
                 <h1 class="font-semibold text-2xl">Our Blog</h1>
                 <router-link to="/" class="flex hover:text-blue-400"><span>View More</span><svg class="w-4 pt-1"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
