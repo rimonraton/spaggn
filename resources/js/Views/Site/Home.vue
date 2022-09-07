@@ -2,10 +2,10 @@
     <!-- <LandingLayout> -->
     <!-- hero -->
     <section>
-        <div class="h-16 w-full"></div>
+        <!-- <div class="h-16 w-full"></div> -->
         <div class="mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center  w-full pattern">
-            <div class="flex flex-col p-5 items-center bg-black/50 w-full pt-32 mx-auto rounded-lg">
-                <div class="w-28 mb-10">
+            <div class="flex flex-col p-5 items-center bg-black/50 w-full pt-16 mx-auto rounded-lg">
+                <div class="w-28 mb-8 mt-2">
                     <img src="/images/bird.png" class="w-full">
                 </div>
                 <div>

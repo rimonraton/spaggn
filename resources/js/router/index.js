@@ -5,7 +5,11 @@ import store from '../store'
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  linkActiveClass: 'activeLink'
+  linkActiveClass: 'activeLink',
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
 })
 
 router.beforeEach((to, from, next) => {
