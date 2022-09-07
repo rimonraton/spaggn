@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[605],{5605:(e,n,r)=>{r.r(n),r.d(n,{default:()=>s});const t={};const s=(0,r(3744).Z)(t,[["render",function(e,n,r,t,s,u){return" Create Profile "}]])}}]);
