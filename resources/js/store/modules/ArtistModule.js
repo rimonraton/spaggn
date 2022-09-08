@@ -27,5 +27,15 @@ export const actions = {
             throw e
         }
 
+    },
+    async getArtistAssets({ commit }, payload) {
+        try {
+            const {data} = await repository.getArtistAssets()
+            console.log(data)
+            return data
+        } catch (e) {
+            throw e
+        }
+
     }
 }

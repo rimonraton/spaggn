@@ -57,6 +57,10 @@ class User extends Authenticatable implements MustVerifyEmail
         // return $this->belongsTo(Artist::class);
         return $this->hasOne(Artist::class);
     }
+    public function assets()
+    {
+        return $this->hasMany(Asset::class);
+    }
 
     public function sendPasswordResetNotification($token)
     {
