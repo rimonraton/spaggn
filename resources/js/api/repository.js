@@ -15,6 +15,9 @@ export default {
     },
     getArtistProfile() {
         return api.get('/api/get-artist-profile')
+    },
+    getArtistAssets() {
+        return api.get('/api/get-artist-assets')
     }
     // changeAddress(params) {
     //     return api.post('/api/change-address', params)

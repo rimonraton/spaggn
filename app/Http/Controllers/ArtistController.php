@@ -219,4 +219,8 @@ class ArtistController extends Controller
     {
         return \Auth::user()->profile;
     }
+    public function getArtistAssets()
+    {
+        return \Auth::user()->assets;
+    }
 }

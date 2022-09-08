@@ -19926,6 +19926,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   getArtistProfile: function getArtistProfile() {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-artist-profile');
+  },
+  getArtistAssets: function getArtistAssets() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-artist-assets');
   } // changeAddress(params) {
   //     return api.post('/api/change-address', params)
   // },
@@ -21106,6 +21109,38 @@ var actions = {
           }
         }
       }, _callee2, null, [[1, 10]]);
+    }))();
+  },
+  getArtistAssets: function getArtistAssets(_ref3, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      var commit, _yield$repository$get2, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              commit = _ref3.commit;
+              _context3.prev = 1;
+              _context3.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getArtistAssets();
+
+            case 4:
+              _yield$repository$get2 = _context3.sent;
+              data = _yield$repository$get2.data;
+              console.log(data);
+              return _context3.abrupt("return", data);
+
+            case 10:
+              _context3.prev = 10;
+              _context3.t0 = _context3["catch"](1);
+              throw _context3.t0;
+
+            case 13:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 10]]);
     }))();
   }
 };
