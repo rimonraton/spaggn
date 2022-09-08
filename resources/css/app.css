@@ -11,5 +11,13 @@ body {font-family: 'Nunito', sans-serif;}
 @tailwind components;
 @tailwind utilities;
 
+/* .tooltip {
+    @apply invisible absolute;
+  }
+  
+  .has-tooltip:hover .tooltip {
+    @apply visible z-50;
+  } */
+
 
 
