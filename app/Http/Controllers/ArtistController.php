@@ -221,6 +221,6 @@ class ArtistController extends Controller
     }
     public function getArtistAssets()
     {
-        return \Auth::user()->assets;
+        return \Auth::user()->assets()->orderBy('id', 'desc')->paginate(5);
     }
 }

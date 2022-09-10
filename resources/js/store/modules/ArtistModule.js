@@ -30,7 +30,7 @@ export const actions = {
     },
     async getArtistAssets({ commit }, payload) {
         try {
-            const {data} = await repository.getArtistAssets()
+            const {data} = await repository.getArtistAssets(payload)
             console.log(data)
             return data
         } catch (e) {

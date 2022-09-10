@@ -18,7 +18,7 @@
           </button>
         </div>
       </div>
-      <section class="container mx-auto p-6 font-mono" v-if="assetData.length > 0">
+      <section class="container mx-auto p-6 font-mono" v-if="Object.keys(assetData).length != 0">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
           <div class="w-full overflow-x-auto">
             <table class="w-full">
@@ -33,22 +33,12 @@
                 </tr>
               </thead>
               <tbody class="bg-white">
-                <tr class="text-gray-700" v-for="asset in assetData" :key="asset.id">
+                <tr class="text-gray-700" v-for="asset in assetData.data" :key="asset.id">
                   <td class="px-4 py-3 border">
                     <div class="flex items-center text-sm">
-                      <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full"
-                          src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                          alt="" loading="lazy" />
-                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                      </div>
-                      <div>
-                        <p class="font-semibold text-black">
-                          Sufyan
-                        </p>
-                        <p class="text-xs text-gray-600">
-                          Developer
-                        </p>
+                      <div class="relative w-full h-12 rounded md:block">
+                        <img class="object-cover w-full h-full rounded" :src="asset.file" alt="image" loading="lazy" />
+                        <div class="absolute inset-0 shadow-inner" aria-hidden="true"></div>
                       </div>
                     </div>
                   </td>
@@ -85,36 +75,50 @@
               </tbody>
             </table>
           </div>
+
+        </div>
+        <div>
+          <VueTailwindPagination v-if="paginationData.total > paginationData.perPage" :current="paginationData.current"
+            :total="paginationData.total" :per-page="paginationData.perPage" @page-changed="artistAsset($event)" />
         </div>
       </section>
       <section class="container mx-auto" v-else>No data found..</section>
     </div>
   </div>
   <asset-modal :showModal="modalOpen" @close="closeModal">
-    <p class="my-4 text-slate-500 text-lg leading-relaxed">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-      cum amet ipsum itaque cumque exercitationem , rem ullam nemo error
-      ab.
-    </p>
+    <AssetForm :bottomCloseButton="modalOpen" @close="closeModal" />
   </asset-modal>
   <!-- </div> -->
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { useStore } from "vuex";
+import VueTailwindPagination from '@ocrv/vue-tailwind-pagination'
 import AssetModal from "../helpers/modal.vue";
+import AssetForm from '../helpers/assetform.vue'
 import { format } from "date-fns";
+const paginationData = reactive({
+  current: 1,
+  perPage: 0,
+  total: 0
+})
 const store = useStore();
 const modalOpen = ref(false);
-const assetData = ref([]);
+const assetData = ref({});
 const closeModal = () => {
   modalOpen.value = !modalOpen.value;
 };
-const artistAsset = async () => {
-  const res = await store.dispatch("artistModule/getArtistAssets");
+const artistAsset = async (page = 1) => {
+  const res = await store.dispatch("artistModule/getArtistAssets", page);
   assetData.value = res;
+  paginationData.current = page
+  paginationData.perPage = res.per_page
+  paginationData.total = res.total
 };
+const getImage = (image) => {
+  return image
+}
 onMounted(() => {
   artistAsset();
 });
