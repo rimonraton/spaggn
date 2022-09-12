@@ -44,6 +44,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Artist
     Route::post('create-artist-profile', [ArtistController::class, 'ArtistProfileSave']);
+    Route::post('create-artist-asset', [ArtistController::class, 'ArtistAssetsSave']);
     Route::get('get-artist-profile', [ArtistController::class, 'getArtistProfile']);
     Route::get('get-artist-assets', [ArtistController::class, 'getArtistAssets']);
 

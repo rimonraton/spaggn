@@ -18,7 +18,7 @@
           </button>
         </div>
       </div>
-      <section class="container mx-auto p-6 font-mono" v-if="Object.keys(assetData).length != 0">
+      <section class="container mx-auto p-6 font-mono" v-if="Object.keys(AsData).length != 0">
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
           <div class="w-full overflow-x-auto">
             <table class="w-full">
@@ -33,13 +33,26 @@
                 </tr>
               </thead>
               <tbody class="bg-white">
-                <tr class="text-gray-700" v-for="asset in assetData.data" :key="asset.id">
-                  <td class="px-4 py-3 border">
-                    <div class="flex items-center text-sm">
-                      <div class="relative w-full h-12 rounded md:block">
-                        <img class="object-cover w-full h-full rounded" :src="asset.file" alt="image" loading="lazy" />
+                <tr class="text-gray-700" v-for="asset in AsData.data" :key="asset.id">
+                  <td class="py-3 border">
+                    <div class="flex relative items-center justify-center text-sm cursor-pointer" @click="viewAsset(asset.id)" data-bs-toggle="tooltip" data-bs-placement="top" title="Show">
+                      <div class="relative rounded md:block" v-if="asset.fileType == 'image'">
+                        <img class="object-cover w-28 h-20 rounded" :src="asset.file" alt="image" loading="lazy" />
                         <div class="absolute inset-0 shadow-inner" aria-hidden="true"></div>
                       </div>
+                      <div class="relative rounded md:block" aspect-video
+                        v-if="asset.fileType == 'video'">
+                        <video controls class="w-28 h-20">
+                          <source :src="asset.file" id="video_here" />
+                          Your browser does not support HTML5 video.
+                        </video>
+                      </div>
+                      <!-- <span class="absolute right-0" v-if="asset.fileType == 'video'">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="black" class="w-3 h-3" viewBox="0 0 576 512">
+                            <path
+                              d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
+                          </svg>
+                        </span> -->
                     </div>
                   </td>
                   <td class="px-4 py-3 text-ms font-semibold border">
@@ -63,7 +76,8 @@
                       <span class="sr-only">Icon description</span>
                     </button>
                     <button type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
-                      class="text-blue-700 border hover:border-blue-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800">
+                      class="text-blue-700 border hover:border-blue-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800"
+                      @click="viewAsset(asset.id)">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="#8C4AB7" class="w-5 h-5" viewBox="0 0 576 512">
                         <path
                           d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z" />
@@ -85,18 +99,23 @@
       <section class="container mx-auto" v-else>No data found..</section>
     </div>
   </div>
-  <asset-modal :showModal="modalOpen" @close="closeModal">
+  <modal :showModal="modalOpen" @close="closeModal">
     <AssetForm :bottomCloseButton="modalOpen" @close="closeModal" />
-  </asset-modal>
+  </modal>
+  <AssetAboutModal :showModal="assetmodalOpen" @close="closeAssetModal" :title="'Your Asset'">
+    <AboutAsset :assetDataValue="assetSingledatavalue" />
+  </AssetAboutModal>
   <!-- </div> -->
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, onMounted, computed } from "vue";
 import { useStore } from "vuex";
 import VueTailwindPagination from '@ocrv/vue-tailwind-pagination'
-import AssetModal from "../helpers/modal.vue";
+import Modal from "../helpers/modal.vue";
+import AssetAboutModal from "../helpers/assetmodal.vue";
 import AssetForm from '../helpers/assetform.vue'
+import AboutAsset from '../helpers/assetdetails.vue'
 import { format } from "date-fns";
 const paginationData = reactive({
   current: 1,
@@ -105,23 +124,35 @@ const paginationData = reactive({
 })
 const store = useStore();
 const modalOpen = ref(false);
-const assetData = ref({});
+const assetmodalOpen = ref(false);
+const assetSingledatavalue = ref(null)
 const closeModal = () => {
   modalOpen.value = !modalOpen.value;
 };
+const closeAssetModal = () => {
+  assetmodalOpen.value = !assetmodalOpen.value;
+};
 const artistAsset = async (page = 1) => {
   const res = await store.dispatch("artistModule/getArtistAssets", page);
-  assetData.value = res;
   paginationData.current = page
-  paginationData.perPage = res.per_page
-  paginationData.total = res.total
+  paginationData.perPage = store.state.artistModule.artistAsset.per_page
+  paginationData.total = store.state.artistModule.artistAsset.total
 };
 const getImage = (image) => {
   return image
 }
+const viewAsset = (id) => {
+  const assetsingleData = AsData.value.data.find(a => a.id === id);
+  assetSingledatavalue.value = assetsingleData
+  assetmodalOpen.value = !assetmodalOpen.value
+
+  // console.log(`view asset-${id}`, assetsingleData)
+}
+const AsData = computed(() => Object.keys(store.state.artistModule.artistAsset).length != 0 ? store.state.artistModule.artistAsset : {})
 onMounted(() => {
-  artistAsset();
-});
+  // console.log('form..', store.state.artistModule.artistAsset)
+  artistAsset()
+})
 </script>
 
 <style>

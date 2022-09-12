@@ -13,6 +13,9 @@ export default {
     createArtistProfile(params) {
         return api.post('/api/create-artist-profile', params)
     },
+    createArtistAsset(params) {
+        return api.post('/api/create-artist-asset', params)
+    },
     getArtistProfile() {
         return api.get('/api/get-artist-profile')
     },

@@ -30,7 +30,7 @@ export default createStore({
     mutations: {
 
         setUser(state, payload) {
-            console.log('set user', payload)
+            // console.log('set user', payload)
             state.user = payload;
         }
 

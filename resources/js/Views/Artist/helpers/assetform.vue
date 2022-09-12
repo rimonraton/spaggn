@@ -33,14 +33,22 @@
                                             </svg>
                                         </div>
                                         <div v-else>
-                                            <img class="mx-auto w-12 h-12" :src="formData.asset" />
+                                            <div v-if="formData.fileFormat == 'image'">
+                                                <img class="mx-auto w-12 h-12" :src="formData.asset" />
+                                            </div>
+                                            <div v-if="formData.fileFormat == 'video'">
+                                                <video width="200" controls>
+                                                    <source :src="formData.asset" id="video_here" />
+                                                    Your browser does not support HTML5 video.
+                                                </video>
+                                            </div>
                                         </div>
                                         <div class="flex text-sm text-gray-600">
                                             <label for="file-upload"
                                                 class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                                 <span>Upload a file</span>
                                                 <input id="file-upload" @change="onFileChangePhoto($event, 'asset')"
-                                                    name="file-upload" type="file" class="sr-only" accept="image/*">
+                                                    name="file-upload" type="file" class="sr-only">
                                             </label>
                                             <p class="pl-1">or drag and drop</p>
                                         </div>
@@ -61,15 +69,6 @@
                                 placeholder="Enter the NTF's name" required="">
 
                         </div>
-                        <!-- <div class="relative mb-6 w-full">
-                <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                  Your social media profiles (Enter To Add More)
-                </label>
-                <multiselect ref="multiselectref" v-model="formData.social" :hideSelected="true" :maxHeight="0"
-                  placeholder="Type your social account link then press enter" :multiple="true" trackBy="url" label="url"
-                  :options="[]" :taggable="true" @tag="addTag">
-                </multiselect>
-              </div> -->
                         <div class="relative mb-6 w-full">
                             <label for="personal_story"
                                 class="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-400">
@@ -78,7 +77,7 @@
                                 <span class="text-sm">Describe your NFT, help other users understand what's unique about
                                     it</span>
                             </label>
-                            <textarea id="personal_story" v-model="formData.personalStory" rows="4"
+                            <textarea id="personal_story" v-model="formData.description" rows="4"
                                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
                                 placeholder="NFT description..."></textarea>
                         </div>
@@ -114,7 +113,7 @@
                         </div>
                         <div class="mb-6">
                             <div class="flex items-center mb-4">
-                                <input id="default-checkbox" type="checkbox" value=""
+                                <input id="default-checkbox" v-model="formData.rights" type="checkbox" value="rights"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 <label for="default-checkbox"
                                     class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -122,7 +121,7 @@
                                 </label>
                             </div>
                             <div class="flex items-center">
-                                <input id="checked-checkbox" type="checkbox" value=""
+                                <input id="checked-checkbox" v-model="formData.terms" type="checkbox" value="terms"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                 <label for="checked-checkbox"
                                     class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -145,24 +144,19 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useStore } from 'vuex'
-import Multiselect from 'vue-multiselect'
-// import { emit } from 'process';
-defineProps({
+const props = defineProps({
     bottomCloseButton: { type: Boolean, default: false }
 })
 const store = useStore()
 const formData = reactive({
     name: '',
-    lastName: '',
-    email: '',
-    social: [],
-    personalStory: '',
-    inspiration: '',
-    messageToWorld: '',
-    charities: [],
-    artisticInspiration: '',
+    description: '',
+    rights: false,
+    terms: false,
     asset: null,
-    coverPhoto: null,
+    fileExtension: '',
+    fileFormat: '',
+    videosrc: null,
     propertyData: [
         {
             property: "",
@@ -170,21 +164,6 @@ const formData = reactive({
         }
     ]
 })
-const multiselectref = ref()
-const charitiesOptions = reactive([
-    {
-        id: 1,
-        name: 'Charity'
-    },
-    {
-        id: 2,
-        name: 'Charity 1'
-    },
-    {
-        id: 3,
-        name: 'Charity 3'
-    }
-])
 const addProperty = () => {
     formData.propertyData.push({
         property: '',
@@ -194,44 +173,56 @@ const addProperty = () => {
 const remove = (index) => {
     formData.propertyData.splice(index, 1)
 }
-const optionSelected = (option, id) => {
-    console.log(`${option.id}`, `${option.name}`)
-    console.log(' >> ', formData.charities)
-}
-
-const addTag = (value, id) => {
-    // options.push({
-    //   url: value
-    // })
-    formData.social.push({
-        url: value
-    })
-    multiselectref.value.$el.focus()
-    // multiselectref.value.activate()
-}
-// const removeTag = (removeOption, id) => {
-//   const index = options.findIndex(key => key.url == removeOption.url)
-//   console.log('remove',removeOption.url, index, options)
-//   options.splice(index, 1)
-// }
 const onFileChangePhoto = (e, photo) => {
     if (e.target.files[0]) {
         const mimeType = e.target.files[0].type
+        console.log('split..', mimeType.split('/'))
         if (mimeType.split('/')[0] === 'image') {
             var reader = new FileReader(); // instance of the FileReader
             reader.readAsDataURL(e.target.files[0]); // read the local file
             reader.onloadend = function () {
                 // set video data as background of div
                 formData[photo] = reader.result
+                formData.fileFormat = mimeType.split('/')[0]
+                formData.fileExtension = mimeType.split('/')[1]
             };
+        } else if (mimeType.split('/')[0] === 'video') {
+            formData.videosrc = e.target.files[0]
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(e.target.files[0]); // read the local file
+            reader.onloadend = function () {
+                // set video data as background of div
+                formData[photo] = reader.result
+                formData.fileFormat = mimeType.split('/')[0]
+                formData.fileExtension = mimeType.split('/')[1]
+            };
+        } else {
+            formData[photo] = e.target.files[0]
         }
     } else {
         alert("file is empty!");
     }
 };
 const saveArtistAssetData = async () => {
+    // console.log('form data...',formData)
+    // return
+    let assetData = new FormData();
+    assetData.append("name", formData.name);
+    assetData.append("description", formData.description);
+    assetData.append("rights", formData.rights);
+    assetData.append("terms", formData.terms);
+    assetData.append("asset", formData.asset);
+    assetData.append("fileExtension", formData.fileExtension);
+    assetData.append("fileFormat", formData.fileFormat);
+    assetData.append("videosrc", formData.videosrc);
+    assetData.append("propertyData", JSON.stringify(formData.propertyData));
+
     try {
-        await store.dispatch('artistModule/createArtistProfile', formData)
+        await store.dispatch('artistModule/createArtistAsset', assetData)
+        clear()
+        if(props.bottomCloseButton) {
+            emit('close')
+        }
     } catch (e) {
         console.log(e)
     }
@@ -241,10 +232,26 @@ const emit = defineEmits(['close'])
 const toggleModal = () => {
     emit('close')
 }
+const clear = () => {
+        formData.name = '',
+        formData.description = '',
+        formData.rights = false,
+        formData.terms = false,
+        formData.asset = null,
+        formData.fileExtension = '',
+        formData.fileFormat = '',
+        formData.videosrc = null,
+        formData.propertyData = [
+            {
+                property: "",
+                value: ""
+            }
+        ]
+}
 </script>
-<style src="vue-multiselect/dist/vue-multiselect.css">
+<!-- <style src="vue-multiselect/dist/vue-multiselect.css">
 
-</style>
+</style> -->
 <style scoped>
 
 </style>
