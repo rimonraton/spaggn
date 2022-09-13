@@ -7,7 +7,7 @@
             <div class="flex flex-row px-2 py-3 mx-3">
               <div class="flex flex-col mb-2 ml-4 mt-1">
                 <div class="text-gray-600 text-2xl font-semibold">
-                  {{profile != null?profile.name:''}}
+                  {{profile != null ? profile.first_name + profile.last_name:''}}
                 </div>
                 <div class="w-full mt-1">
                   <div class="text-gray-400 font-thin text-sm">

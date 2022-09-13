@@ -47,6 +47,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('create-artist-asset', [ArtistController::class, 'ArtistAssetsSave']);
     Route::get('get-artist-profile', [ArtistController::class, 'getArtistProfile']);
     Route::get('get-artist-assets', [ArtistController::class, 'getArtistAssets']);
+    Route::post('image-remove', [ArtistController::class, 'ImageRemove']);
 
     // in app verification
     // Route::post('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verify');

@@ -52,5 +52,16 @@ export const actions = {
             throw e
         }
 
+    },
+    async imageRemove({ commit }, payload) {
+        try {
+            const { data } = await repository.imageRemove(payload)
+            console.log(data)
+            // commit('setAsset', data);
+            return data
+        } catch (e) {
+            throw e
+        }
+
     }
 }

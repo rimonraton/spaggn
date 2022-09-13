@@ -25,7 +25,7 @@ class ArtistController extends Controller
     public function ArtistProfileSave(Request $request)
     {
         // return $request->coverPhoto;
-        // return $request->charities;	
+        // return auth()->user()->id;
         $request->validate([
             'firstName' => 'required|min:3',
             'email' => 'email:rfc,dns',
@@ -56,10 +56,12 @@ class ArtistController extends Controller
         $photo->save(public_path($photoUrl));
         $charities = collect($request->charities)->implode('id', ',');
         $artist = new Artist([
-            'user_id' => auth()->id,
-            'name' => $request->firstName.' '.$request->lastName,
+            'user_id' => auth()->user()->id,
+            'first_name' => $request->firstName,
+            'last_name' => $request->lastName,
             'email' => $request->email,
             'sc_profile' => $sc_profile,
+            'charities_data' => json_encode($request->charities),
             'personal_story' => $request->personalStory,
             'inspiration' => $request->inspiration,
             'message_to_world' => $request->messageToWorld,
@@ -120,7 +122,7 @@ class ArtistController extends Controller
             return 'others';
         }
         $artist = new Asset([
-            'user_id' => auth()->id(),
+            'user_id' => auth()->user()->id,
             'name' => $request->name,
             'description' => $request->description,
             'file' => $assetFileUrl,
@@ -225,5 +227,17 @@ class ArtistController extends Controller
     public function getArtistAssets()
     {
         return \Auth::user()->assets()->orderBy('id', 'desc')->paginate(5);
+    }
+    public function ImageRemove(Request $request)
+    {
+        // return $request->all();
+        if(file_exists($request->file)){
+            @unlink($request->file);
+            Artist::where('user_id', auth()->user()->id)->update([
+                $request->type => ''
+            ]);
+            return 'success';
+            // return auth()->user()->id;
+        }
     }
 }

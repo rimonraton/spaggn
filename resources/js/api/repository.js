@@ -21,6 +21,9 @@ export default {
     },
     getArtistAssets(page) {
         return api.get(`/api/get-artist-assets?page=${page}`)
+    },
+    imageRemove(params) {
+        return api.post('/api/image-remove', params)
     }
     // changeAddress(params) {
     //     return api.post('/api/change-address', params)
