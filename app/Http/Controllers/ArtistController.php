@@ -24,8 +24,7 @@ class ArtistController extends Controller
 
     public function ArtistProfileSave(Request $request)
     {
-        // return $request->coverPhoto;
-        // return auth()->user()->id;
+        // return $request->all();
         $request->validate([
             'firstName' => 'required|min:3',
             'email' => 'email:rfc,dns',
@@ -33,29 +32,61 @@ class ArtistController extends Controller
             'charities' => 'required',
             'coverPhoto' => 'required|max:200000',
             'photo' => 'required|max:100000',
-        ]);
+        ]); 
+        $photoUrl = '';
+        $coverUrl = '';
+        $coverSmUrl = '';
+        if(file_exists($request->photo)){
+            $photoUrl = $request->photo;
+        } else {
+            $photo = \Image::make($request->photo);
+            $photo->resize(200, 200);
+            $photoUrl = 'images/artist/photo/'.Str::random(12).'.jpg';
+            $photo->save(public_path($photoUrl));
+        }
+        if(file_exists($request->coverPhoto)){
+            $coverUrl = $request->coverPhoto;
+        } else {
+            $cover = \Image::make($request->coverPhoto);
+            $coverSm = \Image::make($request->coverPhoto);
+            $cover->resize(1920, 300, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            $coverSm->resize(330, 120);
+            
+            $coverUrl = 'images/artist/cover/'.Str::random(12).'.jpg';
+            $coverSmUrl = 'images/artist/cover_sm/'.Str::random(12).'.jpg';
+            
+            $cover->save(public_path($coverUrl));
+            $coverSm->save(public_path($coverSmUrl));
+        }
         $sc_profile = null;
         $social = collect($request->social)->implode('url', ',');
         if($request->social) {
             $sc_profile = $this->getScProfile($social);
         }
-        $photo = \Image::make($request->photo);
-        $cover = \Image::make($request->coverPhoto);
-        $coverSm = \Image::make($request->coverPhoto);
-        $cover->resize(1920, 300, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
-        $coverSm->resize(330, 120);
-        $photo->resize(200, 200);
-        $coverUrl = 'images/artist/cover/'.Str::random(12).'.jpg';
-        $coverSmUrl = 'images/artist/cover_sm/'.Str::random(12).'.jpg';
-        $photoUrl = 'images/artist/photo/'.Str::random(12).'.jpg';
-        $cover->save(public_path($coverUrl));
-        $coverSm->save(public_path($coverSmUrl));
-        $photo->save(public_path($photoUrl));
         $charities = collect($request->charities)->implode('id', ',');
-        $artist = new Artist([
+        // $artist = new Artist([
+        //     'user_id' => auth()->user()->id,
+        //     'first_name' => $request->firstName,
+        //     'last_name' => $request->lastName,
+        //     'email' => $request->email,
+        //     'sc_profile' => $sc_profile,
+        //     'charities_data' => json_encode($request->charities),
+        //     'personal_story' => $request->personalStory,
+        //     'inspiration' => $request->inspiration,
+        //     'message_to_world' => $request->messageToWorld,
+        //     'charities' => $charities,
+        //     'artistic_inspiration' => $request->artisticInspiration,
+        //     'photo' => $photoUrl,
+        //     'cover' => $coverUrl,
+        //     'cover_sm' => $coverSmUrl
+        // ]);
+        // $artist->save();
+        Artist::updateOrCreate(
+            ['user_id' => auth()->user()->id],
+            [
             'user_id' => auth()->user()->id,
             'first_name' => $request->firstName,
             'last_name' => $request->lastName,
@@ -70,8 +101,7 @@ class ArtistController extends Controller
             'photo' => $photoUrl,
             'cover' => $coverUrl,
             'cover_sm' => $coverSmUrl
-        ]);
-        $artist->save();
+            ]);
         return 'success';
         // return $request->all();
         // return redirect('Admin/ArtistProfile');

@@ -44,10 +44,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       charities: [],
       artisticInspiration: '',
       photo: null,
-      coverPhoto: null
+      coverPhoto: null,
+      isUpdate: false
     });
-    var btnText = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('');
-    var isUpdate = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
+    var btnText = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(''); // const isUpdate = ref(false)
+
     var multiselectref = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
     var charitiesOptions = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)([{
       id: 1,
@@ -151,10 +152,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 console.log('res', res != '' && Object.keys(res).length != 0, res);
 
                 if (res != '' && Object.keys(res).length != 0) {
-                  isUpdate.value = true;
+                  formData.isUpdate = true;
                   formData.firstName = res.first_name, formData.lastName = res.last_name, formData.email = res.email, formData.social = JSON.parse(res.sc_profile), formData.personalStory = res.personal_story, formData.inspiration = res.inspiration, formData.messageToWorld = res.message_to_world, formData.charities = JSON.parse(res.charities_data), formData.artisticInspiration = res.artistic_inspiration, formData.photo = res.photo != '' ? res.photo : null, formData.coverPhoto = res.cover != '' ? res.cover : null;
                 } else {
-                  isUpdate.value = false;
+                  formData.isUpdate = false;
                 }
 
               case 5:
@@ -261,7 +262,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       store: store,
       formData: formData,
       btnText: btnText,
-      isUpdate: isUpdate,
       multiselectref: multiselectref,
       charitiesOptions: charitiesOptions,
       optionSelected: optionSelected,
@@ -759,7 +759,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     accept: "image/*"
   }, null, 32
   /* HYDRATE_EVENTS */
-  )]), _hoisted_53]), _hoisted_54])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.isUpdate ? 'Update' : 'Submit'), 1
+  )]), _hoisted_53]), _hoisted_54])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_55, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_56, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formData.isUpdate ? 'Update' : 'Submit'), 1
   /* TEXT */
   )])], 40
   /* PROPS, HYDRATE_EVENTS */

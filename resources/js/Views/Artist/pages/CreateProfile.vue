@@ -168,7 +168,7 @@
             <div class="w-full">
               <button type="submit"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                {{isUpdate ? 'Update' : 'Submit'}}
+                {{formData.isUpdate ? 'Update' : 'Submit'}}
               </button>
             </div>
           </form>
@@ -197,10 +197,11 @@ const formData = reactive({
   charities: [],
   artisticInspiration: '',
   photo: null,
-  coverPhoto: null
+  coverPhoto: null,
+  isUpdate: false
 })
 const btnText = ref('')
-const isUpdate = ref(false)
+// const isUpdate = ref(false)
 const multiselectref = ref()
 const charitiesOptions = reactive([
   {
@@ -265,8 +266,8 @@ const getArtistProfile = async () => {
   //  profile.value = res
   console.log('res', res != '' && Object.keys(res).length != 0, res)
   if (res != '' && Object.keys(res).length != 0) {
-    isUpdate.value = true
-    formData.firstName = res.first_name,
+      formData.isUpdate = true
+      formData.firstName = res.first_name,
       formData.lastName = res.last_name,
       formData.email = res.email,
       formData.social = JSON.parse(res.sc_profile),
@@ -279,7 +280,7 @@ const getArtistProfile = async () => {
       formData.coverPhoto = res.cover != '' ? res.cover : null
 
   } else {
-    isUpdate.value = false
+    formData.isUpdate = false
   }
 }
 
