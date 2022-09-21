@@ -1,8 +1,7 @@
 <template>
-    <!-- <LandingLayout> -->
     <!-- hero -->
     <section>
-        <!-- <div class="h-16 w-full"></div> -->
+        <div class="h-16 w-full"></div>
         <div class="mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center  w-full pattern">
             <div class="flex flex-col p-5 items-center bg-black/50 w-full pt-16 mx-auto rounded-lg">
                 <div class="w-28 mb-8 mt-2">
@@ -117,7 +116,7 @@
                     :pagination="{ clickable: true }"
                     :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true, }" :speed="2000">
                     <swiper-slide>
-                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="bg-white h-96 overflow-auto rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8 my-10">
                             <div class="space-y-4">
                                 <h3 class="text-xl font-semibold text-center text-purple-900">
                                     We are not just another NFT Marketplace
@@ -136,7 +135,7 @@
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="bg-white h-96 overflow-auto rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8 my-10 py-10">
                             <div class="space-y-4">
                                 <h3 class="text-xl font-semibold text-purple-900 text-center">
                                     Projects with built-in community & Utility
@@ -159,7 +158,7 @@
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="bg-white h-96 overflow-auto rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8 my-10">
                             <div class="space-y-4">
                                 <h3 class="text-xl font-semibold text-purple-900 text-center">
                                     We are addressing the NFT platform challenges
@@ -736,8 +735,7 @@
         </div>
     </section>
     <!-- </div>
-  </section> -->
-    <!-- </LandingLayout> -->
+    </section> -->
 </template>
 
 <script setup>

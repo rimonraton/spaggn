@@ -1679,6 +1679,12 @@ video {
 .overflow-x-hidden {
   overflow-x: hidden
 }
+.overflow-y-visible {
+  overflow-y: visible
+}
+.overflow-y-scroll {
+  overflow-y: scroll
+}
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2167,6 +2173,10 @@ video {
 .px-0 {
   padding-left: 0px;
   padding-right: 0px
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem
 }
 .pt-8 {
   padding-top: 2rem
