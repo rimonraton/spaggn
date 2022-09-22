@@ -1279,6 +1279,9 @@ video {
 .h-20 {
   height: 5rem
 }
+.h-96 {
+  height: 24rem
+}
 .h-64 {
   height: 16rem
 }
@@ -1287,9 +1290,6 @@ video {
 }
 .h-11 {
   height: 2.75rem
-}
-.h-96 {
-  height: 24rem
 }
 .h-14 {
   height: 3.5rem
@@ -1678,12 +1678,6 @@ video {
 }
 .overflow-x-hidden {
   overflow-x: hidden
-}
-.overflow-y-visible {
-  overflow-y: visible
-}
-.overflow-y-scroll {
-  overflow-y: scroll
 }
 .truncate {
   overflow: hidden;
@@ -2162,6 +2156,10 @@ video {
   padding-top: 4rem;
   padding-bottom: 4rem
 }
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem
+}
 .py-0\.5 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem
@@ -2173,10 +2171,6 @@ video {
 .px-0 {
   padding-left: 0px;
   padding-right: 0px
-}
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem
 }
 .pt-8 {
   padding-top: 2rem
