@@ -1348,12 +1348,6 @@ video {
 .w-4\/12 {
   width: 33.333333%
 }
-.w-80 {
-  width: 20rem
-}
-.w-64 {
-  width: 16rem
-}
 .w-16 {
   width: 4rem
 }
@@ -1368,6 +1362,9 @@ video {
 }
 .w-24 {
   width: 6rem
+}
+.w-64 {
+  width: 16rem
 }
 .w-0 {
   width: 0px
@@ -2139,14 +2136,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem
-}
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem
-}
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem
 }
 .px-8 {
   padding-left: 2rem;

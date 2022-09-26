@@ -19,6 +19,8 @@
                         <input type="email" v-model="user.email" name="email" id="email"
                             placeholder="Your email address"
                             class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        <span class="text-red-500" v-for="error in v$.email.$errors"
+                            :key="error.$uid">{{error.$message}}</span>
                     </div>
                     <div class="mb-6">
                         <div class="flex justify-between mb-2">
@@ -27,6 +29,8 @@
                         <input type="password" v-model="user.password" name="password" id="password"
                             placeholder="Your password"
                             class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        <span class="text-red-500" v-for="error in v$.password.$errors"
+                            :key="error.$uid">{{error.$message}}</span>
                         <div class="text-right mb-2">
                             <a href="#!"
                                 class="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300">
@@ -84,66 +88,51 @@
             </div>
         </div>
     </div>
-    <!-- <div class="max-w-screen-md mx-auto py-1 lg:py-4 text-gray-900">
-        <div class="flex justify-center items-center">
-            <form @submit.prevent="login">
-                <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
-                    <div>
-                        <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Login</h1>
-                        <p
-                            class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">
-                            Login to Good Given Network
-                        </p>
-                    </div>
-                    <div class="space-y-4">
-                        <input type="email" v-model="user.email" placeholder="Email Addres"
-                            class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
-                        <input type="password" v-model="user.password" placeholder="Password"
-                            class="block text-sm py-3 px-4 rounded-lg w-full border outline-none" />
-                    </div>
-                    <div class="text-center mt-6">
-                        <button type="submit" class="py-3 w-64 text-xl text-black border border-blue-400 rounded-2xl">
-                            <span v-if="!helper.busy">LogIn Now</span>
-                            <span v-else>Loging...</span>
-                        </button>
-                        <p class="mt-4 text-sm">Don't Have Any Account? <span class="underline cursor-pointer"> Create
-                                Account</span>
-                        </p>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div> -->
 </template>
 
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
+import { useVuelidate } from '@vuelidate/core'
+import { required, email, helpers } from '@vuelidate/validators'
 const router = useRouter()
 const store = useStore()
 const user = reactive({
     email: '',
     password: ''
 })
+const rules = computed(() => {
+    return {
+        email: { required, email },
+        password: { required }
+    }
+})
+const v$ = useVuelidate(rules, user)
 const helper = reactive({
     errors: null,
     busy: false,
 })
 
 const login = async () => {
-    helper.busy = true;
-    helper.errors = null
-    try {
-        await store.dispatch('login', { 'email': user.email, 'password': user.password })
-        const role = store.getters.user.role.name
-        router.push({ name: role })
+    const result = await v$.value.$validate()
+    if (result) {
+        helper.busy = true;
+        helper.errors = null
+        try {
+            await store.dispatch('login', { 'email': user.email, 'password': user.password })
+            const role = store.getters.user.role.name
+            router.push({ name: role })
+        }
+        catch (e) {
+            helper.errors = e.data
+        };
+        helper.busy = false;
+    } else {
+        console.log('Form not submitted!')
     }
-    catch (e) {
-        helper.errors = e.data
-    };
-    helper.busy = false;
+
 
 }
 </script>
