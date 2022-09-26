@@ -9,6 +9,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\MessageInfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,3 +55,4 @@ Route::middleware('auth:sanctum')->group(function () {
     // Route::post('/verify-resend', [VerificationController::class, 'resend']);
 });
 Route::get('/user', UserController::class);
+Route::get('get-message-info', [MessageInfoController::class, 'index']);
