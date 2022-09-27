@@ -19915,7 +19915,7 @@ __webpack_require__.r(__webpack_exports__);
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/sanctum/csrf-cookie');
   },
   login: function login(params) {
-    console.log('params', params);
+    // console.log('params',params)
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/login', params);
   },
   registration: function registration(params) {
@@ -20763,7 +20763,8 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
   namespaced: true,
   state: function state() {
     return {
-      user: null
+      user: null,
+      loginError: null
     };
   },
   getters: {
@@ -20788,12 +20789,12 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
   actions: {
     login: function login(_ref, payload) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var dispatch;
+        var dispatch, state;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                dispatch = _ref.dispatch;
+                dispatch = _ref.dispatch, state = _ref.state;
                 _context.prev = 1;
                 _context.next = 4;
                 return _api_repository__WEBPACK_IMPORTED_MODULE_2__["default"].createSession();
@@ -20801,9 +20802,24 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
               case 4:
                 _context.next = 6;
                 return _api_repository__WEBPACK_IMPORTED_MODULE_2__["default"].login(payload).then(function (res) {
+                  state.loginError = null;
                   return dispatch('getUser');
-                })["catch"](function (err) {
-                  throw err.response;
+                })["catch"](function (error) {
+                  if (error.response) {
+                    // Request made and server responded
+                    var message = error.response.data.message;
+                    state.loginError = message; // console.log('message...', message);
+                    // console.log(error.response.status);
+                    // console.log(error.response.headers);
+                  } else if (error.request) {
+                    // The request was made but no response was received
+                    console.log(error.request);
+                  } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                  }
+
+                  return; // throw error.response
                 });
 
               case 6:
@@ -20890,7 +20906,7 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
                 commit = _ref4.commit;
                 _context4.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/user').then(function (res) {
-                  console.log('res data', res.data);
+                  // console.log('res data', res.data)
                   commit('setUser', res.data);
                 })["catch"](function (err) {
                   throw err.response;

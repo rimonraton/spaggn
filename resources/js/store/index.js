@@ -11,7 +11,8 @@ export default createStore({
     namespaced: true,
     state() {
         return {
-            user: null
+            user: null,
+            loginError: null
         }
     },
     getters: {
@@ -38,16 +39,32 @@ export default createStore({
 
     actions: {
 
-        async login({ dispatch }, payload) {
+        async login({ dispatch, state }, payload) {
             try {
                 // await axios.get('/sanctum/csrf-cookie');
                 await repository.createSession();
 
                 // await axios.post('/api/login', payload).then((res) => {
                 await repository.login(payload).then((res) => {
+                    state.loginError = null
                     return dispatch('getUser');
-                }).catch((err) => {
-                    throw err.response
+                }).catch((error) => {
+                    if (error.response) {
+                        // Request made and server responded
+                        const { message } = error.response.data
+                        state.loginError = message
+                        // console.log('message...', message);
+                        // console.log(error.response.status);
+                        // console.log(error.response.headers);
+                      } else if (error.request) {
+                        // The request was made but no response was received
+                        console.log(error.request);
+                      } else {
+                        // Something happened in setting up the request that triggered an Error
+                        console.log('Error', error.message);
+                      }
+                      return
+                    // throw error.response
                 });
                 // const res = await axios.post('/api/login', payload);
 
@@ -83,7 +100,7 @@ export default createStore({
         },
         async getUser({ commit }) {
             await axios.get('/api/user').then((res) => {
-                console.log('res data', res.data)
+                // console.log('res data', res.data)
                 commit('setUser', res.data);
             }).catch((err) => {
                 throw err.response

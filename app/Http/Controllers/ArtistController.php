@@ -26,8 +26,8 @@ class ArtistController extends Controller
     {
         // return $request->all();
         $request->validate([
-            'firstName' => 'required|min:3',
-            'email' => 'email:rfc,dns',
+            // 'firstName' => 'required|min:3',
+            // 'email' => 'email:rfc,dns',
             'personalStory' => 'required|min:20',
             'charities' => 'required',
             'coverPhoto' => 'required|max:200000',
@@ -88,9 +88,9 @@ class ArtistController extends Controller
             ['user_id' => auth()->user()->id],
             [
             'user_id' => auth()->user()->id,
-            'first_name' => $request->firstName,
-            'last_name' => $request->lastName,
-            'email' => $request->email,
+            // 'first_name' => $request->firstName,
+            // 'last_name' => $request->lastName,
+            // 'email' => $request->email,
             'sc_profile' => $sc_profile,
             'charities_data' => json_encode($request->charities),
             'personal_story' => $request->personalStory,
@@ -252,7 +252,8 @@ class ArtistController extends Controller
     }
     public function getArtistProfile()
     {
-        return \Auth::user()->profile;
+        $profile = \Auth::user()->profile;
+        return response()->json($profile, 200);
     }
     public function getArtistAssets()
     {

@@ -9,22 +9,7 @@
       <div class="md:grid md:grid-cols-1 md:gap-6">
         <div class="mt-5 md:mt-0">
           <form @submit.prevent="saveArtistData" enctype="multipart/form-data">
-            <!-- <div class="relative z-0 mb-6 w-full group">
-                <input type="password" name="floating_password" id="floating_password"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" " required="">
-                <label for="floating_password"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-              </div>
-              <div class="relative z-0 mb-6 w-full group">
-                <input type="password" name="repeat_password" id="floating_repeat_password"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" " required="">
-                <label for="floating_repeat_password"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
-                  password</label>
-              </div> -->
-            <div class="grid md:grid-cols-2 md:gap-6">
+            <!-- <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative z-0 mb-6 w-full group">
                 <input type="text" v-model="formData.firstName" name="floating_first_name" id="floating_first_name"
                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -46,12 +31,12 @@
             <div class="relative z-0 mb-6 w-full group">
               <input type="email" v-model="formData.email" name="floating_email" id="floating_email"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required="">
+                placeholder=" ">
               <label for="floating_email"
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 The best way to connect with you (email address)
               </label>
-            </div>
+            </div> -->
             <div class="relative mb-6 w-full">
               <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                 Your social media profiles (Enter To Add More)
@@ -60,14 +45,16 @@
                 placeholder="Type your social account link then press enter" :multiple="true" trackBy="url" label="url"
                 :options="[]" :taggable="true" @tag="addTag">
               </multiselect>
+              <span class="text-red-500" v-for="error in v$.social.$errors" :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="relative mb-6 w-full">
               <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                How does your personal story influence your art?
+                How does your personal story influence your art? ( Minimum 20 characters )
               </label>
               <textarea id="personal_story" v-model="formData.personalStory" rows="4"
                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
                 placeholder="personal story..."></textarea>
+                <span class="text-red-500" v-for="error in v$.personalStory.$errors" :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="relative mb-6 w-full">
               <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -77,6 +64,7 @@
                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
                 placeholder="your inspiration"></textarea>
             </div>
+            <span class="text-red-500" v-for="error in v$.inspiration.$errors" :key="error.$uid">{{error.$message}}</span>
             <div class="relative mb-6 w-full">
               <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                 What message do your arts convey to the world?
@@ -84,6 +72,7 @@
               <textarea id="personal_story" v-model="formData.messageToWorld" rows="4"
                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
                 placeholder="Message to world"></textarea>
+                <span class="text-red-500" v-for="error in v$.messageToWorld.$errors" :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative mb-6 w-full group">
@@ -93,6 +82,7 @@
                   placeholder="Select One" :multiple="true" trackBy="id" label="name" :options="charitiesOptions"
                   :closeOnSelect="true">
                 </multiselect>
+                <span class="text-red-500" v-for="error in v$.charities.$errors" :key="error.$uid">{{error.$message}}</span>
               </div>
               <div class="relative  mb-6 w-full group">
                 <label for="country" class="block text-sm font-medium text-gray-700">What artistic inspiration closely
@@ -100,11 +90,12 @@
                 <multiselect v-model="formData.artisticInspiration" :hideSelected="true" placeholder="Select One"
                   :options="['one', 'two', 'three']">
                 </multiselect>
+                <span class="text-red-500" v-for="error in v$.artisticInspiration.$errors" :key="error.$uid">{{error.$message}}</span>
               </div>
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
               <div>
-                <label class="block text-sm font-medium text-gray-700"> Your Photo </label>
+                <label class="block text-sm font-medium text-gray-700"> Your Photo <span class="text-red-500" v-for="error in v$.photo.$errors" :key="error.$uid">{{error.$message}}</span></label>
                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   <div class="space-y-1 text-center">
                     <div v-if="formData.photo == null">
@@ -134,7 +125,7 @@
               </div>
               <div class="relative mb-6 w-full group">
                 <div>
-                  <label class="block text-sm font-medium text-gray-700"> Cover Photo (1920 x 300)px </label>
+                  <label class="block text-sm font-medium text-gray-700"> Cover Photo (1920 x 300)px <span class="text-red-500" v-for="error in v$.coverPhoto.$errors" :key="error.$uid">{{error.$message}}</span></label>
                   <div
                     class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                     <div class="space-y-1 text-center">
@@ -180,10 +171,12 @@
 </template>
   
 <script setup>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
 import Multiselect from 'vue-multiselect'
 import { useRouter } from 'vue-router'
+import { useVuelidate } from '@vuelidate/core'
+import { required, minLength } from '@vuelidate/validators'
 const router = useRouter()
 const store = useStore()
 const formData = reactive({
@@ -200,6 +193,22 @@ const formData = reactive({
   coverPhoto: null,
   isUpdate: false
 })
+const rules = computed(() => {
+  return {
+    firstName: { required },
+    lastName: { required },
+    email: { required },
+    social: { required },
+    personalStory: { required, minLength: minLength(20) },
+    inspiration: { required },
+    messageToWorld: { required },
+    charities: { required },
+    artisticInspiration: { required },
+    photo: { required },
+    coverPhoto: { required },
+  }
+})
+const v$ = useVuelidate(rules, formData)
 const btnText = ref('')
 // const isUpdate = ref(false)
 const multiselectref = ref()
@@ -253,21 +262,30 @@ const onFileChangePhoto = (e, photo) => {
   }
 };
 const saveArtistData = async () => {
-  try {
-    await store.dispatch('artistModule/createArtistProfile', formData)
-    clear()
-    router.push({ name: 'Artist' })
-  } catch (e) {
-    console.log(e)
+  const result = await v$.value.$validate()
+  // console.log('result from artist profile..', result)
+  // return
+
+  if (result) {
+    try {
+      await store.dispatch('artistModule/createArtistProfile', formData)
+      clear()
+      router.push({ name: 'Artist' })
+    } catch (e) {
+      console.log(e)
+    }
+  } else {
+    alert('Form not submitted')
   }
+
 }
 const getArtistProfile = async () => {
   const res = await store.dispatch('artistModule/getArtistProfile')
   //  profile.value = res
   console.log('res', res != '' && Object.keys(res).length != 0, res)
   if (res != '' && Object.keys(res).length != 0) {
-      formData.isUpdate = true
-      formData.firstName = res.first_name,
+    formData.isUpdate = true
+    formData.firstName = res.first_name,
       formData.lastName = res.last_name,
       formData.email = res.email,
       formData.social = JSON.parse(res.sc_profile),

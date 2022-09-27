@@ -1,6 +1,17 @@
 <template>
     <!-- component -->
     <div class="flex justify-center bg-gray-100 h-screen items-center">
+        <!-- notification -->
+        <div v-if="helper.errors != null" class="bg-white/60 backdrop-blur-xl z-20 max-w-md absolute right-5 top-5 rounded-lg p-6 shadow">
+            <span class="absolute right-0 top-0 w-3 h-3 mr-2 cursor-pointer" @click="helper.errors = null">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="#C41E3A">
+                    <path
+                        d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+                </svg>
+            </span>
+            <h1 class="text-sm text-red-500 font-medium">{{helper.errors}}</h1>
+        </div>
+        <!-- end notification -->
         <div class="container mt-10 my-auto max-w-md border-2 border-gray-200 p-3 bg-white rounded-lg">
             <!-- header -->
             <div class="text-center my-6">
@@ -122,8 +133,13 @@ const login = async () => {
         helper.errors = null
         try {
             await store.dispatch('login', { 'email': user.email, 'password': user.password })
-            const role = store.getters.user.role.name
-            router.push({ name: role })
+            if (store.state.loginError == null) {
+                const role = store.getters.user.role.name
+                router.push({ name: role })
+            } else {
+                helper.errors = store.state.loginError
+                // alert(store.state.loginError)
+            }
         }
         catch (e) {
             helper.errors = e.data
