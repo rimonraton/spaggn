@@ -4,6 +4,7 @@ import { createApp } from 'vue';
 import App from './components/App.vue'
 import router from './router';
 import store from './store';
+import '@ocrv/vue-tailwind-pagination/styles'
 
 
 axios.defaults.withCredentials = true;

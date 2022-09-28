@@ -1,8 +1,7 @@
 <template>
-    <!-- <LandingLayout> -->
     <!-- hero -->
     <section>
-        <!-- <div class="h-16 w-full"></div> -->
+        <div class="h-16 w-full"></div>
         <div class="mx-auto bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r text-center  w-full pattern">
             <div class="flex flex-col p-5 items-center bg-black/50 w-full pt-16 mx-auto rounded-lg">
                 <div class="w-28 mb-8 mt-2">
@@ -17,7 +16,7 @@
                         Create LEGACY for your donors
                     </h2>
                     <p class="mt-3 text-gray-100">
-                        Good Giving Network lets donors and collectors to donate to their favorite charities and collect
+                        Good Giving Network helps donors and collectors donate to their favorite charities and collect
                         NFTs that reflect their values.
                     </p>
                 </div>
@@ -46,13 +45,9 @@
                             </h3>
                             <p class="mb-6">
                                 Our platform is designed for Charities and nonprofits that are dedicated to solving the
-                                hardest problems the world faces today. GGN partners with these organizations to help
-                                them achieve their vision. All the charities, artists, and collabs on our platform go
-                                through extensive verification and authentication processes before being accepted.
-                                <!-- We do not plan to be everything for everyone. We only allow verified charities and
-                                authentic artists in our platform. We believe the charities and the communities that
-                                support them have the power to solve the hardest problems that the world faces today.
-                                Our goal is to partner with these charities and the communities to achieve their goals. -->
+                                world's biggest problems. GGN partners with these organizations to help them achieve
+                                their vision. All the charities, artists, and collabs on our platform are vetted and
+                                authenticated.
                             </p>
                         </div>
                     </div>
@@ -62,23 +57,11 @@
                                 Projects with built-in community & Utility
                             </h3>
                             <p class="mb-6">
-                                Charities with great cause always have a passionate group of followers and donors. So,
-                                charities do not have the same challenge of building community as other NFT projects.
-                                The funds collected for every NFT that is sold by the charity are used to solve
-                                difficult societal and environmental problems. Some projects also have a governance
-                                feature associated with their NFTs which provides DAO membership to the NFT holders. The
-                                collectors of these NFTs have the opportunity to vote on the NFT projects or any other
-                                projects related to the charity.
-
-                                <!-- Every successful charity already has a passionate group of followers and donors, and
-                                these followers join the cause when the charity starts a project. The funds collected
-                                for every NFT that is sold by the charity are used to solve difficult societal and
-                                environmental problems.
-
-                                Some projects also have a governance feature associated with their NFTs which provides
-                                DAO membership to the NFT holders. The collectors of these NFTs have opportunity to vote
-                                on the NFT projects or any other projects related to the charity. -->
-
+                                Charities with great cause always have a passionate group of followers and donors - a
+                                built-in community. The funds collected for NFT sales are used to solve difficult
+                                societal and environmental problems. In addition, projects with governance features
+                                provide DAO membership to the NFT holders. The collectors of these NFTs have the
+                                opportunity to vote on the NFT projects or any other projects related to the charity.
                             </p>
                         </div>
                     </div>
@@ -89,17 +72,14 @@
                             </h3>
                             <p class="mb-6">
                                 GGN partners with <a href="https://nftrade.com" target="_blank"
-                                    class="text-blue-700 hover:underline cursor-pointer">NFTrade</a> the first
-                                cross-chain and blockchain agnostic NFT platform to
+                                    class="text-blue-700 hover:underline cursor-pointer">
+                                    NFTrade
+                                </a>
+                                the first cross-chain and blockchain agnostic NFT platform to
                                 address the multi-chain & cross-chain and peer-to-peer challenges. GGN is building a
-                                seamless integration between the two platforms, so UX will not be affected. The fiat
-                                currency integration to NFT is also on NFTrade’s roadmap. Once complete, anyone will be
-                                able to purchase NFTs using credit cards in their native currency.
-                                <!-- GGN partners with NFTrade the first cross-chain and blockchain agonstic NFT platform to
-                                address the multi-chain & cross-chain and peer-to-peer challenges. GGN is building a
-                                seamless integration between the two platforms, so UX will not be affected. The fiat
-                                currency integration to NFT is also on NFTrade’s roadmap. Once complete anyone will be
-                                able to purchase NFTs using credit card in their native currency. -->
+                                seamless integration between the two platforms. The fiat currency integration to NFT is
+                                also on NFTrade’s roadmap. Once complete, anyone will be able to purchase NFTs using
+                                credit cards in their native currency.
                             </p>
                         </div>
                     </div>
@@ -117,64 +97,50 @@
                     :pagination="{ clickable: true }"
                     :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true, }" :speed="2000">
                     <swiper-slide>
-                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="bg-white h-96 overflow-auto rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8 my-10">
                             <div class="space-y-4">
                                 <h3 class="text-xl font-semibold text-center text-purple-900">
                                     We are not just another NFT Marketplace
                                 </h3>
                                 <p class="mb-6">
-                                    Our platform is designed for Charities and nonprofits that are dedicated to
-                                    solving the
-                                    hardest problems the world faces today. GGN partners with these organizations to
-                                    help
-                                    them achieve their vision. All the charities, artists, and collabs on our
-                                    platform go
-                                    through extensive verification and authentication processes before being
-                                    accepted.
+                                    Our platform is designed for Charities and nonprofits that are dedicated to solving
+                                    the world's biggest problems. GGN partners with these organizations to help them
+                                    achieve their vision. All the charities, artists, and collabs on our platform are
+                                    vetted and authenticated.
                                 </p>
                             </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="bg-white h-96 overflow-auto rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8 my-10 py-10">
                             <div class="space-y-4">
                                 <h3 class="text-xl font-semibold text-purple-900 text-center">
                                     Projects with built-in community & Utility
                                 </h3>
                                 <p class="mb-6">
-                                    Charities with great cause always have a passionate group of followers and
-                                    donors. So,
-                                    charities do not have the same challenge of building community as other NFT
-                                    projects.
-                                    The funds collected for every NFT that is sold by the charity are used to solve
-                                    difficult societal and environmental problems. Some projects also have a
-                                    governance
-                                    feature associated with their NFTs which provides DAO membership to the NFT
-                                    holders. The
-                                    collectors of these NFTs have the opportunity to vote on the NFT projects or any
-                                    other
-                                    projects related to the charity.
+                                    Charities with great cause always have a passionate group of followers and donors -
+                                    a built-in community. The funds collected for NFT sales are used to solve difficult
+                                    societal and environmental problems. In addition, projects with governance features
+                                    provide DAO membership to the NFT holders. The collectors of these NFTs have the
+                                    opportunity to vote on the NFT projects or any other projects related to the
+                                    charity.
                                 </p>
                             </div>
                         </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <div class="bg-white rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8">
+                        <div class="bg-white h-96 overflow-auto rounded-2xl shadow-xl p-8 sm:px-12 lg:px-8 my-10">
                             <div class="space-y-4">
                                 <h3 class="text-xl font-semibold text-purple-900 text-center">
                                     We are addressing the NFT platform challenges
                                 </h3>
                                 <p class="mb-6">
                                     GGN partners with <a href="https://nftrade.com" target="_blank"
-                                        class="text-blue-700 hover:underline cursor-pointer">NFTrade</a> the first
-                                    cross-chain and blockchain agnostic NFT platform to
-                                    address the multi-chain & cross-chain and peer-to-peer challenges. GGN is
-                                    building a
-                                    seamless integration between the two platforms, so UX will not be affected. The
-                                    fiat
-                                    currency integration to NFT is also on NFTrade’s roadmap. Once complete, anyone
-                                    will be
-                                    able to purchase NFTs using credit cards in their native currency.
+                                        class="text-blue-700 hover:underline cursor-pointer">NFTrade</a> the first cross-chain and blockchain agnostic NFT platform
+                                    to address the multi-chain & cross-chain and peer-to-peer challenges. GGN is
+                                    building a seamless integration between the two platforms. The fiat currency
+                                    integration to NFT is also on NFTrade’s roadmap. Once complete, anyone will be able
+                                    to purchase NFTs using credit cards in their native currency.
                                 </p>
                             </div>
                         </div>
@@ -736,8 +702,7 @@
         </div>
     </section>
     <!-- </div>
-  </section> -->
-    <!-- </LandingLayout> -->
+    </section> -->
 </template>
 
 <script setup>

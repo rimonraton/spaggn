@@ -9,6 +9,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\MessageInfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,11 +45,14 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Artist
     Route::post('create-artist-profile', [ArtistController::class, 'ArtistProfileSave']);
+    Route::post('create-artist-asset', [ArtistController::class, 'ArtistAssetsSave']);
     Route::get('get-artist-profile', [ArtistController::class, 'getArtistProfile']);
     Route::get('get-artist-assets', [ArtistController::class, 'getArtistAssets']);
+    Route::post('image-remove', [ArtistController::class, 'ImageRemove']);
 
     // in app verification
     // Route::post('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verify');
     // Route::post('/verify-resend', [VerificationController::class, 'resend']);
 });
 Route::get('/user', UserController::class);
+Route::get('get-message-info', [MessageInfoController::class, 'index']);

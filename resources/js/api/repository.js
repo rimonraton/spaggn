@@ -4,7 +4,7 @@ export default {
         return api.get('/sanctum/csrf-cookie')
     },
     login(params) {
-        console.log('params',params)
+        // console.log('params',params)
         return api.post('/api/login', params)
     },
     registration(params) {
@@ -13,11 +13,17 @@ export default {
     createArtistProfile(params) {
         return api.post('/api/create-artist-profile', params)
     },
+    createArtistAsset(params) {
+        return api.post('/api/create-artist-asset', params)
+    },
     getArtistProfile() {
         return api.get('/api/get-artist-profile')
     },
-    getArtistAssets() {
-        return api.get('/api/get-artist-assets')
+    getArtistAssets(page) {
+        return api.get(`/api/get-artist-assets?page=${page}`)
+    },
+    imageRemove(params) {
+        return api.post('/api/image-remove', params)
     }
     // changeAddress(params) {
     //     return api.post('/api/change-address', params)
