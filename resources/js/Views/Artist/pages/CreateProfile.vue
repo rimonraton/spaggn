@@ -39,11 +39,11 @@
             </div> -->
             <div class="relative mb-6 w-full">
               <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                Your social media profiles (Enter To Add More) 
-                <span v-if="btnTextdata != ''" class="p-1 border-2 border-blue-500 rounded-lg  lg:hidden" @click="mobileBtn">
+                Your social media profiles <span class="hidden lg:inline-block">(Enter To Add More)</span><span class="lg:hidden mr-1">(Click Add More)</span>
+                <span v-if="btnTextdata != ''" class="p-1 border-2 border-blue-500 rounded-lg lg:hidden" @click="mobileBtn">
                   Add
                 </span>
-                <span v-else class="p-1 border-2 rounded-lg bg-gray-200  lg:hidden">
+                <span v-else class="p-1 border-2 rounded-lg bg-gray-200 lg:hidden">
                   Add
                 </span>
               </label>

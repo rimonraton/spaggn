@@ -737,6 +737,52 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  
 }
+::-webkit-backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  
+}
 ::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -841,6 +887,7 @@ video {
   position: relative
 }
 .sticky {
+  position: -webkit-sticky;
   position: sticky
 }
 .inset-0 {
@@ -1651,9 +1698,6 @@ video {
 }
 .break-words {
   overflow-wrap: break-word
-}
-.break-all {
-  word-break: break-all
 }
 .rounded-lg {
   border-radius: 0.5rem
@@ -3523,6 +3567,9 @@ input:focus-within~label {
   .sm\:inline-flex {
     display: inline-flex
   }
+  .sm\:hidden {
+    display: none
+  }
   .sm\:h-20 {
     height: 5rem
   }
@@ -3878,6 +3925,9 @@ input:focus-within~label {
 }
 
 @media (min-width: 1024px) {
+  .lg\:visible {
+    visibility: visible
+  }
   .lg\:order-2 {
     order: 2
   }
@@ -3923,6 +3973,9 @@ input:focus-within~label {
   }
   .lg\:block {
     display: block
+  }
+  .lg\:inline-block {
+    display: inline-block
   }
   .lg\:flex {
     display: flex
