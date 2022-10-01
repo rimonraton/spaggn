@@ -3567,9 +3567,6 @@ input:focus-within~label {
   .sm\:inline-flex {
     display: inline-flex
   }
-  .sm\:hidden {
-    display: none
-  }
   .sm\:h-20 {
     height: 5rem
   }
@@ -3925,9 +3922,6 @@ input:focus-within~label {
 }
 
 @media (min-width: 1024px) {
-  .lg\:visible {
-    visibility: visible
-  }
   .lg\:order-2 {
     order: 2
   }

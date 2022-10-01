@@ -2252,9 +2252,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_5__.useStore)();
     var formData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
-      firstName: '',
-      lastName: '',
-      email: '',
+      // firstName: '',
+      // lastName: '',
+      // email: '',
       social: [],
       personalStory: '',
       inspiration: '',
@@ -2267,15 +2267,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     });
     var rules = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
       return {
-        firstName: {
-          required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_6__.required
-        },
-        lastName: {
-          required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_6__.required
-        },
-        email: {
-          required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_6__.required
-        },
+        // firstName: { required },
+        // lastName: { required },
+        // email: { required },
         social: {
           required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_6__.required
         },
@@ -2386,42 +2380,43 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 result = _context.sent;
+                console.log('result from artist profile..', result);
 
                 if (!result) {
-                  _context.next = 16;
+                  _context.next = 17;
                   break;
                 }
 
-                _context.prev = 4;
-                _context.next = 7;
+                _context.prev = 5;
+                _context.next = 8;
                 return store.dispatch('artistModule/createArtistProfile', formData);
 
-              case 7:
+              case 8:
                 clear();
                 router.push({
                   name: 'Artist'
                 });
-                _context.next = 14;
+                _context.next = 15;
                 break;
 
-              case 11:
-                _context.prev = 11;
-                _context.t0 = _context["catch"](4);
+              case 12:
+                _context.prev = 12;
+                _context.t0 = _context["catch"](5);
                 console.log(_context.t0);
 
-              case 14:
-                _context.next = 17;
+              case 15:
+                _context.next = 18;
                 break;
 
-              case 16:
+              case 17:
                 alert('Form not submitted');
 
-              case 17:
+              case 18:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[4, 11]]);
+        }, _callee, null, [[5, 12]]);
       }));
 
       return function saveArtistData() {
@@ -2445,8 +2440,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 console.log('res', res != '' && Object.keys(res).length != 0, res);
 
                 if (res != '' && Object.keys(res).length != 0) {
-                  formData.isUpdate = true;
-                  formData.firstName = res.first_name, formData.lastName = res.last_name, formData.email = res.email, formData.social = JSON.parse(res.sc_profile), formData.personalStory = res.personal_story, formData.inspiration = res.inspiration, formData.messageToWorld = res.message_to_world, formData.charities = JSON.parse(res.charities_data), formData.artisticInspiration = res.artistic_inspiration, formData.photo = res.photo != '' ? res.photo : null, formData.coverPhoto = res.cover != '' ? res.cover : null;
+                  formData.isUpdate = true; // formData.firstName = res.first_name,
+                  //   formData.lastName = res.last_name,
+                  //   formData.email = res.email,
+
+                  formData.social = JSON.parse(res.sc_profile), formData.personalStory = res.personal_story, formData.inspiration = res.inspiration, formData.messageToWorld = res.message_to_world, formData.charities = JSON.parse(res.charities_data), formData.artisticInspiration = res.artistic_inspiration, formData.photo = res.photo != '' ? res.photo : null, formData.coverPhoto = res.cover != '' ? res.cover : null;
                 } else {
                   formData.isUpdate = false;
                 }
@@ -2465,7 +2463,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }();
 
     var clear = function clear() {
-      formData.firstName = '', formData.lastName = '', formData.email = '', formData.social = [], formData.personalStory = '', formData.inspiration = '', formData.messageToWorld = '', formData.charities = [], formData.artisticInspiration = '', formData.photo = null, formData.coverPhoto = null;
+      // formData.firstName = '',
+      //   formData.lastName = '',
+      //   formData.email = '',
+      formData.social = [], formData.personalStory = '', formData.inspiration = '', formData.messageToWorld = '', formData.charities = [], formData.artisticInspiration = '', formData.photo = null, formData.coverPhoto = null;
     };
 
     (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(function () {

@@ -194,9 +194,9 @@ import { required, minLength } from '@vuelidate/validators'
 const router = useRouter()
 const store = useStore()
 const formData = reactive({
-  firstName: '',
-  lastName: '',
-  email: '',
+  // firstName: '',
+  // lastName: '',
+  // email: '',
   social: [],
   personalStory: '',
   inspiration: '',
@@ -209,9 +209,9 @@ const formData = reactive({
 })
 const rules = computed(() => {
   return {
-    firstName: { required },
-    lastName: { required },
-    email: { required },
+    // firstName: { required },
+    // lastName: { required },
+    // email: { required },
     social: { required },
     personalStory: { required, minLength: minLength(20) },
     inspiration: { required },
@@ -292,9 +292,7 @@ const onFileChangePhoto = (e, photo) => {
 };
 const saveArtistData = async () => {
   const result = await v$.value.$validate()
-  // console.log('result from artist profile..', result)
-  // return
-
+  console.log('result from artist profile..', result)
   if (result) {
     try {
       await store.dispatch('artistModule/createArtistProfile', formData)
@@ -314,9 +312,9 @@ const getArtistProfile = async () => {
   console.log('res', res != '' && Object.keys(res).length != 0, res)
   if (res != '' && Object.keys(res).length != 0) {
     formData.isUpdate = true
-    formData.firstName = res.first_name,
-      formData.lastName = res.last_name,
-      formData.email = res.email,
+    // formData.firstName = res.first_name,
+    //   formData.lastName = res.last_name,
+    //   formData.email = res.email,
       formData.social = JSON.parse(res.sc_profile),
       formData.personalStory = res.personal_story,
       formData.inspiration = res.inspiration,
@@ -332,9 +330,9 @@ const getArtistProfile = async () => {
 }
 
 const clear = () => {
-  formData.firstName = '',
-    formData.lastName = '',
-    formData.email = '',
+  // formData.firstName = '',
+  //   formData.lastName = '',
+  //   formData.email = '',
     formData.social = [],
     formData.personalStory = '',
     formData.inspiration = '',
