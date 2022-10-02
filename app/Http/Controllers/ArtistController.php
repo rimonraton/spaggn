@@ -252,7 +252,8 @@ class ArtistController extends Controller
     }
     public function getArtistProfile()
     {
-        $profile = \Auth::user()->profile;
+        // $profile = \Auth::user()->profile;
+        $profile = \Auth::user()->load('profile', 'assets');
         return response()->json($profile, 200);
     }
     public function getArtistAssets()

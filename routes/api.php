@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\MessageInfoController;
+use App\Http\Controllers\OrganizationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,3 +57,4 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 Route::get('/user', UserController::class);
 Route::get('get-message-info', [MessageInfoController::class, 'index']);
+Route::get('get-organizations', [OrganizationController::class, 'index']);

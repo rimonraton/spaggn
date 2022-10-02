@@ -2302,16 +2302,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var btnTextdata = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(''); // const isUpdate = ref(false)
 
     var multiselectref = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
-    var charitiesOptions = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)([{
-      id: 1,
-      name: 'Charity'
-    }, {
-      id: 2,
-      name: 'Charity 1'
-    }, {
-      id: 3,
-      name: 'Charity 3'
-    }]);
+    console.log('store.state.organizations...', store.state.organizations);
+    var charitiesOptions = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
+      return store.state.organizations != null ? store.state.organizations : [];
+    });
 
     var optionSelected = function optionSelected(option, id) {
       console.log("".concat(option.id), "".concat(option.name));
@@ -2436,20 +2430,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 res = _context2.sent;
-                //  profile.value = res
-                console.log('res', res != '' && Object.keys(res).length != 0, res);
 
-                if (res != '' && Object.keys(res).length != 0) {
+                //  profile.value = res
+                // console.log('res', res != '' && Object.keys(res).length != 0, res)
+                if (res.profile != null && Object.keys(res.profile).length != 0) {
                   formData.isUpdate = true; // formData.firstName = res.first_name,
                   //   formData.lastName = res.last_name,
                   //   formData.email = res.email,
 
-                  formData.social = JSON.parse(res.sc_profile), formData.personalStory = res.personal_story, formData.inspiration = res.inspiration, formData.messageToWorld = res.message_to_world, formData.charities = JSON.parse(res.charities_data), formData.artisticInspiration = res.artistic_inspiration, formData.photo = res.photo != '' ? res.photo : null, formData.coverPhoto = res.cover != '' ? res.cover : null;
+                  formData.social = JSON.parse(res.profile.sc_profile), formData.personalStory = res.profile.personal_story, formData.inspiration = res.profile.inspiration, formData.messageToWorld = res.profile.message_to_world, formData.charities = JSON.parse(res.profile.charities_data), formData.artisticInspiration = res.profile.artistic_inspiration, formData.photo = res.profile.photo != '' ? res.profile.photo : null, formData.coverPhoto = res.profile.cover != '' ? res.profile.cover : null;
                 } else {
                   formData.isUpdate = false;
                 }
 
-              case 5:
+              case 4:
               case "end":
                 return _context2.stop();
             }
@@ -2471,6 +2465,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(function () {
       getArtistProfile();
+      getOrganizations();
     });
 
     var removePhoto = /*#__PURE__*/function () {
@@ -2551,6 +2546,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       };
     }();
 
+    var getOrganizations = /*#__PURE__*/function () {
+      var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.next = 2;
+                return store.dispatch('getOrganisations');
+
+              case 2:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
+      }));
+
+      return function getOrganizations() {
+        return _ref6.apply(this, arguments);
+      };
+    }();
+
     var __returned__ = {
       router: router,
       store: store,
@@ -2571,6 +2588,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       clear: clear,
       removePhoto: removePhoto,
       removeCover: removeCover,
+      getOrganizations: getOrganizations,
       reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_1__.onMounted,
@@ -3006,7 +3024,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     hideSelected: true,
     placeholder: "Select One",
-    options: ['one', 'two', 'three']
+    options: ['Nature', 'Ordinary Experience & Life', 'Imagination', 'Patterns & Deliberate Design', 'Deep Personal Experience']
   }, null, 8
   /* PROPS */
   , ["modelValue"]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.v$.artisticInspiration.$errors, function (error) {

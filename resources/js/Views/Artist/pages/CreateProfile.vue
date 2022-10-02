@@ -98,7 +98,7 @@
                 <label for="country" class="block text-sm font-medium text-gray-700">What artistic inspiration closely
                   resembles your arts (choose one)?</label>
                 <multiselect v-model="formData.artisticInspiration" :hideSelected="true" placeholder="Select One"
-                  :options="['one', 'two', 'three']">
+                  :options="['Nature', 'Ordinary Experience & Life', 'Imagination', 'Patterns & Deliberate Design', 'Deep Personal Experience']">
                 </multiselect>
                 <span class="text-red-500" v-for="error in v$.artisticInspiration.$errors"
                   :key="error.$uid">{{error.$message}}</span>
@@ -227,20 +227,8 @@ const btnText = ref('')
 const btnTextdata = ref('')
 // const isUpdate = ref(false)
 const multiselectref = ref()
-const charitiesOptions = reactive([
-  {
-    id: 1,
-    name: 'Charity'
-  },
-  {
-    id: 2,
-    name: 'Charity 1'
-  },
-  {
-    id: 3,
-    name: 'Charity 3'
-  }
-])
+console.log('store.state.organizations...', store.state.organizations)
+const charitiesOptions = computed(()=> store.state.organizations != null ? store.state.organizations : [])
 const optionSelected = (option, id) => {
   console.log(`${option.id}`, `${option.name}`)
   console.log(' >> ', formData.charities)
@@ -309,20 +297,20 @@ const saveArtistData = async () => {
 const getArtistProfile = async () => {
   const res = await store.dispatch('artistModule/getArtistProfile')
   //  profile.value = res
-  console.log('res', res != '' && Object.keys(res).length != 0, res)
-  if (res != '' && Object.keys(res).length != 0) {
+  // console.log('res', res != '' && Object.keys(res).length != 0, res)
+  if (res.profile != null && Object.keys(res.profile).length != 0) {
     formData.isUpdate = true
     // formData.firstName = res.first_name,
     //   formData.lastName = res.last_name,
     //   formData.email = res.email,
-      formData.social = JSON.parse(res.sc_profile),
-      formData.personalStory = res.personal_story,
-      formData.inspiration = res.inspiration,
-      formData.messageToWorld = res.message_to_world,
-      formData.charities = JSON.parse(res.charities_data),
-      formData.artisticInspiration = res.artistic_inspiration,
-      formData.photo = res.photo != '' ? res.photo : null,
-      formData.coverPhoto = res.cover != '' ? res.cover : null
+      formData.social = JSON.parse(res.profile.sc_profile),
+      formData.personalStory = res.profile.personal_story,
+      formData.inspiration = res.profile.inspiration,
+      formData.messageToWorld = res.profile.message_to_world,
+      formData.charities = JSON.parse(res.profile.charities_data),
+      formData.artisticInspiration = res.profile.artistic_inspiration,
+      formData.photo = res.profile.photo != '' ? res.profile.photo : null,
+      formData.coverPhoto = res.profile.cover != '' ? res.profile.cover : null
 
   } else {
     formData.isUpdate = false
@@ -344,6 +332,7 @@ const clear = () => {
 }
 onMounted(() => {
   getArtistProfile()
+  getOrganizations()
 })
 const removePhoto = async () => {
   if (isUpdate) {
@@ -367,6 +356,9 @@ const removeCover = async () => {
   } else {
     formData.coverPhoto = null
   }
+}
+const getOrganizations = async () => {
+  await store.dispatch('getOrganisations')
 }
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.css">

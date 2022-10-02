@@ -24,10 +24,10 @@ export default {
     },
     imageRemove(params) {
         return api.post('/api/image-remove', params)
-    }
-    // changeAddress(params) {
-    //     return api.post('/api/change-address', params)
-    // },
+    },
+    getOrganizations() {
+        return api.get('/api/get-organizations')
+    },
     // otp(param) {
     //     return api.post('/api/otp', param)
     // },

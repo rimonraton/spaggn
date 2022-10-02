@@ -12,7 +12,8 @@ export default createStore({
     state() {
         return {
             user: null,
-            loginError: null
+            loginError: null,
+            organizations: null
         }
     },
     getters: {
@@ -33,6 +34,9 @@ export default createStore({
         setUser(state, payload) {
             // console.log('set user', payload)
             state.user = payload;
+        },
+        setOrganizations(state, payload){
+            state.organizations = payload
         }
 
     },
@@ -112,6 +116,17 @@ export default createStore({
             }).catch((err) => {
                 throw err.response
             })
+        },
+        async getOrganisations({ commit }) {
+            try {
+                const { data } = await repository.getOrganizations()
+                // console.log(data)
+                commit('setOrganizations', data);
+                // return data
+            } catch (e) {
+                throw e
+            }
+    
         },
         async password({ commit }, payload) {
             await axios.patch('/api/password', payload).then((res) => {

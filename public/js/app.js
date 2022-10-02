@@ -19935,10 +19935,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   imageRemove: function imageRemove(params) {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/image-remove', params);
-  } // changeAddress(params) {
-  //     return api.post('/api/change-address', params)
-  // },
-  // otp(param) {
+  },
+  getOrganizations: function getOrganizations() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-organizations');
+  } // otp(param) {
   //     return api.post('/api/otp', param)
   // },
   // logout() {
@@ -20764,7 +20764,8 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
   state: function state() {
     return {
       user: null,
-      loginError: null
+      loginError: null,
+      organizations: null
     };
   },
   getters: {
@@ -20784,6 +20785,9 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
     setUser: function setUser(state, payload) {
       // console.log('set user', payload)
       state.user = payload;
+    },
+    setOrganizations: function setOrganizations(state, payload) {
+      state.organizations = payload;
     }
   },
   actions: {
@@ -20943,52 +20947,55 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
         }, _callee5);
       }))();
     },
-    password: function password(_ref6, payload) {
+    getOrganisations: function getOrganisations(_ref6) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6() {
-        var commit;
+        var commit, _yield$repository$get, data;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
                 commit = _ref6.commit;
-                _context6.next = 3;
+                _context6.prev = 1;
+                _context6.next = 4;
+                return _api_repository__WEBPACK_IMPORTED_MODULE_2__["default"].getOrganizations();
+
+              case 4:
+                _yield$repository$get = _context6.sent;
+                data = _yield$repository$get.data;
+                // console.log(data)
+                commit('setOrganizations', data); // return data
+
+                _context6.next = 12;
+                break;
+
+              case 9:
+                _context6.prev = 9;
+                _context6.t0 = _context6["catch"](1);
+                throw _context6.t0;
+
+              case 12:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6, null, [[1, 9]]);
+      }))();
+    },
+    password: function password(_ref7, payload) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7() {
+        var commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                commit = _ref7.commit;
+                _context7.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().patch('/api/password', payload).then(function (res) {})["catch"](function (err) {
                   throw err.response;
                 });
 
               case 3:
-              case "end":
-                return _context6.stop();
-            }
-          }
-        }, _callee6);
-      }))();
-    },
-    verifyResend: function verifyResend(_ref7, payload) {
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7() {
-        var dispatch, res;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
-          while (1) {
-            switch (_context7.prev = _context7.next) {
-              case 0:
-                dispatch = _ref7.dispatch;
-                _context7.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/verify-resend', payload);
-
-              case 3:
-                res = _context7.sent;
-
-                if (!(res.status != 200)) {
-                  _context7.next = 6;
-                  break;
-                }
-
-                throw res;
-
-              case 6:
-                return _context7.abrupt("return", res);
-
-              case 7:
               case "end":
                 return _context7.stop();
             }
@@ -20996,7 +21003,7 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
         }, _callee7);
       }))();
     },
-    verifyEmail: function verifyEmail(_ref8, payload) {
+    verifyResend: function verifyResend(_ref8, payload) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee8() {
         var dispatch, res;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee8$(_context8) {
@@ -21005,7 +21012,7 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
               case 0:
                 dispatch = _ref8.dispatch;
                 _context8.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/verify-email/' + payload.id + '/' + payload.hash);
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/verify-resend', payload);
 
               case 3:
                 res = _context8.sent;
@@ -21018,15 +21025,47 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
                 throw res;
 
               case 6:
-                dispatch('getUser');
                 return _context8.abrupt("return", res);
 
-              case 8:
+              case 7:
               case "end":
                 return _context8.stop();
             }
           }
         }, _callee8);
+      }))();
+    },
+    verifyEmail: function verifyEmail(_ref9, payload) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee9() {
+        var dispatch, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                dispatch = _ref9.dispatch;
+                _context9.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/verify-email/' + payload.id + '/' + payload.hash);
+
+              case 3:
+                res = _context9.sent;
+
+                if (!(res.status != 200)) {
+                  _context9.next = 6;
+                  break;
+                }
+
+                throw res;
+
+              case 6:
+                dispatch('getUser');
+                return _context9.abrupt("return", res);
+
+              case 8:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9);
       }))();
     }
   },
