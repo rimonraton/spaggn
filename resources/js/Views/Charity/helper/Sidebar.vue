@@ -19,7 +19,7 @@
                                 </path>
                             </svg>
                         </span>
-                        <span class="ml-2 text-sm tracking-wide truncate">Dashboard</span>
+                        <span class="ml-2 text-sm tracking-wide truncate">Home</span>
                     </router-link>
                 </li>
 
@@ -36,10 +36,10 @@
                                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
                         </span>
-                        <span class="ml-2 text-sm tracking-wide truncate">Settings</span>
+                        <span class="ml-2 text-sm tracking-wide truncate">Create Profile</span>
                     </router-link>
                 </li>
-                <li>
+                <!-- <li>
                     <router-link to="/charity-messages"
                         class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                         <span class="inline-flex justify-center items-center ml-4">
@@ -52,8 +52,8 @@
                         </span>
                         <span class="ml-2 text-sm tracking-wide truncate">Messages</span>
                     </router-link>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <router-link to="/charity-profile"
                         class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                         <span class="inline-flex justify-center items-center ml-4">
@@ -66,7 +66,7 @@
                         </span>
                         <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
                     </router-link>
-                </li>
+                </li> -->
                 <li>
                     <a @click="handleLogOut" href="#"
                         class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">

@@ -1207,9 +1207,6 @@ video {
 .mb-0 {
   margin-bottom: 0px
 }
-.mb-12 {
-  margin-bottom: 3rem
-}
 .block {
   display: block
 }
@@ -1401,9 +1398,6 @@ video {
 }
 .w-40 {
   width: 10rem
-}
-.w-96 {
-  width: 24rem
 }
 .min-w-full {
   min-width: 100%
@@ -2302,9 +2296,6 @@ video {
 }
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
-}
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif
 }
 .text-sm {
   font-size: 0.875rem;
