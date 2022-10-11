@@ -37,7 +37,7 @@
         <!-- mobile -->
         <div :class="openMenu ? '' : 'hidden'" class="items-center justify-between w-full lg:flex lg:w-auto lg:order-1"
           id="mobile-menu-2">
-          <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+          <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0" @click="openMenu = !openMenu">
             <!-- <li>
               <router-link :to="{ name: 'welcome' }" class="block py-2 pl-3 pr-4 text-gray-700 lg:bg-transparent lg:p-0"
                 aria-current="page">Home</router-link>

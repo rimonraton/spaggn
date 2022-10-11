@@ -9,51 +9,136 @@
       <div class="md:grid md:grid-cols-1 md:gap-6">
         <div class="mt-5 md:mt-0">
           <form @submit.prevent="saveArtistData" enctype="multipart/form-data">
-            <!-- <div class="relative z-0 mb-6 w-full group">
-              <input type="password" name="floating_password" id="floating_password"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required="">
-              <label for="floating_password"
-                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-            </div>
-            <div class="relative z-0 mb-6 w-full group">
-              <input type="password" name="repeat_password" id="floating_repeat_password"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required="">
-              <label for="floating_repeat_password"
-                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
-                password</label>
-            </div> -->
             <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative z-0 mb-6 w-full group">
                 <input type="text" v-model="formData.firstName" name="floating_first_name" id="floating_first_name"
                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" ">
                 <label for="floating_first_name"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
-                  name</label>
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Your Organization's Name
+                </label>
               </div>
               <div class="relative z-0 mb-6 w-full group">
                 <input type="text" v-model="formData.lastName" name="floating_last_name" id="floating_last_name"
                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" ">
                 <label for="floating_last_name"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
-                  name</label>
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Address
+                </label>
               </div>
             </div>
-            <div class="relative z-0 mb-6 w-full group">
-              <input type="email" v-model="formData.email" name="floating_email" id="floating_email"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" " required="">
-              <label for="floating_email"
-                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                The best way to connect with you (email address)
+            <div class="grid md:grid-cols-2 md:gap-6">
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.firstName" name="floating_first_name" id="floating_first_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_first_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Primary Phone Number
+                </label>
+              </div>
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.lastName" name="floating_last_name" id="floating_last_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_last_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Primary Email Address
+                </label>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 md:gap-6">
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.firstName" name="floating_first_name" id="floating_first_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_first_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Website Address
+                </label>
+              </div>
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.lastName" name="floating_last_name" id="floating_last_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_last_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  EIN#
+                </label>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 md:gap-6">
+              <div class="relative mb-6 w-full group">
+                <label for="country" class="block text-sm font-medium text-gray-700">What type of charities would you
+                  like to partner with (choose 3)?</label>
+                <multiselect ref="multiselectCharity" v-model="formData.charities" :id="charity" :hideSelected="true"
+                  placeholder="Select One" :multiple="true" trackBy="id" label="name" :options="charitiesOptions"
+                  :closeOnSelect="true">
+                </multiselect>
+              </div>
+              <div class="relative mb-6 w-full group">
+              <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                List of programs/services you provide (Enter To Add More)
               </label>
+              <multiselect ref="multiselectref" v-model="formData.social" :hideSelected="true" :maxHeight="0"
+                placeholder="Type your social account link then press enter" :multiple="true" trackBy="url" label="url"
+                :options="[]" :taggable="true" @tag="addTag">
+              </multiselect>
+            </div>
+            </div>
+            <div class="relative mb-6 w-full">
+              <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+                Mission of your organization
+              </label>
+              <textarea id="personal_story" v-model="formData.personalStory" rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
+                placeholder="Organization's mission..."></textarea>
+            </div>
+            <div class="grid md:grid-cols-2 md:gap-6">
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.firstName" name="floating_first_name" id="floating_first_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_first_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Target demographics
+                </label>
+              </div>
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.lastName" name="floating_last_name" id="floating_last_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_last_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Geographic area served
+                </label>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 md:gap-6">
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.firstName" name="floating_first_name" id="floating_first_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_first_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Your organization’s link for Charity Navigator site 
+                </label>
+              </div>
+              <div class="relative z-0 mb-6 w-full group">
+                <input type="text" v-model="formData.lastName" name="floating_last_name" id="floating_last_name"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" ">
+                <label for="floating_last_name"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                  Your organization’s link for GuideStar
+                </label>
+              </div>
             </div>
             <div class="relative mb-6 w-full">
               <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                Your social media profiles (Enter To Add More)
+                Your organization’s link for other charity rating organizations (Enter To Add More)
               </label>
               <multiselect ref="multiselectref" v-model="formData.social" :hideSelected="true" :maxHeight="0"
                 placeholder="Type your social account link then press enter" :multiple="true" trackBy="url" label="url"
@@ -62,29 +147,13 @@
             </div>
             <div class="relative mb-6 w-full">
               <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                How does your personal story influence your art?
-              </label>
-              <textarea id="personal_story" v-model="formData.personalStory" rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
-                placeholder="personal story..."></textarea>
-            </div>
-            <div class="relative mb-6 w-full">
-              <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                Where do you draw inspiration from?
+                How do you think GGN can help with your fundraising initiatives?
               </label>
               <textarea id="personal_story" v-model="formData.inspiration" rows="4"
                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
-                placeholder="your inspiration"></textarea>
+                placeholder="fundraising initiatives?"></textarea>
             </div>
-            <div class="relative mb-6 w-full">
-              <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                What message do your arts convey to the world?
-              </label>
-              <textarea id="personal_story" v-model="formData.messageToWorld" rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
-                placeholder="Message to world"></textarea>
-            </div>
-            <div class="grid md:grid-cols-2 md:gap-6">
+            <!-- <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative mb-6 w-full group">
                 <label for="country" class="block text-sm font-medium text-gray-700">What type of charities would you
                   like to partner with (choose 3)?</label>
@@ -100,7 +169,7 @@
                   :options="['one', 'two', 'three']">
                 </multiselect>
               </div>
-            </div>
+            </div> -->
             <div class="grid md:grid-cols-2 md:gap-6">
               <div>
                 <label class="block text-sm font-medium text-gray-700"> Charity Logo</label>

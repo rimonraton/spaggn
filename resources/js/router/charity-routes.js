@@ -26,7 +26,7 @@ export default [
                 }
             },
             {
-                path: '/setting',
+                path: '/create-your-organization-profile',
                 component: CreateCharityProfile,
                 name: 'CreateCharityProfile',
                 meta: {
