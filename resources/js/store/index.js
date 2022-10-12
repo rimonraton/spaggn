@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 // import sharedMutations from 'vuex-shared-mutations';
 import repository from '../api/repository';
 import * as artistModule from './modules/ArtistModule'
+import * as charityModule from './modules/CharityModule'
 
 const router = useRouter()
 
@@ -152,7 +153,7 @@ export default createStore({
 
     },
     // plugins: [sharedMutations({ predicate: ['setUser'] })],
-    modules: { artistModule }
+    modules: { artistModule, charityModule }
 
 
 })

@@ -28,9 +28,9 @@ export default {
     getOrganizations() {
         return api.get('/api/get-organizations')
     },
-    // otp(param) {
-    //     return api.post('/api/otp', param)
-    // },
+    createCharityProfile(param) {
+        return api.post('/api/create-charity-profile', param)
+    },
     // logout() {
     //     return api.delete('/api/logout')
     // },
