@@ -19938,13 +19938,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   getOrganizations: function getOrganizations() {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-organizations');
-  } // otp(param) {
-  //     return api.post('/api/otp', param)
-  // },
-  // logout() {
-  //     return api.delete('/api/logout')
-  // },
-  // getUsers() {
+  },
+  createCharityProfile: function createCharityProfile(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/create-charity-profile', param);
+  },
+  getCharityProfile: function getCharityProfile() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-charity-profile');
+  } // getUsers() {
   //     return api.get('/api/users')
   // },
   // getUser(user) {
@@ -20742,10 +20742,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/repository */ "./resources/js/api/repository.js");
 /* harmony import */ var _modules_ArtistModule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/ArtistModule */ "./resources/js/store/modules/ArtistModule.js");
+/* harmony import */ var _modules_CharityModule__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/CharityModule */ "./resources/js/store/modules/CharityModule.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -20758,8 +20759,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_5__.createStore)({
+
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_6__.createStore)({
   namespaced: true,
   state: function state() {
     return {
@@ -21071,7 +21073,8 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
   },
   // plugins: [sharedMutations({ predicate: ['setUser'] })],
   modules: {
-    artistModule: _modules_ArtistModule__WEBPACK_IMPORTED_MODULE_3__
+    artistModule: _modules_ArtistModule__WEBPACK_IMPORTED_MODULE_3__,
+    charityModule: _modules_CharityModule__WEBPACK_IMPORTED_MODULE_4__
   }
 }));
 
@@ -21275,6 +21278,136 @@ var actions = {
           }
         }
       }, _callee5, null, [[1, 10]]);
+    }))();
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/CharityModule.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/store/modules/CharityModule.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "actions": () => (/* binding */ actions),
+/* harmony export */   "getters": () => (/* binding */ getters),
+/* harmony export */   "mutations": () => (/* binding */ mutations),
+/* harmony export */   "namespaced": () => (/* binding */ namespaced),
+/* harmony export */   "state": () => (/* binding */ state)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/repository */ "./resources/js/api/repository.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var namespaced = true;
+var state = {};
+var getters = {};
+var mutations = {};
+var actions = {
+  createCharityProfile: function createCharityProfile(_ref, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var commit, _yield$repository$cre, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.prev = 1;
+              _context.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].createCharityProfile(payload);
+
+            case 4:
+              _yield$repository$cre = _context.sent;
+              data = _yield$repository$cre.data;
+              return _context.abrupt("return", data);
+
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](1);
+              throw _context.t0;
+
+            case 12:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 9]]);
+    }))();
+  },
+  getCharityProfile: function getCharityProfile(_ref2, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var commit, _yield$repository$get, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              commit = _ref2.commit;
+              _context2.prev = 1;
+              _context2.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getCharityProfile();
+
+            case 4:
+              _yield$repository$get = _context2.sent;
+              data = _yield$repository$get.data;
+              console.log(data);
+              return _context2.abrupt("return", data);
+
+            case 10:
+              _context2.prev = 10;
+              _context2.t0 = _context2["catch"](1);
+              throw _context2.t0;
+
+            case 13:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 10]]);
+    }))();
+  },
+  imageRemove: function imageRemove(_ref3, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      var commit, _yield$repository$ima, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              commit = _ref3.commit;
+              _context3.prev = 1;
+              _context3.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].imageRemove(payload);
+
+            case 4:
+              _yield$repository$ima = _context3.sent;
+              data = _yield$repository$ima.data;
+              console.log(data); // commit('setAsset', data);
+
+              return _context3.abrupt("return", data);
+
+            case 10:
+              _context3.prev = 10;
+              _context3.t0 = _context3["catch"](1);
+              throw _context3.t0;
+
+            case 13:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 10]]);
     }))();
   }
 };

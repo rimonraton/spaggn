@@ -28,12 +28,12 @@ export default {
     getOrganizations() {
         return api.get('/api/get-organizations')
     },
-    // otp(param) {
-    //     return api.post('/api/otp', param)
-    // },
-    // logout() {
-    //     return api.delete('/api/logout')
-    // },
+    createCharityProfile(param) {
+        return api.post('/api/create-charity-profile', param)
+    },
+    getCharityProfile() {
+        return api.get('/api/get-charity-profile')
+    },
     // getUsers() {
     //     return api.get('/api/users')
     // },

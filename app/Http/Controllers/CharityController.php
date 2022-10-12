@@ -4,55 +4,70 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Charity;
+use Illuminate\Support\Str;
 
 class CharityController extends Controller
 {
     public function CharityProfileSave(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         $request->validate([
-            'name' => 'required|min:3',
-            'email' => 'email:rfc,dns',
+            // 'name' => 'required|min:3',
+            // 'email' => 'email:rfc,dns',
             'mission' => 'required|min:20',
             'address' => 'required|min:10',
-            'cover' => 'required|max:200000',
-            'logo' => 'required|max:100000',
+            'coverPhoto' => 'required',
+            'photo' => 'required',
         ]);
-        $sc_profile = null;
-        if($request->sc_profile) {
-            $sc_profile = $this->getScProfile($request->sc_profile);
-        }
-        $logo = \Image::make($request->logo);
-        $cover = \Image::make($request->cover);
-        $coverSm = \Image::make($request->cover);
+        // $sc_profile = null;
+        // if($request->sc_profile) {
+        //     $sc_profile = $this->getScProfile($request->sc_profile);
+        // }
+        $logo = \Image::make($request->photo);
+        $cover = \Image::make($request->coverPhoto);
+        $coverSm = \Image::make($request->coverPhoto);
         $cover->resize(1920, 300, function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
         });
         $coverSm->resize(330, 120);
         $logo->resize(200, 200);
-        $coverUrl = 'images/artist/cover/'.str_random(20).'.jpg';
-        $coverSmUrl = 'images/artist/cover_sm/'.str_random(20).'.jpg';
-        $photoUrl = 'images/artist/photo/'.str_random(20).'.jpg';
+        $coverUrl = 'images/charity/cover/'.Str::random(12).'.jpg';
+        $coverSmUrl = 'images/charity/cover_sm/'.Str::random(12).'.jpg';
+        $photoUrl = 'images/charity/photo/'.Str::random(12).'.jpg';
         $cover->save(public_path($coverUrl));
         $coverSm->save(public_path($coverSmUrl));
         $logo->save(public_path($photoUrl));
-        $charities = implode(',', $request->charities);
-        $artist = new Charity([
-            'name' => $request->name,
-            'email' => $request->email,
-            'sc_profile' => $sc_profile,
-            'personal_story' => $request->personal_story,
-            'inspiration' => $request->inspiration,
-            'message_to_world' => $request->message_to_world,
-            'charities' => $charities,
-            'artistic_inspiration' => $request->artistic_inspiration,
-            'photo' => $photoUrl,
-            'cover' => $coverUrl,
-            'cover_sm' => $coverSmUrl
+        $charity = new Charity([
+            'user_id' => auth()->user()->id,
+            'organization_name' => $request->organizationName,
+            'address' => $request->address,
+            'primary_phone' => $request->primaryPhone,
+            'primary_email' => $request->primaryEmail,
+            'website_address' => $request->websiteAddress,
+            'ein' => $request->ein,
+            'causes' => json_encode($request->causes),
+            'services' => json_encode($request->service),
+            'mission' => $request->mission,
+            'target_demographics' => $request->target_demographics,
+            'geographic' => $request->geographic,
+            'navigator_site' => $request->navigatorSite,
+            'guide_star' => $request->guideStar,
+            'rating_organizations' => json_encode($request->ratingOrganizations),
+            'fund_raising' => $request->fundraising,
+            'logo' => $photoUrl,
+            'cover_photo' => $coverUrl,
+            // 'cover_sm' => $coverSmUrl
         ]);
-        $artist->save();
+        $charity->save();
+        return 'success';
         // return $request->all();
-        return redirect('Admin/ArtistProfile');
+        // return redirect('Admin/ArtistProfile');
+    }
+
+    public function getCharityProfile()
+    {
+        $profile = \Auth::user()->charityprofile;
+        return response()->json($profile, 200);
     }
 }

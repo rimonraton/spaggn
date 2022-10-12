@@ -9,6 +9,7 @@ use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\CharityController;
 use App\Http\Controllers\MessageInfoController;
 use App\Http\Controllers\OrganizationController;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('get-artist-profile', [ArtistController::class, 'getArtistProfile']);
     Route::get('get-artist-assets', [ArtistController::class, 'getArtistAssets']);
     Route::post('image-remove', [ArtistController::class, 'ImageRemove']);
+
+    //Charity
+    Route::post('create-charity-profile',[CharityController::class, 'CharityProfileSave']);
+    Route::get('get-charity-profile',[CharityController::class, 'getCharityProfile']);
 
     // in app verification
     // Route::post('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verify');
