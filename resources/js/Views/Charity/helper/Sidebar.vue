@@ -1,6 +1,6 @@
 <template>
-    <div class="fixed flex flex-col top-14 left-0 w-64 lg:block bg-blue-900 dark:bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar"
-        :class="menuStatus ? '' : 'hidden'">
+    <div class="fixed flex flex-col top-14 left-0 w-64 bg-blue-900 h-full text-white duration-300 border-none z-10"
+        :class="menuStatus ? 'block' : 'hidden'">
         <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
             <ul class="flex flex-col py-4 space-y-1" @click="$emit('closeMenu')">
                 <li class="px-5 hidden md:block">
