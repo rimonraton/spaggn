@@ -67,7 +67,7 @@ class CharityController extends Controller
 
     public function getCharityProfile()
     {
-        $profile = \Auth::user()->charityprofile;
+        $profile = \Auth::user()->load('charityprofile');
         return response()->json($profile, 200);
     }
 }
