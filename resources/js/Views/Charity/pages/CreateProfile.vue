@@ -298,10 +298,12 @@
 <script setup>
 import { reactive, ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
+import {useRouter} from 'vue-router'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
 import Multiselect from 'vue-multiselect'
 const store = useStore()
+const router = useRouter()
 const formData = reactive({
   organizationName: null,
   address: null,
