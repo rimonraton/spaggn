@@ -17,6 +17,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Your Organization's Name
               </label>
+              <span class="text-red-500" v-for="error in v$.organizationName.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.address" name="floating_address" id="floating_address"
@@ -26,6 +28,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Address
               </label>
+              <span class="text-red-500" v-for="error in v$.address.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -38,6 +42,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Primary Phone Number
               </label>
+              <span class="text-red-500" v-for="error in v$.primaryPhone.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.primaryEmail" name="floating_primary_email"
@@ -48,6 +54,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Primary Email Address
               </label>
+              <span class="text-red-500" v-for="error in v$.primaryEmail.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -69,6 +77,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 EIN#
               </label>
+              <span class="text-red-500" v-for="error in v$.ein.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -80,15 +90,27 @@
                 placeholder="Select One" :multiple="true" trackBy="id" label="name" :options="charitiesOptions"
                 :closeOnSelect="true">
               </multiselect>
+              <span class="text-red-500" v-for="error in v$.causes.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="relative mb-6 w-full group">
               <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                List of programs/services you provide (Enter To Add More)
+                List of programs/services you provide <span class="hidden lg:inline-block">(Enter To Add
+                  More)</span><span class="lg:hidden mr-1">(Click Add More)</span>
+                <span v-if="btnserviceTextdata != ''" class="p-1 border-2 border-blue-500 rounded-lg lg:hidden"
+                  @click="servicemobileBtn">
+                  Add
+                </span>
+                <span v-else class="p-1 border-2 rounded-lg bg-gray-200 lg:hidden">
+                  Add
+                </span>
               </label>
               <multiselect ref="multiselectref" v-model="formData.service" :hideSelected="true" :maxHeight="0"
                 placeholder="List of programs/services you provide" :multiple="true" trackBy="name" label="name"
-                :options="[]" :taggable="true" @tag="addServiceTag">
+                :options="[]" :taggable="true" @tag="addServiceTag" @search-change="servicetagdata">
               </multiselect>
+              <span class="text-red-500" v-for="error in v$.service.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
           </div>
           <div class="relative mb-6 w-full">
@@ -98,6 +120,8 @@
             <textarea id="personal_story" v-model="formData.mission" rows="4"
               class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
               placeholder="Organization's mission..."></textarea>
+              <span class="text-red-500" v-for="error in v$.mission.$errors"
+              :key="error.$uid">{{error.$message}}</span>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 mb-6 w-full group">
@@ -109,6 +133,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Target demographics
               </label>
+              <span class="text-red-500" v-for="error in v$.target_demographics.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.geographic" name="floating_geographic" id="floating_geographic"
@@ -118,6 +144,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Geographic area served
               </label>
+              <span class="text-red-500" v-for="error in v$.geographic.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -130,6 +158,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Your organization’s link for Charity Navigator site
               </label>
+              <span class="text-red-500" v-for="error in v$.navigatorSite.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.guideStar" name="floating_guide_star" id="floating_guide_star"
@@ -139,17 +169,30 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Your organization’s link for GuideStar
               </label>
+              <span class="text-red-500" v-for="error in v$.guideStar.$errors"
+              :key="error.$uid">{{error.$message}}</span>
             </div>
           </div>
           <div class="relative mb-6 w-full">
             <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-              Your organization’s link for other charity rating organizations (Enter To Add More)
+              Your organization’s link for other charity rating organizations <span
+                class="hidden lg:inline-block">(Enter To Add More)</span><span class="lg:hidden mr-1">(Click Add
+                More)</span>
+              <span v-if="btnratingTextdata != ''" class="p-1 border-2 border-blue-500 rounded-lg lg:hidden"
+                @click="ratingmobileBtn">
+                Add
+              </span>
+              <span v-else class="p-1 border-2 rounded-lg bg-gray-200 lg:hidden">
+                Add
+              </span>
             </label>
             <multiselect ref="multiselectRatingref" v-model="formData.ratingOrganizations" :hideSelected="true"
               :maxHeight="0" placeholder="Your organization’s link for other charity rating organizations"
               :multiple="true" trackBy="ratingOrganization" label="ratingOrganization" :options="[]" :taggable="true"
-              @tag="addRatingTag">
+              @tag="addRatingTag" @search-change="ratingtagdata">
             </multiselect>
+            <span class="text-red-500" v-for="error in v$.ratingOrganizations.$errors"
+              :key="error.$uid">{{error.$message}}</span>
           </div>
           <div class="relative mb-6 w-full">
             <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -158,6 +201,8 @@
             <textarea id="personal_story" v-model="formData.fundraising" rows="4"
               class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
               placeholder="fundraising initiatives?"></textarea>
+              <span class="text-red-500" v-for="error in v$.fundraising.$errors"
+              :key="error.$uid">{{error.$message}}</span>
           </div>
           <!-- <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative mb-6 w-full group">
@@ -179,6 +224,8 @@
           <div class="grid md:grid-cols-2 md:gap-6">
             <div>
               <label class="block text-sm font-medium text-gray-700"> Charity Logo</label>
+              <span class="text-red-500" v-for="error in v$.photo.$errors"
+              :key="error.$uid">{{error.$message}}</span>
               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                 <div class="space-y-1 text-center">
                   <div v-if="formData.photo == null">
@@ -208,6 +255,8 @@
             <div class="relative mb-6 w-full group">
               <div>
                 <label class="block text-sm font-medium text-gray-700"> Cover Photo (1920 x 300)px </label>
+                <span class="text-red-500" v-for="error in v$.coverPhoto.$errors"
+              :key="error.$uid">{{error.$message}}</span>
                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   <div class="space-y-1 text-center">
                     <div v-if="formData.coverPhoto == null">
@@ -249,6 +298,8 @@
 <script setup>
 import { reactive, ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
+import { useVuelidate } from '@vuelidate/core'
+import { required, minLength } from '@vuelidate/validators'
 import Multiselect from 'vue-multiselect'
 const store = useStore()
 const formData = reactive({
@@ -270,6 +321,8 @@ const formData = reactive({
   photo: null,
   coverPhoto: null
 })
+const btnserviceTextdata = ref('')
+const btnratingTextdata = ref('')
 const multiselectref = ref()
 const multiselectRatingref = ref()
 // const ratingOrganization = ref()
@@ -298,14 +351,40 @@ const addServiceTag = (value, id) => {
     name: value
   })
   multiselectref.value.$el.focus()
+  btnserviceTextdata.value = ''
   // multiselectref.value.activate()
+}
+const servicetagdata = (value, id) => {
+  if (value) {
+    btnserviceTextdata.value = value
+  }
+}
+const servicemobileBtn = () => {
+  formData.service.push({
+    name: btnserviceTextdata.value
+  })
+  multiselectref.value.$el.focus()
+  btnserviceTextdata.value = ''
 }
 const addRatingTag = (value, id) => {
   formData.ratingOrganizations.push({
     ratingOrganization: value
   })
   multiselectRatingref.value.$el.focus()
+  btnratingTextdata.value = ''
   // multiselectref.value.activate()
+}
+const ratingtagdata = (value, id) => {
+  if (value) {
+    btnratingTextdata.value = value
+  }
+}
+const ratingmobileBtn = () => {
+  formData.ratingOrganizations.push({
+    ratingOrganization: btnratingTextdata.value
+  })
+  multiselectRatingref.value.$el.focus()
+  btnratingTextdata.value = ''
 }
 // const removeTag = (removeOption, id) => {
 //   const index = options.findIndex(key => key.url == removeOption.url)
@@ -328,16 +407,44 @@ const onFileChangePhoto = (e, photo) => {
   }
 };
 const saveCharityData = async () => {
-  try {
-    const res = await store.dispatch('charityModule/createCharityProfile', formData)
-    console.log('res..', res)
-  } catch (e) {
-    console.log(e)
+  const result = await v$.value.$validate()
+  if (result) {
+    try {
+      const res = await store.dispatch('charityModule/createCharityProfile', formData)
+      // console.log('res..', res)
+      router.push({ name: 'Charity' })
+    } catch (e) {
+      console.log(e)
+    }
+  } else {
+    alert('Form not submitted')
   }
+
 }
 const getOrganizations = async () => {
   await store.dispatch('getOrganisations')
 }
+const rules = computed(() => {
+  return {
+    organizationName: { required },
+    address: { required },
+    primaryPhone: { required },
+    primaryEmail: { required },
+    ein: { required },
+    causes: { required },
+    service: { required },
+    mission: { required },
+    target_demographics: { required },
+    geographic: { required },
+    navigatorSite: { required },
+    guideStar: { required },
+    ratingOrganizations: { required },
+    fundraising: { required },
+    photo: { required },
+    coverPhoto: { required }
+  }
+})
+const v$ = useVuelidate(rules, formData)
 onMounted(() => {
   getOrganizations()
 })

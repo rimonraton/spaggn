@@ -227,7 +227,7 @@ const btnText = ref('')
 const btnTextdata = ref('')
 // const isUpdate = ref(false)
 const multiselectref = ref()
-console.log('store.state.organizations...', store.state.organizations)
+// console.log('store.state.organizations...', store.state.organizations)
 const charitiesOptions = computed(()=> store.state.organizations != null ? store.state.organizations : [])
 const optionSelected = (option, id) => {
   console.log(`${option.id}`, `${option.name}`)
@@ -280,7 +280,7 @@ const onFileChangePhoto = (e, photo) => {
 };
 const saveArtistData = async () => {
   const result = await v$.value.$validate()
-  console.log('result from artist profile..', result)
+  // console.log('result from artist profile..', result)
   if (result) {
     try {
       await store.dispatch('artistModule/createArtistProfile', formData)

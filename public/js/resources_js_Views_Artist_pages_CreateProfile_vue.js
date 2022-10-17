@@ -2301,8 +2301,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var btnText = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('');
     var btnTextdata = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(''); // const isUpdate = ref(false)
 
-    var multiselectref = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
-    console.log('store.state.organizations...', store.state.organizations);
+    var multiselectref = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(); // console.log('store.state.organizations...', store.state.organizations)
+
     var charitiesOptions = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
       return store.state.organizations != null ? store.state.organizations : [];
     });
@@ -2374,43 +2374,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 result = _context.sent;
-                console.log('result from artist profile..', result);
 
                 if (!result) {
-                  _context.next = 17;
+                  _context.next = 16;
                   break;
                 }
 
-                _context.prev = 5;
-                _context.next = 8;
+                _context.prev = 4;
+                _context.next = 7;
                 return store.dispatch('artistModule/createArtistProfile', formData);
 
-              case 8:
+              case 7:
                 clear();
                 router.push({
                   name: 'Artist'
                 });
-                _context.next = 15;
+                _context.next = 14;
                 break;
 
-              case 12:
-                _context.prev = 12;
-                _context.t0 = _context["catch"](5);
+              case 11:
+                _context.prev = 11;
+                _context.t0 = _context["catch"](4);
                 console.log(_context.t0);
 
-              case 15:
-                _context.next = 18;
+              case 14:
+                _context.next = 17;
                 break;
 
-              case 17:
+              case 16:
                 alert('Form not submitted');
 
-              case 18:
+              case 17:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[5, 12]]);
+        }, _callee, null, [[4, 11]]);
       }));
 
       return function saveArtistData() {
