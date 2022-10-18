@@ -56,10 +56,37 @@
               </router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'ExploreCharities' }"
-                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                Charities
-              </router-link>
+              <div
+                class=" relative block py-2 pl-3 pr-4 text-gray-700 border-b cursor-pointer border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                <div class="flex items-center" @click="submenu = !submenu">
+                  <span>Charities</span>
+                  <svg v-if="submenu" class="pl-1 h-2 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <path
+                      d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z" />
+                  </svg>
+                  <svg v-else class="pl-1 h-2 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                    <path
+                      d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z" />
+                  </svg>
+
+                </div>
+                <div class="bg-white rounded shadow-md mt-2 absolute mt-12 top-0 left-0 min-w-full md:w-40 overflow-auto z-30"
+                  :class="submenu ? 'block' : 'hidden'">
+                  <ul class="list-reset">
+                    <li>
+                      <router-link :to="{ name: 'ExploreCharities' }"
+                      class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
+                        Charities
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link :to="{ name: 'ListCharities' }"
+                        class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
+                        List of Charities</router-link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
             <li>
               <router-link :to="{ name: 'ExploreArtists' }"
@@ -114,6 +141,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const store = useStore();
 const auth = ref(true);
+const submenu = ref(false);
 const openMenu = ref(false);
 const user = computed(() => store.getters.user);
 const goToHome = () => {

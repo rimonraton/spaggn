@@ -6,6 +6,7 @@ const Projects = () => import( "../Views/Site/Projects.vue");
 const Home = () => import( "../Views/Site/Home.vue");
 const Welcome = () => import( "../Views/Site/Welcome.vue");
 const LandingLayout = () => import('../layouts/LandingLayout.vue')
+const ListCharities = () => import('../Views/Site/ListCharities.vue')
 export default [
      {
         path: '/',
@@ -29,6 +30,14 @@ export default [
                 path: "/charities",
                 component: ExploreCharities,
                 name: "ExploreCharities",
+                // meta: {
+                //     layout: ArtistLayout,
+                // },
+            },
+            {
+                path: "/list-charities",
+                component: ListCharities,
+                name: "ListCharities",
                 // meta: {
                 //     layout: ArtistLayout,
                 // },
