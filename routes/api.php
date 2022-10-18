@@ -26,10 +26,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('guest')->group(function () {
+    Route::get('/social-login/{provider}', [AuthController::class, 'socialLogin']);
+    Route::get('/auth-callback/{provider}', [AuthController::class, 'authCallback']);
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', RegisterController::class);
     Route::post('/forgot-password', ForgotPasswordController::class);
     Route::post('/reset-password', ResetPasswordController::class);
+    Route::get('/get-artists', [ArtistController::class, 'getArtist']);
+    Route::get('/get-charity', [CharityController::class, 'getCharity']);
 
     // guest verification (temporary auth)
     // Route::post('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verify');

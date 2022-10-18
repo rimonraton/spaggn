@@ -30,8 +30,8 @@ class ArtistController extends Controller
             // 'email' => 'email:rfc,dns',
             'personalStory' => 'required|min:20',
             'charities' => 'required',
-            'coverPhoto' => 'required|max:200000',
-            'photo' => 'required|max:100000',
+            'coverPhoto' => 'required',
+            'photo' => 'required',
         ]); 
         $photoUrl = '';
         $coverUrl = '';
@@ -271,5 +271,10 @@ class ArtistController extends Controller
             return 'success';
             // return auth()->user()->id;
         }
+    }
+    public function getArtist()
+    {
+        $artists = Artist::with('user')->orderBy('id', 'desc')->paginate(4);
+        return response()->json($artists, 200);
     }
 }

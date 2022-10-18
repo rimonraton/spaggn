@@ -23,22 +23,55 @@ class CharityController extends Controller
         // if($request->sc_profile) {
         //     $sc_profile = $this->getScProfile($request->sc_profile);
         // }
-        $logo = \Image::make($request->photo);
-        $cover = \Image::make($request->coverPhoto);
-        $coverSm = \Image::make($request->coverPhoto);
-        $cover->resize(1920, 300, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
-        $coverSm->resize(330, 120);
-        $logo->resize(200, 200);
-        $coverUrl = 'images/charity/cover/'.Str::random(12).'.jpg';
-        $coverSmUrl = 'images/charity/cover_sm/'.Str::random(12).'.jpg';
-        $photoUrl = 'images/charity/photo/'.Str::random(12).'.jpg';
-        $cover->save(public_path($coverUrl));
-        $coverSm->save(public_path($coverSmUrl));
-        $logo->save(public_path($photoUrl));
-        $charity = new Charity([
+
+        $logoUrl = '';
+        $coverUrl = '';
+        // $coverSmUrl = '';
+        if(file_exists($request->photo)){
+            $logoUrl = $request->photo;
+        } else {
+            $logo = \Image::make($request->photo);
+            $logo->resize(200, 200);
+            $logoUrl = 'images/charity/photo/'.Str::random(12).'.jpg';
+            $logo->save(public_path($logoUrl));
+        }
+        if(file_exists($request->coverPhoto)){
+            $coverUrl = $request->coverPhoto;
+        } else {
+            $cover = \Image::make($request->coverPhoto);
+            // $coverSm = \Image::make($request->coverPhoto);
+            $cover->resize(1920, 300, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            // $coverSm->resize(330, 120);
+            
+            $coverUrl = 'images/charity/cover/'.Str::random(12).'.jpg';
+            // $coverSmUrl = 'images/charity/cover_sm/'.Str::random(12).'.jpg';
+            
+            $cover->save(public_path($coverUrl));
+            // $coverSm->save(public_path($coverSmUrl));
+        }
+
+        // $logo = \Image::make($request->photo);
+        // $cover = \Image::make($request->coverPhoto);
+        // $coverSm = \Image::make($request->coverPhoto);
+        // $cover->resize(1920, 300, function ($constraint) {
+        //     $constraint->aspectRatio();
+        //     $constraint->upsize();
+        // });
+        // $coverSm->resize(330, 120);
+        // $logo->resize(200, 200);
+        // $coverUrl = 'images/charity/cover/'.Str::random(12).'.jpg';
+        // $coverSmUrl = 'images/charity/cover_sm/'.Str::random(12).'.jpg';
+        // $photoUrl = 'images/charity/photo/'.Str::random(12).'.jpg';
+        // $cover->save(public_path($coverUrl));
+        // $coverSm->save(public_path($coverSmUrl));
+        // $logo->save(public_path($photoUrl));
+        // $charity = new Charity([
+            Charity::updateOrCreate(
+            ['user_id' => auth()->user()->id],
+            [
             'user_id' => auth()->user()->id,
             'organization_name' => $request->organizationName,
             'address' => $request->address,
@@ -55,11 +88,11 @@ class CharityController extends Controller
             'guide_star' => $request->guideStar,
             'rating_organizations' => json_encode($request->ratingOrganizations),
             'fund_raising' => $request->fundraising,
-            'logo' => $photoUrl,
+            'logo' => $logoUrl,
             'cover_photo' => $coverUrl,
             // 'cover_sm' => $coverSmUrl
         ]);
-        $charity->save();
+        // $charity->save();
         return 'success';
         // return $request->all();
         // return redirect('Admin/ArtistProfile');
@@ -69,5 +102,10 @@ class CharityController extends Controller
     {
         $profile = \Auth::user()->load('charityprofile');
         return response()->json($profile, 200);
+    }
+    public function getCharity()
+    {
+        $charities = Charity::with('user')->orderBy('id', 'desc')->paginate(4);
+        return response()->json($charities, 200);
     }
 }

@@ -287,7 +287,7 @@
           </div>
           <div class="w-full">
             <button type="submit"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{{isUpdate ? 'Update' : 'Submit'}}</button>
           </div>
         </form>
       </div>
@@ -323,6 +323,7 @@ const formData = reactive({
   photo: null,
   coverPhoto: null
 })
+const isUpdate = ref(false)
 const btnserviceTextdata = ref('')
 const btnratingTextdata = ref('')
 const multiselectref = ref()
@@ -449,7 +450,36 @@ const rules = computed(() => {
 const v$ = useVuelidate(rules, formData)
 onMounted(() => {
   getOrganizations()
+  getCharityProfile()
 })
+const getCharityProfile = async () => {
+  const res = await store.dispatch('charityModule/getCharityProfile')
+  //  profile.value = res
+  // console.log('res', res != '' && Object.keys(res).length != 0, res)
+  console.log('chatity res...', res)
+  if (res.charityprofile != null && Object.keys(res.charityprofile).length != 0) {
+    isUpdate.value = true
+      formData.organizationName = res.charityprofile.organization_name,
+      formData.address = res.charityprofile.address,
+      formData.primaryPhone = res.charityprofile.primary_phone,
+      formData.primaryEmail = res.charityprofile.primary_email,
+      formData.websiteAddress = res.charityprofile.website_address,
+      formData.ein = res.charityprofile.ein,
+      formData.causes = JSON.parse(res.charityprofile.causes),
+      formData.service = JSON.parse(res.charityprofile.services),
+      formData.mission = res.charityprofile.mission,
+      formData.target_demographics = res.charityprofile.target_demographics,
+      formData.geographic = res.charityprofile.geographic,
+      formData.navigatorSite = res.charityprofile.navigator_site,
+      formData.guideStar = res.charityprofile.guide_star,
+      formData.ratingOrganizations = JSON.parse(res.charityprofile.rating_organizations),
+      formData.fundraising = res.charityprofile.fund_raising,
+      formData.photo = res.charityprofile.logo != '' ? res.charityprofile.logo : null,
+      formData.coverPhoto = res.charityprofile.cover_photo != '' ? res.charityprofile.cover_photo : null
+  } else {
+    isUpdate.value = false
+  }
+}
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.css">
 

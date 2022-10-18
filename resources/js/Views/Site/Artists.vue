@@ -1,5 +1,6 @@
 <template>
     <!-- <LandingLayout> -->
+        <!-- {{artistValue}} -->
     <div class="white">
         <div class="container mx-auto lg:w-5/6 px-6 text-gray-600 md:px-12 xl:px-6">
             <h2 class="text-2xl text-gray-900 font-bold md:text-4xl py-4">Artists & Collabs</h2>
@@ -551,6 +552,18 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import { useStore } from 'vuex'
+const store = useStore()
+const artistValue = ref(null)
+const artistData = async () => {
+    const res = await store.dispatch('artistModule/getArtists')
+    // console.log('artist res', res)
+    artistValue.value = res.data
+}
+onMounted(() => {
+    artistData()
+})
 </script>
 
 <style>

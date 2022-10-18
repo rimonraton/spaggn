@@ -136,7 +136,8 @@
                                 </h3>
                                 <p class="mb-6">
                                     GGN partners with <a href="https://nftrade.com" target="_blank"
-                                        class="text-blue-700 hover:underline cursor-pointer">NFTrade</a> the first cross-chain and blockchain agnostic NFT platform
+                                        class="text-blue-700 hover:underline cursor-pointer">NFTrade</a> the first
+                                    cross-chain and blockchain agnostic NFT platform
                                     to address the multi-chain & cross-chain and peer-to-peer challenges. GGN is
                                     building a seamless integration between the two platforms. The fiat currency
                                     integration to NFT is also on NFTrade’s roadmap. Once complete, anyone will be able
@@ -170,7 +171,7 @@
                                     class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
                                     <!-- <div class="absolute inset-0 bg-black opacity-10"> -->
                                     <img class="w-full h-64 rounded-md transition hover:bg-cyan-300"
-                                        :src="`https://picsum.photos/500/300?random=${i + 1}`" alt="">
+                                        :src="`https://source.unsplash.com/random/?Cryptocurrency&${i + 1}`" alt="">
                                     <!-- src="https://images.unsplash.com/photo-1546453667-8a8d2d07bc20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" -->
                                     <!-- </div> -->
                                 </div>
@@ -228,16 +229,26 @@
     </section>
     <!-- end auction -->
     <!-- Charities -->
-    <section>
+    <section v-if="charityValue != null">
         <div class="container mx-auto lg:w-5/6">
-            <h2 class="text-2xl font-semibold py-6 px-4">
-                Charities
-            </h2>
-            <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
-                :slides-per-view="4" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true"
-                :navigation="true" :pagination="{ clickable: true }"
+            <div class="flex justify-between items-center my-4 mx-4">
+                <h2 class="text-2xl font-semibold py-2 px-4">
+                    Charities
+                </h2>
+                <router-link to="/charities" class="flex hover:text-blue-400"><span>View More</span><svg class="w-4 pt-1"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M17.92,11.62a1,1,0,0,0-.21-.33l-5-5a1,1,0,0,0-1.42,1.42L14.59,11H7a1,1,0,0,0,0,2h7.59l-3.3,3.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l5-5a1,1,0,0,0,.21-.33A1,1,0,0,0,17.92,11.62Z">
+                        </path>
+                    </svg>
+                </router-link>
+            </div>
+
+            <swiper v-if="charityValue.length > 0" class="swiper" :modules="modules"
+                :breakpoints="swiperOptions.breakpoints" :space-between="30" :slides-per-view="4" :slides-per-group="1"
+                :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
-                <swiper-slide v-for="item, i in 12" :key="item">
+                <swiper-slide v-for="item, i in charityValue" :key="item">
                     <div class="relative mx-auto w-full my-10">
                         <a href="#"
                             class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
@@ -247,8 +258,7 @@
                                         class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
                                         <!-- <div class="absolute inset-0 bg-black opacity-10"> -->
                                         <img class="w-full h-64 rounded-md transition hover:bg-cyan-300"
-                                            src="https://images.unsplash.com/photo-1659868016402-7afc25b1af8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                                            alt="">
+                                            :src="item.cover_photo" alt="">
                                         <!-- </div> -->
                                     </div>
 
@@ -291,20 +301,20 @@
 
                                 <div class="mt-4">
                                     <h2 class="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
-                                        title="New York">
-                                        Statue of Liberty
+                                        >
+                                        {{item.organization_name}}
                                     </h2>
                                     <div class="mt-2 text-sm text-gray-800 line-clamp-1">
                                         <div class="flex items-center">
                                             <div class="relative">
                                                 <!-- <div class="rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200"></div>
                         <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span> -->
-                                                <img :src="`https://i.pravatar.cc/${300 + i}`"
+                                                <img :src="item.logo"
                                                     class="rounded-full border-solid border-white border-2 w-10">
                                             </div>
 
                                             <p class="ml-2 text-gray-800 line-clamp-1">
-                                                John Doe
+                                                {{item.user.name}}
                                             </p>
                                         </div>
                                     </div>
@@ -324,7 +334,7 @@
                                             </path>
                                         </svg>
                                         <span class="mt-2 xl:mt-0">
-                                            25
+                                            {{25 + i}}
                                         </span>
                                     </p>
                                 </div>
@@ -372,29 +382,40 @@
     </section> -->
     <!-- end Artists -->
     <!-- Artists -->
-    <section>
+    <section v-if="artistValue != null">
         <div class="container mx-auto lg:w-5/6">
-            <h2 class="text-2xl font-semibold py-6 px-4">
+            <div class="flex justify-between items-center my-4 mx-4">
+                <h2 class="text-2xl font-semibold py-6 px-4">
                 Artists & Collabs
             </h2>
-            <swiper class="swiper" :modules="modules" :breakpoints="swiperOptions.breakpoints" :space-between="30"
-                :slides-per-view="4" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true"
-                :navigation="true" :pagination="{ clickable: true }"
+                <router-link to="/artists" class="flex hover:text-blue-400"><span>View More</span><svg class="w-4 pt-1"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M17.92,11.62a1,1,0,0,0-.21-.33l-5-5a1,1,0,0,0-1.42,1.42L14.59,11H7a1,1,0,0,0,0,2h7.59l-3.3,3.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l5-5a1,1,0,0,0,.21-.33A1,1,0,0,0,17.92,11.62Z">
+                        </path>
+                    </svg>
+                </router-link>
+            </div>
+            
+            <swiper v-if="artistValue.length > 0" class="swiper" :modules="modules"
+                :breakpoints="swiperOptions.breakpoints" :space-between="30" :slides-per-view="4" :slides-per-group="1"
+                :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
-                <swiper-slide v-for="item, i in 12" :key="item">
+                <swiper-slide v-for="item, i in artistValue" :key="'item-artist' + i">
                     <div class="max-w-md px-8 bg-white shadow-lg rounded-lg my-10">
                         <div class="flex justify-center md:justify-end z-80">
                             <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
-                                :src="`https://i.pravatar.cc/${300 + i}`">
+                                :src="item.photo">
+                            <!-- :src="`https://i.pravatar.cc/${300 + i}`"> -->
                         </div>
                         <div>
-                            <h2 class="text-gray-800 text-3xl font-semibold">Design Tools</h2>
-                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-                                dolores deserunt ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic,
-                                suscipit in a veritatis pariatur minus consequuntur!</p>
+                            <h2 class="text-gray-800 text-l font-semibold">{{item.artistic_inspiration}}</h2>
+                            <p class="mt-2 text-gray-600 h-48 overflow-auto">
+                                {{item.personal_story}}
+                            </p>
                         </div>
-                        <div class="flex justify-end mt-4">
-                            <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+                        <div class="text-right mt-4 py-4">
+                            <a href="#" class="text-l font-medium text-indigo-500">{{item.user.name}}</a>
                         </div>
                     </div>
                 </swiper-slide>
@@ -712,7 +733,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import { ref, computed, reactive } from "vue";
+import { ref, computed, reactive, onMounted } from "vue";
 import { useStore } from "vuex";
 const blogName = ['Charity', 'Digital Art', 'Artist']
 const modules = ref([Pagination, Navigation, Autoplay])
@@ -739,8 +760,24 @@ const swiperOptions = reactive({
 // const swiper = new Swiper()
 const store = useStore();
 const auth = ref(true);
+const artistValue = ref(null)
+const charityValue = ref(null)
 const openMenu = ref(false);
 const user = computed(() => store.getters.user);
+const artistData = async () => {
+    const res = await store.dispatch('artistModule/getArtists')
+    // console.log('artist res', res)
+    artistValue.value = res.data
+}
+const charityData = async () => {
+    const res = await store.dispatch('charityModule/getCharity')
+    // console.log('charity res..', res)
+    charityValue.value = res.data
+}
+onMounted(() => {
+    artistData()
+    charityData()
+})
 </script>
 <style scoped>
 .pattern {

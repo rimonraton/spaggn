@@ -4,10 +4,41 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-    //
+    public function socialLogin($provider)
+    {
+        // return $provider;
+        return Socialite::driver($provider)->stateless()->redirect();
+    }
+    public function authCallback($provider)
+    {
+       return $socialUser = Socialite::driver($provider)->stateless()->user();
+        dd($socialUser);
+    }
+    // Route::get('/auth/redirect/{provider}', function ($provider) {
+    //      return $provider;
+    //         return Socialite::driver($provider)->redirect();
+    //     });
+        
+    // Route::get('/auth/{provider}/callback', function ($provider) {
+    //         $socialUser = Socialite::driver($provider)->user();
+    //         dd($socialUser);
+        
+    //         $user = User::updateOrCreate([
+    //             'email' => $socialUser->email,
+    //         ], [
+    //             'name' => $socialUser->name,
+    //             'email' => $socialUser->email,
+    //             'password' => Hash::make(Str::random(10)),
+    //         ]);
+        
+    //         Auth::login($user);
+        
+    //         return redirect('/dashboard');
+    //     });
 
     public function Login(Request $request)
     {

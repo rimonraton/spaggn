@@ -34,12 +34,12 @@ export default {
     getCharityProfile() {
         return api.get('/api/get-charity-profile')
     },
-    // getUsers() {
-    //     return api.get('/api/users')
-    // },
-    // getUser(user) {
-    //     return api.get(`/api/users/${user}`)
-    // },
+    getArtists() {
+        return api.get('/api/get-artists')
+    },
+    getCharity() {
+        return api.get('/api/get-charity')
+    },
     // reSendOtp(param) {
     //     return api.post('/api/re_generate_otp', param)
     // },

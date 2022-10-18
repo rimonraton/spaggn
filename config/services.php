@@ -29,5 +29,25 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),         // Your GitHub Client ID
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'), // Your GitHub Client Secret
+        'redirect' => 'https://goodgivingnetwork.io/auth/facebook/callback',
+    ],
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),         // Your GitHub Client ID
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'), // Your GitHub Client Secret
+        'redirect' => 'https://goodgivingnetwork.io/auth/google/callback',
+    ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),         // Your GitHub Client ID
+        'client_secret' => env('GITHUB_CLIENT_SECRET'), // Your GitHub Client Secret
+        'redirect' => 'https://goodgivingnetwork.io/auth/github/callback',
+    ],
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT_ID'),         // Your GitHub Client ID
+        'client_secret' => env('TWITTER_CLIENT_SECRET'), // Your GitHub Client Secret
+        'redirect' => 'http://spaggn.test/api/auth-callback/twitter',
+    ],
 
 ];
