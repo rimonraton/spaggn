@@ -274,7 +274,7 @@ class ArtistController extends Controller
     }
     public function getArtist()
     {
-        $artists = Artist::with('user')->orderBy('id', 'desc')->paginate(4);
+        $artists = Artist::with('user')->orderBy('id', 'desc')->paginate(8);
         return response()->json($artists, 200);
     }
 }

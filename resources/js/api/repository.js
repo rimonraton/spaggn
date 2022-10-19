@@ -34,11 +34,11 @@ export default {
     getCharityProfile() {
         return api.get('/api/get-charity-profile')
     },
-    getArtists() {
-        return api.get('/api/get-artists')
+    getArtists(page) {
+        return api.get(`/api/get-artists?page=${page}`)
     },
-    getCharity() {
-        return api.get('/api/get-charity')
+    getCharity(page) {
+        return api.get(`/api/get-charity?page=${page}`)
     },
     // reSendOtp(param) {
     //     return api.post('/api/re_generate_otp', param)

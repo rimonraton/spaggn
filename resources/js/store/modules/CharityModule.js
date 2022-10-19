@@ -43,7 +43,7 @@ export const actions = {
     },
     async getCharity({ commit }, payload) {
         try {
-            const { data } = await repository.getCharity()
+            const { data } = await repository.getCharity(payload)
             return data
         } catch (e) {
             throw e

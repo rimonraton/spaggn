@@ -74,13 +74,13 @@
                   :class="submenu ? 'block' : 'hidden'">
                   <ul class="list-reset">
                     <li>
-                      <router-link :to="{ name: 'ExploreCharities' }"
+                      <router-link :to="{ name: 'ExploreCharities' }" @click="submenu = !submenu"
                       class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
                         Charities
                       </router-link>
                     </li>
                     <li>
-                      <router-link :to="{ name: 'ListCharities' }"
+                      <router-link :to="{ name: 'ListCharities' }" @click="submenu = !submenu"
                         class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
                         List of Charities</router-link>
                     </li>

@@ -105,7 +105,7 @@ class CharityController extends Controller
     }
     public function getCharity()
     {
-        $charities = Charity::with('user')->orderBy('id', 'desc')->paginate(4);
+        $charities = Charity::with('user')->orderBy('id', 'desc')->paginate(8);
         return response()->json($charities, 200);
     }
 }

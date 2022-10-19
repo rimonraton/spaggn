@@ -764,8 +764,8 @@ const artistValue = ref(null)
 const charityValue = ref(null)
 const openMenu = ref(false);
 const user = computed(() => store.getters.user);
-const artistData = async () => {
-    const res = await store.dispatch('artistModule/getArtists')
+const artistData = async (page = 1) => {
+    const res = await store.dispatch('artistModule/getArtists', page)
     // console.log('artist res', res)
     artistValue.value = res.data
 }
