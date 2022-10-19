@@ -61,7 +61,7 @@
                                     Mission
                                 </span>
                             </div>
-                            <p class="text-l font-bold leading-tight mt-5 sm:mt-0 ">
+                            <p class="text-l leading-tight mt-5 sm:mt-0 ">
                                 {{profile.charityprofile.mission}}
                             </p>
                             <!-- <p class="mt-5 md:text-md ">
