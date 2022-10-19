@@ -57,11 +57,11 @@
                         <div class="content pl-4">
                             <div class="flex items-center gap-3">
                                 <hr class="w-10 bg-orange-500 border " />
-                                <span class="md:text-[10px] font-medium text-gray-800 ">
+                                <span class="md:text-[18px] font-medium text-gray-800 ">
                                     Mission
                                 </span>
                             </div>
-                            <p class="text-xl font-bold leading-tight mt-5 sm:mt-0 ">
+                            <p class="text-l font-bold leading-tight mt-5 sm:mt-0 ">
                                 {{profile.charityprofile.mission}}
                             </p>
                             <!-- <p class="mt-5 md:text-md ">

@@ -4024,6 +4024,9 @@ input:focus-within~label {
   .md\:text-\[10px\] {
     font-size: 10px
   }
+  .md\:text-\[18px\] {
+    font-size: 18px
+  }
   .md\:opacity-100 {
     opacity: 1
   }
