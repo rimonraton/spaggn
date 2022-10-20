@@ -137,7 +137,7 @@ const store = useStore()
 const route = useRoute()
 const profile = ref(null)
 const imageUrl = (image) => {
-    return process.env.MIX_API_URL + '/' + image;
+    return '/' + image;
 }
 const getCharityProfile = async () => {
     const res = await store.dispatch('charityModule/getCharityDetails', route.params.id)

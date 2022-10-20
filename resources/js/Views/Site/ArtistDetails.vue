@@ -164,7 +164,7 @@ const profileAsset = ref(null)
 const hasProfile = ref(false)
 // console.log('process.env.MIX_API_URL', process.env.MIX_API_URL)
 const imageUrl = (image) => {
-  return process.env.MIX_API_URL + '/' + image;
+  return '/' + image;
 }
 const gotoComment = () => {
   const element = document.getElementById('comments');
