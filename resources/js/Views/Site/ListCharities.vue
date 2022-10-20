@@ -4,7 +4,7 @@
             <h2 class="text-2xl text-gray-900 font-bold md:text-4xl py-4">List of Charities</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
                 <div class="relative mx-auto w-full" v-for="charity, i in charityValue" :key="charity">
-                    <a href="#"
+                    <router-link :to="{  name: 'CharityDetails', params: { id: charity.user.id } }"
                         class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                         <div class="shadow p-4 rounded-lg bg-white">
                             <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
@@ -56,7 +56,7 @@
                                 </p>
                             </div>
                         </div>
-                    </a>
+                    </router-link>
                 </div>
             </div>
             <div class="text-center py-4" v-if="charityValue.length < total">

@@ -5,6 +5,8 @@ const Blog = () => import( "../Views/Site/Blogs.vue");
 const Projects = () => import( "../Views/Site/Projects.vue");
 const Home = () => import( "../Views/Site/Home.vue");
 const Welcome = () => import( "../Views/Site/Welcome.vue");
+const ArtistDetails = () => import( "../Views/Site/ArtistDetails.vue");
+const CharityDetails = () => import( "../Views/Site/CharityDetails.vue");
 const LandingLayout = () => import('../layouts/LandingLayout.vue')
 const ListCharities = () => import('../Views/Site/ListCharities.vue')
 export default [
@@ -62,6 +64,22 @@ export default [
                 path: "/projects",
                 component: Projects,
                 name: "Projects",
+                // meta: {
+                //     layout: ArtistLayout,
+                // },
+            },
+            {
+                path: "/artist-details/:id",
+                component: ArtistDetails,
+                name: "ArtistDetails",
+                // meta: {
+                //     layout: ArtistLayout,
+                // },
+            },
+            {
+                path: "/charity-details/:id",
+                component: CharityDetails,
+                name: "CharityDetails",
                 // meta: {
                 //     layout: ArtistLayout,
                 // },

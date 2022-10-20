@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\User;
 use App\Models\Artist;
 use App\Models\Asset;
 use App\Models\Charity;
@@ -254,6 +255,12 @@ class ArtistController extends Controller
     {
         // $profile = \Auth::user()->profile;
         $profile = \Auth::user()->load('profile', 'assets');
+        return response()->json($profile, 200);
+    }
+    public function getArtistProfileById($id)
+    {
+        // $profile = \Auth::user()->profile;
+        $profile = User::find($id)->load('profile', 'assets');
         return response()->json($profile, 200);
     }
     public function getArtistAssets()

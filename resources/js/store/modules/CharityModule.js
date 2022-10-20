@@ -1,13 +1,13 @@
 import repository from "../../api/repository"
 export const namespaced = true
 export const state = {
-  
+
 }
 export const getters = {
 
 }
 export const mutations = {
-    
+
 }
 export const actions = {
     async createCharityProfile({ commit }, payload) {
@@ -44,6 +44,15 @@ export const actions = {
     async getCharity({ commit }, payload) {
         try {
             const { data } = await repository.getCharity(payload)
+            return data
+        } catch (e) {
+            throw e
+        }
+
+    },
+    async getCharityDetails({ commit }, payload) {
+        try {
+            const { data } = await repository.getCharityDetails(payload)
             return data
         } catch (e) {
             throw e

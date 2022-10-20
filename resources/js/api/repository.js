@@ -40,6 +40,12 @@ export default {
     getCharity(page) {
         return api.get(`/api/get-charity?page=${page}`)
     },
+    getArtistDetails(id) {
+        return api.get(`/api/get-artist-profile-by-id/${id}`)
+    },
+    getCharityDetails(id) {
+        return api.get(`/api/get-charity-profile-by-id/${id}`)
+    },
     // reSendOtp(param) {
     //     return api.post('/api/re_generate_otp', param)
     // },

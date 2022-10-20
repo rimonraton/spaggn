@@ -12,16 +12,7 @@
         <div class="flex flex-row justify-center px-2 py-2 mx-3">
           <div class="flex flex-col mb-2 ml-4 mt-1">
             <div class="text-gray-600 text-2xl font-semibold text-center">
-              Welcome to the Good Giving Network family!
-            </div>
-            <div class="w-full mt-1">
-              <div class="text-gray-400 font-thin text-l">
-                Thank you so much for Registration.Please create your profile and go on.
-              </div>
-              <div class="text-center">
-                <router-link to="/create-your-profile" class="text-blue-500 hover:underline">Create my profile
-                </router-link>
-              </div>
+              No data found....
             </div>
           </div>
         </div>
@@ -33,12 +24,12 @@
           <div class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
             <div class="flex justify-center xl:w-1/2">
               <img class="h-80 w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full"
-                :src="profile.photo" alt="">
+                :src="imageUrl(profile.profile.photo)" alt="">
             </div>
 
             <div class="flex flex-col items-center xl:items-start xl:w-1/2">
               <h2 class="text-3xl font-bold tracking-tight text-gray-800 xl:text-4xl dark:text-white">
-                {{$store.state.user.name}}
+                {{profile.name}}
               </h2>
               <div class="bg-white shadow rounded-lg mb-6 mt-4">
                 <div class="px-2 py-3 mx-3">
@@ -47,7 +38,7 @@
                       Social Links
                     </div>
                     <div class="flex flex-col gap-2 cursor-pointer">
-                      <div v-for="sc in JSON.parse(profile.sc_profile)" :key="sc">
+                      <div v-for="sc in JSON.parse(profile.profile.sc_profile)" :key="sc">
                         <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{sc.url}}</a>
                       </div>
                     </div>
@@ -55,8 +46,7 @@
                 </div>
               </div>
               <div class="mb-4">
-                <img :src="profile.cover" class="max-w-full h-auto rounded-lg"
-                  alt="">
+                <img :src="imageUrl(profile.profile.cover)" class="max-w-full h-auto rounded-lg" alt="">
               </div>
             </div>
           </div>
@@ -78,7 +68,7 @@
                           <h6 class="text-lg font-semibold leading-none">Personal Story</h6>
                         </div>
                         <p class="text-gray-600 md:text-l">
-                          {{profile.personal_story}}
+                          {{profile.profile.personal_story}}
                         </p>
 
                       </div>
@@ -89,7 +79,7 @@
                         <div>
                           <h6 class="text-lg font-semibold leading-none">Inspiration</h6>
                         </div>
-                        <p class="text-gray-600"> {{profile.inspiration}}</p>
+                        <p class="text-gray-600"> {{profile.profile.inspiration}}</p>
                       </div>
                     </div>
                     <div class="p-6 border border-gray-100 rounded-xl bg-gray-50 sm:flex sm:space-x-8 sm:p-8">
@@ -97,7 +87,7 @@
                         <div>
                           <h6 class="text-lg font-semibold leading-none">Message for world</h6>
                         </div>
-                        <p class="text-gray-600"> {{profile.message_to_world}}</p>
+                        <p class="text-gray-600"> {{profile.profile.message_to_world}}</p>
 
                       </div>
                     </div>
@@ -120,12 +110,13 @@
               <div class="grid grid-cols-6 col-span-2 gap-2">
                 <div class="overflow-hidden rounded-xl col-span-3 max-h-[14rem]" v-for="asset in profileAsset"
                   :key="asset">
-                  <img class="h-full w-full object-cover" :src="asset.file" alt="" />
+                  <img class="h-full w-full object-cover" :src="imageUrl(asset.file)" alt="" />
                 </div>
               </div>
             </div>
             <div class="font-medium text-sm mb-7 mt-6 mx-3 px-2 pb-4 text-center" v-else>
-              <router-link to="/submit-your-assets"> Please submit your asset</router-link>
+              <!-- <router-link to="/submit-your-assets"> Please submit your asset</router-link> -->
+              <p> Assets are not available yet.</p>
             </div>
           </div>
           <div class="bg-white shadow rounded-lg mb-6">
@@ -135,27 +126,26 @@
                   Social Links
                 </div>
                 <div class="flex flex-col gap-2 cursor-pointer">
-                  <div v-for="sc in JSON.parse(profile.sc_profile)" :key="sc">
+                  <div v-for="sc in JSON.parse(profile.profile.sc_profile)" :key="sc">
                     <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{sc.url}}</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="bg-white shadow rounded-lg mb-6" id="comments">
+          <!-- <div class="bg-white shadow rounded-lg mb-6" id="comments">
             <div class="rounded-xl border p-5 shadow-md w-full bg-white">
               <div class=" w-full border-b pb-3">
                 <div class="text-lg font-bold text-slate-700">Comments</div>
               </div>
 
               <div class="mt-4 mb-6">
-                <!-- <div class="mb-3 text-xl font-bold">Nulla sed leo tempus, feugiat velit vel, rhoncus neque?</div> -->
                 <div class="text-sm text-neutral-600">
                   No comments yet..
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -165,10 +155,17 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useStore } from 'vuex'
+import { useRoute } from 'vue-router'
+const route = useRoute()
 const store = useStore()
 const profile = ref(null)
+const user = ref(null)
 const profileAsset = ref(null)
 const hasProfile = ref(false)
+// console.log('process.env.MIX_API_URL', process.env.MIX_API_URL)
+const imageUrl = (image) => {
+  return process.env.MIX_API_URL + '/' + image;
+}
 const gotoComment = () => {
   const element = document.getElementById('comments');
   element.scrollIntoView({ behavior: 'smooth' });
@@ -178,16 +175,17 @@ const gotoUp = () => {
 }
 const getArtistProfile = async () => {
   hasProfile.value = true
-  const res = await store.dispatch('artistModule/getArtistProfile')
+  const res = await store.dispatch('artistModule/getArtistDetails', route.params.id)
   hasProfile.value = false
-  profile.value = res.profile
+  user.value = res
+  profile.value = res
   profileAsset.value = res.assets
 }
 onMounted(() => {
   getArtistProfile()
 })
 </script>
-
+  
 <style scoped>
 .loader {
   border-top-color: #3498db;
@@ -215,3 +213,4 @@ onMounted(() => {
   }
 }
 </style>
+  

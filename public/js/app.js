@@ -19950,6 +19950,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   getCharity: function getCharity(page) {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-charity?page=".concat(page));
+  },
+  getArtistDetails: function getArtistDetails(id) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-artist-profile-by-id/".concat(id));
+  },
+  getCharityDetails: function getCharityDetails(id) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-charity-profile-by-id/".concat(id));
   } // reSendOtp(param) {
   //     return api.post('/api/re_generate_otp', param)
   // },
@@ -20675,6 +20681,14 @@ var Welcome = function Welcome() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_Site_Welcome_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Site/Welcome.vue */ "./resources/js/Views/Site/Welcome.vue"));
 };
 
+var ArtistDetails = function ArtistDetails() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Site_ArtistDetails_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Site/ArtistDetails.vue */ "./resources/js/Views/Site/ArtistDetails.vue"));
+};
+
+var CharityDetails = function CharityDetails() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Site_CharityDetails_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Site/CharityDetails.vue */ "./resources/js/Views/Site/CharityDetails.vue"));
+};
+
 var LandingLayout = function LandingLayout() {
   return __webpack_require__.e(/*! import() */ "resources_js_layouts_LandingLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/LandingLayout.vue */ "./resources/js/layouts/LandingLayout.vue"));
 };
@@ -20730,6 +20744,20 @@ var ListCharities = function ListCharities() {
     path: "/projects",
     component: Projects,
     name: "Projects" // meta: {
+    //     layout: ArtistLayout,
+    // },
+
+  }, {
+    path: "/artist-details/:id",
+    component: ArtistDetails,
+    name: "ArtistDetails" // meta: {
+    //     layout: ArtistLayout,
+    // },
+
+  }, {
+    path: "/charity-details/:id",
+    component: CharityDetails,
+    name: "CharityDetails" // meta: {
     //     layout: ArtistLayout,
     // },
 
@@ -21321,6 +21349,37 @@ var actions = {
         }
       }, _callee6, null, [[1, 9]]);
     }))();
+  },
+  getArtistDetails: function getArtistDetails(_ref7, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7() {
+      var commit, _yield$repository$get4, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              commit = _ref7.commit;
+              _context7.prev = 1;
+              _context7.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getArtistDetails(payload);
+
+            case 4:
+              _yield$repository$get4 = _context7.sent;
+              data = _yield$repository$get4.data;
+              return _context7.abrupt("return", data);
+
+            case 9:
+              _context7.prev = 9;
+              _context7.t0 = _context7["catch"](1);
+              throw _context7.t0;
+
+            case 12:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7, null, [[1, 9]]);
+    }))();
   }
 };
 
@@ -21481,6 +21540,37 @@ var actions = {
           }
         }
       }, _callee4, null, [[1, 9]]);
+    }))();
+  },
+  getCharityDetails: function getCharityDetails(_ref5, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+      var commit, _yield$repository$get3, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              commit = _ref5.commit;
+              _context5.prev = 1;
+              _context5.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getCharityDetails(payload);
+
+            case 4:
+              _yield$repository$get3 = _context5.sent;
+              data = _yield$repository$get3.data;
+              return _context5.abrupt("return", data);
+
+            case 9:
+              _context5.prev = 9;
+              _context5.t0 = _context5["catch"](1);
+              throw _context5.t0;
+
+            case 12:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[1, 9]]);
     }))();
   }
 };
@@ -45795,7 +45885,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_Views_Site_ArtistDetails_vue":1,"resources_js_Views_Site_CharityDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

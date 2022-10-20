@@ -33,7 +33,9 @@ Route::middleware('guest')->group(function () {
     Route::post('/forgot-password', ForgotPasswordController::class);
     Route::post('/reset-password', ResetPasswordController::class);
     Route::get('/get-artists', [ArtistController::class, 'getArtist']);
+    Route::get('/get-artist-profile-by-id/{id}', [ArtistController::class, 'getArtistProfileById']);
     Route::get('/get-charity', [CharityController::class, 'getCharity']);
+    Route::get('/get-charity-profile-by-id/{id}', [CharityController::class, 'getCharityProfileById']);
 
     // guest verification (temporary auth)
     // Route::post('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verify');

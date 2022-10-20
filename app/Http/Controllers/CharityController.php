@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Charity;
+use App\Models\User;
 use Illuminate\Support\Str;
 
 class CharityController extends Controller
@@ -101,6 +102,11 @@ class CharityController extends Controller
     public function getCharityProfile()
     {
         $profile = \Auth::user()->load('charityprofile');
+        return response()->json($profile, 200);
+    }
+    public function getCharityProfileById($id)
+    {
+        $profile = User::find($id)->load('charityprofile');
         return response()->json($profile, 200);
     }
     public function getCharity()
