@@ -6,13 +6,14 @@
       <p class="w-1/3 text-center text-white">This may take a few seconds.</p>
     </div>
   </div>
-  <div id="home" v-else>
-    <div v-if="profile == null || profile == ''">
+  <div id="home" v-if="profile != null">
+    
+    <div v-if="profile.profile == null">
       <div class="bg-white shadow rounded-lg h-96 w-full">
         <div class="flex flex-row justify-center px-2 py-2 mx-3">
           <div class="flex flex-col mb-2 ml-4 mt-1">
             <div class="text-gray-600 text-2xl font-semibold text-center">
-              Welcome to the Good Giving Network family!
+              Welcome to the Good Giving Network family! {{profile.profile == null}}
             </div>
             <div class="w-full mt-1">
               <div class="text-gray-400 font-thin text-l">
@@ -27,18 +28,18 @@
         </div>
       </div>
     </div>
-    <div class="col-span-4" v-else>
+    <div class="col-span-4" v-if="profile.profile != null">
       <div class="bg-white shadow rounded-lg">
         <section class="bg-white dark:bg-gray-900">
           <div class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
             <div class="flex justify-center xl:w-1/2">
               <img class="h-80 w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full"
-                :src="profile.photo" alt="">
+                :src="profile.profile.photo" alt="">
             </div>
 
             <div class="flex flex-col items-center xl:items-start xl:w-1/2">
               <h2 class="text-3xl font-bold tracking-tight text-gray-800 xl:text-4xl dark:text-white">
-                {{$store.state.user.name}}
+                <!-- {{profile.user.name}} -->
               </h2>
               <div class="bg-white shadow rounded-lg mb-6 mt-4">
                 <div class="px-2 py-3 mx-3">
@@ -47,7 +48,7 @@
                       Social Links
                     </div>
                     <div class="flex flex-col gap-2 cursor-pointer">
-                      <div v-for="sc in JSON.parse(profile.sc_profile)" :key="sc">
+                      <div v-for="sc in JSON.parse(profile.profile.sc_profile)" :key="sc">
                         <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{sc.url}}</a>
                       </div>
                     </div>
@@ -55,7 +56,7 @@
                 </div>
               </div>
               <div class="mb-4">
-                <img :src="profile.cover" class="max-w-full h-auto rounded-lg"
+                <img :src="profile.profile.cover" class="max-w-full h-auto rounded-lg"
                   alt="">
               </div>
             </div>
@@ -78,7 +79,7 @@
                           <h6 class="text-lg font-semibold leading-none">Personal Story</h6>
                         </div>
                         <p class="text-gray-600 md:text-l">
-                          {{profile.personal_story}}
+                          {{profile.profile.personal_story}}
                         </p>
 
                       </div>
@@ -89,7 +90,7 @@
                         <div>
                           <h6 class="text-lg font-semibold leading-none">Inspiration</h6>
                         </div>
-                        <p class="text-gray-600"> {{profile.inspiration}}</p>
+                        <p class="text-gray-600"> {{profile.profile.inspiration}}</p>
                       </div>
                     </div>
                     <div class="p-6 border border-gray-100 rounded-xl bg-gray-50 sm:flex sm:space-x-8 sm:p-8">
@@ -97,7 +98,7 @@
                         <div>
                           <h6 class="text-lg font-semibold leading-none">Message for world</h6>
                         </div>
-                        <p class="text-gray-600"> {{profile.message_to_world}}</p>
+                        <p class="text-gray-600"> {{profile.profile.message_to_world}}</p>
 
                       </div>
                     </div>
@@ -135,7 +136,7 @@
                   Social Links
                 </div>
                 <div class="flex flex-col gap-2 cursor-pointer">
-                  <div v-for="sc in JSON.parse(profile.sc_profile)" :key="sc">
+                  <div v-for="sc in JSON.parse(profile.profile.sc_profile)" :key="sc">
                     <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{sc.url}}</a>
                   </div>
                 </div>
@@ -163,24 +164,25 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useStore } from 'vuex'
 const store = useStore()
-const profile = ref(null)
+// const profile = ref(null)
 const profileAsset = ref(null)
 const hasProfile = ref(false)
-const gotoComment = () => {
-  const element = document.getElementById('comments');
-  element.scrollIntoView({ behavior: 'smooth' });
-}
-const gotoUp = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+// const gotoComment = () => {
+//   const element = document.getElementById('comments');
+//   element.scrollIntoView({ behavior: 'smooth' });
+// }
+// const gotoUp = () => {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
+// }
+const profile = computed(()=> store.state.artistModule.artistProfileData != null ? store.state.artistModule.artistProfileData : null)
 const getArtistProfile = async () => {
   hasProfile.value = true
   const res = await store.dispatch('artistModule/getArtistProfile')
   hasProfile.value = false
-  profile.value = res.profile
+  // profile.value = profile
   profileAsset.value = res.assets
 }
 onMounted(() => {

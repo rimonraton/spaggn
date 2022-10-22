@@ -4,7 +4,8 @@
       <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
         <div class="w-1/2 pl-2 md:pl-0">
           <a class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
-            <i class="fas fa-sun text-pink-600 pr-3"></i> Artist Dashboard
+            <i class="fas fa-sun text-pink-600 pr-3"></i> 
+            Artist Dashboard
           </a>
         </div>
         <div class="w-1/2 pr-0">
@@ -12,7 +13,11 @@
             <div class="relative text-sm">
               <button id="userButton" @click="dropdownOpen = !dropdownOpen"
                 class="flex items-center focus:outline-none mr-3">
-                <img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of User" />
+                <span v-if="$store.state.artistModule.artistProfileData != null">
+                  <img v-if="$store.state.artistModule.artistProfileData.profile == null" class="w-8 h-8 rounded-full mr-4" src="images/profile/profile.jpg" alt="Avatar" />
+                  <img v-if="$store.state.artistModule.artistProfileData.profile != null" class="w-8 h-8 rounded-full mr-4" :src="$store.state.artistModule.artistProfileData.profile.photo" alt="Avatar of User" />
+                </span>
+                
                 <span class="hidden md:inline-block">Hi, {{$store.state.user? $store.state.user.name :""}} </span>
                 <svg v-if="!dropdownOpen" class="pl-1 h-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                   <path

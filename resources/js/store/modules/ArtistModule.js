@@ -2,7 +2,8 @@ import repository from "../../api/repository"
 export const namespaced = true
 export const state = {
     artist: 'Artist from store',
-    artistAsset: {}
+    artistAsset: {},
+    artistProfileData: null
 }
 export const getters = {
 
@@ -32,9 +33,10 @@ export const actions = {
         }
 
     },
-    async getArtistProfile({ commit }, payload) {
+    async getArtistProfile({ commit, state }, payload) {
         try {
             const { data } = await repository.getArtistProfile()
+            state.artistProfileData = data
             // console.log(data)
             return data
         } catch (e) {
