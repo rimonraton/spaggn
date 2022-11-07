@@ -145,10 +145,12 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 const props = defineProps({
     bottomCloseButton: { type: Boolean, default: false }
 })
 const store = useStore()
+const router = useRouter()
 const formData = reactive({
     name: '',
     description: '',
@@ -221,6 +223,7 @@ const saveArtistAssetData = async () => {
     try {
         await store.dispatch('artistModule/createArtistAsset', assetData)
         clear()
+        router.push('/view-your-assets')
         if(props.bottomCloseButton) {
             emit('close')
         }
