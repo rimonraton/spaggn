@@ -10,12 +10,16 @@
           <!-- <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> -->
           <router-link :to="{ name: 'login' }"
             class="border border-purple-700 hover:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
-            Login
+            {{$store.getters.authenticated ? 'Dasboard' : 'Login'}}
           </router-link>
-          <router-link :to="{ name: 'register' }"
+          <router-link :to="{ name: 'register' }" v-if="!$store.getters.authenticated"
             class="hidden lg:block border border-red-500 hover:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
             Register
           </router-link>
+          <a @click="logout" v-if="$store.getters.authenticated"
+            class="hidden cursor-pointer lg:block border border-red-500 hover:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+            Logout
+          </a>
 
           <button @click="openMenu = !openMenu" data-collapse-toggle="mobile-menu-2" type="button"
             class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -116,14 +120,20 @@
             <li class="block lg:hidden">
               <router-link :to="{ name: 'login' }"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
-                Login
+                {{$store.getters.authenticated ? 'Dasboard' : 'Login'}}
               </router-link>
             </li>
-            <li class="block lg:hidden">
+            <li class="block lg:hidden" v-if="!$store.getters.authenticated">
               <router-link :to="{ name: 'register' }"
                 class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
                 Register
               </router-link>
+            </li>
+            <li class="block lg:hidden" v-else>
+              <a @click="logout"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                Logout
+              </a>
             </li>
           </ul>
         </div>
@@ -146,6 +156,16 @@ const openMenu = ref(false);
 const user = computed(() => store.getters.user);
 const goToHome = () => {
   router.push({ name: 'welcome' })
+}
+const logout = async () => {
+  try {
+    await store.dispatch('logout')
+    router.push({ name: 'welcome' })
+  }
+  catch (e) {
+    console.log(e.data)
+  };
+
 }
 </script>
 <style scoped>

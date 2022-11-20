@@ -46,6 +46,12 @@ export default {
     getCharityDetails(id) {
         return api.get(`/api/get-charity-profile-by-id/${id}`)
     },
+    removeArtistAssets(id) {
+        return api.post('/api/remove-artist-assets', id)
+    },
+    updateArtistAssets(param) {
+        return api.post('/api/update-artist-assets', param)
+    },
     // reSendOtp(param) {
     //     return api.post('/api/re_generate_otp', param)
     // },

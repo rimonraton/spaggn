@@ -114,7 +114,7 @@ var _hoisted_1 = {
 };
 var _hoisted_2 = {
   id: "header",
-  "class": "bg-white fixed w-full z-10 top-0 shadow"
+  "class": "bg-white fixed w-full z-10 top-0 shadow absolute"
 };
 var _hoisted_3 = {
   "class": "w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0"

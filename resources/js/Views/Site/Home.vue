@@ -314,7 +314,7 @@
                                             </div>
 
                                             <p class="ml-2 text-gray-800 line-clamp-1">
-                                                {{item.user.name}}
+                                                {{item.user?.name}}
                                             </p>
                                         </div>
                                     </div>
@@ -415,7 +415,7 @@
                             </p>
                         </div>
                         <div class="text-right mt-4 py-4">
-                            <a href="#" class="text-l font-medium text-indigo-500">{{item.user.name}}</a>
+                            <a href="#" class="text-l font-medium text-indigo-500">{{item.user?.name}}</a>
                         </div>
                     </div>
                 </swiper-slide>

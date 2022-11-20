@@ -21,6 +21,9 @@ export default createStore({
         user(state) {
             return state.user;
         },
+        authenticated(state) {
+            return state.user ? true : false;
+        },
         verified(state) {
             if (state.user) return state.user.email_verified_at
             return null

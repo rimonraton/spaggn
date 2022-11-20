@@ -19956,6 +19956,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   getCharityDetails: function getCharityDetails(id) {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-charity-profile-by-id/".concat(id));
+  },
+  removeArtistAssets: function removeArtistAssets(id) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/remove-artist-assets', id);
+  },
+  updateArtistAssets: function updateArtistAssets(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/update-artist-assets', param);
   } // reSendOtp(param) {
   //     return api.post('/api/re_generate_otp', param)
   // },
@@ -20813,6 +20819,9 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
     user: function user(state) {
       return state.user;
     },
+    authenticated: function authenticated(state) {
+      return state.user ? true : false;
+    },
     verified: function verified(state) {
       if (state.user) return state.user.email_verified_at;
       return null;
@@ -21322,9 +21331,9 @@ var actions = {
       }, _callee5, null, [[1, 10]]);
     }))();
   },
-  getArtists: function getArtists(_ref6, payload) {
+  removeArtistAssets: function removeArtistAssets(_ref6, payload) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6() {
-      var commit, _yield$repository$get3, data;
+      var commit, _yield$repository$rem, data;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
         while (1) {
@@ -21333,29 +21342,32 @@ var actions = {
               commit = _ref6.commit;
               _context6.prev = 1;
               _context6.next = 4;
-              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getArtists(payload);
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].removeArtistAssets(payload);
 
             case 4:
-              _yield$repository$get3 = _context6.sent;
-              data = _yield$repository$get3.data;
+              _yield$repository$rem = _context6.sent;
+              data = _yield$repository$rem.data;
+              console.log(data);
+              commit('setAsset', data); // commit('setAsset', data);
+
               return _context6.abrupt("return", data);
 
-            case 9:
-              _context6.prev = 9;
+            case 11:
+              _context6.prev = 11;
               _context6.t0 = _context6["catch"](1);
               throw _context6.t0;
 
-            case 12:
+            case 14:
             case "end":
               return _context6.stop();
           }
         }
-      }, _callee6, null, [[1, 9]]);
+      }, _callee6, null, [[1, 11]]);
     }))();
   },
-  getArtistDetails: function getArtistDetails(_ref7, payload) {
+  updateArtistAssets: function updateArtistAssets(_ref7, payload) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee7() {
-      var commit, _yield$repository$get4, data;
+      var commit, _yield$repository$upd, data;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee7$(_context7) {
         while (1) {
@@ -21364,24 +21376,89 @@ var actions = {
               commit = _ref7.commit;
               _context7.prev = 1;
               _context7.next = 4;
-              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getArtistDetails(payload);
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].updateArtistAssets(payload);
 
             case 4:
-              _yield$repository$get4 = _context7.sent;
-              data = _yield$repository$get4.data;
+              _yield$repository$upd = _context7.sent;
+              data = _yield$repository$upd.data;
+              console.log(data);
+              commit('setAsset', data); // commit('setAsset', data);
+
               return _context7.abrupt("return", data);
 
-            case 9:
-              _context7.prev = 9;
+            case 11:
+              _context7.prev = 11;
               _context7.t0 = _context7["catch"](1);
               throw _context7.t0;
 
-            case 12:
+            case 14:
             case "end":
               return _context7.stop();
           }
         }
-      }, _callee7, null, [[1, 9]]);
+      }, _callee7, null, [[1, 11]]);
+    }))();
+  },
+  getArtists: function getArtists(_ref8, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee8() {
+      var commit, _yield$repository$get3, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              commit = _ref8.commit;
+              _context8.prev = 1;
+              _context8.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getArtists(payload);
+
+            case 4:
+              _yield$repository$get3 = _context8.sent;
+              data = _yield$repository$get3.data;
+              return _context8.abrupt("return", data);
+
+            case 9:
+              _context8.prev = 9;
+              _context8.t0 = _context8["catch"](1);
+              throw _context8.t0;
+
+            case 12:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8, null, [[1, 9]]);
+    }))();
+  },
+  getArtistDetails: function getArtistDetails(_ref9, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee9() {
+      var commit, _yield$repository$get4, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee9$(_context9) {
+        while (1) {
+          switch (_context9.prev = _context9.next) {
+            case 0:
+              commit = _ref9.commit;
+              _context9.prev = 1;
+              _context9.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getArtistDetails(payload);
+
+            case 4:
+              _yield$repository$get4 = _context9.sent;
+              data = _yield$repository$get4.data;
+              return _context9.abrupt("return", data);
+
+            case 9:
+              _context9.prev = 9;
+              _context9.t0 = _context9["catch"](1);
+              throw _context9.t0;
+
+            case 12:
+            case "end":
+              return _context9.stop();
+          }
+        }
+      }, _callee9, null, [[1, 9]]);
     }))();
   }
 };

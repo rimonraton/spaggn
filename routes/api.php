@@ -56,6 +56,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('create-artist-asset', [ArtistController::class, 'ArtistAssetsSave']);
     Route::get('get-artist-profile', [ArtistController::class, 'getArtistProfile']);
     Route::get('get-artist-assets', [ArtistController::class, 'getArtistAssets']);
+    Route::post('remove-artist-assets', [ArtistController::class, 'removeArtistAssets']);
+    Route::post('update-artist-assets', [ArtistController::class, 'updateArtistAssets']);
     Route::post('image-remove', [ArtistController::class, 'ImageRemove']);
 
     //Charity
