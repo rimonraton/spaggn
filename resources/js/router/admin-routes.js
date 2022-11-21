@@ -2,6 +2,7 @@ const AdminHome = () => import('../Views/Admin/pages/Home.vue');
 // const AdminProfile = () => import('../Views/Admin/pages/Profile.vue');
 // const CreateAdminProfile = () => import('../Views/Admin/pages/CreateProfile.vue');
 const AdminLayout = () => import('../layouts/AdminLayout.vue')
+const ViewArtists = () => import('../Views/Admin/pages/Artists.vue')
 const ViewCharities = () => import('../Views/Admin/pages/Charities.vue')
 export default [
     {
@@ -13,6 +14,14 @@ export default [
                 path: '/admin-home',
                 component: AdminHome,
                 name: 'Admin',
+                meta: {
+                    guard: 'auth'
+                }
+            },
+            {
+                path: '/view-artisets',
+                component: ViewArtists,
+                name: 'ViewArtists',
                 meta: {
                     guard: 'auth'
                 }

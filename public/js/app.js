@@ -20192,6 +20192,10 @@ var AdminLayout = function AdminLayout() {
   return __webpack_require__.e(/*! import() */ "resources_js_layouts_AdminLayout_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/AdminLayout.vue */ "./resources/js/layouts/AdminLayout.vue"));
 };
 
+var ViewArtists = function ViewArtists() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_Artists_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/Artists.vue */ "./resources/js/Views/Admin/pages/Artists.vue"));
+};
+
 var ViewCharities = function ViewCharities() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_Charities_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/Charities.vue */ "./resources/js/Views/Admin/pages/Charities.vue"));
 };
@@ -20204,6 +20208,13 @@ var ViewCharities = function ViewCharities() {
     path: '/admin-home',
     component: AdminHome,
     name: 'Admin',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/view-artisets',
+    component: ViewArtists,
+    name: 'ViewArtists',
     meta: {
       guard: 'auth'
     }
@@ -45965,7 +45976,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_Views_Site_ArtistDetails_vue":1,"resources_js_Views_Site_CharityDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_Views_Site_ArtistDetails_vue":1,"resources_js_Views_Site_CharityDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Artists_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

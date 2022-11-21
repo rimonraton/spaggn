@@ -1328,6 +1328,33 @@ video {
 .h-9 {
   height: 2.25rem
 }
+.h-\[calc\(100vh-65px\)\] {
+  height: calc(100vh - 65px)
+}
+.h-\[calc\(100vh-85px\)\] {
+  height: calc(100vh - 85px)
+}
+.h-\[calc\(100vh-100px\)\] {
+  height: calc(100vh - 100px)
+}
+.h-\[calc\(100vh-90px\)\] {
+  height: calc(100vh - 90px)
+}
+.h-\[calc\(100vh-55px\)\] {
+  height: calc(100vh - 55px)
+}
+.h-\[calc\(100vh-40px\)\] {
+  height: calc(100vh - 40px)
+}
+.h-\[calc\(100vh-45px\)\] {
+  height: calc(100vh - 45px)
+}
+.h-\[calc\(100vh-50px\)\] {
+  height: calc(100vh - 50px)
+}
+.h-\[calc\(100vh-51px\)\] {
+  height: calc(100vh - 51px)
+}
 .max-h-\[14rem\] {
   max-height: 14rem
 }
@@ -2183,6 +2210,9 @@ video {
 .p-1 {
   padding: 0.25rem
 }
+.p-0 {
+  padding: 0px
+}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem
@@ -2689,11 +2719,11 @@ video {
 .opacity-10 {
   opacity: 0.1
 }
-.opacity-5 {
-  opacity: 0.05
-}
 .opacity-25 {
   opacity: 0.25
+}
+.opacity-5 {
+  opacity: 0.05
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -3027,14 +3057,14 @@ input:focus-within~label {
   background-color: rgb(14 116 144 / var(--tw-bg-opacity))
 }
 
-.hover\:bg-red-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity))
-}
-
 .hover\:bg-indigo-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(129 140 248 / var(--tw-bg-opacity))
+}
+
+.hover\:bg-red-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity))
 }
 
 .hover\:text-gray-400:hover {
@@ -3636,9 +3666,6 @@ input:focus-within~label {
 }
 
 @media (min-width: 640px) {
-  .sm\:absolute {
-    position: absolute
-  }
   .sm\:-m-4 {
     margin: -1rem
   }
@@ -3807,11 +3834,11 @@ input:focus-within~label {
 }
 
 @media (min-width: 768px) {
+  .md\:visible {
+    visibility: visible
+  }
   .md\:static {
     position: static
-  }
-  .md\:fixed {
-    position: fixed
   }
   .md\:z-auto {
     z-index: auto
@@ -4074,6 +4101,9 @@ input:focus-within~label {
 @media (min-width: 1024px) {
   .lg\:visible {
     visibility: visible
+  }
+  .lg\:invisible {
+    visibility: hidden
   }
   .lg\:order-2 {
     order: 2

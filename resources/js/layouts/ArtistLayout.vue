@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-screen">
     <div>
-      <nav id="header" class="bg-white  w-full z-10 top-0 shadow absolute md:fixed">
+      <nav id="header" class="bg-white  w-full z-10 top-0 shadow fixed">
         <div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
           <div class="w-1/2 pl-2 md:pl-0">
             <a class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
@@ -36,14 +36,14 @@
                   class="bg-white rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30">
                   <ul class="list-reset">
                     <li>
-                      <a href="#"
+                      <router-link to="/create-your-profile"
                         class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">My
-                        account</a>
+                        account</router-link>
                     </li>
-                    <li>
+                    <!-- <li>
                       <a href="#"
                         class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Notifications</a>
-                    </li>
+                    </li> -->
                     <li>
                       <hr class="border-t mx-2 border-gray-400" />
                     </li>
@@ -80,7 +80,7 @@
             </router-link> -->
                 <router-link to="/your-home"
                   class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-pink-500">
-                  <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
+                  <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Dashboard</span>
                 </router-link>
               </li>
               <li class="mr-6 my-2 md:my-0">
@@ -107,16 +107,13 @@
                   <i class="fa fa-envelope fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Messages</span>
                 </router-link>
               </li>
-              <!-- <li class="mr-6 my-2 md:my-0">
-            <a
-              href="#"
-              class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-green-500"
-            >
-              <i class="fas fa-chart-area fa-fw mr-3"></i
-              ><span class="pb-1 md:pb-0 text-sm">Analytics</span>
-            </a>
-          </li>
-          <li class="mr-6 my-2 md:my-0">
+              <li class="mr-6 my-2 md:my-0">
+                <router-link to="/"
+                  class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-green-500">
+                  <i class="fa fa-envelope fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Goto Home Page</span>
+                </router-link>
+              </li>
+              <!--  <li class="mr-6 my-2 md:my-0">
             <a
               href="#"
               class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-red-500"
@@ -142,7 +139,6 @@
         </div>
       </nav>
     </div>
-
     <main class="p-4 flex-grow bg-gray-200">
       <div class="container w-full mx-auto pt-16">
         <div class="w-full md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal relative">

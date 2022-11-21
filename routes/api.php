@@ -12,6 +12,7 @@ use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\CharityController;
 use App\Http\Controllers\MessageInfoController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,3 +72,5 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::get('/user', UserController::class);
 Route::get('get-message-info', [MessageInfoController::class, 'index']);
 Route::get('get-organizations', [OrganizationController::class, 'index']);
+Route::get('get-artists', [AdminController::class, 'getArtists']);
+Route::get('get-charities', [AdminController::class, 'getCharities']);
