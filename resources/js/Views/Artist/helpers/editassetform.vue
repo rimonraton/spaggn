@@ -3,7 +3,7 @@
         <div class="container mx-auto lg:w-5/6">
             <div class="px-4 py-2 sm:px-0 text-center">
                 <!-- {{props.assetData}} -->
-                {{ props.assetData.property_data }}
+                <!-- {{ props.assetData.property_data }} -->
                 <h3 class="text-xl font-medium leading-6 text-gray-900">Edit Asset</h3>
                 <h3 v-if="bottomCloseButton" class="text-3xl font-semibold cursor-pointer absolute right-0 top-0"
                     v-on:click="toggleModal()">
@@ -133,8 +133,23 @@
                             </div>
                         </div> -->
                         <div class="w-full">
-                            <button type="submit"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+                            <button type="submit" v-if="!loading"
+                                class="bg-blue-700 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center uppercase">
+                                Update Your Asset
+                            </button>
+                            <button v-else
+                                class="inline-flex items-center justify-center px-4 py-2 font-semibold w-full leading-6 text-sm shadow rounded-md text-white bg-blue-700 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed uppercase"
+                                disabled="">
+                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
+                                </svg>
+                                Your Asset is Updating...
+                            </button>
                         </div>
                     </form>
 
@@ -154,6 +169,7 @@ const props = defineProps({
 })
 const store = useStore()
 const router = useRouter()
+const loading = ref(false)
 const formData = reactive({
     id: null,
     name: '',
@@ -226,7 +242,9 @@ const saveArtistAssetData = async () => {
     assetData.append("propertyData", JSON.stringify(formData.propertyData));
 
     try {
+        loading.value = true
         await store.dispatch('artistModule/updateArtistAssets', assetData)
+        loading.value = false
         clear()
         router.push('/view-your-assets')
         if (props.bottomCloseButton) {

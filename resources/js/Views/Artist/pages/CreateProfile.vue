@@ -39,8 +39,10 @@
             </div> -->
             <div class="relative mb-6 w-full">
               <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-                Your social media profiles <span class="hidden lg:inline-block">(Enter To Add More)</span><span class="lg:hidden mr-1">(Click Add More)</span>
-                <span v-if="btnTextdata != ''" class="p-1 border-2 border-blue-500 rounded-lg lg:hidden" @click="mobileBtn">
+                Your social media profiles <span class="hidden lg:inline-block">(Enter To Add More)</span><span
+                  class="lg:hidden mr-1">(Click Add More)</span>
+                <span v-if="btnTextdata != ''" class="p-1 border-2 border-blue-500 rounded-lg lg:hidden"
+                  @click="mobileBtn">
                   Add
                 </span>
                 <span v-else class="p-1 border-2 rounded-lg bg-gray-200 lg:hidden">
@@ -51,7 +53,7 @@
                 placeholder="Type your social account link then press enter" :multiple="true" trackBy="url" label="url"
                 :options="[]" :taggable="true" @tag="addTag" @search-change="tagdata">
               </multiselect>
-              <span class="text-red-500" v-for="error in v$.social.$errors" :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.social.$errors" :key="error.$uid">{{ error.$message }}</span>
             </div>
             <div class="relative mb-6 w-full">
               <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -61,7 +63,7 @@
                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
                 placeholder="personal story..."></textarea>
               <span class="text-red-500" v-for="error in v$.personalStory.$errors"
-                :key="error.$uid">{{error.$message}}</span>
+                :key="error.$uid">{{ error.$message }}</span>
             </div>
             <div class="relative mb-6 w-full">
               <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -72,7 +74,7 @@
                 placeholder="your inspiration"></textarea>
             </div>
             <span class="text-red-500" v-for="error in v$.inspiration.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              :key="error.$uid">{{ error.$message }}</span>
             <div class="relative mb-6 w-full">
               <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
                 What message do your arts convey to the world?
@@ -81,7 +83,7 @@
                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
                 placeholder="Message to world"></textarea>
               <span class="text-red-500" v-for="error in v$.messageToWorld.$errors"
-                :key="error.$uid">{{error.$message}}</span>
+                :key="error.$uid">{{ error.$message }}</span>
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative mb-6 w-full group">
@@ -92,7 +94,7 @@
                   :closeOnSelect="true">
                 </multiselect>
                 <span class="text-red-500" v-for="error in v$.charities.$errors"
-                  :key="error.$uid">{{error.$message}}</span>
+                  :key="error.$uid">{{ error.$message }}</span>
               </div>
               <div class="relative  mb-6 w-full group">
                 <label for="country" class="block text-sm font-medium text-gray-700">What artistic inspiration closely
@@ -101,13 +103,13 @@
                   :options="['Nature', 'Ordinary Experience & Life', 'Imagination', 'Patterns & Deliberate Design', 'Deep Personal Experience']">
                 </multiselect>
                 <span class="text-red-500" v-for="error in v$.artisticInspiration.$errors"
-                  :key="error.$uid">{{error.$message}}</span>
+                  :key="error.$uid">{{ error.$message }}</span>
               </div>
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
               <div>
                 <label class="block text-sm font-medium text-gray-700"> Your Photo <span class="text-red-500"
-                    v-for="error in v$.photo.$errors" :key="error.$uid">{{error.$message}}</span></label>
+                    v-for="error in v$.photo.$errors" :key="error.$uid">{{ error.$message }}</span></label>
                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   <div class="space-y-1 text-center">
                     <div v-if="formData.photo == null">
@@ -139,7 +141,7 @@
                 <div>
                   <label class="block text-sm font-medium text-gray-700"> Cover Photo (1920 x 300)px <span
                       class="text-red-500" v-for="error in v$.coverPhoto.$errors"
-                      :key="error.$uid">{{error.$message}}</span></label>
+                      :key="error.$uid">{{ error.$message }}</span></label>
                   <div
                     class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                     <div class="space-y-1 text-center">
@@ -171,9 +173,21 @@
               </div>
             </div>
             <div class="w-full">
-              <button type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                {{formData.isUpdate ? 'Update' : 'Submit'}}
+              <button type="submit" v-if="!loading"
+                class="text-white uppercase bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                {{ formData.isUpdate ? 'Update' : 'Submit' }}
+              </button>
+              <button v-else
+                class="inline-flex items-center justify-center px-4 py-2 font-semibold w-full leading-6 text-sm shadow rounded-md text-white bg-blue-700 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed uppercase"
+                disabled="">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+                Your profile is {{ formData.isUpdate ? 'Updating...' : 'Submiting...' }}
               </button>
             </div>
           </form>
@@ -193,6 +207,7 @@ import { useVuelidate } from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
 const router = useRouter()
 const store = useStore()
+const loading = ref(false)
 const formData = reactive({
   // firstName: '',
   // lastName: '',
@@ -228,7 +243,7 @@ const btnTextdata = ref('')
 // const isUpdate = ref(false)
 const multiselectref = ref()
 // console.log('store.state.organizations...', store.state.organizations)
-const charitiesOptions = computed(()=> store.state.organizations != null ? store.state.organizations : [])
+const charitiesOptions = computed(() => store.state.organizations != null ? store.state.organizations : [])
 const optionSelected = (option, id) => {
   console.log(`${option.id}`, `${option.name}`)
   console.log(' >> ', formData.charities)
@@ -283,8 +298,10 @@ const saveArtistData = async () => {
   // console.log('result from artist profile..', result)
   if (result) {
     try {
+      loading.value = true
       await store.dispatch('artistModule/createArtistProfile', formData)
       clear()
+      loading.value = false
       router.push({ name: 'Artist' })
     } catch (e) {
       console.log(e)
@@ -303,7 +320,7 @@ const getArtistProfile = async () => {
     // formData.firstName = res.first_name,
     //   formData.lastName = res.last_name,
     //   formData.email = res.email,
-      formData.social = JSON.parse(res.profile.sc_profile),
+    formData.social = JSON.parse(res.profile.sc_profile),
       formData.personalStory = res.profile.personal_story,
       formData.inspiration = res.profile.inspiration,
       formData.messageToWorld = res.profile.message_to_world,
@@ -321,7 +338,7 @@ const clear = () => {
   // formData.firstName = '',
   //   formData.lastName = '',
   //   formData.email = '',
-    formData.social = [],
+  formData.social = [],
     formData.personalStory = '',
     formData.inspiration = '',
     formData.messageToWorld = '',

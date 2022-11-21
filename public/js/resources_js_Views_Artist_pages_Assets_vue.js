@@ -40,6 +40,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var props = __props;
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_2__.useStore)();
     var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
+    var loading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
     var formData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
       name: '',
       description: '',
@@ -122,31 +123,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 assetData.append("videosrc", formData.videosrc);
                 assetData.append("propertyData", JSON.stringify(formData.propertyData));
                 _context.prev = 10;
-                _context.next = 13;
+                loading.value = true;
+                _context.next = 14;
                 return store.dispatch('artistModule/createArtistAsset', assetData);
 
-              case 13:
+              case 14:
                 clear();
                 router.push('/view-your-assets');
+                loading.value = false;
 
                 if (props.bottomCloseButton) {
                   emit('close');
                 }
 
-                _context.next = 21;
+                _context.next = 23;
                 break;
 
-              case 18:
-                _context.prev = 18;
+              case 20:
+                _context.prev = 20;
                 _context.t0 = _context["catch"](10);
                 console.log(_context.t0);
 
-              case 21:
+              case 23:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[10, 18]]);
+        }, _callee, null, [[10, 20]]);
       }));
 
       return function saveArtistAssetData() {
@@ -169,6 +172,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       props: props,
       store: store,
       router: router,
+      loading: loading,
       formData: formData,
       addProperty: addProperty,
       remove: remove,
@@ -430,15 +434,43 @@ var _hoisted_48 = {
 
 var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" I approve NFTrade's Terms & Conditions ");
 
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_50 = {
   "class": "w-full"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+var _hoisted_51 = {
+  key: 0,
   type: "submit",
-  "class": "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-}, "Upload")], -1
+  "class": "bg-blue-700 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center uppercase"
+};
+var _hoisted_52 = {
+  key: 1,
+  "class": "inline-flex items-center justify-center px-4 py-2 font-semibold w-full leading-6 text-sm shadow rounded-md text-white bg-blue-700 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed uppercase",
+  disabled: ""
+};
+
+var _hoisted_53 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  "class": "animate-spin -ml-1 mr-3 h-5 w-5 text-white",
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("circle", {
+  "class": "opacity-25",
+  cx: "12",
+  cy: "12",
+  r: "10",
+  stroke: "currentColor",
+  "stroke-width": "4"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  "class": "opacity-75",
+  fill: "currentColor",
+  d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+})], -1
 /* HOISTED */
 );
 
+var _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your Asset is Uploading... ");
+
+var _hoisted_55 = [_hoisted_53, _hoisted_54];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, $props.bottomCloseButton ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h3", {
     key: 0,
@@ -551,7 +583,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.formData.terms]]), _hoisted_49])])]), _hoisted_50], 40
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.formData.terms]]), _hoisted_49])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [!$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_51, " Upload Your Asset ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_52, _hoisted_55))])], 40
   /* PROPS, HYDRATE_EVENTS */
   , _hoisted_9)])])])]);
 }
