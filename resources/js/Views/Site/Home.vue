@@ -760,8 +760,8 @@ const swiperOptions = reactive({
 // const swiper = new Swiper()
 const store = useStore();
 const auth = ref(true);
-const artistValue = ref(null)
-const charityValue = ref(null)
+const artistValue = ref([])
+const charityValue = ref([])
 const openMenu = ref(false);
 const user = computed(() => store.getters.user);
 const artistData = async (page = 1) => {
@@ -774,9 +774,9 @@ const charityData = async () => {
     // console.log('charity res..', res)
     charityValue.value = res.data
 }
-onMounted(() => {
-    artistData()
-    charityData()
+onMounted( async () => {
+   await artistData()
+   await charityData()
 })
 </script>
 <style scoped>

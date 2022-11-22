@@ -82,13 +82,14 @@ const pageno = ref(1)
 const total = ref(0)
 const artistData = async (page = 1) => {
     const res = await store.dispatch('artistModule/getArtists', page)
-    // console.log('artist res', res)
+    console.log('artist res.....', res)
     total.value = res.total
-    if (res.data.length > 0) {
-        res.data.forEach(function (item) {
-            artistValue.value.push(item)
-        });
-    }
+    artistValue.value = res.data
+    // if (res.data.length > 0) {
+    //     res.data.forEach(function (item) {
+    //         artistValue.value.push(item)
+    //     });
+    // }
 
 }
 onMounted(() => {
