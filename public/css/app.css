@@ -902,15 +902,6 @@ video {
 .top-14 {
   top: 3.5rem
 }
-.bottom-10 {
-  bottom: 2.5rem
-}
-.right-10 {
-  right: 2.5rem
-}
-.top-10 {
-  top: 2.5rem
-}
 .z-\[-1\] {
   z-index: -1
 }
@@ -1510,34 +1501,6 @@ video {
 }
 .animate-spin {
   animation: spin 1s linear infinite
-}
-@-webkit-keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1)
-  }
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1)
-  }
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1)
-  }
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1)
-  }
-}
-.animate-bounce {
-  -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite
 }
 .cursor-pointer {
   cursor: pointer
@@ -3062,6 +3025,11 @@ input:focus-within~label {
   color: rgb(96 165 250 / var(--tw-text-opacity))
 }
 
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity))
+}
+
 .hover\:text-blue-500:hover {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity))
@@ -3085,11 +3053,6 @@ input:focus-within~label {
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity))
-}
-
-.hover\:text-red-500:hover {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity))
 }
 
 .hover\:underline:hover {
