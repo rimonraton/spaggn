@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import repository from '../api/repository';
 import * as artistModule from './modules/ArtistModule'
 import * as charityModule from './modules/CharityModule'
+import * as adminModule from './modules/AdminModule'
 
 const router = useRouter()
 
@@ -156,7 +157,7 @@ export default createStore({
 
     },
     // plugins: [sharedMutations({ predicate: ['setUser'] })],
-    modules: { artistModule, charityModule }
+    modules: { artistModule, charityModule, adminModule }
 
 
 })

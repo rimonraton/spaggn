@@ -52,12 +52,12 @@ export default {
     updateArtistAssets(param) {
         return api.post('/api/update-artist-assets', param)
     },
-    // reSendOtp(param) {
-    //     return api.post('/api/re_generate_otp', param)
-    // },
-    // resetPassword(param) {
-    //     return api.post('/api/reset-password', param)
-    // },
+    getAllArtists() {
+        return api.get('/api/get-all-artists')
+    },
+    getAllCharities() {
+        return api.get('/api/get-all-charities')
+    },
     // resetOTP(param) {
     //     return api.post('/api/reset-otp', param)
     // },

@@ -11,12 +11,12 @@ class AdminController extends Controller
     {
         return User::whereHas('roles', function ($q) {
             $q->where('roles.name','Artist');
-        })->orderBy('id', 'desc')->paginate(20);
+        })->with('profile')->orderBy('id', 'desc')->paginate(20);
     }
     public function getCharities()
     {
         return User::whereHas('roles', function ($q) {
             $q->where('roles.name','Charity');
-        })->orderBy('id', 'desc')->paginate(20);
+        })->with('charityprofile')->orderBy('id', 'desc')->paginate(20);
     }
 }

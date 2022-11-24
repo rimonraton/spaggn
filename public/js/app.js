@@ -19962,13 +19962,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   updateArtistAssets: function updateArtistAssets(param) {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/update-artist-assets', param);
-  } // reSendOtp(param) {
-  //     return api.post('/api/re_generate_otp', param)
-  // },
-  // resetPassword(param) {
-  //     return api.post('/api/reset-password', param)
-  // },
-  // resetOTP(param) {
+  },
+  getAllArtists: function getAllArtists() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-all-artists');
+  },
+  getAllCharities: function getAllCharities() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-all-charities');
+  } // resetOTP(param) {
   //     return api.post('/api/reset-otp', param)
   // },
   // setPassword(param) {
@@ -20200,6 +20200,14 @@ var ViewCharities = function ViewCharities() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_Charities_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/Charities.vue */ "./resources/js/Views/Admin/pages/Charities.vue"));
 };
 
+var ViewArtistProfile = function ViewArtistProfile() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_ArtistProfile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/ArtistProfile.vue */ "./resources/js/Views/Admin/pages/ArtistProfile.vue"));
+};
+
+var ViewCharityProfile = function ViewCharityProfile() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_CharityProfile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/CharityProfile.vue */ "./resources/js/Views/Admin/pages/CharityProfile.vue"));
+};
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   path: '/adminLayout',
   component: AdminLayout,
@@ -20219,9 +20227,23 @@ var ViewCharities = function ViewCharities() {
       guard: 'auth'
     }
   }, {
+    path: '/view-artist-profile/:id',
+    component: ViewArtistProfile,
+    name: 'ViewArtistProfile',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
     path: '/view-charities',
     component: ViewCharities,
     name: 'ViewCharities',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/view-charity-profile/:id',
+    component: ViewCharityProfile,
+    name: 'ViewChatityProfile',
     meta: {
       guard: 'auth'
     }
@@ -20798,11 +20820,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../api/repository */ "./resources/js/api/repository.js");
 /* harmony import */ var _modules_ArtistModule__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/ArtistModule */ "./resources/js/store/modules/ArtistModule.js");
 /* harmony import */ var _modules_CharityModule__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/CharityModule */ "./resources/js/store/modules/CharityModule.js");
+/* harmony import */ var _modules_AdminModule__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/AdminModule */ "./resources/js/store/modules/AdminModule.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -20816,8 +20839,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_6__.createStore)({
+
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_6__.useRouter)();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vuex__WEBPACK_IMPORTED_MODULE_7__.createStore)({
   namespaced: true,
   state: function state() {
     return {
@@ -21133,9 +21157,139 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();
   // plugins: [sharedMutations({ predicate: ['setUser'] })],
   modules: {
     artistModule: _modules_ArtistModule__WEBPACK_IMPORTED_MODULE_3__,
-    charityModule: _modules_CharityModule__WEBPACK_IMPORTED_MODULE_4__
+    charityModule: _modules_CharityModule__WEBPACK_IMPORTED_MODULE_4__,
+    adminModule: _modules_AdminModule__WEBPACK_IMPORTED_MODULE_5__
   }
 }));
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/AdminModule.js":
+/*!***************************************************!*\
+  !*** ./resources/js/store/modules/AdminModule.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "actions": () => (/* binding */ actions),
+/* harmony export */   "getters": () => (/* binding */ getters),
+/* harmony export */   "mutations": () => (/* binding */ mutations),
+/* harmony export */   "namespaced": () => (/* binding */ namespaced),
+/* harmony export */   "state": () => (/* binding */ state)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _api_repository__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/repository */ "./resources/js/api/repository.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var namespaced = true;
+var state = {//   artists: null,
+  //   charities: null
+};
+var getters = {};
+var mutations = {};
+var actions = {
+  getAllArtists: function getAllArtists(_ref) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var commit, _yield$repository$get, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.prev = 1;
+              _context.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getAllArtists();
+
+            case 4:
+              _yield$repository$get = _context.sent;
+              data = _yield$repository$get.data;
+              return _context.abrupt("return", data);
+
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](1);
+              throw _context.t0;
+
+            case 12:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 9]]);
+    }))();
+  },
+  getAllCharities: function getAllCharities(_ref2) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var commit, _yield$repository$get2, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              commit = _ref2.commit;
+              _context2.prev = 1;
+              _context2.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getAllCharities();
+
+            case 4:
+              _yield$repository$get2 = _context2.sent;
+              data = _yield$repository$get2.data;
+              return _context2.abrupt("return", data);
+
+            case 9:
+              _context2.prev = 9;
+              _context2.t0 = _context2["catch"](1);
+              throw _context2.t0;
+
+            case 12:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 9]]);
+    }))();
+  },
+  getArtistDetails: function getArtistDetails(_ref3, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      var commit, _yield$repository$get3, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              commit = _ref3.commit;
+              _context3.prev = 1;
+              _context3.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getArtistDetails(payload);
+
+            case 4:
+              _yield$repository$get3 = _context3.sent;
+              data = _yield$repository$get3.data;
+              return _context3.abrupt("return", data);
+
+            case 9:
+              _context3.prev = 9;
+              _context3.t0 = _context3["catch"](1);
+              throw _context3.t0;
+
+            case 12:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 9]]);
+    }))();
+  }
+};
 
 /***/ }),
 
@@ -45976,7 +46130,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_Views_Site_ArtistDetails_vue":1,"resources_js_Views_Site_CharityDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Artists_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_Views_Site_ArtistDetails_vue":1,"resources_js_Views_Site_CharityDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Artists_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1,"resources_js_Views_Admin_pages_ArtistProfile_vue":1,"resources_js_Views_Admin_pages_CharityProfile_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

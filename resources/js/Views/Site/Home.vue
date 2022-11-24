@@ -774,9 +774,9 @@ const charityData = async () => {
     // console.log('charity res..', res)
     charityValue.value = res.data
 }
-onMounted(() => {
-    artistData()
-    charityData()
+onMounted( async () => {
+   await artistData()
+   await charityData()
 })
 </script>
 <style scoped>
