@@ -12,7 +12,7 @@
         <div class="flex flex-row justify-center px-2 py-2 mx-3">
           <div class="flex flex-col mb-2 ml-4 mt-1">
             <div class="text-gray-600 text-2xl font-semibold text-center">
-              Welcome to the Good Giving Network family! {{ profile.profile == null }}
+              Welcome to the Good Giving Network family!
             </div>
             <div class="w-full mt-1">
               <div class="text-gray-400 font-thin text-l">
