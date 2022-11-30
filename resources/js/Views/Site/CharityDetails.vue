@@ -67,7 +67,7 @@
                 </div>
                 <div class="p-4 text-gray-600 border-b">
                     <h1 class="mb-8 text-center text-3xl font-bold text-indigo-900"> List of programs/services</h1>
-                    <ul class="flex flex-wrap md:flex-nowrap justify-center items-center gap-8">
+                    <ul class="flex flex-wrap justify-center items-center gap-8">
                         <li class="flex" v-for="service, i in JSON.parse(profile.charityprofile.services)"
                             :key="service + i">
                             <div class="px-4 text-xl text-indigo-700">{{i + 1}}.</div>
