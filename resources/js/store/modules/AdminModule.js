@@ -37,5 +37,23 @@ export const actions = {
         } catch (e) {
             throw e
         }
+    },
+    async getDataForDashboard({ commit }) {
+        try {
+            const { data } = await repository.getDataForDashboard()
+            // console.log(data)
+            return data
+        } catch (e) {
+            throw e
+        }
+    },
+    async approvedArtist({ commit }, payload) {
+        try {
+            const { data } = await repository.approvedArtist(payload)
+            // console.log(data)
+            return data
+        } catch (e) {
+            throw e
+        }
     }
 }

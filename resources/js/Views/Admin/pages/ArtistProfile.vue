@@ -1,7 +1,17 @@
 <template>
     <main>
-        <div class="text-left md:text-center">
-           <span class="mt-4 z-50 ml-4 md:ml-0 p-2 fixed border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500" @click="$router.back()">Back</span>
+        <div class="flex items-center justify-center gap-2 bg-white">
+            <span
+                class=" px-2 mt-2 py-1 border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
+                @click="$router.back()">
+                Back
+            </span>
+            <span
+                v-if="(profile?.profile.status == 0)"
+                class=" px-2 mt-2 py-1 border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
+                @click="approvedArtist(profile?.profile.id)">
+                Approved
+            </span>
         </div>
         <div v-if="hasProfile">
             <div
@@ -140,8 +150,9 @@
                                     </div>
                                     <div class="flex flex-col gap-2 cursor-pointer">
                                         <div v-for="sc in JSON.parse(profile.profile.sc_profile)" :key="sc">
-                                            <a :href="sc.url" class="text-blue-500 hover:underline"
-                                                target="_blank">{{ sc.url }}</a>
+                                            <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{
+                                                    sc.url
+                                            }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -195,6 +206,11 @@ const getArtistProfile = async () => {
     user.value = res
     profile.value = res
     profileAsset.value = res.assets
+}
+const approvedArtist = async (id) => {
+    const res = await store.dispatch('adminModule/approvedArtist', {id: id})
+    profile.value.profile.status = 1
+    // artistData.value = res.data
 }
 onMounted(() => {
     getArtistProfile()

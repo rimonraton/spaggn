@@ -19968,13 +19968,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   getAllCharities: function getAllCharities() {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-all-charities');
-  } // resetOTP(param) {
-  //     return api.post('/api/reset-otp', param)
-  // },
-  // setPassword(param) {
-  //     return api.post('/api/set-password', param)
-  // },
-  // getCurrentLocation(param) {
+  },
+  getDataForDashboard: function getDataForDashboard() {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/get-data-for-dashboard');
+  },
+  approvedArtist: function approvedArtist(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/approved-artist', param);
+  } // getCurrentLocation(param) {
   //     return api.post('/api/getCurrentLocation', param)
   // },
   // getAutocompleteAddress(address) {
@@ -21287,6 +21287,68 @@ var actions = {
           }
         }
       }, _callee3, null, [[1, 9]]);
+    }))();
+  },
+  getDataForDashboard: function getDataForDashboard(_ref4) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+      var commit, _yield$repository$get4, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              commit = _ref4.commit;
+              _context4.prev = 1;
+              _context4.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].getDataForDashboard();
+
+            case 4:
+              _yield$repository$get4 = _context4.sent;
+              data = _yield$repository$get4.data;
+              return _context4.abrupt("return", data);
+
+            case 9:
+              _context4.prev = 9;
+              _context4.t0 = _context4["catch"](1);
+              throw _context4.t0;
+
+            case 12:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 9]]);
+    }))();
+  },
+  approvedArtist: function approvedArtist(_ref5, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+      var commit, _yield$repository$app, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              commit = _ref5.commit;
+              _context5.prev = 1;
+              _context5.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].approvedArtist(payload);
+
+            case 4:
+              _yield$repository$app = _context5.sent;
+              data = _yield$repository$app.data;
+              return _context5.abrupt("return", data);
+
+            case 9:
+              _context5.prev = 9;
+              _context5.t0 = _context5["catch"](1);
+              throw _context5.t0;
+
+            case 12:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[1, 9]]);
     }))();
   }
 };

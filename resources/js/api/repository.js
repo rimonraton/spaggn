@@ -58,12 +58,12 @@ export default {
     getAllCharities() {
         return api.get('/api/get-all-charities')
     },
-    // resetOTP(param) {
-    //     return api.post('/api/reset-otp', param)
-    // },
-    // setPassword(param) {
-    //     return api.post('/api/set-password', param)
-    // },
+    getDataForDashboard() {
+        return api.get('/api/get-data-for-dashboard')
+    },
+    approvedArtist(param) {
+        return api.post('/api/approved-artist', param)
+    },
     // getCurrentLocation(param) {
     //     return api.post('/api/getCurrentLocation', param)
     // },

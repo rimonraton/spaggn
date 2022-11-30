@@ -74,6 +74,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // Admin
     Route::get('/get-all-artists', [AdminController::class, 'getArtists']);
     Route::get('/get-all-charities', [AdminController::class, 'getCharities']);
+    Route::get('get-data-for-dashboard', [AdminController::class, 'getAllDataForDashboard']);
+    Route::post('approved-artist', [AdminController::class, 'approvedArtist']);
 
     // in app verification
     // Route::post('/verify-email/{id}/{hash}', [VerificationController::class, 'verify'])->name('verify');
