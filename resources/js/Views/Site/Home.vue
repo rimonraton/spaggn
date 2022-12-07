@@ -769,8 +769,8 @@ const artistData = async (page = 1) => {
     // console.log('artist res', res)
     artistValue.value = res.data
 }
-const charityData = async () => {
-    const res = await store.dispatch('charityModule/getCharity')
+const charityData = async (page = 1) => {
+    const res = await store.dispatch('charityModule/getCharity', page)
     // console.log('charity res..', res)
     charityValue.value = res.data
 }

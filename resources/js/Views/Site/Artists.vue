@@ -3,8 +3,8 @@
         <div class="container mx-auto lg:w-5/6 px-6 text-gray-600 md:px-12 xl:px-6">
             <h2 class="text-2xl text-gray-900 font-bold md:text-4xl py-4">Artists & Collabs</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-                <div class="relative mx-auto w-full" v-for="artist in artistValue" :key="artist">
-                    <router-link :to="{  name: 'ArtistDetails', params: { id: artist.user.id } }"
+                <div class="relative mx-auto w-full" v-for="artist in artistValue" :key="artist.id">
+                    <router-link :to="{ name: 'ArtistDetails', params: { id: artist?.user.id } }"
                         class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
                         <div class="shadow p-4 rounded-lg bg-white">
                             <div class="flex justify-center relative rounded-lg overflow-hidden h-52">
@@ -19,19 +19,19 @@
 
                             <div class="mt-4">
                                 <h2 class="font-medium text-base md:text-lg text-gray-800 line-clamp-1">
-                                    {{artist.user.name}}
+                                    {{ artist?.user.name }}
                                 </h2>
                                 <div class="mt-2 text-sm text-gray-800 line-clamp-1">
                                     <div class="flex items-center">
                                         <div class="relative">
                                             <!-- <div class="rounded-full w-6 h-6 md:w-8 md:h-8 bg-gray-200"></div>
                         <span class="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span> -->
-                                            <img :src="artist.photo"
+                                            <img :src="artist?.photo"
                                                 class="rounded-full border-solid border-white border-2 w-10">
                                         </div>
 
                                         <p class="ml-2 text-gray-800 line-clamp-1">
-                                            {{artist.user.name}}
+                                            {{ artist?.user.name }}
                                         </p>
                                     </div>
                                 </div>
@@ -59,9 +59,9 @@
                     </router-link>
                 </div>
             </div>
-            <div class="text-center py-4" v-if="artistValue.length < total">
-                <button class="bg-blue-400 border-2 p-2 rounded-lg text-white hover:bg-blue-500"
-                    @click="artistData(pageno + 1)">Load more</button>
+            <div class="text-center py-4" v-if="(total > perPage)">
+                <button v-if="(currentPage == lastPage)" class="bg-blue-400 border-2 p-2 rounded-lg text-white hover:bg-blue-500"
+                    >No more data</button>
             </div>
         </div>
     </div>
@@ -74,15 +74,20 @@
 
 <script setup>
 import Loading from '../../components/helper/loading.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeMount } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
 const artistValue = ref([])
-const pageno = ref(1)
+const currentPage = ref(0)
+const lastPage = ref(0)
+const perPage = ref(0)
 const total = ref(0)
 const artistData = async (page = 1) => {
     const res = await store.dispatch('artistModule/getArtists', page)
-    console.log('artist res.....', res)
+    // console.log('artist res.....', res)
+    currentPage.value = res.current_page
+    lastPage.value = res.last_page
+    perPage.value = res.per_page
     total.value = res.total
     artistValue.value = res.data
     // if (res.data.length > 0) {
@@ -92,8 +97,29 @@ const artistData = async (page = 1) => {
     // }
 
 }
-onMounted(() => {
-    artistData()
+const getNextArtists = async () => {
+    window.onscroll = async () => {
+        const wHeight= document.documentElement.offsetHeight * 0.6
+        let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight > wHeight;
+        if (bottomOfWindow) {
+            if (lastPage.value > currentPage.value) {
+                currentPage.value++ 
+                const res = await store.dispatch('artistModule/getArtists', currentPage.value)
+                res.data.forEach(element => {
+                    artistValue.value.push(element)
+                });
+
+            }
+
+
+        }
+    };
+}
+onBeforeMount(async () => {
+    await artistData()
+})
+onMounted(async () => {
+    await getNextArtists()
 })
 </script>
 

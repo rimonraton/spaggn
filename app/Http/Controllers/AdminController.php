@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Asset;
 use App\Models\Artist;
+use App\Models\Charity;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -73,5 +74,13 @@ class AdminController extends Controller
             'status'=> $artist->status == 1 ? 0 : 1
         ]);
         return $this->getArtists();
+    }
+    public function approvedCharity(Request $request)
+    {
+        $artist = Charity::find($request->id);
+        $artist->update([
+            'status'=> $artist->status == 1 ? 0 : 1
+        ]);
+        return $this->getCharities();
     }
 }

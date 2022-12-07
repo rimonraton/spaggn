@@ -1,16 +1,14 @@
 <template>
     <main>
         <div class="flex items-center justify-center gap-2 bg-white">
-            <span
-                class=" px-2 mt-2 py-1 border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
+            <span class=" px-2 mt-2 py-1 border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
                 @click="$router.back()">
                 Back
             </span>
             <span
-                v-if="(profile?.profile.status == 0)"
                 class=" px-2 mt-2 py-1 border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
                 @click="approvedArtist(profile?.profile.id)">
-                Approved
+                {{ profile?.profile.status == 0 ? 'Approved' : 'Disapproved' }}
             </span>
         </div>
         <div v-if="hasProfile">
@@ -208,8 +206,8 @@ const getArtistProfile = async () => {
     profileAsset.value = res.assets
 }
 const approvedArtist = async (id) => {
-    const res = await store.dispatch('adminModule/approvedArtist', {id: id})
-    profile.value.profile.status = 1
+    const res = await store.dispatch('adminModule/approvedArtist', { id: id })
+    profile.value.profile.status = profile.value.profile.status == 1 ? 0 : 1
     // artistData.value = res.data
 }
 onMounted(() => {

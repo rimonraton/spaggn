@@ -19974,6 +19974,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   approvedArtist: function approvedArtist(param) {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/approved-artist', param);
+  },
+  approvedCharity: function approvedCharity(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/approved-charity', param);
   } // getCurrentLocation(param) {
   //     return api.post('/api/getCurrentLocation', param)
   // },
@@ -21349,6 +21352,37 @@ var actions = {
           }
         }
       }, _callee5, null, [[1, 9]]);
+    }))();
+  },
+  approvedCharity: function approvedCharity(_ref6, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee6() {
+      var commit, _yield$repository$app2, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              commit = _ref6.commit;
+              _context6.prev = 1;
+              _context6.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].approvedCharity(payload);
+
+            case 4:
+              _yield$repository$app2 = _context6.sent;
+              data = _yield$repository$app2.data;
+              return _context6.abrupt("return", data);
+
+            case 9:
+              _context6.prev = 9;
+              _context6.t0 = _context6["catch"](1);
+              throw _context6.t0;
+
+            case 12:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, null, [[1, 9]]);
     }))();
   }
 };

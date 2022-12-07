@@ -55,5 +55,14 @@ export const actions = {
         } catch (e) {
             throw e
         }
+    },
+    async approvedCharity({ commit }, payload) {
+        try {
+            const { data } = await repository.approvedCharity(payload)
+            // console.log(data)
+            return data
+        } catch (e) {
+            throw e
+        }
     }
 }

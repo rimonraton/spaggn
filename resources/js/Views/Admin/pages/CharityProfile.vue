@@ -1,9 +1,15 @@
 <template>
     <main>
-        <div class="text-left md:text-center">
+        <div class="flex items-center justify-center gap-2 bg-white">
+            <span class=" px-2 mt-2 py-1 border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
+                @click="$router.back()">
+                Back
+            </span>
             <span
-                class="mt-4 z-50 ml-4 md:ml-0 p-2 fixed border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
-                @click="$router.back()">Back</span>
+                class=" px-2 mt-2 py-1 border rounded-lg cursor-pointer hover:text-red-500 hover:border-red-500"
+                @click="approvedCharity(profile?.charityprofile.id)">
+                {{ profile?.charityprofile.status == 0 ? 'Approved' : 'Disapproved' }}
+            </span>
         </div>
         <div v-if="profile != null">
             <div class="p-10" v-if="profile.charityprofile == null">
@@ -153,6 +159,10 @@ const imageUrl = (image) => {
 const getCharityProfile = async () => {
     const res = await store.dispatch('charityModule/getCharityDetails', route.params.id)
     profile.value = res
+}
+const approvedCharity = async (id) => {
+    const res = await store.dispatch('adminModule/approvedCharity', { id: id })
+    profile.value.charityprofile.status = profile.value.charityprofile.status == 1 ? 0 : 1
 }
 onMounted(() => {
     getCharityProfile()

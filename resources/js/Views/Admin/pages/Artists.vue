@@ -43,9 +43,10 @@
                                                 View Profile
                                             </div>
                                         </div>
-                                        <div v-if="(artist.profile.status == 0)" @click="approvedArtist(artist.profile.id)"
+                                        <div @click="approvedArtist(artist.profile.id)"
                                             class="cursor-pointer p-2 rounded-lg border hover:text-slate-500 hover:border-slate-500">
-                                            Approved</div>
+                                           {{artist.profile.status == 0 ? 'Approved':'Disapproved'}}
+                                        </div>
                                     </div>
                                     <div v-else>
                                         <span class="cursor-pointer p-2 rounded-lg border text-red-500 border-red-500">

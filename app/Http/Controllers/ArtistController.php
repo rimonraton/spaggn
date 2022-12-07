@@ -278,7 +278,11 @@ class ArtistController extends Controller
     }
     public function getArtist()
     {
-        $artists = Artist::whereHas('user')->with('user')->orderBy('id', 'desc')->paginate(8);
+        $artists = Artist::whereHas('user')
+        ->with('user')
+        ->where('status', 1)
+        ->orderBy('id', 'desc')
+        ->paginate(8);
         return response()->json($artists, 200);
     }
     public function removeArtistAssets(Request $request)

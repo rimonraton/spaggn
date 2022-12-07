@@ -64,6 +64,9 @@ export default {
     approvedArtist(param) {
         return api.post('/api/approved-artist', param)
     },
+    approvedCharity(param) {
+        return api.post('/api/approved-charity', param)
+    },
     // getCurrentLocation(param) {
     //     return api.post('/api/getCurrentLocation', param)
     // },
