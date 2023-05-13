@@ -7,13 +7,12 @@
     </div>
   </div>
   <div id="home" v-if="profile != null">
-    
     <div v-if="profile.profile == null">
       <div class="bg-white shadow rounded-lg h-96 w-full">
         <div class="flex flex-row justify-center px-2 py-2 mx-3">
           <div class="flex flex-col mb-2 ml-4 mt-1">
             <div class="text-gray-600 text-2xl font-semibold text-center">
-              Welcome to the Good Giving Network family! {{profile.profile == null}}
+              Welcome to the Good Giving Network family!
             </div>
             <div class="w-full mt-1">
               <div class="text-gray-400 font-thin text-l">
@@ -28,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="col-span-4" v-if="profile.profile != null">
+    <div class="col-span-4" v-else>
       <div class="bg-white shadow rounded-lg">
         <section class="bg-white dark:bg-gray-900">
           <div class="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
@@ -49,15 +48,14 @@
                     </div>
                     <div class="flex flex-col gap-2 cursor-pointer">
                       <div v-for="sc in JSON.parse(profile.profile.sc_profile)" :key="sc">
-                        <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{sc.url}}</a>
+                        <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{ sc.url }}</a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="mb-4">
-                <img :src="profile.profile.cover" class="max-w-full h-auto rounded-lg"
-                  alt="">
+                <img :src="profile.profile.cover" class="max-w-full h-auto rounded-lg" alt="">
               </div>
             </div>
           </div>
@@ -79,7 +77,7 @@
                           <h6 class="text-lg font-semibold leading-none">Personal Story</h6>
                         </div>
                         <p class="text-gray-600 md:text-l">
-                          {{profile.profile.personal_story}}
+                          {{ profile.profile.personal_story }}
                         </p>
 
                       </div>
@@ -90,7 +88,7 @@
                         <div>
                           <h6 class="text-lg font-semibold leading-none">Inspiration</h6>
                         </div>
-                        <p class="text-gray-600"> {{profile.profile.inspiration}}</p>
+                        <p class="text-gray-600"> {{ profile.profile.inspiration }}</p>
                       </div>
                     </div>
                     <div class="p-6 border border-gray-100 rounded-xl bg-gray-50 sm:flex sm:space-x-8 sm:p-8">
@@ -98,7 +96,7 @@
                         <div>
                           <h6 class="text-lg font-semibold leading-none">Message for world</h6>
                         </div>
-                        <p class="text-gray-600"> {{profile.profile.message_to_world}}</p>
+                        <p class="text-gray-600"> {{ profile.profile.message_to_world }}</p>
 
                       </div>
                     </div>
@@ -137,7 +135,7 @@
                 </div>
                 <div class="flex flex-col gap-2 cursor-pointer">
                   <div v-for="sc in JSON.parse(profile.profile.sc_profile)" :key="sc">
-                    <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{sc.url}}</a>
+                    <a :href="sc.url" class="text-blue-500 hover:underline" target="_blank">{{ sc.url }}</a>
                   </div>
                 </div>
               </div>
@@ -160,7 +158,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 <script setup>
@@ -168,7 +165,7 @@ import { ref, onMounted, computed } from 'vue';
 import { useStore } from 'vuex'
 const store = useStore()
 // const profile = ref(null)
-const profileAsset = ref(null)
+const profileAsset = ref([])
 const hasProfile = ref(false)
 // const gotoComment = () => {
 //   const element = document.getElementById('comments');
@@ -177,13 +174,15 @@ const hasProfile = ref(false)
 // const gotoUp = () => {
 //   window.scrollTo({ top: 0, behavior: 'smooth' });
 // }
-const profile = computed(()=> store.state.artistModule.artistProfileData != null ? store.state.artistModule.artistProfileData : null)
+const profile = computed(() => store.state.artistModule.artistProfileData != null ? store.state.artistModule.artistProfileData : null)
 const getArtistProfile = async () => {
   hasProfile.value = true
   const res = await store.dispatch('artistModule/getArtistProfile')
   hasProfile.value = false
+  // console.log('res...', res.assets)
   // profile.value = profile
   profileAsset.value = res.assets
+  // profileAsset.value = res.assets
 }
 onMounted(() => {
   getArtistProfile()

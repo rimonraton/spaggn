@@ -17,8 +17,9 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Your Organization's Name
               </label>
-              <span class="text-red-500" v-for="error in v$.organizationName.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.organizationName.$errors" :key="error.$uid">{{
+                  error.$message
+              }}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.address" name="floating_address" id="floating_address"
@@ -28,8 +29,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Address
               </label>
-              <span class="text-red-500" v-for="error in v$.address.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.address.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -42,8 +43,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Primary Phone Number
               </label>
-              <span class="text-red-500" v-for="error in v$.primaryPhone.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.primaryPhone.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.primaryEmail" name="floating_primary_email"
@@ -54,8 +55,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Primary Email Address
               </label>
-              <span class="text-red-500" v-for="error in v$.primaryEmail.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.primaryEmail.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -77,8 +78,7 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 EIN#
               </label>
-              <span class="text-red-500" v-for="error in v$.ein.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.ein.$errors" :key="error.$uid">{{ error.$message }}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -90,8 +90,8 @@
                 placeholder="Select One" :multiple="true" trackBy="id" label="name" :options="charitiesOptions"
                 :closeOnSelect="true">
               </multiselect>
-              <span class="text-red-500" v-for="error in v$.causes.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.causes.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
             <div class="relative mb-6 w-full group">
               <label for="social" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -109,8 +109,8 @@
                 placeholder="List of programs/services you provide" :multiple="true" trackBy="name" label="name"
                 :options="[]" :taggable="true" @tag="addServiceTag" @search-change="servicetagdata">
               </multiselect>
-              <span class="text-red-500" v-for="error in v$.service.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.service.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
           </div>
           <div class="relative mb-6 w-full">
@@ -120,8 +120,7 @@
             <textarea id="personal_story" v-model="formData.mission" rows="4"
               class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
               placeholder="Organization's mission..."></textarea>
-              <span class="text-red-500" v-for="error in v$.mission.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+            <span class="text-red-500" v-for="error in v$.mission.$errors" :key="error.$uid">{{ error.$message }}</span>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 mb-6 w-full group">
@@ -133,8 +132,9 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Target demographics
               </label>
-              <span class="text-red-500" v-for="error in v$.target_demographics.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.target_demographics.$errors" :key="error.$uid">{{
+                  error.$message
+              }}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.geographic" name="floating_geographic" id="floating_geographic"
@@ -144,8 +144,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Geographic area served
               </label>
-              <span class="text-red-500" v-for="error in v$.geographic.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.geographic.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
@@ -158,8 +158,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Your organization’s link for Charity Navigator site
               </label>
-              <span class="text-red-500" v-for="error in v$.navigatorSite.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.navigatorSite.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
             <div class="relative z-0 mb-6 w-full group">
               <input type="text" v-model="formData.guideStar" name="floating_guide_star" id="floating_guide_star"
@@ -169,8 +169,8 @@
                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Your organization’s link for GuideStar
               </label>
-              <span class="text-red-500" v-for="error in v$.guideStar.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.guideStar.$errors" :key="error.$uid">{{ error.$message
+              }}</span>
             </div>
           </div>
           <div class="relative mb-6 w-full">
@@ -191,8 +191,9 @@
               :multiple="true" trackBy="ratingOrganization" label="ratingOrganization" :options="[]" :taggable="true"
               @tag="addRatingTag" @search-change="ratingtagdata">
             </multiselect>
-            <span class="text-red-500" v-for="error in v$.ratingOrganizations.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+            <span class="text-red-500" v-for="error in v$.ratingOrganizations.$errors" :key="error.$uid">{{
+                error.$message
+            }}</span>
           </div>
           <div class="relative mb-6 w-full">
             <label for="personal_story" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -201,8 +202,8 @@
             <textarea id="personal_story" v-model="formData.fundraising" rows="4"
               class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
               placeholder="fundraising initiatives?"></textarea>
-              <span class="text-red-500" v-for="error in v$.fundraising.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+            <span class="text-red-500" v-for="error in v$.fundraising.$errors" :key="error.$uid">{{ error.$message
+            }}</span>
           </div>
           <!-- <div class="grid md:grid-cols-2 md:gap-6">
               <div class="relative mb-6 w-full group">
@@ -224,8 +225,7 @@
           <div class="grid md:grid-cols-2 md:gap-6">
             <div>
               <label class="block text-sm font-medium text-gray-700"> Charity Logo</label>
-              <span class="text-red-500" v-for="error in v$.photo.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+              <span class="text-red-500" v-for="error in v$.photo.$errors" :key="error.$uid">{{ error.$message }}</span>
               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                 <div class="space-y-1 text-center">
                   <div v-if="formData.photo == null">
@@ -255,8 +255,8 @@
             <div class="relative mb-6 w-full group">
               <div>
                 <label class="block text-sm font-medium text-gray-700"> Cover Photo (1920 x 300)px </label>
-                <span class="text-red-500" v-for="error in v$.coverPhoto.$errors"
-              :key="error.$uid">{{error.$message}}</span>
+                <span class="text-red-500" v-for="error in v$.coverPhoto.$errors" :key="error.$uid">{{ error.$message
+                }}</span>
                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   <div class="space-y-1 text-center">
                     <div v-if="formData.coverPhoto == null">
@@ -286,8 +286,22 @@
             </div>
           </div>
           <div class="w-full">
-            <button type="submit"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{{isUpdate ? 'Update' : 'Submit'}}</button>
+            <button type="submit" v-if="!loading"
+              class="text-white uppercase bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              {{ isUpdate ? 'Update Your Profile' : 'Submit Your Profile' }}
+            </button>
+            <button v-else
+              class="inline-flex items-center justify-center px-4 py-2 font-semibold w-full leading-6 text-sm shadow rounded-md text-white bg-blue-700 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed uppercase"
+              disabled="">
+              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                </path>
+              </svg>
+              Your profile is {{ formData.isUpdate ? 'Updating...' : 'Submiting...' }}
+            </button>
           </div>
         </form>
       </div>
@@ -298,12 +312,13 @@
 <script setup>
 import { reactive, ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
-import {useRouter} from 'vue-router'
+import { useRouter } from 'vue-router'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
 import Multiselect from 'vue-multiselect'
 const store = useStore()
 const router = useRouter()
+const loading = ref(false)
 const formData = reactive({
   organizationName: null,
   address: null,
@@ -413,7 +428,9 @@ const saveCharityData = async () => {
   const result = await v$.value.$validate()
   if (result) {
     try {
+      loading.value = true
       const res = await store.dispatch('charityModule/createCharityProfile', formData)
+      loading.value = false
       // console.log('res..', res)
       router.push({ name: 'Charity' })
     } catch (e) {
@@ -459,7 +476,7 @@ const getCharityProfile = async () => {
   console.log('chatity res...', res)
   if (res.charityprofile != null && Object.keys(res.charityprofile).length != 0) {
     isUpdate.value = true
-      formData.organizationName = res.charityprofile.organization_name,
+    formData.organizationName = res.charityprofile.organization_name,
       formData.address = res.charityprofile.address,
       formData.primaryPhone = res.charityprofile.primary_phone,
       formData.primaryEmail = res.charityprofile.primary_email,

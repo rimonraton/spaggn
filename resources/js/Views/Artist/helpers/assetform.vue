@@ -89,7 +89,7 @@
                                     etc..)</span>
                             </div>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-5 md:gap-6" v-for="pd,index in formData.propertyData"
+                        <div class="grid grid-cols-1 md:grid-cols-5 md:gap-6" v-for="pd, index in formData.propertyData"
                             :key="index">
                             <div class="mb-6 w-full group col-span-2">
                                 <input type="text" v-model="pd.property" name="floating_first_name"
@@ -113,11 +113,12 @@
                         </div>
                         <div class="mb-6">
                             <div class="flex items-center mb-4">
-                                
+
                                 <label for="default-checkbox"
                                     class="text-sm font-medium text-gray-900 dark:text-gray-300">
-                                    <input id="default-checkbox" v-model="formData.rights" type="checkbox" value="rights"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <input id="default-checkbox" v-model="formData.rights" type="checkbox"
+                                        value="rights"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                     I approve that I'm the owner or have the rights of publication and sale.
                                 </label>
                             </div>
@@ -125,14 +126,29 @@
                                 <label for="checked-checkbox"
                                     class="text-sm font-medium text-gray-900 dark:text-gray-300">
                                     <input id="checked-checkbox" v-model="formData.terms" type="checkbox" value="terms"
-                                    class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                     I approve NFTrade's Terms & Conditions
                                 </label>
                             </div>
                         </div>
                         <div class="w-full">
-                            <button type="submit"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Upload</button>
+                            <button type="submit" v-if="!loading"
+                                class="bg-blue-700 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center uppercase">
+                                Upload Your Asset
+                            </button>
+                            <button v-else
+                                class="inline-flex items-center justify-center px-4 py-2 font-semibold w-full leading-6 text-sm shadow rounded-md text-white bg-blue-700 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed uppercase"
+                                disabled="">
+                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
+                                </svg>
+                               Your Asset is Uploading...
+                            </button>
                         </div>
                     </form>
 
@@ -151,6 +167,7 @@ const props = defineProps({
 })
 const store = useStore()
 const router = useRouter()
+const loading = ref(false)
 const formData = reactive({
     name: '',
     description: '',
@@ -221,10 +238,12 @@ const saveArtistAssetData = async () => {
     assetData.append("propertyData", JSON.stringify(formData.propertyData));
 
     try {
+        loading.value = true
         await store.dispatch('artistModule/createArtistAsset', assetData)
         clear()
         router.push('/view-your-assets')
-        if(props.bottomCloseButton) {
+        loading.value = false
+        if (props.bottomCloseButton) {
             emit('close')
         }
     } catch (e) {
@@ -237,7 +256,7 @@ const toggleModal = () => {
     emit('close')
 }
 const clear = () => {
-        formData.name = '',
+    formData.name = '',
         formData.description = '',
         formData.rights = false,
         formData.terms = false,

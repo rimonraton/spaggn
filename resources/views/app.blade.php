@@ -12,7 +12,7 @@
 
 <body class="min-h-screen">
 
-    <div id="app"></div>
+    <div id="app" class="overflow-x-hidden"></div>
 
     <script src="{{mix('js/app.js')}}" defer></script>
 

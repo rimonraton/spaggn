@@ -66,6 +66,30 @@ export const actions = {
         }
 
     },
+    async removeArtistAssets({ commit }, payload) {
+        try {
+            const { data } = await repository.removeArtistAssets(payload)
+            console.log(data)
+            commit('setAsset', data);
+            // commit('setAsset', data);
+            return data
+        } catch (e) {
+            throw e
+        }
+
+    },
+    async updateArtistAssets({ commit }, payload) {
+        try {
+            const { data } = await repository.updateArtistAssets(payload)
+            console.log(data)
+            commit('setAsset', data);
+            // commit('setAsset', data);
+            return data
+        } catch (e) {
+            throw e
+        }
+
+    },
     async getArtists({ commit }, payload) {
         try {
             const { data } = await repository.getArtists(payload)

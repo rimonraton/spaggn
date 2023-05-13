@@ -1,5 +1,5 @@
 <template>
-    <div v-if="profile != null">
+    <div v-if="profile != null" class="p-0">
         <div class="p-10" v-if="profile.charityprofile == null">
             <div class="p-8 bg-white shadow">
                 <div class="text-center">
@@ -143,7 +143,7 @@
             </div>
         </div>
     </div>
-    <div v-else>
+    <div v-else class="px-4 py-6 text-center">
         Loading...
     </div>
 

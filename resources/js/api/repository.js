@@ -46,18 +46,27 @@ export default {
     getCharityDetails(id) {
         return api.get(`/api/get-charity-profile-by-id/${id}`)
     },
-    // reSendOtp(param) {
-    //     return api.post('/api/re_generate_otp', param)
-    // },
-    // resetPassword(param) {
-    //     return api.post('/api/reset-password', param)
-    // },
-    // resetOTP(param) {
-    //     return api.post('/api/reset-otp', param)
-    // },
-    // setPassword(param) {
-    //     return api.post('/api/set-password', param)
-    // },
+    removeArtistAssets(id) {
+        return api.post('/api/remove-artist-assets', id)
+    },
+    updateArtistAssets(param) {
+        return api.post('/api/update-artist-assets', param)
+    },
+    getAllArtists() {
+        return api.get('/api/get-all-artists')
+    },
+    getAllCharities() {
+        return api.get('/api/get-all-charities')
+    },
+    getDataForDashboard() {
+        return api.get('/api/get-data-for-dashboard')
+    },
+    approvedArtist(param) {
+        return api.post('/api/approved-artist', param)
+    },
+    approvedCharity(param) {
+        return api.post('/api/approved-charity', param)
+    },
     // getCurrentLocation(param) {
     //     return api.post('/api/getCurrentLocation', param)
     // },

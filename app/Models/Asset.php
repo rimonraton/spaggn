@@ -9,4 +9,7 @@ class Asset extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $casts = [
+        'property_data' => 'json',
+    ];
 }
