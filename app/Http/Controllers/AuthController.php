@@ -10,35 +10,24 @@ class AuthController extends Controller
 {
     public function socialLogin($provider)
     {
-        // return $provider;
-        return Socialite::driver($provider)->stateless()->redirect();
+        return Socialite::driver($provider)->redirect();
     }
     public function authCallback($provider)
     {
-       return $socialUser = Socialite::driver($provider)->stateless()->user();
-        dd($socialUser);
+        $socialUser = Socialite::driver($provider)->user();
+//        dd($socialUser);
+        $user = User::updateOrCreate([
+            'email' => $socialUser->email,
+        ], [
+            'name' => $socialUser->name,
+            'email' => $socialUser->email,
+            'password' => Hash::make(Str::random(10)),
+        ]);
+
+        Auth::login($user);
+
+        return redirect('/dashboard');
     }
-    // Route::get('/auth/redirect/{provider}', function ($provider) {
-    //      return $provider;
-    //         return Socialite::driver($provider)->redirect();
-    //     });
-        
-    // Route::get('/auth/{provider}/callback', function ($provider) {
-    //         $socialUser = Socialite::driver($provider)->user();
-    //         dd($socialUser);
-        
-    //         $user = User::updateOrCreate([
-    //             'email' => $socialUser->email,
-    //         ], [
-    //             'name' => $socialUser->name,
-    //             'email' => $socialUser->email,
-    //             'password' => Hash::make(Str::random(10)),
-    //         ]);
-        
-    //         Auth::login($user);
-        
-    //         return redirect('/dashboard');
-    //     });
 
     public function Login(Request $request)
     {

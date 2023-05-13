@@ -47,7 +47,7 @@ return [
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),         // Your GitHub Client ID
         'client_secret' => env('TWITTER_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => 'http://spaggn.test/api/auth-callback/twitter',
+        'redirect' => 'http://spaggn.test/auth-callback/twitter',
     ],
 
 ];

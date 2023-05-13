@@ -87,7 +87,7 @@
                         </svg>
                         Facebook
                     </button>
-                    <a href="/api/social-login/twitter"
+                    <a href="/auth/redirect/twitter"
                         class="bg-blue-700 text-white w-full p-2 flex flex-row justify-center gap-2 items-center rounded-sm hover:bg-gray-800 duration-100 ease-in-out">
                         <svg class="w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="white"

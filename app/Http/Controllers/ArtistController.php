@@ -16,6 +16,10 @@ use Illuminate\Support\Str;
 
 class ArtistController extends Controller
 {
+    public function test($provider)
+    {
+        return $provider;
+    }
     public function ArtistProfile()
     {
         $icons = Icon::all();
@@ -33,7 +37,7 @@ class ArtistController extends Controller
             'charities' => 'required',
             'coverPhoto' => 'required',
             'photo' => 'required',
-        ]); 
+        ]);
         $photoUrl = '';
         $coverUrl = '';
         $coverSmUrl = '';
@@ -55,10 +59,10 @@ class ArtistController extends Controller
                 $constraint->upsize();
             });
             $coverSm->resize(330, 120);
-            
+
             $coverUrl = 'images/artist/cover/'.Str::random(12).'.jpg';
             $coverSmUrl = 'images/artist/cover_sm/'.Str::random(12).'.jpg';
-            
+
             $cover->save(public_path($coverUrl));
             $coverSm->save(public_path($coverSmUrl));
         }
