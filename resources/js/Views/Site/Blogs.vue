@@ -29,10 +29,11 @@
                         <div class="p-4">
                             <h2 class="tracking-widest text-xs title-font font-bold text-green-400 mb-1 uppercase ">
                                 Web development</h2>
-                            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">This is a blog template
+                            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">This is a blog template Link
                             </h1>
                             <div class="flex items-center flex-wrap ">
-                                <a href="/" class="text-green-800  md:mb-2 lg:mb-0">
+                                <router-link :to="{ name: 'BlogDetails', params: { id: 1 } }"
+                                             class="text-green-800  md:mb-2 lg:mb-0">
                                     <p class="inline-flex items-center">Read Blog
                                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
                                             stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -40,7 +41,7 @@
                                             <path d="M12 5l7 7-7 7"></path>
                                         </svg>
                                     </p>
-                                </a>
+                                </router-link>
                                 <span
                                     class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                     <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor"

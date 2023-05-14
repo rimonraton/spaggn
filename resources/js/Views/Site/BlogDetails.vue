@@ -1,54 +1,31 @@
 <template>
-    <div v-if="profile != null" class="p-0">
+    <div v-if="profile != null">
         <div class="p-10" v-if="profile.charityprofile == null">
             <div class="p-8 bg-white shadow">
                 <div class="text-center">
-                    <h1 class="text-4xl font-medium text-gray-700">{{profile.name}}</h1>
-                    <p class="mt-4 text-xl text-gray-500">Congratulations! You are now part of Good Giving Network.
-                        Thank you for supporting us.</p>
-                    <router-link to="/create-your-organization-profile" class="text-blue-500 hover:underline">Create
-                        Your Profile</router-link>
+                    <h1 class="text-4xl font-medium text-gray-700">No data found...</h1>
                 </div>
             </div>
         </div>
         <div v-else>
-            <!-- {{profile.charityprofile}} -->
-            <div class="p-8 bg-white shadow mt-10">
-                <div class="flex items-center justify-center gap-6 w-full">
-                    <div class="w-48 h-48">
-                        <img :src="profile.charityprofile.logo" class="max-w-full h-auto rounded-full" alt="">
-                    </div>
-                    <!-- <div class="mt-0 md:mt-8 text-center border-b pb-12">
-                        <h1 class="text-xl md:text-4xl font-medium text-gray-700">
-                            {{profile.charityprofile.organization_name}}
-                        </h1>
-                        <p class="font-light text-gray-600 mt-3">{{profile.charityprofile.address}}</p>
-                        <p class="mt-8 text-gray-500">Solution Manager - Creative Tim Officer</p>
-                        <p class="mt-2 text-gray-500">University of Computer Science</p>
-                    </div> -->
-                    <!-- <div class="w-48 h-48">
-                        <img :src="profile.charityprofile.cover_photo" class="max-w-full h-auto rounded-full" alt="">
-                    </div> -->
-                    <!-- <div
-                        class="w-48 h-48 bg-indigo-100 mx-auto rounded-full shadow-2xl  inset-x-0 -mt-24 flex items-center justify-center text-indigo-500">
-                        <img :src="profile.charityprofile.logo" class="w-full rounded-full">
-                    </div>
-                    <div class="w-48 h-48">
-                        <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
-                            class="max-w-full h-auto rounded-full" alt="">
-                    </div> -->
+            <div class="container p-6 mx-auto mt-8 md:mt-0 md:space-x-10 flex flex-col md:flex-row justify-center items-center md:py-10">
+                <div class="">
+                    <img class="lg:h-80 md:h-64 h-40 rounded-lg"
+                    :src="imageUrl(profile.charityprofile.logo)" alt="" />
                 </div>
-                <div class="mt-0 md:mt-8 flex flex-col justify-center items-center border-b pb-12">
-                    <h1 class="text-xl md:text-4xl font-medium text-gray-700">
-                        {{profile.charityprofile.organization_name}}
-                    </h1>
-                    <p class="w-52 mt-3 rounded-lg border-2 border-black bg-yellow-500 shadow text-center">
-                        <label class="px-2 font-mono text-2xl font-medium"><span class="text-white">EIN#</span>
-                            {{profile.charityprofile.ein}}</label>
+                <div class="mt-8 md:mt-0">
+                    <h1 class="text-4xl text-gray-800 text-center md:text-left font-bold mb-6">Hi, we are {{profile.charityprofile.organization_name}}</h1>
+                    <p class="text-xl text-gray-800 text-center md:text-left">
+                        {{profile.charityprofile.address}}, {{profile.charityprofile.website_address}}
                     </p>
-                    <p class="font-light text-gray-600 mt-3">{{profile.charityprofile.address}}</p>
-                    <p class="font-light text-gray-600 mt-3">{{profile.charityprofile.website_address}}</p>
+                    <button
+                        class="block mt-8 mx-auto md:mx-0 text-2xl py-3 px-6 text-red-50 font-semibold rounded bg-red-400">
+                        EIN# {{profile.charityprofile.ein}}
+                    </button>
                 </div>
+            </div>
+            <!-- {{profile.charityprofile}} -->
+            <div class="p-8 bg-white shadow">
                 <!-- component -->
                 <div class="relative mt-10 bg-gradient-to-t from-[#fffbf5] to-[#fffef4] pt-10 sm:pt-0 mb-10">
 
@@ -65,13 +42,13 @@
                                 {{profile.charityprofile.mission}}
                             </p>
                             <!-- <p class="mt-5 md:text-md ">
-                                I'm creative designer based in Bangladesh, and I'm very passionate and
-                                dedicated to my <br class="hidden md:block" /> work.Your Satisfaction is my success
-                            </p> -->
+                              I'm creative designer based in Bangladesh, and I'm very passionate and
+                              dedicated to my <br class="hidden md:block" /> work.Your Satisfaction is my success
+                          </p> -->
                         </div>
                         <div class="relative sm:mt-0 mt-10 px-6 sm:px-0">
                             <img class="w-[600px] animate__animated animate__fadeInRight animate__delay-.5s"
-                                :src="profile.charityprofile.cover_photo" alt="" />
+                                :src="imageUrl(profile.charityprofile.cover_photo)" alt="" />
                         </div>
                     </div>
                 </div>
@@ -90,8 +67,8 @@
                 </div>
                 <div class="p-4 text-gray-600 border-b">
                     <h1 class="mb-8 text-center text-3xl font-bold text-indigo-900"> List of programs/services</h1>
-                    <ul class="flex flex-wrap md:flex-nowrap justify-center items-center gap-8">
-                        <li class="flex" v-for="(service, i) in JSON.parse(profile.charityprofile.services)"
+                    <ul class="flex flex-wrap justify-center items-center gap-8">
+                        <li class="flex" v-for="service, i in JSON.parse(profile.charityprofile.services)"
                             :key="service + i">
                             <div class="px-4 text-xl text-indigo-700">{{i + 1}}.</div>
                             <div class="text-xl font-bold text-indigo-800">{{service.name}}</div>
@@ -108,7 +85,7 @@
                                 </p>
                             </div>
                             <div class="p-10">
-                                <h3 class="text-xl font-medium text-gray-700">  Geographic area served</h3>
+                                <h3 class="text-xl font-medium text-gray-700"> Geographic area served</h3>
                                 <p class="mt-2 text-slate-500">
                                     {{profile.charityprofile.geographic}}
                                 </p>
@@ -116,15 +93,17 @@
                         </div>
                         <div class="flex rounded-md border border-slate-200">
                             <div class="flex-1 p-10">
-                                <h3 class="text-xl font-medium text-gray-700"> Your organization’s link for Charity Navigator site </h3>
+                                <h3 class="text-xl font-medium text-gray-700"> Your organization’s link for Charity
+                                    Navigator site </h3>
                                 <p class="mt-2 text-slate-500">
-                                   {{profile.charityprofile.navigator_site}}
+                                    {{profile.charityprofile.navigator_site}}
                                 </p>
                             </div>
                         </div>
                         <div class="flex rounded-md border border-slate-200">
                             <div class="flex-1 p-10">
-                                <h3 class="text-xl font-medium text-gray-700"> Your organization’s link for GuideStar</h3>
+                                <h3 class="text-xl font-medium text-gray-700"> Your organization’s link for GuideStar
+                                </h3>
                                 <p class="mt-2 text-slate-500">
                                     {{profile.charityprofile.guide_star}}
                                 </p>
@@ -133,29 +112,35 @@
                     </div>
                 </div>
                 <!-- <div class="mt-12 flex flex-col justify-center">
-                    <p class="text-gray-600 text-center font-light lg:px-16">An artist of considerable range, Ryan — the
-                        name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of
-                        his
-                        own music, giving it a warm, intimate feel with a solid groove structure. An artist of
-                        considerable
-                        range.</p> <button class="text-indigo-500 py-2 px-4  font-medium mt-4"> Show more</button>
-                </div> -->
+                  <p class="text-gray-600 text-center font-light lg:px-16">An artist of considerable range, Ryan — the
+                      name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of
+                      his
+                      own music, giving it a warm, intimate feel with a solid groove structure. An artist of
+                      considerable
+                      range.</p> <button class="text-indigo-500 py-2 px-4  font-medium mt-4"> Show more</button>
+              </div> -->
             </div>
         </div>
     </div>
-    <div v-else class="px-4 py-6 text-center">
-        Loading...
+    <div v-else>
+        <Loading />
     </div>
 
 </template>
 
 <script setup>
+import Loading from '../../components/helper/loading.vue'
 import { ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
+import { useRoute } from 'vue-router'
 const store = useStore()
+const route = useRoute()
 const profile = ref(null)
+const imageUrl = (image) => {
+    return '/' + image;
+}
 const getCharityProfile = async () => {
-    const res = await store.dispatch('charityModule/getCharityProfile')
+    const res = await store.dispatch('charityModule/getCharityDetails', route.params.id)
     profile.value = res
 }
 onMounted(() => {

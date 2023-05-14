@@ -1494,19 +1494,13 @@ video {
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
-@-webkit-keyframes spin {
-  to {
-    transform: rotate(360deg)
-  }
-}
 @keyframes spin {
   to {
     transform: rotate(360deg)
   }
 }
 .animate-spin {
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite
+  animation: spin 1s linear infinite
 }
 .cursor-pointer {
   cursor: pointer
@@ -1700,9 +1694,6 @@ video {
 }
 .break-words {
   overflow-wrap: break-word
-}
-.break-all {
-  word-break: break-all
 }
 .rounded-lg {
   border-radius: 0.5rem
@@ -2325,6 +2316,9 @@ video {
 }
 .pb-6 {
   padding-bottom: 1.5rem
+}
+.pb-5 {
+  padding-bottom: 1.25rem
 }
 .text-left {
   text-align: left
@@ -3899,6 +3893,9 @@ input:focus-within~label {
   .md\:w-32 {
     width: 8rem
   }
+  .md\:w-44 {
+    width: 11rem
+  }
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr))
   }
@@ -4015,9 +4012,6 @@ input:focus-within~label {
   }
   .md\:text-left {
     text-align: left
-  }
-  .md\:text-center {
-    text-align: center
   }
   .md\:text-2xl {
     font-size: 1.5rem;

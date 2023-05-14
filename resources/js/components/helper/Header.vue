@@ -74,20 +74,27 @@
                   </svg>
 
                 </div>
-                <div class="bg-white rounded shadow-md mt-2 absolute mt-12 top-0 left-0 min-w-full md:w-40 overflow-auto z-30"
+                <div class="bg-white rounded shadow-md mt-2 absolute mt-12 top-0 left-0 min-w-full md:w-64 overflow-auto z-30"
                   :class="submenu ? 'block' : 'hidden'">
                   <ul class="list-reset">
-                    <li>
-                      <router-link :to="{ name: 'ExploreCharities' }" @click="submenu = !submenu"
-                      class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
-                        Charities
-                      </router-link>
-                    </li>
-                    <li>
-                      <router-link :to="{ name: 'ListCharities' }" @click="submenu = !submenu"
-                        class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
-                        List of Charities</router-link>
-                    </li>
+                      <li>
+                          <router-link :to="{ name: 'ExploreCharities' }" @click="submenu = !submenu"
+                                       class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
+                              Why Partner with GGN?
+                          </router-link>
+                      </li>
+                      <li>
+                          <router-link :to="{ name: 'ExploreCharities' }" @click="submenu = !submenu"
+                                       class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
+                              How to Partner with GGN?
+                          </router-link>
+                      </li>
+                      <li>
+                          <router-link :to="{ name: 'ListCharities' }" @click="submenu = !submenu"
+                            class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">
+                            List of Charities
+                          </router-link>
+                      </li>
                   </ul>
                 </div>
               </div>

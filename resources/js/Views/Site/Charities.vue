@@ -4,12 +4,17 @@
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-4 mx-auto">
             <div class="text-center my-10">
-                <!--                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Raw Denim Heirloom Man Braid</h1>-->
+<!--                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Raw Denim Heirloom Man Braid</h1>-->
+<!--                <p class="xl:w-2/4 lg:w-3/4 mx-auto leading-relaxed text-lg">-->
+<!--                    The projects created on the GGN platform are driven by the four guiding-->
+<!--                    principles of charitable giving - a bond of trust, a sense of altruism, and social-->
+<!--                    impact, and (sometimes) a feeling of egoism. Projects that can fully embrace-->
+<!--                    these principles will have a high chance of success.</p>-->
                 <p class="xl:w-2/4 lg:w-3/4 mx-auto leading-relaxed text-lg">
-                    The projects created on the GGN platform are driven by the four guiding
-                    principles of charitable giving - a bond of trust, a sense of altruism, and social
-                    impact, and (sometimes) a feeling of egoism. Projects that can fully embrace
-                    these principles will have a high chance of success.</p>
+                    Projects developed within the GGN platform adhere to four core tenets of philanthropy: fostering trust,
+                    cultivating altruism, generating social impact, and occasionally appealing to egoism. By effectively
+                    embracing these guiding principles, projects in GGN significantly increase their likelihood of success.
+                </p>
                 <div class="flex mt-6 justify-center">
                     <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
                 </div>
@@ -68,8 +73,6 @@
                 </div>
             </div>
             <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center mt-16">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 ">It’s about how you make them
-                    feel</h1>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                     class="inline-block w-8 h-8 text-gray-400 my-5" viewBox="0 0 975.036 975.036">
                     <path
@@ -77,81 +80,72 @@
                     </path>
                 </svg>
                 <p class="leading-relaxed text-lg italic">
-                    I've learned that people will forget what you said, people will forget what you did, but people will
-                    never
-                    forget how you made them feel.
+                    I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.
                 </p>
                 <span class="inline-block h-1 w-10 rounded bg-indigo-500 my-3"></span>
                 <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Maya Angelou</h2>
-                <p class="text-gray-500">Famous poet and civil rights activist</p>
+                <p class="text-gray-500 pb-5">Famous poet and civil rights activist</p>
+
                 <div class="text-gray-500 mt-8">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 mt-8 text-left italic" >
+                        It’s about how you make them feel
+                    </h1>
                     <p class="py-3 text-left">
-                        People donate to charities because they are passionate about the causes.
-                        Charities are successful when they tap into this passion and have an honest
-                        and heartfelt communication with potential donors and create a community.
+                        Individuals contribute to charitable organizations due to their deep connection with the cause. Success for these organizations comes from effectively engaging with potential donors through genuine, heartfelt communication, and fostering a sense of community.
                     </p>
                     <p class="py-3 text-left">
-                        The traditional ways of nurturing the relationships by sending a small token gift to
-                        donors are not effective anymore. Instead, what if the donor receives an NFT? – a personal
-                        one-of-a-kind gift.
+                        Traditional approaches, such as sending small tokens of appreciation to donors, are no longer as impactful. Instead, imagine offering donors a unique, personalized NFT. This one-of-a-kind gift can be cherished and passed down through generations like a piece of art or sold at a higher value to further benefit the charity. By incorporating a royalty feature, the NFT becomes a gift with ongoing contributions.
                     </p>
+
+<!--                    <p class="py-3 text-left">-->
+<!--                        People donate to charities because they are passionate about the causes. Charities are successful when they tap into this passion and have an honest and heartfelt communication with potential donors and create a community.-->
+<!--                    </p>-->
+<!--                    <p class="py-3 text-left">-->
+<!--                        The traditional ways of nurturing the relationships by sending a small token gift to donors are not effective anymore. Instead, what if the donor receives an NFT? – a personal one-of-a-kind gift.-->
+<!--                    </p>-->
+<!--                    <p class="py-3 text-left">-->
+<!--                        The donor can hold on to the NFT and pass it to their children (just like a piece of art) or can sell it at a higher price and raise more money for the charity. With a royalty option attached to the NFT, this will be a gift that will keep giving.-->
+<!--                    </p>-->
+                </div>
+                <div class="text-gray-500 mt-8">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 text-left italic">
+<!--                        When one is more than many-->
+                        The Power of One Over Many
+                    </h1>
                     <p class="py-3 text-left">
-                        The donor can hold on to the NFT and pass it to their children (just like a piece of art) or can
-                        sell
-                        it at a higher price and raise more money for the charity. With a royalty option attached to the
-                        NFT,
-                        this will be a gift that will keep giving.
+                        NFTs have the potential to evoke a powerful emotional response in donors, inspiring them to contribute more than they might under typical circumstances. In psychology, this phenomenon is known as the Identifiable Victim Effect, which describes the inclination to provide greater aid to a specific, identifiable person rather than a larger, anonymous group.
+<!--                        NFTs can create a unique emotional response in a donors’ mind that will inspire them to donate far more than they would have donated in normal circumstances. In psychology there is a term called Identifiable Victim Effect, that refers to the tendency to offer greater assistance to an identifiable individual as opposed to a larger, unnamed, or statistical group of people.-->
+                    </p>
+
+                    <p class="py-3 text-left">
+                        NFTs can serve as an ideal medium for fostering the Identifiable Victim Effect in a donor's mind. For example, an artwork created by a cancer survivor, or a project focused on the daily life of a bunny within a rabbit rescue organization can elicit profound emotional connections that might otherwise remain unattainable.
+                        <!--                        NFTs can be the perfect medium to create Identifiable Victim Effect in a donor's mind - an artwork created by a survivor of cancer, or a project centered around the daily life of a bunny for a rabbit rescue organization can create deep emotional responses in a donor's mind that would not be possible otherwise.-->
                     </p>
                 </div>
                 <div class="text-gray-500 mt-8">
-                    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 text-left">When one is
-                        more than many</h1>
-                    <p class="py-3 text-left">
-                        NFTs can create a unique emotional response in a donors’ mind that will inspire them to donate
-                        far more than they would have donated in normal circumstances. In psychology there is a term
-                        called Identifiable Victim Effect, that refers to the tendency to offer greater assistance to an
-                        identifiable individual as opposed to a larger, unnamed, or statistical group of people.
-                    </p>
-                    <p class="py-3 text-left">
-                        NFTs can be the perfect medium to create Identifiable Victim Effect in a donor's mind - an
-                        artwork created by a survivor of cancer, or a project centered around the daily life of a bunny
-                        for a rabbit rescue organization can create deep emotional responses in a donor's mind that
-                        would not be possible otherwise.
-                    </p>
-                </div>
-                <div class="text-gray-500 mt-8">
-                    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 text-left">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 text-left italic">
                         Amazing things can happen when donors are involved
                     </h1>
                     <p class="py-3 text-left">
-                        In traditional charities, donors mostly take a passive role. But the donors who received NFTs
-                        have a Communal Ownership of the project. They are responsible for the success of the project
-                        and have voting rights on various aspects of the project (Governance). They are also involved in
-                        promoting the project and take on the role of Ambassadorship.
+                        Unlike conventional charity models where donors often assume a passive role, those who receive NFTs experience a sense of communal ownership in the project. They bear responsibility for the project's success and possess voting rights on different aspects of its governance. Additionally, these donors become advocates for the project, embracing the role of ambassadors in promoting its objectives.
+<!--                        In traditional charities, donors mostly take a passive role. But the donors who received NFTs have a Communal Ownership of the project. They are responsible for the success of the project and have voting rights on various aspects of the project (Governance). They are also involved in promoting the project and take on the role of Ambassadorship.-->
                     </p>
                 </div>
                 <div class="text-gray-500 mt-8">
-                    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 text-left">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 text-left italic">
                         Financial benefits for NFT collectors
                     </h1>
                     <p class="py-3 text-left">
-                        The GGN NFT marketplace is where collectors can find interesting projects by top charities and
-                        the artworks of famous celebrities raising money for their favorite charities (think “Woman With
-                        Stick Cat” by Ellen DeGeneres for World Central Kitchen).
+                        The GGN NFT marketplace offers collectors an opportunity to discover interesting projects from top charities and artwork by renowned celebrities who are raising funds for their preferred charitable organizations (for instance, Ellen DeGeneres' "Woman With Stick Cat" in support of World Central Kitchen).
+<!--                        The GGN NFT marketplace is where collectors can find interesting projects by top charities and the artworks of famous celebrities raising money for their favorite charities (think “Woman With Stick Cat” by Ellen DeGeneres for World Central Kitchen).-->
                     </p>
                     <p class="py-3 text-left">
-                        Any amount paid above the asking bid of the charity is considered a donation to the charity and
-                        therefore tax deductible. For example, if the asking bid of an NFT is $100 and a collector paid
-                        $1,000 then $900 will be tax deductible and the charity will write a donation slip that the
-                        donor can submit to the IRS.
+                        Any payment exceeding the charity's requested bid is deemed a donation and is thus tax-deductible. For example, if an NFT's asking bid is $100 and a collector pays $1,000, the $900 difference can be deducted as a charitable contribution, and the charity will provide a donation receipt for the donor to submit to the IRS.
+<!--                        Any amount paid above the asking bid of the charity is considered a donation to the charity and therefore tax deductible. For example, if the asking bid of an NFT is $100 and a collector paid $1,000 then $900 will be tax deductible and the charity will write a donation slip that the donor can submit to the IRS.-->
                     </p>
                     <p class="py-3 text-left">
-                        Now the question is, if an NFT is sold to another person, will it be tax deductible? The answer
-                        is - it depends. If the charity adds a royalty option to the NFT then the donor can deduct that
-                        portion. For example, if the current holder decides to sell her $1,000 NFT for $5,000 and the
-                        charity has a 10% royalty option then the charity will receive $500 (10% of $5,000) as donation
-                        from the sell and the original collector can deduct $500 as a charitable contribution. She will
-                        end up receiving $4,500 net from the transaction.
+                        As for whether the resale of an NFT is tax-deductible, the answer depends on the specific circumstances. If a royalty option is attached to the NFT by the charity, the donor can deduct that portion. For instance, if the initial holder sells their $1,000 NFT for $5,000 and the charity has a 10% royalty option, the charity will receive $500 (10% of $5,000) as a donation from the sale, and the original collector can claim a $500 charitable deduction. The collector would ultimately receive a net amount of $4,500 from the transaction.
+<!--                        Now the question is, if an NFT is sold to another person, will it be tax deductible? The answer is - it depends. If the charity adds a royalty option to the NFT then the donor can deduct that portion. For example, if the current holder decides to sell her $1,000 NFT for $5,000 and the charity has a 10% royalty option then the charity will receive $500 (10% of $5,000) as donation from the sell and the original collector can deduct $500 as a charitable contribution. She will end up receiving $4,500 net from the transaction.-->
                     </p>
                 </div>
 
