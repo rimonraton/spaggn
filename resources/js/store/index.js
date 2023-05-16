@@ -6,6 +6,7 @@ import repository from '../api/repository';
 import * as artistModule from './modules/ArtistModule'
 import * as charityModule from './modules/CharityModule'
 import * as adminModule from './modules/AdminModule'
+import * as blogModule from './modules/BlogModule'
 
 const router = useRouter()
 
@@ -131,7 +132,7 @@ export default createStore({
             } catch (e) {
                 throw e
             }
-    
+
         },
         async password({ commit }, payload) {
             await axios.patch('/api/password', payload).then((res) => {
@@ -157,7 +158,7 @@ export default createStore({
 
     },
     // plugins: [sharedMutations({ predicate: ['setUser'] })],
-    modules: { artistModule, charityModule, adminModule }
+    modules: { artistModule, charityModule, adminModule, blogModule }
 
 
 })

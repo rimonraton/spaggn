@@ -80,7 +80,7 @@ export default [
                 // },
             },
             {
-                path: "/blog-details/:id",
+                path: "/blog-details/:slug/:post",
                 component: BlogDetails,
                 name: "BlogDetails",
             },

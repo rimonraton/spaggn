@@ -8,6 +8,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\MessageInfoController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
@@ -89,4 +90,8 @@ Route::get('/get-artists', [ArtistController::class, 'getArtist']);
 Route::get('/get-charity', [CharityController::class, 'getCharity']);
 Route::get('get-message-info', [MessageInfoController::class, 'index']);
 Route::get('get-organizations', [OrganizationController::class, 'index']);
+Route::get('/get-posts', [PostController::class, 'getPosts']);
+Route::get('/get-posts/{post}/{slug}', [PostController::class, 'getPost']);
+
+
 

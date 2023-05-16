@@ -83,7 +83,9 @@ const lastPage = ref(0)
 const perPage = ref(0)
 const total = ref(0)
 const artistData = async (page = 1) => {
+    // const res = await store.dispatch('artistModule/getArtists', page)
     const res = await store.dispatch('artistModule/getArtists', page)
+
     // console.log('artist res.....', res)
     currentPage.value = res.current_page
     lastPage.value = res.last_page
@@ -103,7 +105,7 @@ const getNextArtists = async () => {
         let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight > wHeight;
         if (bottomOfWindow) {
             if (lastPage.value > currentPage.value) {
-                currentPage.value++ 
+                currentPage.value++
                 const res = await store.dispatch('artistModule/getArtists', currentPage.value)
                 res.data.forEach(element => {
                     artistValue.value.push(element)

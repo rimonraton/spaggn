@@ -67,6 +67,13 @@ export default {
     approvedCharity(param) {
         return api.post('/api/approved-charity', param)
     },
+    getPosts(page) {
+        return api.get(`/api/get-posts?page=${page}`)
+    },
+    getPost(params) {
+        return api.get(`/api/get-posts/${params.post}/${params.slug}`)
+    },
+
     // getCurrentLocation(param) {
     //     return api.post('/api/getCurrentLocation', param)
     // },
