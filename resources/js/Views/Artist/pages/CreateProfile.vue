@@ -197,7 +197,7 @@
     </div>
   </div>
 </template>
-  
+
 <script setup>
 import { reactive, ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
@@ -209,9 +209,6 @@ const router = useRouter()
 const store = useStore()
 const loading = ref(false)
 const formData = reactive({
-  // firstName: '',
-  // lastName: '',
-  // email: '',
   social: [],
   personalStory: '',
   inspiration: '',
@@ -313,21 +310,16 @@ const saveArtistData = async () => {
 }
 const getArtistProfile = async () => {
   const res = await store.dispatch('artistModule/getArtistProfile')
-  //  profile.value = res
-  // console.log('res', res != '' && Object.keys(res).length != 0, res)
   if (res.profile != null && Object.keys(res.profile).length != 0) {
     formData.isUpdate = true
-    // formData.firstName = res.first_name,
-    //   formData.lastName = res.last_name,
-    //   formData.email = res.email,
     formData.social = JSON.parse(res.profile.sc_profile),
-      formData.personalStory = res.profile.personal_story,
-      formData.inspiration = res.profile.inspiration,
-      formData.messageToWorld = res.profile.message_to_world,
-      formData.charities = JSON.parse(res.profile.charities_data),
-      formData.artisticInspiration = res.profile.artistic_inspiration,
-      formData.photo = res.profile.photo != '' ? res.profile.photo : null,
-      formData.coverPhoto = res.profile.cover != '' ? res.profile.cover : null
+    formData.personalStory = res.profile.personal_story,
+    formData.inspiration = res.profile.inspiration,
+    formData.messageToWorld = res.profile.message_to_world,
+    formData.charities = JSON.parse(res.profile.charities_data),
+    formData.artisticInspiration = res.profile.artistic_inspiration,
+    formData.photo = res.profile.photo != '' ? res.profile.photo : null,
+    formData.coverPhoto = res.profile.cover != '' ? res.profile.cover : null
 
   } else {
     formData.isUpdate = false
@@ -386,4 +378,3 @@ const getOrganizations = async () => {
   white-space: nowrap;
 }
 </style>
-  

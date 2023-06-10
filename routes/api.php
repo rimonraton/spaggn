@@ -92,6 +92,8 @@ Route::get('get-message-info', [MessageInfoController::class, 'index']);
 Route::get('get-organizations', [OrganizationController::class, 'index']);
 Route::get('/get-posts', [PostController::class, 'getPosts']);
 Route::get('/get-posts/{post}/{slug}', [PostController::class, 'getPost']);
+Route::post('/save-posts', [PostController::class, 'savePost']);
+Route::post('/upload-post-image', [PostController::class, 'savePostImage']);
 
 
 

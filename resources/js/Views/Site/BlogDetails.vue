@@ -33,7 +33,6 @@ import Loading from '../../components/helper/loading.vue'
 import { ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
-import { QuillEditor } from '@vueup/vue-quill'
 import BlotFormatter from 'quill-blot-formatter'
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
 const store = useStore()

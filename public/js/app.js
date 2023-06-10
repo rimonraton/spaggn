@@ -19571,8 +19571,11 @@ __webpack_require__.r(__webpack_exports__);
   getPosts: function getPosts(page) {
     return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-posts?page=".concat(page));
   },
-  getPost: function getPost(params) {
-    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-posts/".concat(params.post, "/").concat(params.slug));
+  getPost: function getPost(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].get("/api/get-posts/".concat(param.post, "/").concat(param.slug));
+  },
+  savePost: function savePost(param) {
+    return _api__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/save-posts', param);
   } // getCurrentLocation(param) {
   //     return api.post('/api/getCurrentLocation', param)
   // },
@@ -19807,6 +19810,10 @@ var ViewCharityProfile = function ViewCharityProfile() {
   return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_CharityProfile_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/CharityProfile.vue */ "./resources/js/Views/Admin/pages/CharityProfile.vue"));
 };
 
+var AdminBlogs = function AdminBlogs() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_blogs_AdminBlogs_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/blogs/AdminBlogs */ "./resources/js/Views/Admin/pages/blogs/AdminBlogs.vue"));
+};
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([{
   path: '/adminLayout',
   component: AdminLayout,
@@ -19843,6 +19850,22 @@ var ViewCharityProfile = function ViewCharityProfile() {
     path: '/view-charity-profile/:id',
     component: ViewCharityProfile,
     name: 'ViewChatityProfile',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/admin-blogs',
+    component: AdminBlogs,
+    name: 'AdminBlogs',
+    meta: {
+      guard: 'auth'
+    }
+  }, {
+    path: '/admin-blogs/create',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_Views_Admin_pages_blogs_CreateBlog_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Views/Admin/pages/blogs/CreateBlog */ "./resources/js/Views/Admin/pages/blogs/CreateBlog.vue"));
+    },
+    name: 'AdminBlogsCreate',
     meta: {
       guard: 'auth'
     }
@@ -21430,6 +21453,37 @@ var actions = {
           }
         }
       }, _callee2, null, [[1, 9]]);
+    }))();
+  },
+  savePost: function savePost(_ref3, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+      var commit, _yield$repository$sav, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              commit = _ref3.commit;
+              _context3.prev = 1;
+              _context3.next = 4;
+              return _api_repository__WEBPACK_IMPORTED_MODULE_1__["default"].savePost(payload);
+
+            case 4:
+              _yield$repository$sav = _context3.sent;
+              data = _yield$repository$sav.data;
+              return _context3.abrupt("return", data);
+
+            case 9:
+              _context3.prev = 9;
+              _context3.t0 = _context3["catch"](1);
+              throw _context3.t0;
+
+            case 12:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 9]]);
     }))();
   }
 };
@@ -45944,7 +45998,7 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_CharityDetails_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_BlogDetails_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_Views_Site_ArtistDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Artists_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1,"resources_js_Views_Admin_pages_ArtistProfile_vue":1,"resources_js_Views_Admin_pages_CharityProfile_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Views_Settings_vue":1,"resources_js_Views_Profile_vue":1,"resources_js_Views_Password_vue":1,"resources_js_Views_Authentication_Login_vue":1,"resources_js_Views_Authentication_Signup_vue":1,"resources_js_Views_ForgotPassword_vue":1,"resources_js_Views_ResetPassword_vue":1,"resources_js_Views_VerifyEmail_vue":1,"resources_js_Views_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Views_Artist_pages_Home_vue":1,"resources_js_Views_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Views_Artist_pages_Messages_vue":1,"resources_js_Views_Artist_pages_Assets_vue":1,"resources_js_Views_Artist_pages_ViewAssets_vue":1,"resources_js_Views_Site_Funding_vue":1,"resources_js_Views_Site_Charities_vue":1,"resources_js_Views_Site_CharityDetails_vue":1,"resources_js_Views_Site_Artists_vue":1,"resources_js_Views_Site_Blogs_vue":1,"resources_js_Views_Site_BlogDetails_vue":1,"resources_js_Views_Site_Projects_vue":1,"resources_js_Views_Site_Home_vue":1,"resources_js_Views_Site_Welcome_vue":1,"resources_js_Views_Site_ArtistDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Views_Site_ListCharities_vue":1,"resources_js_Views_Charity_pages_Home_vue":1,"resources_js_Views_Charity_pages_Profile_vue":1,"resources_js_Views_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Views_Charity_pages_Messages_vue":1,"resources_js_Views_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Views_Admin_pages_Artists_vue":1,"resources_js_Views_Admin_pages_Charities_vue":1,"resources_js_Views_Admin_pages_ArtistProfile_vue":1,"resources_js_Views_Admin_pages_CharityProfile_vue":1,"resources_js_Views_Admin_pages_blogs_AdminBlogs_vue":1,"resources_js_Views_Admin_pages_blogs_CreateBlog_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

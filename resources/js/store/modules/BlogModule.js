@@ -30,6 +30,14 @@ export const actions = {
         } catch (e) {
             throw e
         }
+    },
+    async savePost({ commit }, payload) {
+        try {
+            const { data } = await repository.savePost(payload)
+            return data
+        } catch (e) {
+            throw e
+        }
 
     },
 }

@@ -70,8 +70,11 @@ export default {
     getPosts(page) {
         return api.get(`/api/get-posts?page=${page}`)
     },
-    getPost(params) {
-        return api.get(`/api/get-posts/${params.post}/${params.slug}`)
+    getPost(param) {
+        return api.get(`/api/get-posts/${param.post}/${param.slug}`)
+    },
+    savePost(param) {
+        return api.post('/api/save-posts', param)
     },
 
     // getCurrentLocation(param) {

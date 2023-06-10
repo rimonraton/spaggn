@@ -6,6 +6,7 @@ const ViewArtists = () => import('../Views/Admin/pages/Artists.vue')
 const ViewCharities = () => import('../Views/Admin/pages/Charities.vue')
 const ViewArtistProfile = () => import('../Views/Admin/pages/ArtistProfile.vue')
 const ViewCharityProfile = () => import('../Views/Admin/pages/CharityProfile.vue')
+const AdminBlogs = () => import('../Views/Admin/pages/blogs/AdminBlogs')
 export default [
     {
         path: '/adminLayout',
@@ -48,6 +49,22 @@ export default [
                 path: '/view-charity-profile/:id',
                 component: ViewCharityProfile,
                 name: 'ViewChatityProfile',
+                meta: {
+                    guard: 'auth'
+                }
+            },
+            {
+                path: '/admin-blogs',
+                component: AdminBlogs,
+                name: 'AdminBlogs',
+                meta: {
+                    guard: 'auth'
+                }
+            },
+            {
+                path: '/admin-blogs/create',
+                component: () => import('../Views/Admin/pages/blogs/CreateBlog'),
+                name: 'AdminBlogsCreate',
                 meta: {
                     guard: 'auth'
                 }
