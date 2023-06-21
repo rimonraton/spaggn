@@ -14,7 +14,7 @@ class AdminController extends Controller
     {
         return User::whereHas('roles', function ($q) {
             $q->where('roles.name', 'Artist');
-        })->whereHas('profile')->with('profile')->orderBy('id', 'desc')->paginate(20);
+        })->whereHas('profile')->with('profile')->orderBy('id', 'desc')->paginate(5);
     }
     public function getCharities()
     {
@@ -73,7 +73,7 @@ class AdminController extends Controller
         $artist->update([
             'status'=> $artist->status == 1 ? 0 : 1
         ]);
-        return $this->getArtists();
+        return $artist->status;
     }
     public function approvedCharity(Request $request)
     {

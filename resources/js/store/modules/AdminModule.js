@@ -8,12 +8,12 @@ export const getters = {
 
 }
 export const mutations = {
-   
+
 }
 export const actions = {
-    async getAllArtists({ commit }) {
+    async getAllArtists({ commit }, payload) {
         try {
-            const { data } = await repository.getAllArtists()
+            const { data } = await repository.getAllArtists(payload)
             // console.log(data)
             return data
         } catch (e) {

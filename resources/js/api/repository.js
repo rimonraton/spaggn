@@ -52,8 +52,8 @@ export default {
     updateArtistAssets(param) {
         return api.post('/api/update-artist-assets', param)
     },
-    getAllArtists() {
-        return api.get('/api/get-all-artists')
+    getAllArtists(page) {
+        return api.get(`/api/get-all-artists?page=${page}`)
     },
     getAllCharities() {
         return api.get('/api/get-all-charities')

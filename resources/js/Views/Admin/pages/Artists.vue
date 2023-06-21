@@ -23,7 +23,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            <tr class="text-gray-500" v-for="artist in artistData" :key="artist.id">
+                            <tr class="text-gray-500" v-for="(artist, index) in laravelData.data" :key="artist.id">
                                 <th
                                     class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
                                     {{ artist.name }}
@@ -43,7 +43,7 @@
                                                 View Profile
                                             </div>
                                         </div>
-                                        <div @click="approvedArtist(artist.profile.id)"
+                                        <div @click="approvedArtist(artist.profile.id, index)"
                                             class="cursor-pointer p-2 rounded-lg border hover:text-slate-500 hover:border-slate-500">
                                            {{artist.profile.status == 0 ? 'Approved':'Disapproved'}}
                                         </div>
@@ -58,6 +58,10 @@
                             </tr>
                         </tbody>
                     </table>
+                    <TailwindPagination
+                        :data="laravelData"
+                        @pagination-change-page="getResults"
+                    />
                 </div>
             </div>
         </div>
@@ -68,20 +72,27 @@
 import { ref, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
+import { TailwindPagination } from 'laravel-vue-pagination';
+
 const router = useRouter()
 const artistData = ref(null)
 const store = useStore()
 const viewProfile = (id) => {
     router.push({ name: 'ViewArtistProfile', params: { id: id }, query: { view: 'artist' } })
 }
-const approvedArtist = async (id) => {
+const approvedArtist = async (id, index) => {
     const res = await store.dispatch('adminModule/approvedArtist', {id: id})
-    artistData.value = res.data
+    laravelData.value.data[index].profile.status = res;
+    console.log(laravelData.value.data[index].profile, res)
 }
-onMounted(async () => {
-    const res = await store.dispatch('adminModule/getAllArtists')
-    artistData.value = res.data
-})
+const laravelData = ref({});
+
+const getResults = async (page = 1) => {
+    laravelData.value = await store.dispatch('adminModule/getAllArtists', page);
+}
+
+getResults();
+
 </script>
 
 <style>
