@@ -3,7 +3,7 @@
         <div class="container mx-auto lg:w-5/6">
             <div class="px-2 py-0 lg:py-2 lg:px-4">
                 <h3 class="text-lg text-center font-medium leading-6 text-gray-900">
-                    Create New Blog
+                    Update Blog
                 </h3>
             </div>
             <div class="md:grid md:grid-cols-1 md:gap-6">
@@ -17,7 +17,8 @@
                                 {{ error.$message }}
                             </span>
                             <input
-                                type="text" v-model="formData.title"
+                                type="text"
+                                v-model="formData.title"
                                 class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300"
                                 placeholder="Blog Title"/>
 
@@ -70,18 +71,18 @@
                                 v-for="error in v$.description.$errors"
                                 :key="error.$uid">
                                     {{ error.$message }}
-                                </span>
-                                <div class="relative">
-                                    <QuillEditor
-                                        theme="snow"
-                                        :modules="modules"
-                                        v-model:content="formData.description"
-                                        contentType="html"
-                                        toolbar="full"
-                                    />
-                                </div>
+                            </span>
+                            <div class="relative">
+                                <QuillEditor
+                                    theme="snow"
+                                    :modules="modules"
+                                    v-model:content="formData.description"
+                                    contentType="html"
+                                    toolbar="full"
+                                />
+                            </div>
 
-                            <div class="w-full mt-6">
+                            <div class="w-full mt-32 md:mt-16">
                                 <button type="submit" v-if="!loading"
                                         class="text-white uppercase bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     {{ formData.isUpdate ? 'Update' : 'Submit' }}
@@ -109,12 +110,7 @@
         </div>
     </div>
 </template>
-<style>
-.ql-editor{
-    min-height:150px !important;
-}
 
-</style>
 <script setup>
 import { reactive, ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
@@ -122,10 +118,11 @@ import { QuillEditor } from '@vueup/vue-quill'
 import BlotFormatter from 'quill-blot-formatter'
 import ImageUploader from 'quill-image-uploader';
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
 const router = useRouter()
+const route = useRoute()
 const store = useStore()
 const loading = ref(false)
 
@@ -200,7 +197,8 @@ const saveBlogData = async () => {
             console.log('get Save data',blog)
             clear()
             loading.value = false
-            router.push({ name: 'AdminBlogs' })
+            return
+            router.push({ name: 'Artist' })
         } catch (e) {
             console.log(e)
         }
@@ -216,11 +214,23 @@ const clear = () => {
     formData.coverPhoto = null
     formData.isUpdate = false
 }
+const post = ref({});
+const getPost = async () => {
+    // console.log('getPost', route.params.id)
+    const param = {
+        post: route.params.id,
+        slug: 'test'
+    }
+    post.value = await store.dispatch('blogModule/getPost', param);
+    formData.title =  post.value.title
+    formData.description = post.value.description
+    formData.coverPhoto = post.value.photo
+    formData.isUpdate = true
+}
 
+getPost();
 </script>
-<style src="vue-multiselect/dist/vue-multiselect.css">
 
-</style>
 <style scoped>
 .whitespace {
     white-space: nowrap;
@@ -232,6 +242,9 @@ const clear = () => {
     top: 0px;
     background: transparent;
 
+}
+.ql-editor{
+    min-height:150px !important;
 }
 </style>
 

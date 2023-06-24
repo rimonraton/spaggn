@@ -69,6 +69,14 @@ export default [
                     guard: 'auth'
                 }
             },
+            {
+                path: '/admin-blogs/update/:id',
+                component: () => import('../Views/Admin/pages/blogs/UpdateBlog'),
+                name: 'AdminBlogsUpdate',
+                meta: {
+                    guard: 'auth'
+                }
+            },
             // {
             //     path: '/Admin-profile',
             //     component: AdminProfile,

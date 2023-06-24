@@ -16,7 +16,6 @@ export const actions = {
     async getPosts({ commit }, payload) {
         try {
             const { data } = await repository.getPosts(payload)
-            // commit('setAsset', data);
             return data
         } catch (e) {
             throw e
