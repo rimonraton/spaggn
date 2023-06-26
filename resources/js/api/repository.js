@@ -76,6 +76,9 @@ export default {
     savePost(param) {
         return api.post('/api/save-posts', param)
     },
+    deletePost(param) {
+        return api.post('/api/deletePost', param)
+    },
 
     // getCurrentLocation(param) {
     //     return api.post('/api/getCurrentLocation', param)

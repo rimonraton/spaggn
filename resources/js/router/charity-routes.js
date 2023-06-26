@@ -1,8 +1,8 @@
-const CharityHome = () => import('../Views/Charity/pages/Home.vue');
-const CharityProfile = () => import('../Views/Charity/pages/Profile.vue');
-const CreateCharityProfile = () => import('../Views/Charity/pages/CreateProfile.vue');
+const CharityHome = () => import('../Pages/Charity/pages/Home.vue');
+const CharityProfile = () => import('../Pages/Charity/pages/Profile.vue');
+const CreateCharityProfile = () => import('../Pages/Charity/pages/CreateProfile.vue');
 const CharityLayout = () => import('../layouts/CharityLayout.vue')
-const CharityMessage = () => import('../Views/Charity/pages/Messages.vue')
+const CharityMessage = () => import('../Pages/Charity/pages/Messages.vue')
 export default [
     {
         path: '/charityLayout',

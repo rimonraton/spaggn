@@ -49,4 +49,11 @@ class PostController extends Controller
         $path = $request->file('image')->store('public/post');
         return '/storage/' . $path;
     }
+
+    public function deletePost(Request $request)
+    {
+        return Post::find($request->id)->delete();
+    }
+
+
 }

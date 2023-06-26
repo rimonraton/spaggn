@@ -1,9 +1,14 @@
 <template>
-    <div class="max-w-full h-screen mx-auto shadow-lg bg-white px-2 py-4 rounded-lg lg:mt-6">
+    <div class="max-w-full min-h-screen mx-auto shadow-lg bg-white px-2 py-4 rounded-lg lg:mt-6">
         <div class="container mx-auto lg:w-5/6">
-            <div class="px-2 py-0 lg:py-2 lg:px-4">
-                <h3 class="text-lg text-center font-medium leading-6 text-gray-900">
-                    Create New Blog
+            <div class="flex px-2 py-0 lg:py-2 lg:px-4">
+                <div
+                    class="px-4 py-1 rounded-lg cursor-pointer bg-gray-500 text-white"
+                    @click="$router.back()">
+                    Back
+                </div>
+                <h3 class="w-full text-lg text-center font-medium leading-6 text-gray-900">
+                    {{ formData.isUpdate ? 'Update Blog' : 'Create New Blog' }}
                 </h3>
             </div>
             <div class="md:grid md:grid-cols-1 md:gap-6">
@@ -61,14 +66,15 @@
                                     </p>
                             </div>
                         </div>
-                        <div class="mb-6 w-full h-52">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Blog Description
-                            </label>
-                            <span
-                                class="text-red-500 my-5"
-                                v-for="error in v$.description.$errors"
-                                :key="error.$uid">
+                        <div class="mb-6 w-full">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                    Blog Description
+                                </label>
+                                <span
+                                    class="text-red-500 my-5"
+                                    v-for="error in v$.description.$errors"
+                                    :key="error.$uid">
                                     {{ error.$message }}
                                 </span>
                                 <div class="relative">
@@ -80,6 +86,7 @@
                                         toolbar="full"
                                     />
                                 </div>
+                            </div>
 
                             <div class="w-full mt-6">
                                 <button type="submit" v-if="!loading"
@@ -116,16 +123,17 @@
 
 </style>
 <script setup>
-import { reactive, ref, onMounted, computed } from 'vue'
+import { reactive, ref, computed } from 'vue'
 import { useStore } from 'vuex'
 import { QuillEditor } from '@vueup/vue-quill'
 import BlotFormatter from 'quill-blot-formatter'
 import ImageUploader from 'quill-image-uploader';
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
-import { useRouter } from 'vue-router'
+import {useRoute, useRouter} from 'vue-router'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength } from '@vuelidate/validators'
 const router = useRouter()
+const route = useRoute()
 const store = useStore()
 const loading = ref(false)
 
@@ -216,6 +224,27 @@ const clear = () => {
     formData.coverPhoto = null
     formData.isUpdate = false
 }
+
+const post = ref({});
+
+const getPost = async () => {
+    if(route.params.id) {
+        const param = {
+            post: route.params.id,
+            slug: 'test'
+        }
+        post.value = await store.dispatch('blogModule/getPost', param);
+        formData.title =  post.value.title
+        formData.description = post.value.description
+        formData.coverPhoto = post.value.photo
+        formData.isUpdate = true
+    }else{
+        console.log('getPost')
+    }
+
+}
+
+getPost();
 
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.css">

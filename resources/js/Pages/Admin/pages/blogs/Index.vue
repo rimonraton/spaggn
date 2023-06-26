@@ -21,16 +21,13 @@
                                 <th
                                     class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
                                     Blog Title</th>
-                                <th
-                                    class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs
-                                    font-semibold text-left uppercase border-l-0 border-r-0
-                                    whitespace-nowrap min-w-140-px w-20">
+                                <th class="px-4 py-3 bg-gray-50 text-gray-700 text-xs font-semibold text-center uppercase min-w-140-px w-20 ">
                                     Action
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            <tr class="text-gray-500" v-for="post in posts.data" :key="post.id">
+                            <tr class="text-gray-500" v-for="(post, index) in posts.data" :key="post.id">
                                 <th
                                     class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
                                     <img :src="post.photo" alt="post cover" class="w-20">
@@ -42,21 +39,22 @@
 
                                 <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                                     <div class="flex gap-2">
-<!--                                            @click="viewPost(post.id)"-->
-                                            <div
-                                                class="disabled cursor-pointer p-2 rounded-lg border hover:text-blue-500 hover:border-blue-500">
-                                                View
-                                            </div>
-<!--                                    @click="editPost(post.id)"-->
-                                        <div
-                                            class="disabled cursor-pointer p-2 rounded-lg border hover:text-slate-500 hover:border-slate-500">
-                                           Edit
-                                        </div>
+                                        <unicon
+                                            class="cursor-pointer"
+                                            @click="deletePost(post.id, index)"
+                                            name="trash-alt" fill="deeppink" />
+
+                                        <unicon
+                                            class="cursor-pointer"
+                                            @click="editPost(post.id)"
+                                            name="edit" fill="gray" />
+
+                                        <unicon
+                                            class="cursor-pointer"
+                                            @click="viewPost(post.id)"
+                                            name="eye" fill="gray" />
+
                                     </div>
-<!--                                    <div>-->
-<!--                                        <span class="cursor-pointer p-2 rounded-lg border text-red-500 border-red-500">-->
-<!--                                            Profile not yet submit</span>-->
-<!--                                    </div>-->
                                 </td>
                             </tr>
                         </tbody>
@@ -82,16 +80,24 @@ const router = useRouter()
 const artistData = ref(null)
 const store = useStore()
 const viewPost = (id) => {
-    router.push({ name: 'ViewArtistProfile', params: { id: id }, query: { view: 'artist' } })
+    router.push({ name: 'ShowPost', params: { id: id }, query: { view: 'AdminBlogs' } })
 }
 const editPost = (id) => {
     router.push({ name: 'AdminBlogsUpdate', params: { id: id }, query: { view: 'AdminBlogs' } })
 }
 
-const approvedArtist = async (id) => {
-    const res = await store.dispatch('adminModule/approvedArtist', {id: id})
-    artistData.value = res.data
+const deletePost = async (id, index) => {
+    if(confirm("Do you really want to delete?")) {
+        const res = await store.dispatch('blogModule/deletePost', {id})
+        if (res === 1) {
+            posts.value.data.splice(index, 1)
+            console.log('data deleted')
+        }
+        console.log(res)
+    }
 }
+
+
 const posts = ref({});
 
 const getPosts = async (page = 1) => {

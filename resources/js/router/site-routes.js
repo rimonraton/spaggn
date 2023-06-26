@@ -1,16 +1,16 @@
-const Funding = () => import('../Views/Site/Funding.vue');
-const ExploreCharities = () => import('../Views/Site/Charities.vue');
-const CharityDetails = () => import( "../Views/Site/CharityDetails.vue");
-const ExploreArtists = () => import( "../Views/Site/Artists.vue");
-const Blog = () => import( "../Views/Site/Blogs.vue");
-const BlogDetails = () => import( "../Views/Site/BlogDetails.vue");
+const Funding = () => import('../Pages/Site/Funding.vue');
+const ExploreCharities = () => import('../Pages/Site/Charities.vue');
+const CharityDetails = () => import( "../Pages/Site/CharityDetails.vue");
+const ExploreArtists = () => import( "../Pages/Site/Artists.vue");
+const Blog = () => import( "../Pages/Site/Blogs.vue");
+const BlogDetails = () => import( "../Pages/Site/BlogDetails.vue");
 
-const Projects = () => import( "../Views/Site/Projects.vue");
-const Home = () => import( "../Views/Site/Home.vue");
-const Welcome = () => import( "../Views/Site/Welcome.vue");
-const ArtistDetails = () => import( "../Views/Site/ArtistDetails.vue");
+const Projects = () => import( "../Pages/Site/Projects.vue");
+const Home = () => import( "../Pages/Site/Home.vue");
+const Welcome = () => import( "../Pages/Site/Welcome.vue");
+const ArtistDetails = () => import( "../Pages/Site/ArtistDetails.vue");
 const LandingLayout = () => import('../layouts/LandingLayout.vue')
-const ListCharities = () => import('../Views/Site/ListCharities.vue')
+const ListCharities = () => import('../Pages/Site/ListCharities.vue')
 
 export default [
      {

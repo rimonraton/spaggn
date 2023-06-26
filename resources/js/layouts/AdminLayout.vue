@@ -16,8 +16,8 @@
 </template>
 
 <script setup>
-import Header from '../Views/Admin/helper/Header.vue';
-import Sidebar from '../Views/Admin/helper/Sidebar.vue'
+import Header from '../Pages/Admin/helper/Header.vue';
+import Sidebar from '../Pages/Admin/helper/Sidebar.vue'
 import { ref } from 'vue'
 const isOpen = ref(false)
 const openingMenu = () => {

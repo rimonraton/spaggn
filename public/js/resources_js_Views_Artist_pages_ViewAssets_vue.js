@@ -37,9 +37,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose;
-
     __expose();
-
     var __returned__ = {};
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -61,17 +59,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
-
-
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 
@@ -86,15 +80,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   emits: ['close'],
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose,
-        emit = _ref.emit;
-
+      emit = _ref.emit;
     __expose();
-
     var props = __props;
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_2__.useStore)();
-    var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
-    var loading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var formData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.useStore)();
+    var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
+    var loading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var formData = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
       name: '',
       description: '',
       rights: false,
@@ -108,28 +100,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: ""
       }]
     });
-
     var addProperty = function addProperty() {
       formData.propertyData.push({
         property: '',
         value: ''
       });
     };
-
     var remove = function remove(index) {
       formData.propertyData.splice(index, 1);
     };
-
     var onFileChangePhoto = function onFileChangePhoto(e, photo) {
       if (e.target.files[0]) {
         var mimeType = e.target.files[0].type;
         console.log('split..', mimeType.split('/'));
-
         if (mimeType.split('/')[0] === 'image') {
           var reader = new FileReader(); // instance of the FileReader
-
           reader.readAsDataURL(e.target.files[0]); // read the local file
-
           reader.onloadend = function () {
             // set video data as background of div
             formData[photo] = reader.result;
@@ -139,9 +125,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         } else if (mimeType.split('/')[0] === 'video') {
           formData.videosrc = e.target.files[0];
           var reader = new FileReader(); // instance of the FileReader
-
           reader.readAsDataURL(e.target.files[0]); // read the local file
-
           reader.onloadend = function () {
             // set video data as background of div
             formData[photo] = reader.result;
@@ -155,72 +139,60 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         alert("file is empty!");
       }
     };
-
     var saveArtistAssetData = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         var assetData;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                // console.log('form data...',formData)
-                // return
-                assetData = new FormData();
-                assetData.append("name", formData.name);
-                assetData.append("description", formData.description);
-                assetData.append("rights", formData.rights);
-                assetData.append("terms", formData.terms);
-                assetData.append("asset", formData.asset);
-                assetData.append("fileExtension", formData.fileExtension);
-                assetData.append("fileFormat", formData.fileFormat);
-                assetData.append("videosrc", formData.videosrc);
-                assetData.append("propertyData", JSON.stringify(formData.propertyData));
-                _context.prev = 10;
-                loading.value = true;
-                _context.next = 14;
-                return store.dispatch('artistModule/createArtistAsset', assetData);
-
-              case 14:
-                clear();
-                router.push('/view-your-assets');
-                loading.value = false;
-
-                if (props.bottomCloseButton) {
-                  emit('close');
-                }
-
-                _context.next = 23;
-                break;
-
-              case 20:
-                _context.prev = 20;
-                _context.t0 = _context["catch"](10);
-                console.log(_context.t0);
-
-              case 23:
-              case "end":
-                return _context.stop();
-            }
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              // console.log('form data...',formData)
+              // return
+              assetData = new FormData();
+              assetData.append("name", formData.name);
+              assetData.append("description", formData.description);
+              assetData.append("rights", formData.rights);
+              assetData.append("terms", formData.terms);
+              assetData.append("asset", formData.asset);
+              assetData.append("fileExtension", formData.fileExtension);
+              assetData.append("fileFormat", formData.fileFormat);
+              assetData.append("videosrc", formData.videosrc);
+              assetData.append("propertyData", JSON.stringify(formData.propertyData));
+              _context.prev = 10;
+              loading.value = true;
+              _context.next = 14;
+              return store.dispatch('artistModule/createArtistAsset', assetData);
+            case 14:
+              clear();
+              router.push('/view-your-assets');
+              loading.value = false;
+              if (props.bottomCloseButton) {
+                emit('close');
+              }
+              _context.next = 23;
+              break;
+            case 20:
+              _context.prev = 20;
+              _context.t0 = _context["catch"](10);
+              console.log(_context.t0);
+            case 23:
+            case "end":
+              return _context.stop();
           }
         }, _callee, null, [[10, 20]]);
       }));
-
       return function saveArtistAssetData() {
         return _ref2.apply(this, arguments);
       };
     }();
-
     var toggleModal = function toggleModal() {
       emit('close');
     };
-
     var clear = function clear() {
       formData.name = '', formData.description = '', formData.rights = false, formData.terms = false, formData.asset = null, formData.fileExtension = '', formData.fileFormat = '', formData.videosrc = null, formData.propertyData = [{
         property: "",
         value: ""
       }];
     };
-
     var __returned__ = {
       props: props,
       store: store,
@@ -234,17 +206,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       emit: emit,
       toggleModal: toggleModal,
       clear: clear,
-      reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
-      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
-
+      reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       get useStore() {
-        return vuex__WEBPACK_IMPORTED_MODULE_2__.useStore;
+        return vuex__WEBPACK_IMPORTED_MODULE_1__.useStore;
       },
-
       get useRouter() {
-        return vue_router__WEBPACK_IMPORTED_MODULE_3__.useRouter;
+        return vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter;
       }
-
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -297,20 +266,18 @@ __webpack_require__.r(__webpack_exports__);
   emits: ['close', 'submit'],
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose,
-        emit = _ref.emit;
-
+      emit = _ref.emit;
     __expose();
-
     var toggleModal = function toggleModal() {
       emit('close');
     };
-
     var submitForm = function submitForm() {
       emit('submit');
-    }; // const toggleModal = () => {
+    };
+
+    // const toggleModal = () => {
     //     showModal.value = !showModal.value;
     // }
-
 
     var __returned__ = {
       emit: emit,
@@ -337,17 +304,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
-
-
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.mjs");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 
@@ -366,15 +329,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   emits: ['close'],
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose,
-        emit = _ref.emit;
-
+      emit = _ref.emit;
     __expose();
-
     var props = __props;
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_2__.useStore)();
-    var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
-    var loading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var formData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_1__.useStore)();
+    var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
+    var loading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var formData = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
       id: null,
       name: '',
       description: '',
@@ -389,28 +350,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: ""
       }]
     });
-
     var addProperty = function addProperty() {
       formData.propertyData.push({
         property: '',
         value: ''
       });
     };
-
     var remove = function remove(index) {
       formData.propertyData.splice(index, 1);
     };
-
     var onFileChangePhoto = function onFileChangePhoto(e, photo) {
       if (e.target.files[0]) {
         var mimeType = e.target.files[0].type;
         console.log('split..', mimeType.split('/'));
-
         if (mimeType.split('/')[0] === 'image') {
           var reader = new FileReader(); // instance of the FileReader
-
           reader.readAsDataURL(e.target.files[0]); // read the local file
-
           reader.onloadend = function () {
             // set video data as background of div
             formData[photo] = reader.result;
@@ -420,9 +375,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         } else if (mimeType.split('/')[0] === 'video') {
           formData.videosrc = e.target.files[0];
           var reader = new FileReader(); // instance of the FileReader
-
           reader.readAsDataURL(e.target.files[0]); // read the local file
-
           reader.onloadend = function () {
             // set video data as background of div
             formData[photo] = reader.result;
@@ -436,87 +389,75 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         alert("file is empty!");
       }
     };
-
     var saveArtistAssetData = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         var assetData;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                // console.log('form data...',formData)
-                // return
-                assetData = new FormData();
-                assetData.append("id", formData.id);
-                assetData.append("name", formData.name);
-                assetData.append("description", formData.description);
-                assetData.append("rights", formData.rights);
-                assetData.append("terms", formData.terms);
-                assetData.append("asset", formData.asset);
-                assetData.append("fileExtension", formData.fileExtension);
-                assetData.append("fileFormat", formData.fileFormat);
-                assetData.append("videosrc", formData.videosrc);
-                assetData.append("propertyData", JSON.stringify(formData.propertyData));
-                _context.prev = 11;
-                loading.value = true;
-                _context.next = 15;
-                return store.dispatch('artistModule/updateArtistAssets', assetData);
-
-              case 15:
-                loading.value = false;
-                clear();
-                router.push('/view-your-assets');
-
-                if (props.bottomCloseButton) {
-                  emit('close');
-                }
-
-                _context.next = 24;
-                break;
-
-              case 21:
-                _context.prev = 21;
-                _context.t0 = _context["catch"](11);
-                console.log(_context.t0);
-
-              case 24:
-              case "end":
-                return _context.stop();
-            }
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              // console.log('form data...',formData)
+              // return
+              assetData = new FormData();
+              assetData.append("id", formData.id);
+              assetData.append("name", formData.name);
+              assetData.append("description", formData.description);
+              assetData.append("rights", formData.rights);
+              assetData.append("terms", formData.terms);
+              assetData.append("asset", formData.asset);
+              assetData.append("fileExtension", formData.fileExtension);
+              assetData.append("fileFormat", formData.fileFormat);
+              assetData.append("videosrc", formData.videosrc);
+              assetData.append("propertyData", JSON.stringify(formData.propertyData));
+              _context.prev = 11;
+              loading.value = true;
+              _context.next = 15;
+              return store.dispatch('artistModule/updateArtistAssets', assetData);
+            case 15:
+              loading.value = false;
+              clear();
+              router.push('/view-your-assets');
+              if (props.bottomCloseButton) {
+                emit('close');
+              }
+              _context.next = 24;
+              break;
+            case 21:
+              _context.prev = 21;
+              _context.t0 = _context["catch"](11);
+              console.log(_context.t0);
+            case 24:
+            case "end":
+              return _context.stop();
           }
         }, _callee, null, [[11, 21]]);
       }));
-
       return function saveArtistAssetData() {
         return _ref2.apply(this, arguments);
       };
     }();
-
     var toggleModal = function toggleModal() {
       emit('close');
     };
-
     var clear = function clear() {
       formData.name = '', formData.description = '', formData.rights = false, formData.terms = false, formData.asset = null, formData.fileExtension = '', formData.fileFormat = '', formData.videosrc = null, formData.propertyData = [{
         property: "",
         value: ""
       }];
     };
-
-    (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(function () {
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
       // console.log('props.assetData', props.assetData.properties)
       formData.id = props.assetData.id;
       formData.name = props.assetData.name;
       formData.description = props.assetData.description;
       formData.asset = props.assetData.file;
       formData.fileFormat = props.assetData.fileType;
-      formData.fileExtension = props.assetData.ext; // rights: false,
+      formData.fileExtension = props.assetData.ext;
+      // rights: false,
       // terms: false,
       // asset: null,
       // fileExtension: '',
       // fileFormat: '',
       // videosrc: null,
-
       if (props.assetData.property_data) {
         formData.propertyData = JSON.parse(props.assetData.property_data);
       }
@@ -534,18 +475,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       emit: emit,
       toggleModal: toggleModal,
       clear: clear,
-      reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
-      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
-      onMounted: vue__WEBPACK_IMPORTED_MODULE_1__.onMounted,
-
+      reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
       get useStore() {
-        return vuex__WEBPACK_IMPORTED_MODULE_2__.useStore;
+        return vuex__WEBPACK_IMPORTED_MODULE_1__.useStore;
       },
-
       get useRouter() {
-        return vue_router__WEBPACK_IMPORTED_MODULE_3__.useRouter;
+        return vue_router__WEBPACK_IMPORTED_MODULE_2__.useRouter;
       }
-
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -598,20 +536,18 @@ __webpack_require__.r(__webpack_exports__);
   emits: ['close', 'submit'],
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose,
-        emit = _ref.emit;
-
+      emit = _ref.emit;
     __expose();
-
     var toggleModal = function toggleModal() {
       emit('close');
     };
-
     var submitForm = function submitForm() {
       emit('submit');
-    }; // const toggleModal = () => {
+    };
+
+    // const toggleModal = () => {
     //     showModal.value = !showModal.value;
     // }
-
 
     var __returned__ = {
       emit: emit,
@@ -638,23 +574,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var _ocrv_vue_tailwind_pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ocrv/vue-tailwind-pagination */ "./node_modules/@ocrv/vue-tailwind-pagination/dist/vue-tailwind-pagination.es.js");
-/* harmony import */ var _helpers_modal_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers/modal.vue */ "./resources/js/Views/Artist/helpers/modal.vue");
-/* harmony import */ var _helpers_assetmodal_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helpers/assetmodal.vue */ "./resources/js/Views/Artist/helpers/assetmodal.vue");
-/* harmony import */ var _helpers_assetform_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/assetform.vue */ "./resources/js/Views/Artist/helpers/assetform.vue");
-/* harmony import */ var _helpers_editassetform_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helpers/editassetform.vue */ "./resources/js/Views/Artist/helpers/editassetform.vue");
-/* harmony import */ var _helpers_assetdetails_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../helpers/assetdetails.vue */ "./resources/js/Views/Artist/helpers/assetdetails.vue");
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
-
-
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var _ocrv_vue_tailwind_pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ocrv/vue-tailwind-pagination */ "./node_modules/@ocrv/vue-tailwind-pagination/dist/vue-tailwind-pagination.es.js");
+/* harmony import */ var _helpers_modal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers/modal.vue */ "./resources/js/Views/Artist/helpers/modal.vue");
+/* harmony import */ var _helpers_assetmodal_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers/assetmodal.vue */ "./resources/js/Views/Artist/helpers/assetmodal.vue");
+/* harmony import */ var _helpers_assetform_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helpers/assetform.vue */ "./resources/js/Views/Artist/helpers/assetform.vue");
+/* harmony import */ var _helpers_editassetform_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/editassetform.vue */ "./resources/js/Views/Artist/helpers/editassetform.vue");
+/* harmony import */ var _helpers_assetdetails_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helpers/assetdetails.vue */ "./resources/js/Views/Artist/helpers/assetdetails.vue");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 
@@ -668,25 +600,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   __name: 'ViewAssets',
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose;
-
     __expose();
-
-    var paginationData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
+    var paginationData = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
       current: 1,
       perPage: 0,
       total: 0
     });
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_8__.useStore)();
-    var modalOpen = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var editModalOpen = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var assetmodalOpen = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var assetData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
-    var assetSingledatavalue = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
-
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_7__.useStore)();
+    var modalOpen = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var editModalOpen = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var assetmodalOpen = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var assetData = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)();
+    var assetSingledatavalue = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
     var closeModal = function closeModal() {
       modalOpen.value = !modalOpen.value;
     };
-
     var editModal = function editModal(id) {
       var asset = AsData.value.data.find(function (a) {
         return a.id === id;
@@ -695,94 +623,80 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       console.log(assetData.value);
       editModalOpen.value = !editModalOpen.value;
     };
-
     var closeAssetModal = function closeAssetModal() {
       assetmodalOpen.value = !assetmodalOpen.value;
     };
-
     var artistAsset = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
         var page,
-            res,
-            _args = arguments;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                page = _args.length > 0 && _args[0] !== undefined ? _args[0] : 1;
-                _context.next = 3;
-                return store.dispatch("artistModule/getArtistAssets", page);
-
-              case 3:
-                res = _context.sent;
-                paginationData.current = page;
-                paginationData.perPage = store.state.artistModule.artistAsset.per_page;
-                paginationData.total = store.state.artistModule.artistAsset.total;
-
-              case 7:
-              case "end":
-                return _context.stop();
-            }
+          res,
+          _args = arguments;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              page = _args.length > 0 && _args[0] !== undefined ? _args[0] : 1;
+              _context.next = 3;
+              return store.dispatch("artistModule/getArtistAssets", page);
+            case 3:
+              res = _context.sent;
+              paginationData.current = page;
+              paginationData.perPage = store.state.artistModule.artistAsset.per_page;
+              paginationData.total = store.state.artistModule.artistAsset.total;
+            case 7:
+            case "end":
+              return _context.stop();
           }
         }, _callee);
       }));
-
       return function artistAsset() {
         return _ref2.apply(this, arguments);
       };
     }();
-
     var getImage = function getImage(image) {
       return image;
     };
-
     var viewAsset = function viewAsset(id) {
       var assetsingleData = AsData.value.data.find(function (a) {
         return a.id === id;
       });
       assetSingledatavalue.value = assetsingleData;
-      assetmodalOpen.value = !assetmodalOpen.value; // console.log(`view asset-${id}`, assetsingleData)
+      assetmodalOpen.value = !assetmodalOpen.value;
+
+      // console.log(`view asset-${id}`, assetsingleData)
     };
 
     var deleteAsset = /*#__PURE__*/function () {
-      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(id) {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(id) {
         var res;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                if (!confirm('Are you sure you want to delete your asset?')) {
-                  _context2.next = 6;
-                  break;
-                }
-
-                _context2.next = 3;
-                return store.dispatch("artistModule/removeArtistAssets", {
-                  id: id
-                });
-
-              case 3:
-                res = _context2.sent;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) switch (_context2.prev = _context2.next) {
+            case 0:
+              if (!confirm('Are you sure you want to delete your asset?')) {
                 _context2.next = 6;
                 break;
-
-              case 6:
-              case "end":
-                return _context2.stop();
-            }
+              }
+              _context2.next = 3;
+              return store.dispatch("artistModule/removeArtistAssets", {
+                id: id
+              });
+            case 3:
+              res = _context2.sent;
+              _context2.next = 6;
+              break;
+            case 6:
+            case "end":
+              return _context2.stop();
           }
         }, _callee2);
       }));
-
       return function deleteAsset(_x) {
         return _ref3.apply(this, arguments);
       };
     }();
-
-    var AsData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
+    var AsData = (0,vue__WEBPACK_IMPORTED_MODULE_0__.computed)(function () {
       return Object.keys(store.state.artistModule.artistAsset).length != 0 ? store.state.artistModule.artistAsset : {};
     });
-    (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(function () {
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
       // console.log('form..', store.state.artistModule.artistAsset)
       artistAsset();
     });
@@ -802,29 +716,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       viewAsset: viewAsset,
       deleteAsset: deleteAsset,
       AsData: AsData,
-      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
-      reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
-      onMounted: vue__WEBPACK_IMPORTED_MODULE_1__.onMounted,
-      computed: vue__WEBPACK_IMPORTED_MODULE_1__.computed,
-
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
+      reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
+      computed: vue__WEBPACK_IMPORTED_MODULE_0__.computed,
       get useStore() {
-        return vuex__WEBPACK_IMPORTED_MODULE_8__.useStore;
+        return vuex__WEBPACK_IMPORTED_MODULE_7__.useStore;
       },
-
       get VueTailwindPagination() {
-        return _ocrv_vue_tailwind_pagination__WEBPACK_IMPORTED_MODULE_2__["default"];
+        return _ocrv_vue_tailwind_pagination__WEBPACK_IMPORTED_MODULE_1__["default"];
       },
-
-      Modal: _helpers_modal_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      AssetAboutModal: _helpers_assetmodal_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      AssetForm: _helpers_assetform_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      EditAssetForm: _helpers_editassetform_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-      AboutAsset: _helpers_assetdetails_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-
+      Modal: _helpers_modal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      AssetAboutModal: _helpers_assetmodal_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      AssetForm: _helpers_assetform_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      EditAssetForm: _helpers_editassetform_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      AboutAsset: _helpers_assetdetails_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
       get format() {
-        return date_fns__WEBPACK_IMPORTED_MODULE_9__["default"];
+        return date_fns__WEBPACK_IMPORTED_MODULE_8__["default"];
       }
-
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -844,7 +753,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
@@ -882,30 +791,19 @@ var _hoisted_10 = {
 var _hoisted_11 = {
   "class": "text-base leading-normal text-gray-600 dark:text-white mt-2"
 };
-
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-3xl font-medium text-gray-600 dark:text-white mt-8 md:mt-10"
-}, null, -1
-/* HOISTED */
-);
+}, null, -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [$props.assetDataValue.fileType == 'image' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: $props.assetDataValue.file,
     alt: "img",
     "class": "w-full h-96"
-  }, null, 8
-  /* PROPS */
-  , _hoisted_5)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.assetDataValue.fileType == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
+  }, null, 8 /* PROPS */, _hoisted_5)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.assetDataValue.fileType == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
     src: $props.assetDataValue.file,
     id: "video_here"
-  }, null, 8
-  /* PROPS */
-  , _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.assetDataValue.name), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.assetDataValue.description), 1
-  /* TEXT */
-  ), _hoisted_12])])]);
+  }, null, 8 /* PROPS */, _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.assetDataValue.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.assetDataValue.description), 1 /* TEXT */), _hoisted_12])])]);
 }
 
 /***/ }),
@@ -918,7 +816,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
@@ -931,19 +829,12 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "px-4 py-2 sm:px-0 text-center"
 };
-
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "text-xl font-medium leading-6 text-gray-900"
-}, "Add New Asset", -1
-/* HOISTED */
-);
-
+}, "Add New Asset", -1 /* HOISTED */);
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500 h-6 w-6 text-2xl block"
-}, " × ", -1
-/* HOISTED */
-);
-
+}, " × ", -1 /* HOISTED */);
 var _hoisted_6 = [_hoisted_5];
 var _hoisted_7 = {
   "class": "md:grid md:grid-cols-1 md:gap-6"
@@ -955,21 +846,14 @@ var _hoisted_9 = ["onSubmit"];
 var _hoisted_10 = {
   "class": "grid md:grid-cols-1 md:gap-6 mb-6"
 };
-
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "block text-xl font-medium text-gray-700"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Upload File "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500"
-}, "*")], -1
-/* HOISTED */
-);
-
+}, "*")], -1 /* HOISTED */);
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm"
-}, "Add your unique image / video / audio file", -1
-/* HOISTED */
-);
-
+}, "Add your unique image / video / audio file", -1 /* HOISTED */);
 var _hoisted_13 = {
   "class": "mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
 };
@@ -979,7 +863,6 @@ var _hoisted_14 = {
 var _hoisted_15 = {
   key: 0
 };
-
 var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "mx-auto h-12 w-12 text-gray-400",
   stroke: "currentColor",
@@ -991,10 +874,7 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "stroke-width": "2",
   "stroke-linecap": "round",
   "stroke-linejoin": "round"
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_17 = [_hoisted_16];
 var _hoisted_18 = {
   key: 1
@@ -1018,57 +898,33 @@ var _hoisted_25 = {
   "for": "file-upload",
   "class": "relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
 };
-
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Upload a file", -1
-/* HOISTED */
-);
-
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Upload a file", -1 /* HOISTED */);
 var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "pl-1"
-}, "or drag and drop", -1
-/* HOISTED */
-);
-
+}, "or drag and drop", -1 /* HOISTED */);
 var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-xs text-gray-500"
-}, "JPG, PNG, GIF, WEBP, MP4 or MP3. Max 30mb.", -1
-/* HOISTED */
-);
-
+}, "JPG, PNG, GIF, WEBP, MP4 or MP3. Max 30mb.", -1 /* HOISTED */);
 var _hoisted_29 = {
   "class": "mb-6 w-full group"
 };
-
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "floating_email",
   "class": "peer-focus:font-medium text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Name "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500"
-}, "*")], -1
-/* HOISTED */
-);
-
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
-/* HOISTED */
-);
-
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Choose a unique name for your NFT", -1
-/* HOISTED */
-);
-
+}, "*")], -1 /* HOISTED */);
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Choose a unique name for your NFT", -1 /* HOISTED */);
 var _hoisted_33 = {
   "class": "relative mb-6 w-full"
 };
-
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "personal_story",
   "class": "block mb-2 text-xl font-medium text-gray-900 dark:text-gray-400"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Description "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm"
-}, "Describe your NFT, help other users understand what's unique about it")], -1
-/* HOISTED */
-);
-
+}, "Describe your NFT, help other users understand what's unique about it")], -1 /* HOISTED */);
 var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "grid grid-cols-1 md:grid-cols-5 md:gap-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -1077,10 +933,7 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "block text-xl font-medium text-gray-700"
 }, " Properties "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm"
-}, "List attributes that represents your NFT (color, shape, mood, etc..)")])], -1
-/* HOISTED */
-);
-
+}, "List attributes that represents your NFT (color, shape, mood, etc..)")])], -1 /* HOISTED */);
 var _hoisted_36 = {
   "class": "mb-6 w-full group col-span-2"
 };
@@ -1123,7 +976,6 @@ var _hoisted_49 = {
   "class": "inline-flex items-center justify-center px-4 py-2 font-semibold w-full leading-6 text-sm shadow rounded-md text-white bg-blue-700 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed uppercase",
   disabled: ""
 };
-
 var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "animate-spin -ml-1 mr-3 h-5 w-5 text-white",
   xmlns: "http://www.w3.org/2000/svg",
@@ -1140,9 +992,7 @@ var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "opacity-75",
   fill: "currentColor",
   d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-})], -1
-/* HOISTED */
-);
+})], -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, $props.bottomCloseButton ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h3", {
@@ -1157,14 +1007,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_11, _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [$setup.formData.asset == null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, _hoisted_17)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [$setup.formData.fileFormat == 'image' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     "class": "mx-auto w-12 h-12",
     src: $setup.formData.asset
-  }, null, 8
-  /* PROPS */
-  , _hoisted_20)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.formData.fileFormat == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
+  }, null, 8 /* PROPS */, _hoisted_20)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.formData.fileFormat == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
     src: $setup.formData.asset,
     id: "video_here"
-  }, null, 8
-  /* PROPS */
-  , _hoisted_23), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_23), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "file-upload",
     onChange: _cache[1] || (_cache[1] = function ($event) {
       return $setup.onFileChangePhoto($event, 'asset');
@@ -1172,9 +1018,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "file-upload",
     type: "file",
     "class": "sr-only"
-  }, null, 32
-  /* HYDRATE_EVENTS */
-  )]), _hoisted_27]), _hoisted_28])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 32 /* HYDRATE_EVENTS */)]), _hoisted_27]), _hoisted_28])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.formData.name = $event;
@@ -1183,9 +1027,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer",
     placeholder: "Enter the NTF's name",
     required: ""
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     id: "personal_story",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $setup.formData.description = $event;
@@ -1193,9 +1035,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     rows: "4",
     "class": "block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300",
     placeholder: "NFT description..."
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.description]])]), _hoisted_35, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.formData.propertyData, function (pd, index) {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.description]])]), _hoisted_35, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.formData.propertyData, function (pd, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "grid grid-cols-1 md:grid-cols-5 md:gap-6",
       key: index
@@ -1208,9 +1048,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       id: "floating_first_name",
       "class": "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer",
       placeholder: "Property"
-    }, null, 8
-    /* PROPS */
-    , _hoisted_37), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.property]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, null, 8 /* PROPS */, _hoisted_37), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.property]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return pd.value = $event;
@@ -1219,24 +1057,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       id: "floating_last_name",
       "class": "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer",
       placeholder: "Value"
-    }, null, 8
-    /* PROPS */
-    , _hoisted_39), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.value]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    }, null, 8 /* PROPS */, _hoisted_39), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.value]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
       "class": "bg-red-500 px-3 py-2 rounded text-xl text-white cursor-pointer mr-2",
       onClick: function onClick($event) {
         return $setup.remove(index);
       }
-    }, "X", 8
-    /* PROPS */
-    , _hoisted_41), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index > 0]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    }, "X", 8 /* PROPS */, _hoisted_41), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index > 0]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
       "class": "bg-blue-500 px-3 py-2 rounded text-xl text-white cursor-pointer",
       onClick: $setup.addProperty
-    }, "+", 512
-    /* NEED_PATCH */
-    ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index == 0]])])]);
-  }), 128
-  /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, "+", 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index == 0]])])]);
+  }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_44, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "default-checkbox",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $setup.formData.rights = $event;
@@ -1244,9 +1074,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "checkbox",
     value: "rights",
     "class": "w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.formData.rights]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" I approve that I'm the owner or have the rights of publication and sale. ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.formData.rights]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" I approve that I'm the owner or have the rights of publication and sale. ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_46, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "checked-checkbox",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $setup.formData.terms = $event;
@@ -1254,11 +1082,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "checkbox",
     value: "terms",
     "class": "w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.formData.terms]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" I approve NFTrade's Terms & Conditions ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [!$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_48, " Upload Your Asset ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_49, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your Asset is Uploading... ")]))])], 40
-  /* PROPS, HYDRATE_EVENTS */
-  , _hoisted_9)])])])]);
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.formData.terms]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" I approve NFTrade's Terms & Conditions ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_47, [!$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_48, " Upload Your Asset ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_49, [_hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your Asset is Uploading... ")]))])], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_9)])])])]);
 }
 
 /***/ }),
@@ -1271,7 +1095,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
@@ -1292,13 +1116,9 @@ var _hoisted_4 = {
 var _hoisted_5 = {
   "class": "text-3xl font-semibold"
 };
-
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500 h-6 w-6 text-2xl block"
-}, " × ", -1
-/* HOISTED */
-);
-
+}, " × ", -1 /* HOISTED */);
 var _hoisted_7 = [_hoisted_6];
 var _hoisted_8 = {
   "class": "relative p-6 flex-auto"
@@ -1312,9 +1132,7 @@ var _hoisted_10 = {
   "class": "opacity-25 fixed inset-0 z-40 bg-black"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [$props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("content"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("header"), $props.title != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [$props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("content"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("header"), $props.title != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
     "class": "text-3xl font-semibold cursor-pointer",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.toggleModal();
@@ -1326,18 +1144,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.toggleModal();
     })
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.closeButtonText), 1
-  /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.bottomSubmitButton ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.closeButtonText), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.bottomSubmitButton ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
     "class": "text-white bg-blue-600 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 rounded",
     type: "button",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.submitForm();
     })
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.buttonText), 1
-  /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.buttonText), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -1350,7 +1164,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
@@ -1363,19 +1177,12 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "px-4 py-2 sm:px-0 text-center"
 };
-
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "text-xl font-medium leading-6 text-gray-900"
-}, "Edit Asset", -1
-/* HOISTED */
-);
-
+}, "Edit Asset", -1 /* HOISTED */);
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500 h-6 w-6 text-2xl block"
-}, " × ", -1
-/* HOISTED */
-);
-
+}, " × ", -1 /* HOISTED */);
 var _hoisted_6 = [_hoisted_5];
 var _hoisted_7 = {
   "class": "md:grid md:grid-cols-1 md:gap-6"
@@ -1387,21 +1194,14 @@ var _hoisted_9 = ["onSubmit"];
 var _hoisted_10 = {
   "class": "grid md:grid-cols-1 md:gap-6 mb-6"
 };
-
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "block text-xl font-medium text-gray-700"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Upload File "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500"
-}, "*")], -1
-/* HOISTED */
-);
-
+}, "*")], -1 /* HOISTED */);
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm"
-}, "Add your unique image / video / audio file", -1
-/* HOISTED */
-);
-
+}, "Add your unique image / video / audio file", -1 /* HOISTED */);
 var _hoisted_13 = {
   "class": "mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
 };
@@ -1411,7 +1211,6 @@ var _hoisted_14 = {
 var _hoisted_15 = {
   key: 0
 };
-
 var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "mx-auto h-12 w-12 text-gray-400",
   stroke: "currentColor",
@@ -1423,10 +1222,7 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "stroke-width": "2",
   "stroke-linecap": "round",
   "stroke-linejoin": "round"
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_17 = [_hoisted_16];
 var _hoisted_18 = {
   key: 1
@@ -1450,57 +1246,33 @@ var _hoisted_25 = {
   "for": "file-upload",
   "class": "relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
 };
-
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Upload a file", -1
-/* HOISTED */
-);
-
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Upload a file", -1 /* HOISTED */);
 var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "pl-1"
-}, "or drag and drop", -1
-/* HOISTED */
-);
-
+}, "or drag and drop", -1 /* HOISTED */);
 var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-xs text-gray-500"
-}, "JPG, PNG, GIF, WEBP, MP4 or MP3. Max 30mb.", -1
-/* HOISTED */
-);
-
+}, "JPG, PNG, GIF, WEBP, MP4 or MP3. Max 30mb.", -1 /* HOISTED */);
 var _hoisted_29 = {
   "class": "mb-6 w-full group"
 };
-
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "floating_email",
   "class": "peer-focus:font-medium text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Name "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500"
-}, "*")], -1
-/* HOISTED */
-);
-
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
-/* HOISTED */
-);
-
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Choose a unique name for your NFT", -1
-/* HOISTED */
-);
-
+}, "*")], -1 /* HOISTED */);
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Choose a unique name for your NFT", -1 /* HOISTED */);
 var _hoisted_33 = {
   "class": "relative mb-6 w-full"
 };
-
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "personal_story",
   "class": "block mb-2 text-xl font-medium text-gray-900 dark:text-gray-400"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Description "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm"
-}, "Describe your NFT, help other users understand what's unique about it")], -1
-/* HOISTED */
-);
-
+}, "Describe your NFT, help other users understand what's unique about it")], -1 /* HOISTED */);
 var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "grid grid-cols-1 md:grid-cols-5 md:gap-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -1509,10 +1281,7 @@ var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "block text-xl font-medium text-gray-700"
 }, " Properties "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-sm"
-}, "List attributes that represents your NFT (color, shape, mood, etc..)")])], -1
-/* HOISTED */
-);
-
+}, "List attributes that represents your NFT (color, shape, mood, etc..)")])], -1 /* HOISTED */);
 var _hoisted_36 = {
   "class": "mb-6 w-full group col-span-2"
 };
@@ -1538,7 +1307,6 @@ var _hoisted_44 = {
   "class": "inline-flex items-center justify-center px-4 py-2 font-semibold w-full leading-6 text-sm shadow rounded-md text-white bg-blue-700 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-not-allowed uppercase",
   disabled: ""
 };
-
 var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "animate-spin -ml-1 mr-3 h-5 w-5 text-white",
   xmlns: "http://www.w3.org/2000/svg",
@@ -1555,9 +1323,7 @@ var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "opacity-75",
   fill: "currentColor",
   d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-})], -1
-/* HOISTED */
-);
+})], -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" {{props.assetData}} "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" {{ props.assetData.property_data }} "), _hoisted_4, $props.bottomCloseButton ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("h3", {
@@ -1572,14 +1338,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_11, _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [$setup.formData.asset == null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, _hoisted_17)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [$setup.formData.fileFormat == 'image' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     "class": "mx-auto w-12 h-12",
     src: $setup.formData.asset
-  }, null, 8
-  /* PROPS */
-  , _hoisted_20)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.formData.fileFormat == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
+  }, null, 8 /* PROPS */, _hoisted_20)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.formData.fileFormat == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
     src: $setup.formData.asset,
     id: "video_here"
-  }, null, 8
-  /* PROPS */
-  , _hoisted_23), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_23), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     id: "file-upload",
     onChange: _cache[1] || (_cache[1] = function ($event) {
       return $setup.onFileChangePhoto($event, 'asset');
@@ -1587,9 +1349,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     name: "file-upload",
     type: "file",
     "class": "sr-only"
-  }, null, 32
-  /* HYDRATE_EVENTS */
-  )]), _hoisted_27]), _hoisted_28])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 32 /* HYDRATE_EVENTS */)]), _hoisted_27]), _hoisted_28])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.formData.name = $event;
@@ -1598,9 +1358,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer",
     placeholder: "Enter the NTF's name",
     required: ""
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [_hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     id: "personal_story",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $setup.formData.description = $event;
@@ -1608,9 +1366,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     rows: "4",
     "class": "block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300",
     placeholder: "NFT description..."
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.description]])]), _hoisted_35, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.formData.propertyData, function (pd, index) {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.formData.description]])]), _hoisted_35, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.formData.propertyData, function (pd, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "grid grid-cols-1 md:grid-cols-5 md:gap-6",
       key: index
@@ -1623,9 +1379,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       id: "floating_first_name",
       "class": "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer",
       placeholder: "Property"
-    }, null, 8
-    /* PROPS */
-    , _hoisted_37), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.property]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, null, 8 /* PROPS */, _hoisted_37), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.property]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return pd.value = $event;
@@ -1634,26 +1388,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       id: "floating_last_name",
       "class": "block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer",
       placeholder: "Value"
-    }, null, 8
-    /* PROPS */
-    , _hoisted_39), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.value]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    }, null, 8 /* PROPS */, _hoisted_39), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, pd.value]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
       "class": "bg-red-500 px-3 py-2 rounded text-xl text-white cursor-pointer mr-2",
       onClick: function onClick($event) {
         return $setup.remove(index);
       }
-    }, "X", 8
-    /* PROPS */
-    , _hoisted_41), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index > 0]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+    }, "X", 8 /* PROPS */, _hoisted_41), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index > 0]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
       "class": "bg-blue-500 px-3 py-2 rounded text-xl text-white cursor-pointer",
       onClick: $setup.addProperty
-    }, "+", 512
-    /* NEED_PATCH */
-    ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index == 0]])])]);
-  }), 128
-  /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-6\">\r\n                            <div class=\"flex items-center mb-4\">\r\n                                \r\n                                <label for=\"default-checkbox\"\r\n                                    class=\"text-sm font-medium text-gray-900 dark:text-gray-300\">\r\n                                    <input id=\"default-checkbox\" v-model=\"formData.rights\" type=\"checkbox\" value=\"rights\"\r\n                                    class=\"w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600\">\r\n                                    I approve that I'm the owner or have the rights of publication and sale.\r\n                                </label>\r\n                            </div>\r\n                            <div class=\"flex items-center\">\r\n                                <label for=\"checked-checkbox\"\r\n                                    class=\"text-sm font-medium text-gray-900 dark:text-gray-300\">\r\n                                    <input id=\"checked-checkbox\" v-model=\"formData.terms\" type=\"checkbox\" value=\"terms\"\r\n                                    class=\"w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600\">\r\n                                    I approve NFTrade's Terms & Conditions\r\n                                </label>\r\n                            </div>\r\n                        </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [!$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_43, " Update Your Asset ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your Asset is Updating... ")]))])], 40
-  /* PROPS, HYDRATE_EVENTS */
-  , _hoisted_9)])])])]);
+    }, "+", 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, index == 0]])])]);
+  }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-6\">\r\n                            <div class=\"flex items-center mb-4\">\r\n                                \r\n                                <label for=\"default-checkbox\"\r\n                                    class=\"text-sm font-medium text-gray-900 dark:text-gray-300\">\r\n                                    <input id=\"default-checkbox\" v-model=\"formData.rights\" type=\"checkbox\" value=\"rights\"\r\n                                    class=\"w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600\">\r\n                                    I approve that I'm the owner or have the rights of publication and sale.\r\n                                </label>\r\n                            </div>\r\n                            <div class=\"flex items-center\">\r\n                                <label for=\"checked-checkbox\"\r\n                                    class=\"text-sm font-medium text-gray-900 dark:text-gray-300\">\r\n                                    <input id=\"checked-checkbox\" v-model=\"formData.terms\" type=\"checkbox\" value=\"terms\"\r\n                                    class=\"w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600\">\r\n                                    I approve NFTrade's Terms & Conditions\r\n                                </label>\r\n                            </div>\r\n                        </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_42, [!$setup.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_43, " Update Your Asset ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your Asset is Updating... ")]))])], 40 /* PROPS, HYDRATE_EVENTS */, _hoisted_9)])])])]);
 }
 
 /***/ }),
@@ -1666,7 +1410,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
@@ -1687,13 +1431,9 @@ var _hoisted_4 = {
 var _hoisted_5 = {
   "class": "text-3xl font-semibold"
 };
-
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "text-red-500 h-6 w-6 text-2xl block"
-}, " × ", -1
-/* HOISTED */
-);
-
+}, " × ", -1 /* HOISTED */);
 var _hoisted_7 = [_hoisted_6];
 var _hoisted_8 = {
   "class": "relative p-6 flex-auto"
@@ -1707,9 +1447,7 @@ var _hoisted_10 = {
   "class": "opacity-25 fixed inset-0 z-40 bg-black"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [$props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("content"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("header"), $props.title != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [$props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("content"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("header"), $props.title != '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
     "class": "text-3xl font-semibold cursor-pointer",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.toggleModal();
@@ -1721,18 +1459,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.toggleModal();
     })
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.closeButtonText), 1
-  /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.bottomSubmitButton ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.closeButtonText), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.bottomSubmitButton ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
     "class": "text-white bg-blue-600 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 rounded",
     type: "button",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.submitForm();
     })
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.buttonText), 1
-  /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.buttonText), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.showModal ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),
@@ -1745,7 +1479,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */   render: () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
@@ -1755,19 +1489,12 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "bg-white py-4 md:py-6 px-4 md:px-8 xl:px-10"
 };
-
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800"
-}, " Your Assets ", -1
-/* HOISTED */
-);
-
+}, " Your Assets ", -1 /* HOISTED */);
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-sm font-medium leading-none text-white"
-}, " Add Asset ", -1
-/* HOISTED */
-);
-
+}, " Add Asset ", -1 /* HOISTED */);
 var _hoisted_5 = [_hoisted_4];
 var _hoisted_6 = {
   key: 0,
@@ -1782,7 +1509,6 @@ var _hoisted_8 = {
 var _hoisted_9 = {
   "class": "w-full"
 };
-
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
   "class": "text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
@@ -1795,10 +1521,7 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "px-4 py-3"
 }, "Created At"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "px-4 py-3"
-}, "Action")])], -1
-/* HOISTED */
-);
-
+}, "Action")])], -1 /* HOISTED */);
 var _hoisted_11 = {
   "class": "bg-white"
 };
@@ -1811,14 +1534,10 @@ var _hoisted_14 = {
   "class": "relative rounded md:block"
 };
 var _hoisted_15 = ["src"];
-
 var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "absolute inset-0 shadow-inner",
   "aria-hidden": "true"
-}, null, -1
-/* HOISTED */
-);
-
+}, null, -1 /* HOISTED */);
 var _hoisted_17 = {
   key: 1,
   "class": "relative rounded md:block",
@@ -1845,7 +1564,6 @@ var _hoisted_24 = {
   "class": "px-4 py-3 text-sm border"
 };
 var _hoisted_25 = ["onClick"];
-
 var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   fill: "#4AB7B2",
@@ -1853,19 +1571,12 @@ var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   viewBox: "0 0 512 512"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "sr-only"
-}, "Icon description", -1
-/* HOISTED */
-);
-
+}, "Icon description", -1 /* HOISTED */);
 var _hoisted_28 = [_hoisted_26, _hoisted_27];
 var _hoisted_29 = ["onClick"];
-
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   fill: "#8C4AB7",
@@ -1873,19 +1584,12 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   viewBox: "0 0 576 512"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "sr-only"
-}, "Icon description", -1
-/* HOISTED */
-);
-
+}, "Icon description", -1 /* HOISTED */);
 var _hoisted_32 = [_hoisted_30, _hoisted_31];
 var _hoisted_33 = ["onClick"];
-
 var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   fill: "red",
@@ -1893,16 +1597,10 @@ var _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   viewBox: "0 0 448 512"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
-})], -1
-/* HOISTED */
-);
-
+})], -1 /* HOISTED */);
 var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "sr-only"
-}, "Icon description", -1
-/* HOISTED */
-);
-
+}, "Icon description", -1 /* HOISTED */);
 var _hoisted_36 = [_hoisted_34, _hoisted_35];
 var _hoisted_37 = {
   key: 1,
@@ -1931,22 +1629,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       src: asset.file,
       alt: "image",
       loading: "lazy"
-    }, null, 8
-    /* PROPS */
-    , _hoisted_15), _hoisted_16])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), asset.fileType == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
+    }, null, 8 /* PROPS */, _hoisted_15), _hoisted_16])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), asset.fileType == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("source", {
       src: asset.file,
       id: "video_here"
-    }, null, 8
-    /* PROPS */
-    , _hoisted_19), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span class=\"absolute right-0\" v-if=\"asset.fileType == 'video'\">\r\n                          <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"black\" class=\"w-3 h-3\" viewBox=\"0 0 576 512\">\r\n                            <path\r\n                              d=\"M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z\" />\r\n                          </svg>\r\n                        </span> ")], 8
-    /* PROPS */
-    , _hoisted_13)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(asset.name), 1
-    /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(asset.description), 1
-    /* TEXT */
-    )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.format(new Date(asset.created_at), "PPPP")), 1
-    /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_19), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Your browser does not support HTML5 video. ")])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <span class=\"absolute right-0\" v-if=\"asset.fileType == 'video'\">\r\n                          <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"black\" class=\"w-3 h-3\" viewBox=\"0 0 576 512\">\r\n                            <path\r\n                              d=\"M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z\" />\r\n                          </svg>\r\n                        </span> ")], 8 /* PROPS */, _hoisted_13)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(asset.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(asset.description), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.format(new Date(asset.created_at), "PPPP")), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $setup.editModal(asset.id);
       },
@@ -1955,9 +1641,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       title: "Edit",
       type: "button",
       "class": "text-blue-700 border hover:border-blue-700 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2"
-    }, _hoisted_28, 8
-    /* PROPS */
-    , _hoisted_25), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, _hoisted_28, 8 /* PROPS */, _hoisted_25), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       type: "button",
       "data-bs-toggle": "tooltip",
       "data-bs-placement": "top",
@@ -1966,9 +1650,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       onClick: function onClick($event) {
         return $setup.viewAsset(asset.id);
       }
-    }, _hoisted_32, 8
-    /* PROPS */
-    , _hoisted_29), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, _hoisted_32, 8 /* PROPS */, _hoisted_29), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $setup.deleteAsset(asset.id);
       },
@@ -1977,12 +1659,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       title: "Delete",
       type: "button",
       "class": "text-blue-700 border hover:border-blue-700 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center ml-2"
-    }, _hoisted_36, 8
-    /* PROPS */
-    , _hoisted_33)])]);
-  }), 128
-  /* KEYED_FRAGMENT */
-  ))])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$setup.paginationData.total > $setup.paginationData.perPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["VueTailwindPagination"], {
+    }, _hoisted_36, 8 /* PROPS */, _hoisted_33)])]);
+  }), 128 /* KEYED_FRAGMENT */))])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [$setup.paginationData.total > $setup.paginationData.perPage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["VueTailwindPagination"], {
     key: 0,
     current: $setup.paginationData.current,
     total: $setup.paginationData.total,
@@ -1990,9 +1668,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onPageChanged: _cache[0] || (_cache[0] = function ($event) {
       return $setup.artistAsset($event);
     })
-  }, null, 8
-  /* PROPS */
-  , ["current", "total", "per-page"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_37, "No data found.."))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Modal"], {
+  }, null, 8 /* PROPS */, ["current", "total", "per-page"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_37, "No data found.."))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Modal"], {
     showModal: $setup.modalOpen,
     onClose: $setup.closeModal
   }, {
@@ -2000,16 +1676,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AssetForm"], {
         bottomCloseButton: $setup.modalOpen,
         onClose: $setup.closeModal
-      }, null, 8
-      /* PROPS */
-      , ["bottomCloseButton"])];
+      }, null, 8 /* PROPS */, ["bottomCloseButton"])];
     }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["showModal"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Modal"], {
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["showModal"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Modal"], {
     showModal: $setup.editModalOpen,
     onClose: $setup.editModal
   }, {
@@ -2018,16 +1688,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         bottomCloseButton: $setup.editModalOpen,
         "asset-data": $setup.assetData,
         onClose: $setup.editModal
-      }, null, 8
-      /* PROPS */
-      , ["bottomCloseButton", "asset-data"])];
+      }, null, 8 /* PROPS */, ["bottomCloseButton", "asset-data"])];
     }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["showModal"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AssetAboutModal"], {
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["showModal"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AssetAboutModal"], {
     showModal: $setup.assetmodalOpen,
     onClose: $setup.closeAssetModal,
     title: 'Your Asset'
@@ -2035,18 +1699,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AboutAsset"], {
         assetDataValue: $setup.assetSingledatavalue
-      }, null, 8
-      /* PROPS */
-      , ["assetDataValue"])];
+      }, null, 8 /* PROPS */, ["assetDataValue"])];
     }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["showModal"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")], 64
-  /* STABLE_FRAGMENT */
-  );
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["showModal"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> ")], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -2064,11 +1720,9 @@ __webpack_require__.r(__webpack_exports__);
 function addLeadingZeros(number, targetLength) {
   var sign = number < 0 ? '-' : '';
   var output = Math.abs(number).toString();
-
   while (output.length < targetLength) {
     output = '0' + output;
   }
-
   return sign + output;
 }
 
@@ -2098,8 +1752,8 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getDefaultOptions": () => (/* binding */ getDefaultOptions),
-/* harmony export */   "setDefaultOptions": () => (/* binding */ setDefaultOptions)
+/* harmony export */   getDefaultOptions: () => (/* binding */ getDefaultOptions),
+/* harmony export */   setDefaultOptions: () => (/* binding */ setDefaultOptions)
 /* harmony export */ });
 var defaultOptions = {};
 function getDefaultOptions() {
@@ -2145,7 +1799,6 @@ var dayPeriodEnum = {
   evening: 'evening',
   night: 'night'
 };
-
 /*
  * |     | Unit                           |     | Unit                           |
  * |-----|--------------------------------|-----|--------------------------------|
@@ -2191,11 +1844,11 @@ var dayPeriodEnum = {
  * - `P` is long localized date format
  * - `p` is long localized time format
  */
+
 var formatters = {
   // Era
-  G: function (date, token, localize) {
+  G: function G(date, token, localize) {
     var era = date.getUTCFullYear() > 0 ? 1 : 0;
-
     switch (token) {
       // AD, BC
       case 'G':
@@ -2205,13 +1858,11 @@ var formatters = {
           width: 'abbreviated'
         });
       // A, B
-
       case 'GGGGG':
         return localize.era(era, {
           width: 'narrow'
         });
       // Anno Domini, Before Christ
-
       case 'GGGG':
       default:
         return localize.era(era, {
@@ -2220,44 +1871,45 @@ var formatters = {
     }
   },
   // Year
-  y: function (date, token, localize) {
+  y: function y(date, token, localize) {
     // Ordinal number
     if (token === 'yo') {
-      var signedYear = date.getUTCFullYear(); // Returns 1 for 1 BC (which is year 0 in JavaScript)
-
+      var signedYear = date.getUTCFullYear();
+      // Returns 1 for 1 BC (which is year 0 in JavaScript)
       var year = signedYear > 0 ? signedYear : 1 - signedYear;
       return localize.ordinalNumber(year, {
         unit: 'year'
       });
     }
-
     return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].y(date, token);
   },
   // Local week-numbering year
-  Y: function (date, token, localize, options) {
-    var signedWeekYear = (0,_lib_getUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(date, options); // Returns 1 for 1 BC (which is year 0 in JavaScript)
+  Y: function Y(date, token, localize, options) {
+    var signedWeekYear = (0,_lib_getUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(date, options);
+    // Returns 1 for 1 BC (which is year 0 in JavaScript)
+    var weekYear = signedWeekYear > 0 ? signedWeekYear : 1 - signedWeekYear;
 
-    var weekYear = signedWeekYear > 0 ? signedWeekYear : 1 - signedWeekYear; // Two digit year
-
+    // Two digit year
     if (token === 'YY') {
       var twoDigitYear = weekYear % 100;
       return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(twoDigitYear, 2);
-    } // Ordinal number
+    }
 
-
+    // Ordinal number
     if (token === 'Yo') {
       return localize.ordinalNumber(weekYear, {
         unit: 'year'
       });
-    } // Padding
+    }
 
-
+    // Padding
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(weekYear, token.length);
   },
   // ISO week-numbering year
-  R: function (date, token) {
-    var isoWeekYear = (0,_lib_getUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date); // Padding
+  R: function R(date, token) {
+    var isoWeekYear = (0,_lib_getUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date);
 
+    // Padding
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(isoWeekYear, token.length);
   },
   // Extended year. This is a single number designating the year of this calendar system.
@@ -2269,44 +1921,38 @@ var formatters = {
   // | BC 2 |   2 |  -1 |
   // Also `yy` always returns the last two digits of a year,
   // while `uu` pads single digit years to 2 characters and returns other years unchanged.
-  u: function (date, token) {
+  u: function u(date, token) {
     var year = date.getUTCFullYear();
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(year, token.length);
   },
   // Quarter
-  Q: function (date, token, localize) {
+  Q: function Q(date, token, localize) {
     var quarter = Math.ceil((date.getUTCMonth() + 1) / 3);
-
     switch (token) {
       // 1, 2, 3, 4
       case 'Q':
         return String(quarter);
       // 01, 02, 03, 04
-
       case 'QQ':
         return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(quarter, 2);
       // 1st, 2nd, 3rd, 4th
-
       case 'Qo':
         return localize.ordinalNumber(quarter, {
           unit: 'quarter'
         });
       // Q1, Q2, Q3, Q4
-
       case 'QQQ':
         return localize.quarter(quarter, {
           width: 'abbreviated',
           context: 'formatting'
         });
       // 1, 2, 3, 4 (narrow quarter; could be not numerical)
-
       case 'QQQQQ':
         return localize.quarter(quarter, {
           width: 'narrow',
           context: 'formatting'
         });
       // 1st quarter, 2nd quarter, ...
-
       case 'QQQQ':
       default:
         return localize.quarter(quarter, {
@@ -2316,39 +1962,33 @@ var formatters = {
     }
   },
   // Stand-alone quarter
-  q: function (date, token, localize) {
+  q: function q(date, token, localize) {
     var quarter = Math.ceil((date.getUTCMonth() + 1) / 3);
-
     switch (token) {
       // 1, 2, 3, 4
       case 'q':
         return String(quarter);
       // 01, 02, 03, 04
-
       case 'qq':
         return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(quarter, 2);
       // 1st, 2nd, 3rd, 4th
-
       case 'qo':
         return localize.ordinalNumber(quarter, {
           unit: 'quarter'
         });
       // Q1, Q2, Q3, Q4
-
       case 'qqq':
         return localize.quarter(quarter, {
           width: 'abbreviated',
           context: 'standalone'
         });
       // 1, 2, 3, 4 (narrow quarter; could be not numerical)
-
       case 'qqqqq':
         return localize.quarter(quarter, {
           width: 'narrow',
           context: 'standalone'
         });
       // 1st quarter, 2nd quarter, ...
-
       case 'qqqq':
       default:
         return localize.quarter(quarter, {
@@ -2358,35 +1998,30 @@ var formatters = {
     }
   },
   // Month
-  M: function (date, token, localize) {
+  M: function M(date, token, localize) {
     var month = date.getUTCMonth();
-
     switch (token) {
       case 'M':
       case 'MM':
         return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].M(date, token);
       // 1st, 2nd, ..., 12th
-
       case 'Mo':
         return localize.ordinalNumber(month + 1, {
           unit: 'month'
         });
       // Jan, Feb, ..., Dec
-
       case 'MMM':
         return localize.month(month, {
           width: 'abbreviated',
           context: 'formatting'
         });
       // J, F, ..., D
-
       case 'MMMMM':
         return localize.month(month, {
           width: 'narrow',
           context: 'formatting'
         });
       // January, February, ..., December
-
       case 'MMMM':
       default:
         return localize.month(month, {
@@ -2396,39 +2031,33 @@ var formatters = {
     }
   },
   // Stand-alone month
-  L: function (date, token, localize) {
+  L: function L(date, token, localize) {
     var month = date.getUTCMonth();
-
     switch (token) {
       // 1, 2, ..., 12
       case 'L':
         return String(month + 1);
       // 01, 02, ..., 12
-
       case 'LL':
         return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(month + 1, 2);
       // 1st, 2nd, ..., 12th
-
       case 'Lo':
         return localize.ordinalNumber(month + 1, {
           unit: 'month'
         });
       // Jan, Feb, ..., Dec
-
       case 'LLL':
         return localize.month(month, {
           width: 'abbreviated',
           context: 'standalone'
         });
       // J, F, ..., D
-
       case 'LLLLL':
         return localize.month(month, {
           width: 'narrow',
           context: 'standalone'
         });
       // January, February, ..., December
-
       case 'LLLL':
       default:
         return localize.month(month, {
@@ -2438,55 +2067,47 @@ var formatters = {
     }
   },
   // Local week of year
-  w: function (date, token, localize, options) {
+  w: function w(date, token, localize, options) {
     var week = (0,_lib_getUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_4__["default"])(date, options);
-
     if (token === 'wo') {
       return localize.ordinalNumber(week, {
         unit: 'week'
       });
     }
-
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(week, token.length);
   },
   // ISO week of year
-  I: function (date, token, localize) {
+  I: function I(date, token, localize) {
     var isoWeek = (0,_lib_getUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_5__["default"])(date);
-
     if (token === 'Io') {
       return localize.ordinalNumber(isoWeek, {
         unit: 'week'
       });
     }
-
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(isoWeek, token.length);
   },
   // Day of the month
-  d: function (date, token, localize) {
+  d: function d(date, token, localize) {
     if (token === 'do') {
       return localize.ordinalNumber(date.getUTCDate(), {
         unit: 'date'
       });
     }
-
     return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].d(date, token);
   },
   // Day of year
-  D: function (date, token, localize) {
+  D: function D(date, token, localize) {
     var dayOfYear = (0,_lib_getUTCDayOfYear_index_js__WEBPACK_IMPORTED_MODULE_6__["default"])(date);
-
     if (token === 'Do') {
       return localize.ordinalNumber(dayOfYear, {
         unit: 'dayOfYear'
       });
     }
-
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(dayOfYear, token.length);
   },
   // Day of week
-  E: function (date, token, localize) {
+  E: function E(date, token, localize) {
     var dayOfWeek = date.getUTCDay();
-
     switch (token) {
       // Tue
       case 'E':
@@ -2497,21 +2118,18 @@ var formatters = {
           context: 'formatting'
         });
       // T
-
       case 'EEEEE':
         return localize.day(dayOfWeek, {
           width: 'narrow',
           context: 'formatting'
         });
       // Tu
-
       case 'EEEEEE':
         return localize.day(dayOfWeek, {
           width: 'short',
           context: 'formatting'
         });
       // Tuesday
-
       case 'EEEE':
       default:
         return localize.day(dayOfWeek, {
@@ -2521,46 +2139,39 @@ var formatters = {
     }
   },
   // Local day of week
-  e: function (date, token, localize, options) {
+  e: function e(date, token, localize, options) {
     var dayOfWeek = date.getUTCDay();
     var localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
-
     switch (token) {
       // Numerical value (Nth day of week with current locale or weekStartsOn)
       case 'e':
         return String(localDayOfWeek);
       // Padded numerical value
-
       case 'ee':
         return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(localDayOfWeek, 2);
       // 1st, 2nd, ..., 7th
-
       case 'eo':
         return localize.ordinalNumber(localDayOfWeek, {
           unit: 'day'
         });
-
       case 'eee':
         return localize.day(dayOfWeek, {
           width: 'abbreviated',
           context: 'formatting'
         });
       // T
-
       case 'eeeee':
         return localize.day(dayOfWeek, {
           width: 'narrow',
           context: 'formatting'
         });
       // Tu
-
       case 'eeeeee':
         return localize.day(dayOfWeek, {
           width: 'short',
           context: 'formatting'
         });
       // Tuesday
-
       case 'eeee':
       default:
         return localize.day(dayOfWeek, {
@@ -2570,46 +2181,39 @@ var formatters = {
     }
   },
   // Stand-alone local day of week
-  c: function (date, token, localize, options) {
+  c: function c(date, token, localize, options) {
     var dayOfWeek = date.getUTCDay();
     var localDayOfWeek = (dayOfWeek - options.weekStartsOn + 8) % 7 || 7;
-
     switch (token) {
       // Numerical value (same as in `e`)
       case 'c':
         return String(localDayOfWeek);
       // Padded numerical value
-
       case 'cc':
         return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(localDayOfWeek, token.length);
       // 1st, 2nd, ..., 7th
-
       case 'co':
         return localize.ordinalNumber(localDayOfWeek, {
           unit: 'day'
         });
-
       case 'ccc':
         return localize.day(dayOfWeek, {
           width: 'abbreviated',
           context: 'standalone'
         });
       // T
-
       case 'ccccc':
         return localize.day(dayOfWeek, {
           width: 'narrow',
           context: 'standalone'
         });
       // Tu
-
       case 'cccccc':
         return localize.day(dayOfWeek, {
           width: 'short',
           context: 'standalone'
         });
       // Tuesday
-
       case 'cccc':
       default:
         return localize.day(dayOfWeek, {
@@ -2619,47 +2223,40 @@ var formatters = {
     }
   },
   // ISO day of week
-  i: function (date, token, localize) {
+  i: function i(date, token, localize) {
     var dayOfWeek = date.getUTCDay();
     var isoDayOfWeek = dayOfWeek === 0 ? 7 : dayOfWeek;
-
     switch (token) {
       // 2
       case 'i':
         return String(isoDayOfWeek);
       // 02
-
       case 'ii':
         return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(isoDayOfWeek, token.length);
       // 2nd
-
       case 'io':
         return localize.ordinalNumber(isoDayOfWeek, {
           unit: 'day'
         });
       // Tue
-
       case 'iii':
         return localize.day(dayOfWeek, {
           width: 'abbreviated',
           context: 'formatting'
         });
       // T
-
       case 'iiiii':
         return localize.day(dayOfWeek, {
           width: 'narrow',
           context: 'formatting'
         });
       // Tu
-
       case 'iiiiii':
         return localize.day(dayOfWeek, {
           width: 'short',
           context: 'formatting'
         });
       // Tuesday
-
       case 'iiii':
       default:
         return localize.day(dayOfWeek, {
@@ -2669,10 +2266,9 @@ var formatters = {
     }
   },
   // AM or PM
-  a: function (date, token, localize) {
+  a: function a(date, token, localize) {
     var hours = date.getUTCHours();
     var dayPeriodEnumValue = hours / 12 >= 1 ? 'pm' : 'am';
-
     switch (token) {
       case 'a':
       case 'aa':
@@ -2680,19 +2276,16 @@ var formatters = {
           width: 'abbreviated',
           context: 'formatting'
         });
-
       case 'aaa':
         return localize.dayPeriod(dayPeriodEnumValue, {
           width: 'abbreviated',
           context: 'formatting'
         }).toLowerCase();
-
       case 'aaaaa':
         return localize.dayPeriod(dayPeriodEnumValue, {
           width: 'narrow',
           context: 'formatting'
         });
-
       case 'aaaa':
       default:
         return localize.dayPeriod(dayPeriodEnumValue, {
@@ -2702,10 +2295,9 @@ var formatters = {
     }
   },
   // AM, PM, midnight, noon
-  b: function (date, token, localize) {
+  b: function b(date, token, localize) {
     var hours = date.getUTCHours();
     var dayPeriodEnumValue;
-
     if (hours === 12) {
       dayPeriodEnumValue = dayPeriodEnum.noon;
     } else if (hours === 0) {
@@ -2713,7 +2305,6 @@ var formatters = {
     } else {
       dayPeriodEnumValue = hours / 12 >= 1 ? 'pm' : 'am';
     }
-
     switch (token) {
       case 'b':
       case 'bb':
@@ -2721,19 +2312,16 @@ var formatters = {
           width: 'abbreviated',
           context: 'formatting'
         });
-
       case 'bbb':
         return localize.dayPeriod(dayPeriodEnumValue, {
           width: 'abbreviated',
           context: 'formatting'
         }).toLowerCase();
-
       case 'bbbbb':
         return localize.dayPeriod(dayPeriodEnumValue, {
           width: 'narrow',
           context: 'formatting'
         });
-
       case 'bbbb':
       default:
         return localize.dayPeriod(dayPeriodEnumValue, {
@@ -2743,10 +2331,9 @@ var formatters = {
     }
   },
   // in the morning, in the afternoon, in the evening, at night
-  B: function (date, token, localize) {
+  B: function B(date, token, localize) {
     var hours = date.getUTCHours();
     var dayPeriodEnumValue;
-
     if (hours >= 17) {
       dayPeriodEnumValue = dayPeriodEnum.evening;
     } else if (hours >= 12) {
@@ -2756,7 +2343,6 @@ var formatters = {
     } else {
       dayPeriodEnumValue = dayPeriodEnum.night;
     }
-
     switch (token) {
       case 'B':
       case 'BB':
@@ -2765,13 +2351,11 @@ var formatters = {
           width: 'abbreviated',
           context: 'formatting'
         });
-
       case 'BBBBB':
         return localize.dayPeriod(dayPeriodEnumValue, {
           width: 'narrow',
           context: 'formatting'
         });
-
       case 'BBBB':
       default:
         return localize.dayPeriod(dayPeriodEnumValue, {
@@ -2781,7 +2365,7 @@ var formatters = {
     }
   },
   // Hour [1-12]
-  h: function (date, token, localize) {
+  h: function h(date, token, localize) {
     if (token === 'ho') {
       var hours = date.getUTCHours() % 12;
       if (hours === 0) hours = 12;
@@ -2789,133 +2373,119 @@ var formatters = {
         unit: 'hour'
       });
     }
-
     return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].h(date, token);
   },
   // Hour [0-23]
-  H: function (date, token, localize) {
+  H: function H(date, token, localize) {
     if (token === 'Ho') {
       return localize.ordinalNumber(date.getUTCHours(), {
         unit: 'hour'
       });
     }
-
     return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].H(date, token);
   },
   // Hour [0-11]
-  K: function (date, token, localize) {
+  K: function K(date, token, localize) {
     var hours = date.getUTCHours() % 12;
-
     if (token === 'Ko') {
       return localize.ordinalNumber(hours, {
         unit: 'hour'
       });
     }
-
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(hours, token.length);
   },
   // Hour [1-24]
-  k: function (date, token, localize) {
+  k: function k(date, token, localize) {
     var hours = date.getUTCHours();
     if (hours === 0) hours = 24;
-
     if (token === 'ko') {
       return localize.ordinalNumber(hours, {
         unit: 'hour'
       });
     }
-
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(hours, token.length);
   },
   // Minute
-  m: function (date, token, localize) {
+  m: function m(date, token, localize) {
     if (token === 'mo') {
       return localize.ordinalNumber(date.getUTCMinutes(), {
         unit: 'minute'
       });
     }
-
     return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].m(date, token);
   },
   // Second
-  s: function (date, token, localize) {
+  s: function s(date, token, localize) {
     if (token === 'so') {
       return localize.ordinalNumber(date.getUTCSeconds(), {
         unit: 'second'
       });
     }
-
     return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].s(date, token);
   },
   // Fraction of second
-  S: function (date, token) {
+  S: function S(date, token) {
     return _lightFormatters_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].S(date, token);
   },
   // Timezone (ISO-8601. If offset is 0, output is always `'Z'`)
-  X: function (date, token, _localize, options) {
+  X: function X(date, token, _localize, options) {
     var originalDate = options._originalDate || date;
     var timezoneOffset = originalDate.getTimezoneOffset();
-
     if (timezoneOffset === 0) {
       return 'Z';
     }
-
     switch (token) {
       // Hours and optional minutes
       case 'X':
         return formatTimezoneWithOptionalMinutes(timezoneOffset);
+
       // Hours, minutes and optional seconds without `:` delimiter
       // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
       // so this token always has the same output as `XX`
-
       case 'XXXX':
       case 'XX':
         // Hours and minutes without `:` delimiter
         return formatTimezone(timezoneOffset);
+
       // Hours, minutes and optional seconds with `:` delimiter
       // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
       // so this token always has the same output as `XXX`
-
       case 'XXXXX':
       case 'XXX': // Hours and minutes with `:` delimiter
-
       default:
         return formatTimezone(timezoneOffset, ':');
     }
   },
   // Timezone (ISO-8601. If offset is 0, output is `'+00:00'` or equivalent)
-  x: function (date, token, _localize, options) {
+  x: function x(date, token, _localize, options) {
     var originalDate = options._originalDate || date;
     var timezoneOffset = originalDate.getTimezoneOffset();
-
     switch (token) {
       // Hours and optional minutes
       case 'x':
         return formatTimezoneWithOptionalMinutes(timezoneOffset);
+
       // Hours, minutes and optional seconds without `:` delimiter
       // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
       // so this token always has the same output as `xx`
-
       case 'xxxx':
       case 'xx':
         // Hours and minutes without `:` delimiter
         return formatTimezone(timezoneOffset);
+
       // Hours, minutes and optional seconds with `:` delimiter
       // Note: neither ISO-8601 nor JavaScript supports seconds in timezone offsets
       // so this token always has the same output as `xxx`
-
       case 'xxxxx':
       case 'xxx': // Hours and minutes with `:` delimiter
-
       default:
         return formatTimezone(timezoneOffset, ':');
     }
   },
   // Timezone (GMT)
-  O: function (date, token, _localize, options) {
+  O: function O(date, token, _localize, options) {
     var originalDate = options._originalDate || date;
     var timezoneOffset = originalDate.getTimezoneOffset();
-
     switch (token) {
       // Short
       case 'O':
@@ -2923,17 +2493,15 @@ var formatters = {
       case 'OOO':
         return 'GMT' + formatTimezoneShort(timezoneOffset, ':');
       // Long
-
       case 'OOOO':
       default:
         return 'GMT' + formatTimezone(timezoneOffset, ':');
     }
   },
   // Timezone (specific non-location)
-  z: function (date, token, _localize, options) {
+  z: function z(date, token, _localize, options) {
     var originalDate = options._originalDate || date;
     var timezoneOffset = originalDate.getTimezoneOffset();
-
     switch (token) {
       // Short
       case 'z':
@@ -2941,49 +2509,42 @@ var formatters = {
       case 'zzz':
         return 'GMT' + formatTimezoneShort(timezoneOffset, ':');
       // Long
-
       case 'zzzz':
       default:
         return 'GMT' + formatTimezone(timezoneOffset, ':');
     }
   },
   // Seconds timestamp
-  t: function (date, token, _localize, options) {
+  t: function t(date, token, _localize, options) {
     var originalDate = options._originalDate || date;
     var timestamp = Math.floor(originalDate.getTime() / 1000);
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(timestamp, token.length);
   },
   // Milliseconds timestamp
-  T: function (date, token, _localize, options) {
+  T: function T(date, token, _localize, options) {
     var originalDate = options._originalDate || date;
     var timestamp = originalDate.getTime();
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(timestamp, token.length);
   }
 };
-
 function formatTimezoneShort(offset, dirtyDelimiter) {
   var sign = offset > 0 ? '-' : '+';
   var absOffset = Math.abs(offset);
   var hours = Math.floor(absOffset / 60);
   var minutes = absOffset % 60;
-
   if (minutes === 0) {
     return sign + String(hours);
   }
-
   var delimiter = dirtyDelimiter || '';
   return sign + String(hours) + delimiter + (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(minutes, 2);
 }
-
 function formatTimezoneWithOptionalMinutes(offset, dirtyDelimiter) {
   if (offset % 60 === 0) {
     var sign = offset > 0 ? '-' : '+';
     return sign + (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(Math.abs(offset) / 60, 2);
   }
-
   return formatTimezone(offset, dirtyDelimiter);
 }
-
 function formatTimezone(offset, dirtyDelimiter) {
   var delimiter = dirtyDelimiter || '';
   var sign = offset > 0 ? '-' : '+';
@@ -2992,7 +2553,6 @@ function formatTimezone(offset, dirtyDelimiter) {
   var minutes = (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(absOffset % 60, 2);
   return sign + hours + delimiter + minutes;
 }
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatters);
 
 /***/ }),
@@ -3021,10 +2581,9 @@ __webpack_require__.r(__webpack_exports__);
  *
  * Letters marked by * are not implemented but reserved by Unicode standard.
  */
-
 var formatters = {
   // Year
-  y: function (date, token) {
+  y: function y(date, token) {
     // From http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_tokens
     // | Year     |     y | yy |   yyy |  yyyy | yyyyy |
     // |----------|-------|----|-------|-------|-------|
@@ -3033,58 +2592,55 @@ var formatters = {
     // | AD 123   |   123 | 23 |   123 |  0123 | 00123 |
     // | AD 1234  |  1234 | 34 |  1234 |  1234 | 01234 |
     // | AD 12345 | 12345 | 45 | 12345 | 12345 | 12345 |
-    var signedYear = date.getUTCFullYear(); // Returns 1 for 1 BC (which is year 0 in JavaScript)
 
+    var signedYear = date.getUTCFullYear();
+    // Returns 1 for 1 BC (which is year 0 in JavaScript)
     var year = signedYear > 0 ? signedYear : 1 - signedYear;
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(token === 'yy' ? year % 100 : year, token.length);
   },
   // Month
-  M: function (date, token) {
+  M: function M(date, token) {
     var month = date.getUTCMonth();
     return token === 'M' ? String(month + 1) : (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(month + 1, 2);
   },
   // Day of the month
-  d: function (date, token) {
+  d: function d(date, token) {
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(date.getUTCDate(), token.length);
   },
   // AM or PM
-  a: function (date, token) {
+  a: function a(date, token) {
     var dayPeriodEnumValue = date.getUTCHours() / 12 >= 1 ? 'pm' : 'am';
-
     switch (token) {
       case 'a':
       case 'aa':
         return dayPeriodEnumValue.toUpperCase();
-
       case 'aaa':
         return dayPeriodEnumValue;
-
       case 'aaaaa':
         return dayPeriodEnumValue[0];
-
       case 'aaaa':
       default:
         return dayPeriodEnumValue === 'am' ? 'a.m.' : 'p.m.';
     }
   },
   // Hour [1-12]
-  h: function (date, token) {
+  h: function h(date, token) {
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(date.getUTCHours() % 12 || 12, token.length);
   },
   // Hour [0-23]
-  H: function (date, token) {
+  H: function H(date, token) {
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(date.getUTCHours(), token.length);
   },
   // Minute
-  m: function (date, token) {
+  m: function m(date, token) {
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(date.getUTCMinutes(), token.length);
   },
   // Second
-  s: function (date, token) {
+  s: function s(date, token) {
     return (0,_addLeadingZeros_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(date.getUTCSeconds(), token.length);
   },
   // Fraction of second
-  S: function (date, token) {
+  S: function S(date, token) {
     var numberOfDigits = token.length;
     var milliseconds = date.getUTCMilliseconds();
     var fractionalSeconds = Math.floor(milliseconds * Math.pow(10, numberOfDigits - 3));
@@ -3105,23 +2661,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var dateLongFormatter = function (pattern, formatLong) {
+var dateLongFormatter = function dateLongFormatter(pattern, formatLong) {
   switch (pattern) {
     case 'P':
       return formatLong.date({
         width: 'short'
       });
-
     case 'PP':
       return formatLong.date({
         width: 'medium'
       });
-
     case 'PPP':
       return formatLong.date({
         width: 'long'
       });
-
     case 'PPPP':
     default:
       return formatLong.date({
@@ -3129,24 +2682,20 @@ var dateLongFormatter = function (pattern, formatLong) {
       });
   }
 };
-
-var timeLongFormatter = function (pattern, formatLong) {
+var timeLongFormatter = function timeLongFormatter(pattern, formatLong) {
   switch (pattern) {
     case 'p':
       return formatLong.time({
         width: 'short'
       });
-
     case 'pp':
       return formatLong.time({
         width: 'medium'
       });
-
     case 'ppp':
       return formatLong.time({
         width: 'long'
       });
-
     case 'pppp':
     default:
       return formatLong.time({
@@ -3154,37 +2703,30 @@ var timeLongFormatter = function (pattern, formatLong) {
       });
   }
 };
-
-var dateTimeLongFormatter = function (pattern, formatLong) {
+var dateTimeLongFormatter = function dateTimeLongFormatter(pattern, formatLong) {
   var matchResult = pattern.match(/(P+)(p+)?/) || [];
   var datePattern = matchResult[1];
   var timePattern = matchResult[2];
-
   if (!timePattern) {
     return dateLongFormatter(pattern, formatLong);
   }
-
   var dateTimeFormat;
-
   switch (datePattern) {
     case 'P':
       dateTimeFormat = formatLong.dateTime({
         width: 'short'
       });
       break;
-
     case 'PP':
       dateTimeFormat = formatLong.dateTime({
         width: 'medium'
       });
       break;
-
     case 'PPP':
       dateTimeFormat = formatLong.dateTime({
         width: 'long'
       });
       break;
-
     case 'PPPP':
     default:
       dateTimeFormat = formatLong.dateTime({
@@ -3192,10 +2734,8 @@ var dateTimeLongFormatter = function (pattern, formatLong) {
       });
       break;
   }
-
   return dateTimeFormat.replace('{{date}}', dateLongFormatter(datePattern, formatLong)).replace('{{time}}', timeLongFormatter(timePattern, formatLong));
 };
-
 var longFormatters = {
   p: timeLongFormatter,
   P: dateTimeLongFormatter
@@ -3289,7 +2829,6 @@ function getUTCISOWeekYear(dirtyDate) {
   fourthOfJanuaryOfThisYear.setUTCFullYear(year, 0, 4);
   fourthOfJanuaryOfThisYear.setUTCHours(0, 0, 0, 0);
   var startOfThisYear = (0,_startOfUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(fourthOfJanuaryOfThisYear);
-
   if (date.getTime() >= startOfNextYear.getTime()) {
     return year + 1;
   } else if (date.getTime() >= startOfThisYear.getTime()) {
@@ -3323,10 +2862,11 @@ var MILLISECONDS_IN_WEEK = 604800000;
 function getUTCISOWeek(dirtyDate) {
   (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
   var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
-  var diff = (0,_startOfUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date).getTime() - (0,_startOfUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date).getTime(); // Round the number of days to the nearest integer
+  var diff = (0,_startOfUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date).getTime() - (0,_startOfUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date).getTime();
+
+  // Round the number of days to the nearest integer
   // because the number of milliseconds in a week is not constant
   // (e.g. it's different in the week of the daylight saving time clock shift)
-
   return Math.round(diff / MILLISECONDS_IN_WEEK) + 1;
 }
 
@@ -3354,17 +2894,16 @@ __webpack_require__.r(__webpack_exports__);
 
 function getUTCWeekYear(dirtyDate, options) {
   var _ref, _ref2, _ref3, _options$firstWeekCon, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
-
   (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
   var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
   var year = date.getUTCFullYear();
   var defaultOptions = (0,_defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_2__.getDefaultOptions)();
-  var firstWeekContainsDate = (0,_toInteger_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])((_ref = (_ref2 = (_ref3 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref !== void 0 ? _ref : 1); // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
+  var firstWeekContainsDate = (0,_toInteger_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])((_ref = (_ref2 = (_ref3 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref !== void 0 ? _ref : 1);
 
+  // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
   if (!(firstWeekContainsDate >= 1 && firstWeekContainsDate <= 7)) {
     throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
   }
-
   var firstWeekOfNextYear = new Date(0);
   firstWeekOfNextYear.setUTCFullYear(year + 1, 0, firstWeekContainsDate);
   firstWeekOfNextYear.setUTCHours(0, 0, 0, 0);
@@ -3373,7 +2912,6 @@ function getUTCWeekYear(dirtyDate, options) {
   firstWeekOfThisYear.setUTCFullYear(year, 0, firstWeekContainsDate);
   firstWeekOfThisYear.setUTCHours(0, 0, 0, 0);
   var startOfThisYear = (0,_startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_4__["default"])(firstWeekOfThisYear, options);
-
   if (date.getTime() >= startOfNextYear.getTime()) {
     return year + 1;
   } else if (date.getTime() >= startOfThisYear.getTime()) {
@@ -3407,10 +2945,11 @@ var MILLISECONDS_IN_WEEK = 604800000;
 function getUTCWeek(dirtyDate, options) {
   (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
   var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
-  var diff = (0,_startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date, options).getTime() - (0,_startOfUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date, options).getTime(); // Round the number of days to the nearest integer
+  var diff = (0,_startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date, options).getTime() - (0,_startOfUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date, options).getTime();
+
+  // Round the number of days to the nearest integer
   // because the number of milliseconds in a week is not constant
   // (e.g. it's different in the week of the daylight saving time clock shift)
-
   return Math.round(diff / MILLISECONDS_IN_WEEK) + 1;
 }
 
@@ -3424,9 +2963,9 @@ function getUTCWeek(dirtyDate, options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "isProtectedDayOfYearToken": () => (/* binding */ isProtectedDayOfYearToken),
-/* harmony export */   "isProtectedWeekYearToken": () => (/* binding */ isProtectedWeekYearToken),
-/* harmony export */   "throwProtectedError": () => (/* binding */ throwProtectedError)
+/* harmony export */   isProtectedDayOfYearToken: () => (/* binding */ isProtectedDayOfYearToken),
+/* harmony export */   isProtectedWeekYearToken: () => (/* binding */ isProtectedWeekYearToken),
+/* harmony export */   throwProtectedError: () => (/* binding */ throwProtectedError)
 /* harmony export */ });
 var protectedDayOfYearTokens = ['D', 'DD'];
 var protectedWeekYearTokens = ['YY', 'YYYY'];
@@ -3545,7 +3084,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function startOfUTCWeekYear(dirtyDate, options) {
   var _ref, _ref2, _ref3, _options$firstWeekCon, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
-
   (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
   var defaultOptions = (0,_defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_1__.getDefaultOptions)();
   var firstWeekContainsDate = (0,_toInteger_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])((_ref = (_ref2 = (_ref3 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref !== void 0 ? _ref : 1);
@@ -3579,15 +3117,14 @@ __webpack_require__.r(__webpack_exports__);
 
 function startOfUTCWeek(dirtyDate, options) {
   var _ref, _ref2, _ref3, _options$weekStartsOn, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
-
   (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
   var defaultOptions = (0,_defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_1__.getDefaultOptions)();
-  var weekStartsOn = (0,_toInteger_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])((_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+  var weekStartsOn = (0,_toInteger_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])((_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0);
 
+  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
   if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
     throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
   }
-
   var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(dirtyDate);
   var day = date.getUTCDay();
   var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
@@ -3612,13 +3149,10 @@ function toInteger(dirtyNumber) {
   if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
     return NaN;
   }
-
   var number = Number(dirtyNumber);
-
   if (isNaN(number)) {
     return number;
   }
-
   return number < 0 ? Math.ceil(number) : Math.floor(number);
 }
 
@@ -3658,7 +3192,6 @@ __webpack_require__.r(__webpack_exports__);
  * const result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
  * //=> Thu Jul 10 2014 12:45:30.750
  */
-
 function addMilliseconds(dirtyDate, dirtyAmount) {
   (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(2, arguments);
   var timestamp = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate).getTime();
@@ -3710,14 +3243,15 @@ __webpack_require__.r(__webpack_exports__);
 //   If there is no matching single quote
 //   then the sequence will continue until the end of the string.
 // - . matches any single character unmatched by previous parts of the RegExps
+var formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g;
 
-var formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g; // This RegExp catches symbols escaped by quotes, and also
+// This RegExp catches symbols escaped by quotes, and also
 // sequences of symbols P, p, and the combinations like `PPPPPPPppppp`
-
 var longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
 var escapedStringRegExp = /^'([^]*?)'?$/;
 var doubleQuoteRegExp = /''/g;
 var unescapedLatinCharacterRegExp = /[a-zA-Z]/;
+
 /**
  * @name format
  * @category Common Helpers
@@ -4012,40 +3546,36 @@ var unescapedLatinCharacterRegExp = /[a-zA-Z]/;
 
 function format(dirtyDate, dirtyFormatStr, options) {
   var _ref, _options$locale, _ref2, _ref3, _ref4, _options$firstWeekCon, _options$locale2, _options$locale2$opti, _defaultOptions$local, _defaultOptions$local2, _ref5, _ref6, _ref7, _options$weekStartsOn, _options$locale3, _options$locale3$opti, _defaultOptions$local3, _defaultOptions$local4;
-
   (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(2, arguments);
   var formatStr = String(dirtyFormatStr);
   var defaultOptions = (0,_lib_defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_1__.getDefaultOptions)();
   var locale = (_ref = (_options$locale = options === null || options === void 0 ? void 0 : options.locale) !== null && _options$locale !== void 0 ? _options$locale : defaultOptions.locale) !== null && _ref !== void 0 ? _ref : _lib_defaultLocale_index_js__WEBPACK_IMPORTED_MODULE_2__["default"];
-  var firstWeekContainsDate = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])((_ref2 = (_ref3 = (_ref4 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale2 = options.locale) === null || _options$locale2 === void 0 ? void 0 : (_options$locale2$opti = _options$locale2.options) === null || _options$locale2$opti === void 0 ? void 0 : _options$locale2$opti.firstWeekContainsDate) !== null && _ref4 !== void 0 ? _ref4 : defaultOptions.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : 1); // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
+  var firstWeekContainsDate = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])((_ref2 = (_ref3 = (_ref4 = (_options$firstWeekCon = options === null || options === void 0 ? void 0 : options.firstWeekContainsDate) !== null && _options$firstWeekCon !== void 0 ? _options$firstWeekCon : options === null || options === void 0 ? void 0 : (_options$locale2 = options.locale) === null || _options$locale2 === void 0 ? void 0 : (_options$locale2$opti = _options$locale2.options) === null || _options$locale2$opti === void 0 ? void 0 : _options$locale2$opti.firstWeekContainsDate) !== null && _ref4 !== void 0 ? _ref4 : defaultOptions.firstWeekContainsDate) !== null && _ref3 !== void 0 ? _ref3 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.firstWeekContainsDate) !== null && _ref2 !== void 0 ? _ref2 : 1);
 
+  // Test if weekStartsOn is between 1 and 7 _and_ is not NaN
   if (!(firstWeekContainsDate >= 1 && firstWeekContainsDate <= 7)) {
     throw new RangeError('firstWeekContainsDate must be between 1 and 7 inclusively');
   }
+  var weekStartsOn = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])((_ref5 = (_ref6 = (_ref7 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale3 = options.locale) === null || _options$locale3 === void 0 ? void 0 : (_options$locale3$opti = _options$locale3.options) === null || _options$locale3$opti === void 0 ? void 0 : _options$locale3$opti.weekStartsOn) !== null && _ref7 !== void 0 ? _ref7 : defaultOptions.weekStartsOn) !== null && _ref6 !== void 0 ? _ref6 : (_defaultOptions$local3 = defaultOptions.locale) === null || _defaultOptions$local3 === void 0 ? void 0 : (_defaultOptions$local4 = _defaultOptions$local3.options) === null || _defaultOptions$local4 === void 0 ? void 0 : _defaultOptions$local4.weekStartsOn) !== null && _ref5 !== void 0 ? _ref5 : 0);
 
-  var weekStartsOn = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])((_ref5 = (_ref6 = (_ref7 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale3 = options.locale) === null || _options$locale3 === void 0 ? void 0 : (_options$locale3$opti = _options$locale3.options) === null || _options$locale3$opti === void 0 ? void 0 : _options$locale3$opti.weekStartsOn) !== null && _ref7 !== void 0 ? _ref7 : defaultOptions.weekStartsOn) !== null && _ref6 !== void 0 ? _ref6 : (_defaultOptions$local3 = defaultOptions.locale) === null || _defaultOptions$local3 === void 0 ? void 0 : (_defaultOptions$local4 = _defaultOptions$local3.options) === null || _defaultOptions$local4 === void 0 ? void 0 : _defaultOptions$local4.weekStartsOn) !== null && _ref5 !== void 0 ? _ref5 : 0); // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
-
+  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
   if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
     throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
   }
-
   if (!locale.localize) {
     throw new RangeError('locale must contain localize property');
   }
-
   if (!locale.formatLong) {
     throw new RangeError('locale must contain formatLong property');
   }
-
   var originalDate = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_4__["default"])(dirtyDate);
-
   if (!(0,_isValid_index_js__WEBPACK_IMPORTED_MODULE_5__["default"])(originalDate)) {
     throw new RangeError('Invalid time value');
-  } // Convert the date in system timezone to the same date in UTC+00:00 timezone.
+  }
+
+  // Convert the date in system timezone to the same date in UTC+00:00 timezone.
   // This ensures that when UTC functions will be implemented, locales will be compatible with them.
   // See an issue about UTC functions: https://github.com/date-fns/date-fns/issues/376
-
-
   var timezoneOffset = (0,_lib_getTimezoneOffsetInMilliseconds_index_js__WEBPACK_IMPORTED_MODULE_6__["default"])(originalDate);
   var utcDate = (0,_subMilliseconds_index_js__WEBPACK_IMPORTED_MODULE_7__["default"])(originalDate, timezoneOffset);
   var formatterOptions = {
@@ -4056,55 +3586,42 @@ function format(dirtyDate, dirtyFormatStr, options) {
   };
   var result = formatStr.match(longFormattingTokensRegExp).map(function (substring) {
     var firstCharacter = substring[0];
-
     if (firstCharacter === 'p' || firstCharacter === 'P') {
       var longFormatter = _lib_format_longFormatters_index_js__WEBPACK_IMPORTED_MODULE_8__["default"][firstCharacter];
       return longFormatter(substring, locale.formatLong);
     }
-
     return substring;
   }).join('').match(formattingTokensRegExp).map(function (substring) {
     // Replace two single quote characters with one single quote character
     if (substring === "''") {
       return "'";
     }
-
     var firstCharacter = substring[0];
-
     if (firstCharacter === "'") {
       return cleanEscapedString(substring);
     }
-
     var formatter = _lib_format_formatters_index_js__WEBPACK_IMPORTED_MODULE_9__["default"][firstCharacter];
-
     if (formatter) {
       if (!(options !== null && options !== void 0 && options.useAdditionalWeekYearTokens) && (0,_lib_protectedTokens_index_js__WEBPACK_IMPORTED_MODULE_10__.isProtectedWeekYearToken)(substring)) {
         (0,_lib_protectedTokens_index_js__WEBPACK_IMPORTED_MODULE_10__.throwProtectedError)(substring, dirtyFormatStr, String(dirtyDate));
       }
-
       if (!(options !== null && options !== void 0 && options.useAdditionalDayOfYearTokens) && (0,_lib_protectedTokens_index_js__WEBPACK_IMPORTED_MODULE_10__.isProtectedDayOfYearToken)(substring)) {
         (0,_lib_protectedTokens_index_js__WEBPACK_IMPORTED_MODULE_10__.throwProtectedError)(substring, dirtyFormatStr, String(dirtyDate));
       }
-
       return formatter(utcDate, substring, locale.localize, formatterOptions);
     }
-
     if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
       throw new RangeError('Format string contains an unescaped latin alphabet character `' + firstCharacter + '`');
     }
-
     return substring;
   }).join('');
   return result;
 }
-
 function cleanEscapedString(input) {
   var matched = input.match(escapedStringRegExp);
-
   if (!matched) {
     return input;
   }
-
   return matched[1].replace(doubleQuoteRegExp, "'");
 }
 
@@ -4120,7 +3637,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ isDate)
 /* harmony export */ });
-/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+/* harmony import */ var _babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/typeof */ "./node_modules/date-fns/node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+
 
 /**
  * @name isDate
@@ -4154,10 +3673,9 @@ __webpack_require__.r(__webpack_exports__);
  * const result = isDate({})
  * //=> false
  */
-
 function isDate(value) {
-  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-  return value instanceof Date || typeof value === 'object' && Object.prototype.toString.call(value) === '[object Date]';
+  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(1, arguments);
+  return value instanceof Date || (0,_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(value) === 'object' && Object.prototype.toString.call(value) === '[object Date]';
 }
 
 /***/ }),
@@ -4209,14 +3727,11 @@ __webpack_require__.r(__webpack_exports__);
  * const result = isValid(new Date(''))
  * //=> false
  */
-
 function isValid(dirtyDate) {
   (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-
   if (!(0,_isDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate) && typeof dirtyDate !== 'number') {
     return false;
   }
-
   var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(dirtyDate);
   return !isNaN(Number(date));
 }
@@ -4259,21 +3774,17 @@ function buildLocalizeFn(args) {
   return function (dirtyIndex, options) {
     var context = options !== null && options !== void 0 && options.context ? String(options.context) : 'standalone';
     var valuesArray;
-
     if (context === 'formatting' && args.formattingValues) {
       var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
       var width = options !== null && options !== void 0 && options.width ? String(options.width) : defaultWidth;
       valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
     } else {
       var _defaultWidth = args.defaultWidth;
-
       var _width = options !== null && options !== void 0 && options.width ? String(options.width) : args.defaultWidth;
-
       valuesArray = args.values[_width] || args.values[_defaultWidth];
     }
-
-    var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex; // @ts-ignore: For some reason TypeScript just don't want to match it, no matter how hard we try. I challenge you to try to remove it!
-
+    var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
+    // @ts-ignore: For some reason TypeScript just don't want to match it, no matter how hard we try. I challenge you to try to remove it!
     return valuesArray[index];
   };
 }
@@ -4296,11 +3807,9 @@ function buildMatchFn(args) {
     var width = options.width;
     var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
     var matchResult = string.match(matchPattern);
-
     if (!matchResult) {
       return null;
     }
-
     var matchedString = matchResult[0];
     var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
     var key = Array.isArray(parsePatterns) ? findIndex(parsePatterns, function (pattern) {
@@ -4318,24 +3827,20 @@ function buildMatchFn(args) {
     };
   };
 }
-
 function findKey(object, predicate) {
   for (var key in object) {
     if (object.hasOwnProperty(key) && predicate(object[key])) {
       return key;
     }
   }
-
   return undefined;
 }
-
 function findIndex(array, predicate) {
   for (var key = 0; key < array.length; key++) {
     if (predicate(array[key])) {
       return key;
     }
   }
-
   return undefined;
 }
 
@@ -4444,11 +3949,9 @@ var formatDistanceLocale = {
     other: 'almost {{count}} years'
   }
 };
-
-var formatDistance = function (token, count, options) {
+var formatDistance = function formatDistance(token, count, options) {
   var result;
   var tokenValue = formatDistanceLocale[token];
-
   if (typeof tokenValue === 'string') {
     result = tokenValue;
   } else if (count === 1) {
@@ -4456,7 +3959,6 @@ var formatDistance = function (token, count, options) {
   } else {
     result = tokenValue.other.replace('{{count}}', count.toString());
   }
-
   if (options !== null && options !== void 0 && options.addSuffix) {
     if (options.comparison && options.comparison > 0) {
       return 'in ' + result;
@@ -4464,10 +3966,8 @@ var formatDistance = function (token, count, options) {
       return result + ' ago';
     }
   }
-
   return result;
 };
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatDistance);
 
 /***/ }),
@@ -4538,11 +4038,9 @@ var formatRelativeLocale = {
   nextWeek: "eeee 'at' p",
   other: 'P'
 };
-
-var formatRelative = function (token, _date, _baseDate, _options) {
+var formatRelative = function formatRelative(token, _date, _baseDate, _options) {
   return formatRelativeLocale[token];
 };
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatRelative);
 
 /***/ }),
@@ -4568,11 +4066,12 @@ var quarterValues = {
   narrow: ['1', '2', '3', '4'],
   abbreviated: ['Q1', 'Q2', 'Q3', 'Q4'],
   wide: ['1st quarter', '2nd quarter', '3rd quarter', '4th quarter']
-}; // Note: in English, the names of days of the week and months are capitalized.
+};
+
+// Note: in English, the names of days of the week and months are capitalized.
 // If you are making a new locale based on this one, check if the same is true for the language you're working on.
 // Generally, formatted dates should look like they are in the middle of a sentence,
 // e.g. in Spanish language the weekdays and months should be in the lowercase.
-
 var monthValues = {
   narrow: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
   abbreviated: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -4648,9 +4147,10 @@ var formattingDayPeriodValues = {
     night: 'at night'
   }
 };
+var ordinalNumber = function ordinalNumber(dirtyNumber, _options) {
+  var number = Number(dirtyNumber);
 
-var ordinalNumber = function (dirtyNumber, _options) {
-  var number = Number(dirtyNumber); // If ordinal numbers depend on context, for example,
+  // If ordinal numbers depend on context, for example,
   // if they are different for different grammatical genders,
   // use `options.unit`.
   //
@@ -4658,23 +4158,18 @@ var ordinalNumber = function (dirtyNumber, _options) {
   // 'day', 'hour', 'minute', 'second'.
 
   var rem100 = number % 100;
-
   if (rem100 > 20 || rem100 < 10) {
     switch (rem100 % 10) {
       case 1:
         return number + 'st';
-
       case 2:
         return number + 'nd';
-
       case 3:
         return number + 'rd';
     }
   }
-
   return number + 'th';
 };
-
 var localize = {
   ordinalNumber: ordinalNumber,
   era: (0,_lib_buildLocalizeFn_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -4684,7 +4179,7 @@ var localize = {
   quarter: (0,_lib_buildLocalizeFn_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])({
     values: quarterValues,
     defaultWidth: 'wide',
-    argumentCallback: function (quarter) {
+    argumentCallback: function argumentCallback(quarter) {
       return quarter - 1;
     }
   }),
@@ -4778,7 +4273,7 @@ var match = {
   ordinalNumber: (0,_lib_buildMatchPatternFn_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])({
     matchPattern: matchOrdinalNumberPattern,
     parsePattern: parseOrdinalNumberPattern,
-    valueCallback: function (value) {
+    valueCallback: function valueCallback(value) {
       return parseInt(value, 10);
     }
   }),
@@ -4793,7 +4288,7 @@ var match = {
     defaultMatchWidth: 'wide',
     parsePatterns: parseQuarterPatterns,
     defaultParseWidth: 'any',
-    valueCallback: function (index) {
+    valueCallback: function valueCallback(index) {
       return index + 1;
     }
   }),
@@ -4840,7 +4335,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /**
  * @type {Locale}
  * @category Locales
@@ -4858,9 +4352,7 @@ var locale = {
   localize: _lib_localize_index_js__WEBPACK_IMPORTED_MODULE_3__["default"],
   match: _lib_match_index_js__WEBPACK_IMPORTED_MODULE_4__["default"],
   options: {
-    weekStartsOn: 0
-    /* Sunday */
-    ,
+    weekStartsOn: 0 /* Sunday */,
     firstWeekContainsDate: 1
   }
 };
@@ -4902,7 +4394,6 @@ __webpack_require__.r(__webpack_exports__);
  * const result = subMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
  * //=> Thu Jul 10 2014 12:45:29.250
  */
-
 function subMilliseconds(dirtyDate, dirtyAmount) {
   (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(2, arguments);
   var amount = (0,_lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyAmount);
@@ -4921,7 +4412,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ toDate)
 /* harmony export */ });
-/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+/* harmony import */ var _babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/typeof */ "./node_modules/date-fns/node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_lib/requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+
 
 /**
  * @name toDate
@@ -4953,12 +4446,12 @@ __webpack_require__.r(__webpack_exports__);
  * const result = toDate(1392098430000)
  * //=> Tue Feb 11 2014 11:30:30
  */
-
 function toDate(argument) {
-  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-  var argStr = Object.prototype.toString.call(argument); // Clone the date
+  (0,_lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(1, arguments);
+  var argStr = Object.prototype.toString.call(argument);
 
-  if (argument instanceof Date || typeof argument === 'object' && argStr === '[object Date]') {
+  // Clone the date
+  if (argument instanceof Date || (0,_babel_runtime_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(argument) === 'object' && argStr === '[object Date]') {
     // Prevent the date to lose the milliseconds when passed to new Date() in IE10
     return new Date(argument.getTime());
   } else if (typeof argument === 'number' || argStr === '[object Number]') {
@@ -4966,11 +4459,10 @@ function toDate(argument) {
   } else {
     if ((typeof argument === 'string' || argStr === '[object String]') && typeof console !== 'undefined') {
       // eslint-disable-next-line no-console
-      console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#string-arguments"); // eslint-disable-next-line no-console
-
+      console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://github.com/date-fns/date-fns/blob/master/docs/upgradeGuide.md#string-arguments");
+      // eslint-disable-next-line no-console
       console.warn(new Error().stack);
     }
-
     return new Date(NaN);
   }
 }
@@ -5237,7 +4729,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetdetails_vue_vue_type_template_id_0a9e85f5__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetdetails_vue_vue_type_template_id_0a9e85f5__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetdetails_vue_vue_type_template_id_0a9e85f5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./assetdetails.vue?vue&type=template&id=0a9e85f5 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Views/Artist/helpers/assetdetails.vue?vue&type=template&id=0a9e85f5");
 
@@ -5252,7 +4744,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetform_vue_vue_type_template_id_cac6cdbe__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetform_vue_vue_type_template_id_cac6cdbe__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetform_vue_vue_type_template_id_cac6cdbe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./assetform.vue?vue&type=template&id=cac6cdbe */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Views/Artist/helpers/assetform.vue?vue&type=template&id=cac6cdbe");
 
@@ -5267,7 +4759,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetmodal_vue_vue_type_template_id_5de5a8c0__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetmodal_vue_vue_type_template_id_5de5a8c0__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_assetmodal_vue_vue_type_template_id_5de5a8c0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./assetmodal.vue?vue&type=template&id=5de5a8c0 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Views/Artist/helpers/assetmodal.vue?vue&type=template&id=5de5a8c0");
 
@@ -5282,7 +4774,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_editassetform_vue_vue_type_template_id_0b6358d7__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_editassetform_vue_vue_type_template_id_0b6358d7__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_editassetform_vue_vue_type_template_id_0b6358d7__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./editassetform.vue?vue&type=template&id=0b6358d7 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Views/Artist/helpers/editassetform.vue?vue&type=template&id=0b6358d7");
 
@@ -5297,7 +4789,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_vue_vue_type_template_id_395e221a__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_vue_vue_type_template_id_395e221a__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modal_vue_vue_type_template_id_395e221a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modal.vue?vue&type=template&id=395e221a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Views/Artist/helpers/modal.vue?vue&type=template&id=395e221a");
 
@@ -5312,10 +4804,32 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ViewAssets_vue_vue_type_template_id_dfc387a8__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ViewAssets_vue_vue_type_template_id_dfc387a8__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_ViewAssets_vue_vue_type_template_id_dfc387a8__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ViewAssets.vue?vue&type=template&id=dfc387a8 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Views/Artist/pages/ViewAssets.vue?vue&type=template&id=dfc387a8");
 
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/node_modules/@babel/runtime/helpers/esm/typeof.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/date-fns/node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _typeof)
+/* harmony export */ });
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, _typeof(obj);
+}
 
 /***/ })
 

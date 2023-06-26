@@ -1,10 +1,10 @@
-const ArtistHome = () => import('../Views/Artist/pages/Home.vue');
+const ArtistHome = () => import('../Pages/Artist/pages/Home.vue');
 // const ArtistProfile = () => import('../Views/Artist/pages/Profile.vue');
-const CreateArtistProfile = () => import('../Views/Artist/pages/CreateProfile.vue');
+const CreateArtistProfile = () => import('../Pages/Artist/pages/CreateProfile.vue');
 const ArtistLayout = () => import('../layouts/ArtistLayout.vue')
-const ArtistMessage = () => import('../Views/Artist/pages/Messages.vue')
-const SubmitAssets = () => import('../Views/Artist/pages/Assets.vue')
-const ViewAssets = () => import('../Views/Artist/pages/ViewAssets.vue')
+const ArtistMessage = () => import('../Pages/Artist/pages/Messages.vue')
+const SubmitAssets = () => import('../Pages/Artist/pages/Assets.vue')
+const ViewAssets = () => import('../Pages/Artist/pages/ViewAssets.vue')
 export default [
     {
         path: '/artist',

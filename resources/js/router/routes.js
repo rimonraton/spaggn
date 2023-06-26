@@ -3,15 +3,15 @@ import siteRoutes from './site-routes';
 import charityRoutes from './charity-routes';
 import adminRoutes from './admin-routes';
 
-const Settings = () => import('../Views/Settings.vue');
-const Profile = () => import('../Views/Profile.vue');
-const Password = () => import('../Views/Password.vue');
-const Login = () => import('../Views/Authentication/Login.vue');
-const Register = () => import('../Views/Authentication/Signup.vue');
-const ForgotPassword = () => import('../Views/ForgotPassword.vue');
-const ResetPassword = () => import('../Views/ResetPassword.vue');
-const VerifyEmail = () => import('../Views/VerifyEmail.vue');
-const Home = () => import('../Views/Home.vue');
+const Settings = () => import('../Pages/Settings.vue');
+const Profile = () => import('../Pages/Profile.vue');
+const Password = () => import('../Pages/Password.vue');
+const Login = () => import('../Pages/Authentication/Login.vue');
+const Register = () => import('../Pages/Authentication/Signup.vue');
+const ForgotPassword = () => import('../Pages/ForgotPassword.vue');
+const ResetPassword = () => import('../Pages/ResetPassword.vue');
+const VerifyEmail = () => import('../Pages/VerifyEmail.vue');
+const Home = () => import('../Pages/Home.vue');
 // const Welcome = () => import('../Views/Site/Welcome.vue')
 // const Admin = () => import('../layouts/AdminLayout.vue')
 // const Artist = () => import('../layouts/ArtistLayout.vue')

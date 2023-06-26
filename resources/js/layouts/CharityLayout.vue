@@ -17,8 +17,8 @@
 </template>
 
 <script setup>
-import Header from '../Views/Charity/helper/Header.vue';
-import Sidebar from '../Views/Charity/helper/Sidebar.vue';
+import Header from '../Pages/Charity/helper/Header.vue';
+import Sidebar from '../Pages/Charity/helper/Sidebar.vue';
 import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import {ref} from 'vue'

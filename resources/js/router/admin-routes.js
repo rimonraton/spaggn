@@ -1,12 +1,14 @@
-const AdminHome = () => import('../Views/Admin/pages/Home.vue');
+const AdminHome = () => import('../Pages/Admin/pages/Home.vue');
 // const AdminProfile = () => import('../Views/Admin/pages/Profile.vue');
 // const CreateAdminProfile = () => import('../Views/Admin/pages/CreateProfile.vue');
 const AdminLayout = () => import('../layouts/AdminLayout.vue')
-const ViewArtists = () => import('../Views/Admin/pages/Artists.vue')
-const ViewCharities = () => import('../Views/Admin/pages/Charities.vue')
-const ViewArtistProfile = () => import('../Views/Admin/pages/ArtistProfile.vue')
-const ViewCharityProfile = () => import('../Views/Admin/pages/CharityProfile.vue')
-const AdminBlogs = () => import('../Views/Admin/pages/blogs/AdminBlogs')
+const ViewArtists = () => import('../Pages/Admin/pages/Artists.vue')
+const ViewCharities = () => import('../Pages/Admin/pages/Charities.vue')
+const ViewArtistProfile = () => import('../Pages/Admin/pages/ArtistProfile.vue')
+const ViewCharityProfile = () => import('../Pages/Admin/pages/CharityProfile.vue')
+const BlogList = () => import('../Pages/Admin/pages/blogs/Index')
+const AdminBlogsCreate = () => import('../Pages/Admin/pages/blogs/CreateBlog')
+
 export default [
     {
         path: '/adminLayout',
@@ -55,7 +57,7 @@ export default [
             },
             {
                 path: '/admin-blogs',
-                component: AdminBlogs,
+                component: BlogList,
                 name: 'AdminBlogs',
                 meta: {
                     guard: 'auth'
@@ -63,7 +65,7 @@ export default [
             },
             {
                 path: '/admin-blogs/create',
-                component: () => import('../Views/Admin/pages/blogs/CreateBlog'),
+                component: AdminBlogsCreate,
                 name: 'AdminBlogsCreate',
                 meta: {
                     guard: 'auth'
@@ -71,8 +73,16 @@ export default [
             },
             {
                 path: '/admin-blogs/update/:id',
-                component: () => import('../Views/Admin/pages/blogs/UpdateBlog'),
+                component: AdminBlogsCreate,
                 name: 'AdminBlogsUpdate',
+                meta: {
+                    guard: 'auth'
+                }
+            },
+            {
+                path: '/admin-blogs/show/:id',
+                component: () => import('../Pages/Admin/pages/blogs/ShowPost'),
+                name: 'ShowPost',
                 meta: {
                     guard: 'auth'
                 }

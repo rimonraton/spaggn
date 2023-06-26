@@ -39,4 +39,12 @@ export const actions = {
         }
 
     },
+    async deletePost({ commit }, id) {
+        try {
+            const { data } = await repository.deletePost(id)
+            return data
+        } catch (e) {
+            throw e
+        }
+    },
 }
