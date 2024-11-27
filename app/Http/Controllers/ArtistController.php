@@ -28,7 +28,7 @@ class ArtistController extends Controller
         return view('Admin.Artist.index', compact('icons', 'organizations'));
     }
 
-    public function ArtistProfileSave(Request $request)
+    public function ArtistProfileSave(Request $request): string
     {
         // return $request->all();
         $request->validate([
@@ -258,7 +258,7 @@ class ArtistController extends Controller
     }
     public function getArtistProfile()
     {
-        // $profile = Auth::user()->profile;
+        return $profile = Auth::user();
         $profile = Auth::user()->load('profile', 'assets');
         return response()->json($profile, 200);
     }

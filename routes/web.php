@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -15,6 +17,18 @@ use Laravel\Socialite\Facades\Socialite;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login', function (){
+    return redirect('/');
+})->name('login');
+
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('route:cache');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return 'Application has been cleared';
+});
+
 Route::get('/auth/redirect/{provider}', function ($provider) {
 //    return $provider;
     return Socialite::driver($provider)->redirect();
@@ -35,7 +49,6 @@ Route::get('/auth/{provider}/callback', [ArtistController::class, 'test']);
 //    Auth::login($user);
 //
 //    return redirect('/dashboard');
-
 
     Route::get('{path}', function () {
         return view('app');

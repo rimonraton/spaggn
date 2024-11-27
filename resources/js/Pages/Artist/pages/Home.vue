@@ -19,7 +19,7 @@
                 Thank you so much for Registration.Please create your profile and go on.
               </div>
               <div class="text-center">
-                <router-link to="/create-your-profile" class="text-blue-500 hover:underline">Create my profile
+                <router-link to="/create-your-profile" class="text-blue-500 hover:underline">Create Profile
                 </router-link>
               </div>
             </div>
