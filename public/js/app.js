@@ -20271,6 +20271,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+var NftExplained = function NftExplained() {
+  return __webpack_require__.e(/*! import() */ "resources_js_Pages_Site_NftExplained_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Site/NftExplained.vue */ "./resources/js/Pages/Site/NftExplained.vue"));
+};
 var Funding = function Funding() {
   return __webpack_require__.e(/*! import() */ "resources_js_Pages_Site_Funding_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/Site/Funding.vue */ "./resources/js/Pages/Site/Funding.vue"));
 };
@@ -20316,6 +20319,13 @@ var ListCharities = function ListCharities() {
   name: "LandingLayout",
   component: LandingLayout,
   children: [{
+    path: "/NftExplained",
+    component: NftExplained,
+    name: "NftExplained"
+    // meta: {
+    //     layout: ArtistLayout,
+    // },
+  }, {
     path: "/funding",
     component: Funding,
     name: "Funding"
@@ -49033,7 +49043,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Settings_vue":1,"resources_js_Pages_Profile_vue":1,"resources_js_Pages_Password_vue":1,"resources_js_Pages_Authentication_Login_vue":1,"resources_js_Pages_Authentication_Signup_vue":1,"resources_js_Pages_ForgotPassword_vue":1,"resources_js_Pages_ResetPassword_vue":1,"resources_js_Pages_VerifyEmail_vue":1,"resources_js_Pages_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Pages_Artist_pages_Home_vue":1,"resources_js_Pages_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Pages_Artist_pages_Messages_vue":1,"resources_js_Pages_Artist_pages_Assets_vue":1,"resources_js_Pages_Artist_pages_ViewAssets_vue":1,"resources_js_Pages_Site_Funding_vue":1,"resources_js_Pages_Site_Charities_vue":1,"resources_js_Pages_Site_CharityDetails_vue":1,"resources_js_Pages_Site_Artists_vue":1,"resources_js_Pages_Site_Blogs_vue":1,"resources_js_Pages_Site_BlogDetails_vue":1,"resources_js_Pages_Site_Projects_vue":1,"resources_js_Pages_Site_Home_vue":1,"resources_js_Pages_Site_Welcome_vue":1,"resources_js_Pages_Site_ArtistDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Pages_Site_ListCharities_vue":1,"resources_js_Pages_Charity_pages_Home_vue":1,"resources_js_Pages_Charity_pages_Profile_vue":1,"resources_js_Pages_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Pages_Charity_pages_Messages_vue":1,"resources_js_Pages_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Pages_Admin_pages_Artists_vue":1,"resources_js_Pages_Admin_pages_Charities_vue":1,"resources_js_Pages_Admin_pages_ArtistProfile_vue":1,"resources_js_Pages_Admin_pages_CharityProfile_vue":1,"resources_js_Pages_Admin_pages_blogs_Index_vue":1,"resources_js_Pages_Admin_pages_blogs_CreateBlog_vue":1,"resources_js_Pages_Admin_pages_blogs_ShowPost_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Settings_vue":1,"resources_js_Pages_Profile_vue":1,"resources_js_Pages_Password_vue":1,"resources_js_Pages_Authentication_Login_vue":1,"resources_js_Pages_Authentication_Signup_vue":1,"resources_js_Pages_ForgotPassword_vue":1,"resources_js_Pages_ResetPassword_vue":1,"resources_js_Pages_VerifyEmail_vue":1,"resources_js_Pages_Home_vue":1,"resources_js_components_helper_404_vue":1,"resources_js_Pages_Artist_pages_Home_vue":1,"resources_js_Pages_Artist_pages_CreateProfile_vue":1,"resources_js_layouts_ArtistLayout_vue":1,"resources_js_Pages_Artist_pages_Messages_vue":1,"resources_js_Pages_Artist_pages_Assets_vue":1,"resources_js_Pages_Artist_pages_ViewAssets_vue":1,"resources_js_Pages_Site_NftExplained_vue":1,"resources_js_Pages_Site_Funding_vue":1,"resources_js_Pages_Site_Charities_vue":1,"resources_js_Pages_Site_CharityDetails_vue":1,"resources_js_Pages_Site_Artists_vue":1,"resources_js_Pages_Site_Blogs_vue":1,"resources_js_Pages_Site_BlogDetails_vue":1,"resources_js_Pages_Site_Projects_vue":1,"resources_js_Pages_Site_Home_vue":1,"resources_js_Pages_Site_Welcome_vue":1,"resources_js_Pages_Site_ArtistDetails_vue":1,"resources_js_layouts_LandingLayout_vue":1,"resources_js_Pages_Site_ListCharities_vue":1,"resources_js_Pages_Charity_pages_Home_vue":1,"resources_js_Pages_Charity_pages_Profile_vue":1,"resources_js_Pages_Charity_pages_CreateProfile_vue":1,"resources_js_layouts_CharityLayout_vue":1,"resources_js_Pages_Charity_pages_Messages_vue":1,"resources_js_Pages_Admin_pages_Home_vue":1,"resources_js_layouts_AdminLayout_vue":1,"resources_js_Pages_Admin_pages_Artists_vue":1,"resources_js_Pages_Admin_pages_Charities_vue":1,"resources_js_Pages_Admin_pages_ArtistProfile_vue":1,"resources_js_Pages_Admin_pages_CharityProfile_vue":1,"resources_js_Pages_Admin_pages_blogs_Index_vue":1,"resources_js_Pages_Admin_pages_blogs_CreateBlog_vue":1,"resources_js_Pages_Admin_pages_blogs_ShowPost_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

@@ -2,7 +2,10 @@
     <div class="white" v-if="post != null">
         <div class="container mx-auto lg:w-4/6 px-6 text-gray-600 md:px-12 xl:px-6 mt-6 md:mt-10">
             <section class="mb-32 text-gray-800">
-                <img :src="post.photo" class="w-full shadow-lg rounded-lg mb-6" alt="" />
+                <router-link to="/blog" class="border border-gray-300 px-5 py-2 my-5 rounded hover:bg-gray-600 hover:text-white">
+                    Back
+                </router-link>
+                <img :src="post.photo" class="w-full shadow-lg rounded-lg my-6" alt="" />
 
                 <div class="flex items-center mb-6">
                     <img src="https://mdbootstrap.com/img/Photos/Avatars/img (23).jpg" class="rounded-full mr-2 h-8" alt=""

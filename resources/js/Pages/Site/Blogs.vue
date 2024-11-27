@@ -6,6 +6,7 @@
             <div class="flex flex-wrap ">
                 <!--start here-->
                 <div class="p-4 md:w-1/3" v-for="post in posts" :key="post.id">
+                    <router-link :to="{ name: 'BlogDetails', params: { slug: post.slug, post: post.id } }">
                     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                         <div class="w-full">
                             <div class="w-full flex p-2">
@@ -67,6 +68,7 @@
 
                         </div>
                     </div>
+                    </router-link>
                 </div>
                 <!--End here-->
             </div>

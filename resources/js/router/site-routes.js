@@ -1,3 +1,4 @@
+const NftExplained = () => import('../Pages/Site/NftExplained.vue');
 const Funding = () => import('../Pages/Site/Funding.vue');
 const ExploreCharities = () => import('../Pages/Site/Charities.vue');
 const CharityDetails = () => import( "../Pages/Site/CharityDetails.vue");
@@ -23,6 +24,14 @@ export default [
         name: "LandingLayout",
         component: LandingLayout,
         children: [
+            {
+                path: "/NftExplained",
+                component: NftExplained,
+                name: "NftExplained",
+                // meta: {
+                //     layout: ArtistLayout,
+                // },
+            },
             {
                 path: "/funding",
                 component: Funding,
