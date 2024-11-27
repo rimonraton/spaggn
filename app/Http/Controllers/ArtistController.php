@@ -12,6 +12,7 @@ use App\Models\Icon;
 use App\Models\Organization;
 use App\Models\Post;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class ArtistController extends Controller
@@ -167,7 +168,7 @@ class ArtistController extends Controller
             'fileType' => $request->fileFormat,
         ]);
         $artist->save();
-        return \Auth::user()->assets()->orderBy('id', 'desc')->paginate(5);
+        return Auth::user()->assets()->orderBy('id', 'desc')->paginate(5);
         // return redirect('Admin/ArtistProfile');
     }
 
@@ -257,19 +258,19 @@ class ArtistController extends Controller
     }
     public function getArtistProfile()
     {
-        // $profile = \Auth::user()->profile;
-        $profile = \Auth::user()->load('profile', 'assets');
+        // $profile = Auth::user()->profile;
+        $profile = Auth::user()->load('profile', 'assets');
         return response()->json($profile, 200);
     }
     public function getArtistProfileById($id)
     {
-        // $profile = \Auth::user()->profile;
+        // $profile = Auth::user()->profile;
         $profile = User::find($id)->load('profile', 'assets');
         return response()->json($profile, 200);
     }
     public function getArtistAssets()
     {
-        return \Auth::user()->assets()->orderBy('id', 'desc')->paginate(5);
+        return Auth::user()->assets()->orderBy('id', 'desc')->paginate(5);
     }
     public function ImageRemove(Request $request)
     {

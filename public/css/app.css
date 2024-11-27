@@ -742,7 +742,7 @@ video {
   --tw-backdrop-invert:  ;
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  
+  --tw-backdrop-sepia: ;
 }
 ::backdrop {
   --tw-border-spacing-x: 0;
@@ -791,7 +791,7 @@ video {
   --tw-backdrop-invert:  ;
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  
+  --tw-backdrop-sepia:  ;
 }
 .container {
   width: 100%
@@ -2775,7 +2775,7 @@ video {
 /* .tooltip {
     @apply invisible absolute;
   }
-  
+
   .has-tooltip:hover .tooltip {
     @apply visible z-50;
   } */

@@ -1,5 +1,5 @@
 <template>
-    <div class="white" v-if="posts.length > 0">
+    <div class="white" v-if="posts?.length > 0">
         <div class="container mx-auto lg:w-5/6 px-6 text-gray-600 md:px-12 xl:px-6">
             <h2 class="text-2xl text-gray-900 font-bold md:text-4xl py-4">Our Blog</h2>
 
@@ -14,8 +14,12 @@
                                          alt="author" class="w-10 h-10 rounded-full overflow-hidden" />
                                 </div>
                                 <div class="pl-2 pt-2 ">
-                                    <p class="font-bold">Vipin Bansal</p>
-                                    <p class="text-xs">2 June 2022</p>
+                                    <p class="font-bold">
+                                        {{ post.user.name }}
+                                    </p>
+                                    <p class="text-xs">
+                                        {{ moment(String( post.created_at )).format('DD-MM-YYYY hh:mm') }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -83,6 +87,7 @@
 
 <script setup>
 import Loading from '../../components/helper/loading.vue'
+import moment from 'moment'
 import { ref, onMounted, onBeforeMount } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
@@ -93,7 +98,7 @@ const perPage = ref(0)
 const total = ref(0)
 const postsData = async (page = 1) => {
     const res = await store.dispatch('blogModule/getPosts', page)
-    // console.log('artist res.....', res)
+    console.log('artist res.....', res)
     currentPage.value = res.current_page
     lastPage.value = res.last_page
     perPage.value = res.per_page

@@ -120,7 +120,7 @@
                 :slides-per-view="4" :slides-per-group="1" :loop="true" :loop-fill-group-with-blank="true"
                 :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
-                <swiper-slide v-for="item, i in 12" :key="item">
+                <swiper-slide v-for="(item, i) in 12" :key="item">
                     <div class="relative mx-auto w-full my-10">
                         <!-- <a href="#"
               class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full"> -->
@@ -130,7 +130,8 @@
                                     class="transition-transform duration-500 transform ease-in-out hover:scale-110 w-full">
                                     <!-- <div class="absolute inset-0 bg-black opacity-10"> -->
                                     <img class="w-full h-64 rounded-md transition hover:bg-cyan-300"
-                                        :src="`https://source.unsplash.com/random/?Cryptocurrency&${i + 1}`" alt="">
+                                        src="https://picsum.photos/200/300?random=1"
+                                         alt="">
                                     <!-- src="https://images.unsplash.com/photo-1546453667-8a8d2d07bc20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" -->
                                     <!-- </div> -->
                                 </div>
@@ -207,7 +208,7 @@
                 :breakpoints="swiperOptions.breakpoints" :space-between="30" :slides-per-view="4" :slides-per-group="1"
                 :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
-                <swiper-slide v-for="item, i in charityValue" :key="item">
+                <swiper-slide v-for="(item, i) in charityValue" :key="item">
                     <div class="relative mx-auto w-full my-10">
                         <a href="#"
                             class="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-2 w-full">
@@ -322,7 +323,7 @@
                 :breakpoints="swiperOptions.breakpoints" :space-between="30" :slides-per-view="4" :slides-per-group="1"
                 :loop="true" :loop-fill-group-with-blank="true" :navigation="true" :pagination="{ clickable: true }"
                 :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }" :speed="3000">
-                <swiper-slide v-for="item, i in artistValue" :key="'item-artist' + i">
+                <swiper-slide v-for="(item, i) in artistValue" :key="'item-artist' + i">
                     <div class="max-w-md px-8 bg-white shadow-lg rounded-lg my-10">
                         <div class="flex justify-center md:justify-end z-80">
                             <img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"

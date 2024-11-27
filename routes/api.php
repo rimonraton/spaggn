@@ -32,6 +32,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/register', RegisterController::class);
     Route::post('/forgot-password', ForgotPasswordController::class);
     Route::post('/reset-password', ResetPasswordController::class);
+
+
 });
 // Route::middleware('guest')->group(function () {
 // Route::get('/social-login/{provider}', [AuthController::class, 'socialLogin']);
@@ -80,8 +82,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('approved-charity', [AdminController::class, 'approvedCharity']);
 
 //     Blog Post
-    Route::get('/get-posts', [PostController::class, 'getPosts']);
-    Route::get('/get-posts/{post}/{slug}', [PostController::class, 'getPost']);
+//    Route::get('/get-posts', [PostController::class, 'getPosts']);
+//    Route::get('/get-posts/{post}/{slug}', [PostController::class, 'getPost']);
     Route::post('/save-posts', [PostController::class, 'savePost']);
     Route::post('/upload-post-image', [PostController::class, 'savePostImage']);
     Route::post('/deletePost', [PostController::class, 'deletePost']);
@@ -97,6 +99,8 @@ Route::get('/get-artists', [ArtistController::class, 'getArtist']);
 Route::get('/get-charity', [CharityController::class, 'getCharity']);
 Route::get('get-message-info', [MessageInfoController::class, 'index']);
 Route::get('get-organizations', [OrganizationController::class, 'index']);
+Route::get('/get-posts', [PostController::class, 'getPosts']);
+Route::get('/get-posts/{post}/{slug}', [PostController::class, 'getPost']);
 
 
 
